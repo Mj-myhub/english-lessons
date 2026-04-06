@@ -1,311 +1,708 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="it-it">
-<head><title>
-	ATAC S.p.A.
-</title><link href="/css/layout-style.css" rel="stylesheet" type="text/css" />
-	<!--[if gte IE 7]>
-		<link href="/css/layout-style-ie.css" rel="stylesheet" type="text/css" />
-	<![endif]-->
-    <link href="/css/calendar.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="/js/jquery.js"></script>
-    <script type="text/javascript" src="/js/3.6.0/jquery.min.js"></script>
-
-
-    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE" /><meta http-equiv="EXPIRES" content="0" />
-    <script type="text/javascript">
-
-        function ShowProgress() {
-            setTimeout(function () {
-                var modal = $('<div />');
-                modal.addClass("modal");
-                $('body').append(modal);
-                var loading = $(".loading");
-                loading.show();
-                var top = Math.max($(window).height() / 2 - loading[0].offsetHeight / 2, 0);
-                var left = Math.max($(window).width() / 2 - loading[0].offsetWidth / 2, 0);
-                loading.css({ top: top, left: left });
-            }, 200);
-        }
-
-        function SubmitShow() {
-            ShowProgress()
-        };
-
-
-        function SubmitTargetNew() {
-            document.forms[0].target = "_blank";
-        }
-
-
-</script>
-
-<script>var __uzdbm_1 = "47f224b1-5680-46b1-b0a9-74a6fb3eebf7";var __uzdbm_2 = "NzRhZjc2NjQtYzJvNy00Yzc2LWE2YzAtYTk3YjQ3YjY1MTQ5JDkzLjE1MC44Ny4yMTY=";</script> <script>(function(w, d, e, u, c, g, a, b){ w["SSJSConnectorObj"] = {ss_cid : c, domain_info: "auto"}; a = d.createElement(e); a.async = true; a.src = u; b = d.getElementsByTagName(e)[0]; b.parentNode.insertBefore(a, b); })(window,document,"script","https://cdn.perfdrive.com/aperture/aperture.js","c2o9","ssConf");</script></head>
-<body onload="if(history.length>0)history.go(+1);">
-    <div id="BOX_IMG_LOD" class="loading">
-	<div class="loading-message">Operazione in corso</div><img src="/images/loading/load-000.gif" alt="loading" />
-</div>
-   <form method="post" action="./default_status.aspx?sk=7BA770FD-6507-4462-A327-627C71BAF494" id="main_form">
-<div class="aspNetHidden">
-<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
-<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTI4OTQ1MzAxNw9kFgJmD2QWAgIFD2QWDgIDDxYCHgdWaXNpYmxlaGQCBw8WAh8AaGQCCQ9kFgJmDxYCHgRUZXh0BZwhPHVsIGlkPSJzaWdpdE1lbnUiIGNsYXNzPSJtYXN0ZXItbWVudSI+DQo8bGk+DQo8aDMgY2xhc3M9ImN1cnJlbnQgcmVkLW5vbmUiID5NeUF0YWM8L2gzPg0KPHVsIGNsYXNzPSJtZW51Ij4NCjxsaT4NCjxoNCBjbGFzcz0iaGVhZCBncmF5LXNtcGwiIG9uY2xpY2s9ImxvY2F0aW9uLmhyZWY9Jy9teWF0YWMvYWNjb3VudC9sb2dvbi5hc3B4JzsgcmV0dXJuIFNob3dQcm9ncmVzcygpOyI+QWNjZWRpPC9oND4NCjwvbGk+DQo8bGk+DQo8aDQgY2xhc3M9ImhlYWQgZ3JheS1zbXBsIiBvbmNsaWNrPSJsb2NhdGlvbi5ocmVmPScvbXlhdGFjL2FjY291bnQvcmVnaXN0cmF6aW9uZS5hc3B4JzsgcmV0dXJuIFNob3dQcm9ncmVzcygpOyI+UmVnaXN0cmF0aTwvaDQ+DQo8L2xpPg0KPGxpPg0KPGg0IGNsYXNzPSJoZWFkIGdyYXktc21wbCIgb25jbGljaz0ibG9jYXRpb24uaHJlZj0nL215YXRhYy9hY2NvdW50L3Bhc3N3b3JkX2xvc3QuYXNweCc7IHJldHVybiBTaG93UHJvZ3Jlc3MoKTsiPlBhc3N3b3JkIGRpbWVudGljYXRhPC9oND4NCjwvbGk+DQo8bGk+DQo8aDQgY2xhc3M9ImhlYWQgZ3JheS1zbXBsIiBvbmNsaWNrPSJsb2NhdGlvbi5ocmVmPScvbXlhdGFjL2FjY291bnQvbG9nb24uYXNweCc7IHJldHVybiBTaG93UHJvZ3Jlc3MoKTsiPlRhcCZHbzwvaDQ+DQo8L2xpPg0KPC91bD4NCjwvbGk+DQo8bGk+DQo8aDMgY2xhc3M9ImN1cnJlbnQgcmVkLW5vbmUiID5SaWNhcmljaGUgTWV0cmVidXMgb25saW5lPC9oMz4NCjx1bCBjbGFzcz0ibWVudSI+DQo8bGk+DQo8aDQgY2xhc3M9ImhlYWQgZ3JheS1zbXBsIiBvbmNsaWNrPSJsb2NhdGlvbi5ocmVmPScvcmljYXJpY2EtYWJib25hbWVudGkvJzsgcmV0dXJuIFNob3dQcm9ncmVzcygpOyI+UmljYXJpY2EgbGEgQ2FyZDwvaDQ+DQo8L2xpPg0KPGxpPg0KPGg0IGNsYXNzPSJoZWFkIGdyYXktc21wbCIgb25jbGljaz0ibG9jYXRpb24uaHJlZj0nL3JpY2FyaWNhLWFiYm9uYW1lbnRpLWFnZXZvbGF0aS8nOyByZXR1cm4gU2hvd1Byb2dyZXNzKCk7Ij5BYmJvbmFtZW50aSBhZ2V2b2xhdGk8L2g0Pg0KPC9saT4NCjxsaT4NCjxoNCBjbGFzcz0iaGVhZCBvcmFuZ2UtcGx1cy1kYXJrIiA+QXNzaXN0ZW56YSByaW5ub3ZpIG9ubGluZTwvaDQ+DQo8dWwgY2xhc3M9InN1Ym1lbnUiPg0KPGxpIGNsYXNzPSJoZWFkIGdyYXktc21wbCIgb25jbGljaz0ibG9jYXRpb24uaHJlZj0nL21ldHJlYnVzL3NyY19tZXRyZWJ1c19yaWNhcmljYS5hc3B4JzsgcmV0dXJuIFNob3dQcm9ncmVzcygpOyI+UmljaGllZGkgbGEgcmljZXZ1dGE8L2xpPg0KPC91bD4NCjwvbGk+DQo8L3VsPg0KPC9saT4NCjxsaT4NCjxoMyBjbGFzcz0iY3VycmVudCByZWQtbm9uZSIgPlJpY2hpZXN0ZSBhYmJvbmFtZW50bzwvaDM+DQo8dWwgY2xhc3M9Im1lbnUiPg0KPGxpPg0KPGg0IGNsYXNzPSJoZWFkIG9yYW5nZS1wbHVzLWRhcmsiID5BYmJvbmFtZW50aSBhZ2V2b2xhdGk8L2g0Pg0KPHVsIGNsYXNzPSJzdWJtZW51Ij4NCjxsaSBjbGFzcz0iaGVhZCBncmF5LXNtcGwiIG9uY2xpY2s9ImxvY2F0aW9uLmhyZWY9Jy9teWF0YWMvYWNjb3VudC9sb2dvbi5hc3B4JzsgcmV0dXJuIFNob3dQcm9ncmVzcygpOyI+QSBjb250cmlidXppb25lPC9saT4NCjxsaSBjbGFzcz0iaGVhZCBncmF5LXNtcGwiIG9uY2xpY2s9ImxvY2F0aW9uLmhyZWY9Jy9teWF0YWMvYWNjb3VudC9sb2dvbi5hc3B4JzsgcmV0dXJuIFNob3dQcm9ncmVzcygpOyI+TWVuc2lsZSBkaXNvY2N1cGF0aTwvbGk+DQo8bGkgY2xhc3M9ImhlYWQgZ3JheS1zbXBsIiBvbmNsaWNrPSJsb2NhdGlvbi5ocmVmPScvbXlhdGFjL2FjY291bnQvbG9nb24uYXNweCc7IHJldHVybiBTaG93UHJvZ3Jlc3MoKTsiPlNjb250byAxMCU8L2xpPg0KPGxpIGNsYXNzPSJoZWFkIGdyYXktc21wbCIgb25jbGljaz0ibG9jYXRpb24uaHJlZj0nL215YXRhYy9hY2NvdW50L2xvZ29uLmFzcHgnOyByZXR1cm4gU2hvd1Byb2dyZXNzKCk7Ij5RdW96aWVudGUgZmFtaWxpYXJlPC9saT4NCjxsaSBjbGFzcz0iaGVhZCBncmF5LXNtcGwiIG9uY2xpY2s9ImxvY2F0aW9uLmhyZWY9Jy9teWF0YWMvYWNjb3VudC9sb2dvbi5hc3B4JzsgcmV0dXJuIFNob3dQcm9ncmVzcygpOyI+Q2FyZCBPdmVyIDcwPC9saT4NCjxsaSBjbGFzcz0iaGVhZCBncmF5LXNtcGwiIG9uY2xpY2s9ImxvY2F0aW9uLmhyZWY9Jy9teWF0YWMvYWNjb3VudC9sb2dvbi5hc3B4JzsgcmV0dXJuIFNob3dQcm9ncmVzcygpOyI+Q2F0ZWdvcmllIHNwZWNpYWxpPC9saT4NCjxsaSBjbGFzcz0iaGVhZCBncmF5LXNtcGwiIG9uY2xpY2s9ImxvY2F0aW9uLmhyZWY9Jy9teWF0YWMvYWNjb3VudC9sb2dvbi5hc3B4JzsgcmV0dXJuIFNob3dQcm9ncmVzcygpOyI+Um9tYSBPdmVyIDY1PC9saT4NCjxsaSBjbGFzcz0iaGVhZCBncmF5LXNtcGwiIG9uY2xpY2s9ImxvY2F0aW9uLmhyZWY9Jy9teWF0YWMvYWNjb3VudC9sb2dvbi5hc3B4JzsgcmV0dXJuIFNob3dQcm9ncmVzcygpOyI+Um9tYSBnaW92YW5pIGUgc3R1ZGVudGk8L2xpPg0KPGxpIGNsYXNzPSJoZWFkIGdyYXktc21wbCIgb25jbGljaz0ibG9jYXRpb24uaHJlZj0nL215YXRhYy9hY2NvdW50L2xvZ29uLmFzcHgnOyByZXR1cm4gU2hvd1Byb2dyZXNzKCk7Ij5JbnYuIEd1ZXJyYSBlIE1lZC4gRCdPcm88L2xpPg0KPC91bD4NCjwvbGk+DQo8bGk+DQo8aDQgY2xhc3M9ImhlYWQgb3JhbmdlLXBsdXMtZGFyayIgPkNhcmQgZGkgbGliZXJhIGNpcmNvbGF6aW9uZTwvaDQ+DQo8dWwgY2xhc3M9InN1Ym1lbnUiPg0KPGxpIGNsYXNzPSJoZWFkIGdyYXktc21wbCIgb25jbGljaz0ibG9jYXRpb24uaHJlZj0nL215YXRhYy9hY2NvdW50L2xvZ29uLmFzcHgnOyByZXR1cm4gU2hvd1Byb2dyZXNzKCk7Ij5Gb3J6ZSBkZWxsJ09yZGluZTwvbGk+DQo8bGkgY2xhc3M9ImhlYWQgZ3JheS1zbXBsIiBvbmNsaWNrPSJsb2NhdGlvbi5ocmVmPScvbXlhdGFjL2FjY291bnQvbG9nb24uYXNweCc7IHJldHVybiBTaG93UHJvZ3Jlc3MoKTsiPkZvcnplIEFybWF0ZTwvbGk+DQo8bGkgY2xhc3M9ImhlYWQgZ3JheS1zbXBsIiBvbmNsaWNrPSJsb2NhdGlvbi5ocmVmPScvbXlhdGFjL2FjY291bnQvbG9nb24uYXNweCc7IHJldHVybiBTaG93UHJvZ3Jlc3MoKTsiPkEuTi5BLlMuIFNwQTwvbGk+DQo8L3VsPg0KPC9saT4NCjwvdWw+DQo8L2xpPg0KPGxpPg0KPGgzIGNsYXNzPSJjdXJyZW50IHJlZC1ub25lIiA+R3VpZGEgYWxsJ3V0aWxpenpvPC9oMz4NCjx1bCBjbGFzcz0ibWVudSI+DQo8bGk+DQo8aDQgY2xhc3M9ImhlYWQgb3JhbmdlLXBsdXMtZGFyayIgPlJpY2hpZXN0ZSBhYmJvbmFtZW50bzwvaDQ+DQo8dWwgY2xhc3M9InN1Ym1lbnUiPg0KPGxpIGNsYXNzPSJoZWFkIGdyYXktc21wbCIgb25jbGljaz0ibG9jYXRpb24uaHJlZj0nL21ldHJlYnVzLWFnZXZvbGF0YS9ndWlkYS8nOyByZXR1cm4gU2hvd1Byb2dyZXNzKCk7Ij5BZ2V2b2xhdG8gYSBjb250cmlidXppb25lPC9saT4NCjwvdWw+DQo8L2xpPg0KPC91bD4NCjwvbGk+DQo8bGk+DQo8aDMgY2xhc3M9ImN1cnJlbnQgcmVkLW5vbmUiID5BY2NyZWRpdGFtZW50aTwvaDM+DQo8dWwgY2xhc3M9Im1lbnUiPg0KPGxpPg0KPGg0IGNsYXNzPSJoZWFkIG9yYW5nZS1wbHVzLWRhcmsiID5Qcm9mZXNzaW9uaXN0aTwvaDQ+DQo8dWwgY2xhc3M9InN1Ym1lbnUiPg0KPGxpIGNsYXNzPSJoZWFkIGdyYXktc21wbCIgb25jbGljaz0ibG9jYXRpb24uaHJlZj0nL2FjY3JlZGl0YW1lbnRvLXByb2Zlc3Npb25pc3RpLyc7IHJldHVybiBTaG93UHJvZ3Jlc3MoKTsiPkF2dm9jYXRpIGUgQ29tbWVyY2lhbGlzdGk8L2xpPg0KPC91bD4NCjwvbGk+DQo8L3VsPg0KPC9saT4NCjxsaT4NCjxoMyBjbGFzcz0iY3VycmVudCByZWQtbm9uZSIgPkluZm9ybWF6aW9uaTwvaDM+DQo8dWwgY2xhc3M9Im1lbnUiPg0KPGxpPg0KPGg0IGNsYXNzPSJoZWFkIGdyYXktc21wbCIgb25jbGljaz0ibG9jYXRpb24uaHJlZj0nL215YXRhYy9pbmZvcm1hdGl2YS1wcml2YWN5Lyc7IHJldHVybiBTaG93UHJvZ3Jlc3MoKTsiPkluZm9ybWF0aXZhIFByaXZhY3k8L2g0Pg0KPC9saT4NCjxsaT4NCjxoNCBjbGFzcz0iaGVhZCBncmF5LXNtcGwiIG9uY2xpY2s9ImxvY2F0aW9uLmhyZWY9J2h0dHBzOi8vZm9ybS5hZ2lkLmdvdi5pdC92aWV3L2QzNjZiOWVkLWVhYWItNGZlNC1iNDdiLTVlMWFmNzBkZmRiZCc7IHJldHVybiBTaG93UHJvZ3Jlc3MoKTsiPkRpY2hpYXJhemlvbmUgZGkgYWNjZXNzaWJpbGl0w6A8L2g0Pg0KPC9saT4NCjwvdWw+DQo8L2xpPg0KPC91bD4NCmQCCw9kFlACAQ8WAh4FVmFsdWUFATBkAgMPFgIfAmVkAgUPFgIfAmVkAg0PFgIfAgUkN0JBNzcwRkQtNjUwNy00NDYyLUEzMjctNjI3QzcxQkFGNDk0ZAIPDxYCHwJlZAIRDxYCHwIFDjIwMjMwMDAyMDc5NTQ3ZAITDxYCHwIFEDAzNDUyOTQ0OTI0MjYwMTNkAhUPFgIfAgUHMjA3OTU0N2QCFw8WAh8CBQczNTAyMzA0ZAIZDxYCHwIFATBkAhsPFgIfAgUBMGQCHQ8WAh8CBQcxMDA4NjE4ZAIfDxYCHwIFBTE0MDQ5ZAIhDxYCHwIFATBkAiMPFgIfAgUBMGQCJQ8WAh8CZWQCJw8WAh8CBQYyOTUyMzNkAikPFgIfAgUBMmQCKw8WAh8CBQExZAItDxYCHwIFATFkAi8PFgIfAgUGNDI3NTk4ZAIxDxYCHwIFATBkAjUPZBYCAgEPFgIfAQUSOTAwMDAwMDAyOTUyMzMyMDIzZAI3D2QWAgIBDxYCHwEFEDE3LzA0LzIwMjMgMTQ6MDFkAjkPFgIfAQUXQ1JFRElUTyBCT05VUyBUUkFTUE9SVElkAjsPFgIfAGhkAj0PDxYEHghDc3NDbGFzcwUkYm94LW1haW4tYXJlYS1jbGVhbi1pdGVtLXZhbHVlIGdyZWVuHgRfIVNCAgJkFgJmDxYCHwEFFk9QRVJBWklPTkUgQVVUT1JJWlpBVEFkAj8PFgIfAGgWBAIBDxYCHwEFD0JPTlVTIFRSQVNQT1JUSWQCAw8WAh8BBQUzNSwwMGQCQQ8PFgIfAGhkZAJDDxYCHwEFBTM1LDAwZAJFDxYCHwBnFggCAw8WAh8BBSQxYjkzY2Y1NS04N2UwLTRiZWYtOTQ1NC1hMzlhNDAzMGI3NDZkAgUPFgIfAQUFNjAsMDBkAgcPDxYEHwMFJGJveC1tYWluLWFyZWEtY2xlYW4taXRlbS12YWx1ZSBncmVlbh8EAgJkFgJmDxYCHwEFClJJU0NBVFRBVE9kAgkPFgIfAGcWBgIBDxYCHwEFCjE3LzA0LzIwMjNkAgMPFgIfAQUFMzUsMDBkAgUPFgIfAQUFMjUsMDBkAkkPFgIfAQUYQUJCT05BTUVOVE8gTUVOU0lMRSBST01BZAJLDxYCHwEFCjMxLzAzLzIwMjNkAk0PFgIfAQUKMzAvMDQvMjAyM2QCTw8WAh8AaGQCUQ8WAh8BBQUzNSwwMGQCUw8WAh8AZ2QCVw8WAh8BBRAwMzQ1Mjk0NDkyNDI2MDEzZAJZD2QWAgIBDxYCHwEFDE1BSklEIEpBRkFSSWQCWw9kFgICAQ8WAh8BBRdqYWZhcnltYWppZDIwQGdtYWlsLmNvbWQCDQ8PFgIfAQUTJmNvcHk7MjAyMyBBdGFjIFNwYWRkAg8PDxYCHwEFzwE8cCBjbGFzcz0iY3NzLXZhbGlkIj48YSBocmVmPSJodHRwczovL2ppZ3Nhdy53My5vcmcvY3NzLXZhbGlkYXRvci9jaGVjay9yZWZlcmVyIj48aW1nIHN0eWxlPSJib3JkZXI6MDt3aWR0aDo4OHB4O2hlaWdodDozMXB4IiBzcmM9Imh0dHBzOi8vamlnc2F3LnczLm9yZy9jc3MtdmFsaWRhdG9yL2ltYWdlcy92Y3NzIiBhbHQ9IkNTUyBWYWxpZG8hIi8+PC9hPjwvcD5kZAIRDw8WAh8BBeADQVRBQyBTLnAuQS4gQXppZW5kYSBwZXIgbGEgbW9iaWxpdMOgIC0gVmlhIFByZW5lc3RpbmEsIDQ1IC0gMDAxNzYgUm9tYSAtIFRlbC46IDA2LjQ2OTUxIC0gUG9zdGEgRWxldHRyb25pY2EgQ2VydGlmaWNhdGE6IDxBIGhyZWY9Im1haWx0bzpwcm90b2NvbGxvQGNlcnQyLmF0YWMucm9tYS5pdCI+cHJvdG9jb2xsb0BjZXJ0Mi5hdGFjLnJvbWEuaXQ8L0E+PEJSPlNvY2lldMOgIGNvbiBzb2NpbyB1bmljbyBzb2dnZXR0YSBhbGxhIGRpcmV6aW9uZSBlIGNvb3JkaW5hbWVudG8gZGkgUm9tYSBDYXBpdGFsZSAtIFAuIEl2YSAwNjM0MTk4MTAwNiAtIENvZGljZSBkZXN0aW5hdGFyaW8gQVRBQyBmYXR0dXJhemlvbmUgZWxldHRyb25pY2E6IEhRMUtMQiAtIENvZGljZSBpUEE6IGFzYWxtPEJSPkNhcC4gU29jLiBldXJvIDE3OS41MTkuMjk5LDAwIGludC4gdmVyc2F0byAtIElzY3IuIENDSUFBIGRpIFJvbWEgbi4gOTYxNjkyIGRlbCAxOC8xMi8yMDAwZGRk5IgcmciuIll9kqZAqXyVdeDLuR6jJZoyn7xY6G2bmO8=" />
-</div>
-
-<script type="text/javascript">
-//<![CDATA[
-var theForm = document.forms['main_form'];
-if (!theForm) {
-    theForm = document.main_form;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maj Jaffrey — Private English Lessons in Rome & Online</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0b1d33;
+  --navy-mid: #132d4f;
+  --ivory: #faf8f5;
+  --cream: #f2ede6;
+  --warm: #f7f3ee;
+  --gold: #c49a3c;
+  --gold-soft: #d4af5a;
+  --gold-glow: rgba(196, 154, 60, 0.12);
+  --gold-border: rgba(196, 154, 60, 0.25);
+  --teal: #3a8f85;
+  --teal-glow: rgba(58, 143, 133, 0.1);
+  --slate: #4a5568;
+  --mist: #7b8794;
+  --light-border: rgba(11, 29, 51, 0.07);
+  --success: #2d7a50;
+  --red: #c0392b;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'Manrope', system-ui, sans-serif;
+  --radius: 20px;
+  --radius-sm: 12px;
 }
-function __doPostBack(eventTarget, eventArgument) {
-    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
-        theForm.__EVENTTARGET.value = eventTarget;
-        theForm.__EVENTARGUMENT.value = eventArgument;
-        theForm.submit();
-    }
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); background: var(--ivory); color: var(--navy); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E"); pointer-events: none; z-index: 9999; }
+[data-lang="it"] [data-en], [data-lang="en"] [data-it] { display: none !important; }
+[data-lang="it"] [data-it], [data-lang="en"] [data-en] { display: inline; }
+
+.navbar { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 1.15rem 2rem; display: flex; justify-content: space-between; align-items: center; transition: all 0.4s; }
+.navbar.scrolled { background: rgba(250,248,245,0.95); backdrop-filter: blur(20px); box-shadow: 0 1px 0 var(--light-border); padding: 0.8rem 2rem; }
+.nav-logo { font-family: var(--font-display); font-size: 1.45rem; color: var(--navy); text-decoration: none; }
+.nav-right { display: flex; align-items: center; gap: 1.5rem; }
+.nav-links { display: flex; gap: 1.5rem; list-style: none; }
+.nav-links a { font-size: 0.78rem; font-weight: 700; color: var(--slate); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.3s; }
+.nav-links a:hover { color: var(--gold); }
+.lang-switch { display: flex; background: var(--cream); border-radius: 100px; padding: 3px; }
+.lang-btn { padding: 0.3rem 0.7rem; border: none; border-radius: 100px; font-family: var(--font-body); font-size: 0.7rem; font-weight: 700; cursor: pointer; transition: all 0.3s; background: transparent; color: var(--mist); letter-spacing: 0.05em; }
+.lang-btn.active { background: var(--navy); color: var(--ivory); }
+.nav-cta { padding: 0.55rem 1.25rem; background: var(--gold); color: #fff; border-radius: 100px; font-size: 0.78rem; font-weight: 700; text-decoration: none; transition: all 0.3s; }
+.nav-cta:hover { background: #b38a30; transform: translateY(-1px); }
+.menu-toggle { display: none; background: none; border: none; cursor: pointer; width: 26px; height: 18px; position: relative; }
+.menu-toggle span { display: block; width: 100%; height: 2px; background: var(--navy); position: absolute; left: 0; transition: all 0.3s; }
+.menu-toggle span:nth-child(1) { top: 0; }
+.menu-toggle span:nth-child(2) { top: 8px; }
+.menu-toggle span:nth-child(3) { top: 16px; }
+.menu-toggle.active span:nth-child(1) { top: 8px; transform: rotate(45deg); }
+.menu-toggle.active span:nth-child(2) { opacity: 0; }
+.menu-toggle.active span:nth-child(3) { top: 8px; transform: rotate(-45deg); }
+
+.hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 8rem 2rem 4rem; position: relative; overflow: hidden; background: linear-gradient(175deg, var(--ivory) 0%, var(--cream) 60%, var(--warm) 100%); }
+.hero-orb { position: absolute; border-radius: 50%; filter: blur(80px); animation: orbFloat 12s ease-in-out infinite; }
+.hero-orb-1 { width: 500px; height: 500px; top: -15%; right: -8%; background: var(--gold-glow); }
+.hero-orb-2 { width: 350px; height: 350px; bottom: -10%; left: -5%; background: var(--teal-glow); animation-delay: -4s; }
+@keyframes orbFloat { 0%, 100% { transform: translate(0,0) scale(1); } 50% { transform: translate(25px,-15px) scale(1.05); } }
+.hero-content { position: relative; z-index: 1; max-width: 800px; }
+.hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1.2rem; background: rgba(255,255,255,0.7); backdrop-filter: blur(8px); border: 1px solid var(--gold-border); border-radius: 100px; font-size: 0.78rem; font-weight: 700; color: var(--gold); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 2rem; animation: fadeUp 0.7s ease both; }
+.hero h1 { font-family: var(--font-display); font-size: clamp(2.6rem,6.5vw,4.8rem); font-weight: 400; line-height: 1.12; letter-spacing: -0.02em; color: var(--navy); margin-bottom: 1.5rem; animation: fadeUp 0.7s ease 0.1s both; }
+.hero-accent { color: var(--gold); font-style: italic; }
+.hero-sub { font-size: 1.1rem; color: var(--slate); line-height: 1.75; max-width: 560px; margin: 0 auto 2.5rem; animation: fadeUp 0.7s ease 0.2s both; }
+.hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; animation: fadeUp 0.7s ease 0.3s both; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+.trust-bar { display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; padding: 2.5rem 2rem; background: var(--navy); }
+.trust-item { display: flex; align-items: center; gap: 0.6rem; font-size: 0.85rem; font-weight: 600; color: rgba(255,255,255,0.85); }
+.trust-icon { width: 36px; height: 36px; border-radius: 10px; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+
+.btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 1.9rem; border-radius: 100px; font-family: var(--font-body); font-size: 0.88rem; font-weight: 700; text-decoration: none; cursor: pointer; border: none; transition: all 0.3s cubic-bezier(0.4,0,0.2,1); letter-spacing: 0.01em; }
+.btn-primary { background: var(--navy); color: var(--ivory); }
+.btn-primary:hover { background: var(--navy-mid); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(11,29,51,0.2); }
+.btn-gold { background: var(--gold); color: #fff; }
+.btn-gold:hover { background: #b38a30; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(196,154,60,0.3); }
+.btn-outline { background: transparent; color: var(--navy); border: 1.5px solid rgba(11,29,51,0.15); }
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+.btn-sm { padding: 0.7rem 1.4rem; font-size: 0.82rem; }
+
+.section { padding: 6.5rem 2rem; }
+.section-cream { background: var(--cream); }
+.section-dark { background: var(--navy); color: var(--ivory); }
+.container { max-width: 1080px; margin: 0 auto; }
+.section-header { text-align: center; margin-bottom: 3.5rem; }
+.section-label { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold); margin-bottom: 0.85rem; }
+.section-title { font-family: var(--font-display); font-size: clamp(1.9rem,4vw,2.8rem); font-weight: 400; letter-spacing: -0.015em; line-height: 1.2; margin-bottom: 1rem; }
+.section-subtitle { font-size: 1rem; color: var(--slate); line-height: 1.7; max-width: 520px; margin: 0 auto; }
+.section-dark .section-subtitle { color: var(--mist); }
+
+/* ABOUT - no photo */
+.about-content { max-width: 720px; margin: 0 auto; text-align: center; }
+.about-content h2 { font-family: var(--font-display); font-size: clamp(1.9rem,4vw,2.6rem); margin-bottom: 1.5rem; line-height: 1.2; }
+.about-body { text-align: left; max-width: 620px; margin: 0 auto; }
+.about-body p { font-size: 0.95rem; color: var(--slate); line-height: 1.85; margin-bottom: 1.15rem; }
+.about-body p strong { color: var(--navy); }
+.about-highlights { display: flex; gap: 1rem; margin-top: 1.75rem; flex-wrap: wrap; justify-content: center; }
+.about-tag { display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 1rem; background: var(--gold-glow); border: 1px solid var(--gold-border); border-radius: 100px; font-size: 0.78rem; font-weight: 700; color: var(--gold); }
+
+.features-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+.feature-card { padding: 2.25rem 1.75rem; border-radius: var(--radius); background: #fff; border: 1px solid var(--light-border); transition: all 0.35s; }
+.feature-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(11,29,51,0.06); }
+.feature-icon { width: 48px; height: 48px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1.25rem; background: var(--gold-glow); }
+.feature-card h3 { font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 0.6rem; }
+.feature-card p { font-size: 0.88rem; color: var(--slate); line-height: 1.65; }
+.features-cta { text-align: center; margin-top: 2.5rem; }
+
+/* PRICING SELECTOR - big visible cards instead of tiny tabs */
+.pricing-selector { display: flex; justify-content: center; gap: 1rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
+.pricing-selector-card {
+  display: flex; align-items: center; gap: 0.75rem;
+  padding: 1rem 1.75rem;
+  background: #fff;
+  border: 2px solid var(--light-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.3s;
+  min-width: 220px;
 }
-//]]>
-</script>
+.pricing-selector-card:hover { border-color: var(--gold-border); }
+.pricing-selector-card.active { border-color: var(--gold); background: var(--gold-glow); box-shadow: 0 4px 20px var(--gold-glow); }
+.selector-icon { font-size: 1.6rem; }
+.selector-text { text-align: left; }
+.selector-text h4 { font-family: var(--font-display); font-size: 1.05rem; margin-bottom: 0.1rem; }
+.selector-text p { font-size: 0.75rem; color: var(--mist); font-weight: 500; }
+.pricing-selector-card.active .selector-text p { color: var(--slate); }
 
+.pricing-category { display: none; }
+.pricing-category.active { display: block; }
+.pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
+.pricing-card { background: #fff; border-radius: var(--radius); padding: 2.25rem 1.75rem; border: 1.5px solid var(--light-border); position: relative; transition: all 0.35s; display: flex; flex-direction: column; }
+.pricing-card:hover { transform: translateY(-3px); box-shadow: 0 16px 48px rgba(11,29,51,0.07); }
+.pricing-card.featured { border-color: var(--gold); box-shadow: 0 4px 30px var(--gold-glow); }
+.pricing-card.featured::before { content: ''; position: absolute; top: -1.5px; left: 1.5rem; right: 1.5rem; height: 3px; background: linear-gradient(90deg, var(--gold), var(--gold-soft)); border-radius: 0 0 4px 4px; }
+.card-badge { position: absolute; top: -11px; right: 1.25rem; background: var(--gold); color: #fff; font-size: 0.68rem; font-weight: 800; padding: 0.25rem 0.8rem; border-radius: 100px; letter-spacing: 0.06em; text-transform: uppercase; }
+.plan-name { font-family: var(--font-display); font-size: 1.2rem; margin-bottom: 0.2rem; }
+.plan-for { font-size: 0.78rem; color: var(--teal); font-weight: 600; margin-bottom: 1.25rem; }
+.plan-price { font-family: var(--font-display); font-size: 2.8rem; color: var(--navy); margin-bottom: 0.15rem; }
+.plan-price span { font-size: 0.9rem; font-weight: 400; color: var(--mist); }
+.plan-per { font-size: 0.78rem; color: var(--mist); margin-bottom: 1.25rem; }
+.plan-savings { display: inline-block; background: rgba(45,122,80,0.08); color: var(--success); font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 100px; margin-bottom: 1.25rem; }
+.plan-features { list-style: none; margin-bottom: 1.75rem; flex-grow: 1; }
+.plan-features li { display: flex; align-items: flex-start; gap: 0.55rem; font-size: 0.84rem; color: var(--slate); padding: 0.4rem 0; line-height: 1.45; }
+.plan-features li::before { content: '✓'; color: var(--gold); font-weight: 800; font-size: 0.8rem; flex-shrink: 0; margin-top: 1px; }
+.pricing-card .btn { width: 100%; justify-content: center; }
 
-<div class="aspNetHidden">
+.trial-banner { margin-top: 2.5rem; padding: 2.25rem 2.5rem; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); border-radius: var(--radius); display: flex; align-items: center; justify-content: space-between; gap: 2rem; color: var(--ivory); position: relative; overflow: hidden; }
+.trial-banner::before { content: ''; position: absolute; top: -40%; right: -8%; width: 250px; height: 250px; border-radius: 50%; background: radial-gradient(circle, rgba(196,154,60,0.12) 0%, transparent 70%); }
+.trial-text h3 { font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 0.4rem; }
+.trial-text p { font-size: 0.9rem; color: var(--mist); }
 
-	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="A0AC4BE9" />
-	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAATO1ZMLcVVYvQ59MbtQuTkUlcazM1gXhKN4ZMAGc8HOb+7N9P29BTI9gh5pmkdmYKe5KKSOZKYedjzWheJCp8Tm987iMD+OY3ILEpxw3GbeeZR34HhlAzmEwIN9g46zgKU=" />
-</div>
-       <div id="cookie_bar" class="cookie-bar-fixed">
-	
-           <p>Il sito della società Atac S.p.A. utilizza cookies per la gestione della sola esperienza di navigazione. Cliccando su "Accetto" acconsenti alla policy aziendale sui cookie. Per saperne di più clicca su "Maggiori informazioni" 
-               <a id="LNK_CKI_OK" class="cb-enable" href="javascript:__doPostBack(&#39;ctl00$LNK_CKI_OK&#39;,&#39;&#39;)">Accetto</a>
-               <a onclick="window.open(&#39;https://www.atac.roma.it/page.asp?p=169&#39;);" id="LNK_CKI_INFO" class="cb-policy" href="javascript:__doPostBack(&#39;ctl00$LNK_CKI_INFO&#39;,&#39;&#39;)">Maggiori informazioni</a>
-           </p>
-       
-</div>
-        <div id="struct-masterpage">
-	        <div class="header">
-		        <div class="clear hideSkiplink">
-                    <div id="NavigationMenu" class="menu">
-                        <ul class="level1"><li onclick="location.href='https://www.atac.roma.it';" class="lk_home"></li></ul>
-                        <div class="main-box-log">
-                            
-                            
-                            
-                        </div>
-                    </div>
-                </div>
-	        </div>
-	        <div class="main">
-		        <div id="content-menu" class="menu-oper"><ul id="sigitMenu" class="master-menu">
-<li>
-<h3 class="current red-none" >MyAtac</h3>
-<ul class="menu">
-<li>
-<h4 class="head gray-smpl" onclick="location.href='/myatac/account/logon.aspx'; return ShowProgress();">Accedi</h4>
-</li>
-<li>
-<h4 class="head gray-smpl" onclick="location.href='/myatac/account/registrazione.aspx'; return ShowProgress();">Registrati</h4>
-</li>
-<li>
-<h4 class="head gray-smpl" onclick="location.href='/myatac/account/password_lost.aspx'; return ShowProgress();">Password dimenticata</h4>
-</li>
-<li>
-<h4 class="head gray-smpl" onclick="location.href='/myatac/account/logon.aspx'; return ShowProgress();">Tap&Go</h4>
-</li>
-</ul>
-</li>
-<li>
-<h3 class="current red-none" >Ricariche Metrebus online</h3>
-<ul class="menu">
-<li>
-<h4 class="head gray-smpl" onclick="location.href='/ricarica-abbonamenti/'; return ShowProgress();">Ricarica la Card</h4>
-</li>
-<li>
-<h4 class="head gray-smpl" onclick="location.href='/ricarica-abbonamenti-agevolati/'; return ShowProgress();">Abbonamenti agevolati</h4>
-</li>
-<li>
-<h4 class="head orange-plus-dark" >Assistenza rinnovi online</h4>
-<ul class="submenu">
-<li class="head gray-smpl" onclick="location.href='/metrebus/src_metrebus_ricarica.aspx'; return ShowProgress();">Richiedi la ricevuta</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<h3 class="current red-none" >Richieste abbonamento</h3>
-<ul class="menu">
-<li>
-<h4 class="head orange-plus-dark" >Abbonamenti agevolati</h4>
-<ul class="submenu">
-<li class="head gray-smpl" onclick="location.href='/myatac/account/logon.aspx'; return ShowProgress();">A contribuzione</li>
-<li class="head gray-smpl" onclick="location.href='/myatac/account/logon.aspx'; return ShowProgress();">Mensile disoccupati</li>
-<li class="head gray-smpl" onclick="location.href='/myatac/account/logon.aspx'; return ShowProgress();">Sconto 10%</li>
-<li class="head gray-smpl" onclick="location.href='/myatac/account/logon.aspx'; return ShowProgress();">Quoziente familiare</li>
-<li class="head gray-smpl" onclick="location.href='/myatac/account/logon.aspx'; return ShowProgress();">Card Over 70</li>
-<li class="head gray-smpl" onclick="location.href='/myatac/account/logon.aspx'; return ShowProgress();">Categorie speciali</li>
-<li class="head gray-smpl" onclick="location.href='/myatac/account/logon.aspx'; return ShowProgress();">Roma Over 65</li>
-<li class="head gray-smpl" onclick="location.href='/myatac/account/logon.aspx'; return ShowProgress();">Roma giovani e studenti</li>
-<li class="head gray-smpl" onclick="location.href='/myatac/account/logon.aspx'; return ShowProgress();">Inv. Guerra e Med. D'Oro</li>
-</ul>
-</li>
-<li>
-<h4 class="head orange-plus-dark" >Card di libera circolazione</h4>
-<ul class="submenu">
-<li class="head gray-smpl" onclick="location.href='/myatac/account/logon.aspx'; return ShowProgress();">Forze dell'Ordine</li>
-<li class="head gray-smpl" onclick="location.href='/myatac/account/logon.aspx'; return ShowProgress();">Forze Armate</li>
-<li class="head gray-smpl" onclick="location.href='/myatac/account/logon.aspx'; return ShowProgress();">A.N.A.S. SpA</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<h3 class="current red-none" >Guida all'utilizzo</h3>
-<ul class="menu">
-<li>
-<h4 class="head orange-plus-dark" >Richieste abbonamento</h4>
-<ul class="submenu">
-<li class="head gray-smpl" onclick="location.href='/metrebus-agevolata/guida/'; return ShowProgress();">Agevolato a contribuzione</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<h3 class="current red-none" >Accreditamenti</h3>
-<ul class="menu">
-<li>
-<h4 class="head orange-plus-dark" >Professionisti</h4>
-<ul class="submenu">
-<li class="head gray-smpl" onclick="location.href='/accreditamento-professionisti/'; return ShowProgress();">Avvocati e Commercialisti</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<h3 class="current red-none" >Informazioni</h3>
-<ul class="menu">
-<li>
-<h4 class="head gray-smpl" onclick="location.href='/myatac/informativa-privacy/'; return ShowProgress();">Informativa Privacy</h4>
-</li>
-<li>
-<h4 class="head gray-smpl" onclick="location.href='https://form.agid.gov.it/view/d366b9ed-eaab-4fe4-b47b-5e1af70dfdbd'; return ShowProgress();">Dichiarazione di accessibilità</h4>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-		        <div id="content-area" class="content-main">
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="sin-main">
-        <div class="sin-main-title-red"><div class="tab-act-ttl">Stato del pagamento</div></div>
-        <div class="box-main-area-clean">
-            <div Class="box-main-area-clean-item">
-                <div id="MainContent_PNL_PAY_OPR_COD" class="box-main-area-clean-item-content">
-	<div Class="box-main-area-clean-item-label">Codice transazione:</div><div Class="box-main-area-clean-item-value">900000002952332023</div>
-</div>
-                <div id="MainContent_PNL_PAY_OPR_DAT" class="box-main-area-clean-item-content-right">
-	<div Class="box-main-area-clean-item-label">Data operazione:</div><div Class="box-main-area-clean-item-value">17/04/2023 14:01</div>
-</div>
-                <div Class="box-main-area-clean-item-content-line"></div>
-                <div Class="box-main-area-clean-item-content"><div Class="box-main-area-clean-item-label">Metodo di pagamento:</div><div Class="box-main-area-clean-item-value">CREDITO BONUS TRASPORTI</div></div>
-                
-                <div Class="box-main-area-clean-item-content-line"></div>
-                <div Class="box-main-area-clean-item-content">
-                <div Class="box-main-area-clean-item-label">Esito della transazione:</div><div id="MainContent_PNL_PAY_OPR_STS" class="box-main-area-clean-item-value green">
-	OPERAZIONE AUTORIZZATA
-</div></div>
-                
-                <div Class="box-main-area-clean-item-content-line"></div>
-                
-                <div Class="box-main-area-clean-item-content-right-money"><div Class="box-main-area-clean-item-label">Importo operazione:</div><div Class="box-main-area-clean-item-value">&euro; <b class="value-money">35,00</b></div></div>
-            </div>
-        </div>
-        
-            <div class="sin-main-title-orange"><div class="tab-act-ttl">Dettaglio Bonus Trasporti</div></div>
-            <div class="box-main-area-clean">
-                <div Class="box-main-area-clean-item">
-                    <div Class="box-main-area-clean-item-content"><div Class="box-main-area-clean-item-label">Codice:</div><div Class="box-main-area-clean-item-value">1b93cf55-87e0-4bef-9454-a39a4030b746</div></div>
-                    <div Class="box-main-area-clean-item-content-right"><div Class="box-main-area-clean-item-label">Credito iniziale:</div><div Class="box-main-area-clean-item-value">&euro; <b class="value-money">60,00</b></div></div>
-                    <div Class="box-main-area-clean-item-content-line"></div>
-                    <div Class="box-main-area-clean-item-content"><div Class="box-main-area-clean-item-label">Stato:</div><div id="MainContent_PNL_BON_TRS_STS_USD" class="box-main-area-clean-item-value green">
-	RISCATTATO
-</div></div>
-                    
-                        <div Class="box-main-area-clean-item-content-right"><div Class="box-main-area-clean-item-label">Data utilizzo:</div><div Class="box-main-area-clean-item-value">17/04/2023</div></div>
-                        <div Class="box-main-area-clean-item-content-line"></div>
-                        <div Class="box-main-area-clean-item-content"><div Class="box-main-area-clean-item-label">Credito utilizzato:</div><div Class="box-main-area-clean-item-value">&euro; <b class="value-money">35,00</b></div></div>
-                        <div Class="box-main-area-clean-item-content-right"><div Class="box-main-area-clean-item-label">Credito non utilizzato:</div><div Class="box-main-area-clean-item-value">&euro; <b class="value-money">25,00</b></div></div>
-                    
-                </div>
-            </div>
-        
-        <div class="sin-main-title-orange"><div class="tab-act-ttl">Dettaglio del rinnovo</div></div>
-        <div class="box-main-area-clean">
-            <div Class="box-main-area-clean-item">
-                <div Class="box-main-area-clean-item-content"><div Class="box-main-area-clean-item-title">ABBONAMENTO MENSILE ROMA</div></div>
-                <div Class="box-main-area-clean-item-content-line"></div>
-                <div Class="box-main-area-clean-item-content"><div Class="box-main-area-clean-item-label">Periodo di validità dal:</div><div Class="box-main-area-clean-item-value">31/03/2023</div></div>
-                <div Class="box-main-area-clean-item-content"><div Class="box-main-area-clean-item-label">a tutto il:</div><div Class="box-main-area-clean-item-value">30/04/2023</div></div>
-                
-                <div Class="box-main-area-clean-item-content-line"></div>
-                <div Class="box-main-area-clean-item-content"><div Class="box-main-area-clean-item-label">Importo del titolo di viaggio:</div><div Class="box-main-area-clean-item-value"> &euro; <b class="value-money">35,00</b></div></div>
-                
-                    <div Class="box-main-area-clean-item-content-line"></div>
-                    <div Class="box-main-area-clean-item-content-buttons">
-                        <input type="submit" name="ctl00$MainContent$BTN_INS_ZON" value="Ricevuta" onclick="SubmitTargetNew();" id="MainContent_BTN_INS_ZON" class="box-main-area-clean-item-content-button-red" />
-                    </div>
-                
-            </div>
-        </div>
-        <div class="sin-main-title-orange"><div class="tab-act-ttl">Dettaglio della tessera</div></div>
-        <div class="box-main-area-clean">
-            <div Class="box-main-area-clean-item">
-                <div Class="box-main-area-clean-item-content"><div Class="box-main-area-clean-item-label">Codice seriale:</div><div Class="box-main-area-clean-item-value">0345294492426013</div></div>
-                
-                    <div Class="box-main-area-clean-item-content-line"></div>
-                    <div Class="box-main-area-clean-item-content"><div Class="box-main-area-clean-item-label">Nominativo intestatario:</div><div Class="box-main-area-clean-item-value">MAJID JAFARI</div></div>
-                
-                
-                    <div Class="box-main-area-clean-item-content-line"></div>
-                    <div Class="box-main-area-clean-item-content"><div Class="box-main-area-clean-item-label">E-mail invio ricevuta:</div><div Class="box-main-area-clean-item-value-lower">jafarymajid20@gmail.com</div></div>
-                
-            </div>
-        </div>
+.steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; }
+.step { text-align: center; padding: 2rem 1.25rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: var(--radius); }
+.step-num { display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; background: var(--gold-glow); border: 2px solid var(--gold-border); color: var(--gold); font-family: var(--font-display); font-size: 1.3rem; margin: 0 auto 1rem; }
+.step h4 { font-family: var(--font-display); font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--ivory); }
+.step p { font-size: 0.82rem; color: var(--mist); line-height: 1.6; }
+
+/* TESTIMONIALS (existing) */
+.testimonials-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+.testimonial-card { background: #fff; border: 1px solid var(--light-border); border-radius: var(--radius); padding: 2rem 1.75rem; transition: all 0.35s; }
+.testimonial-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(11,29,51,0.06); }
+.testimonial-stars { color: var(--gold); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 1rem; }
+.testimonial-card blockquote { font-size: 0.9rem; color: var(--slate); line-height: 1.7; font-style: italic; margin-bottom: 1.25rem; }
+.testimonial-author { font-size: 0.85rem; font-weight: 700; color: var(--navy); }
+.testimonial-role { font-size: 0.75rem; color: var(--mist); margin-top: 0.1rem; }
+
+/* REVIEW WALL */
+.review-wall { margin-top: 3.5rem; }
+.review-wall-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem; }
+.review-wall-header h3 { font-family: var(--font-display); font-size: 1.4rem; }
+.leave-review-btn { padding: 0.6rem 1.3rem; background: var(--gold); color: #fff; border: none; border-radius: 100px; font-family: var(--font-body); font-size: 0.82rem; font-weight: 700; cursor: pointer; transition: all 0.3s; }
+.leave-review-btn:hover { background: #b38a30; transform: translateY(-1px); }
+
+/* Review form */
+.review-form-overlay { display: none; position: fixed; inset: 0; background: rgba(11,29,51,0.5); z-index: 2000; align-items: center; justify-content: center; padding: 1.5rem; }
+.review-form-overlay.open { display: flex; }
+.review-form { background: #fff; border-radius: var(--radius); padding: 2.5rem; max-width: 480px; width: 100%; position: relative; box-shadow: 0 24px 80px rgba(11,29,51,0.2); }
+.review-form h3 { font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 0.4rem; }
+.review-form .form-sub { font-size: 0.85rem; color: var(--mist); margin-bottom: 1.5rem; }
+.review-form label { display: block; font-size: 0.82rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; margin-top: 1rem; }
+.review-form input, .review-form textarea, .review-form select {
+  width: 100%; padding: 0.7rem 1rem; border: 1.5px solid var(--light-border); border-radius: var(--radius-sm);
+  font-family: var(--font-body); font-size: 0.88rem; color: var(--navy); background: var(--ivory);
+  transition: border-color 0.3s; outline: none;
+}
+.review-form input:focus, .review-form textarea:focus { border-color: var(--gold); }
+.review-form textarea { resize: vertical; min-height: 90px; }
+.star-select { display: flex; gap: 0.35rem; margin-bottom: 0.5rem; }
+.star-select span { font-size: 1.6rem; cursor: pointer; color: var(--cream); transition: color 0.2s; }
+.star-select span.lit { color: var(--gold); }
+.form-actions { display: flex; gap: 0.75rem; margin-top: 1.5rem; }
+.form-actions .btn { flex: 1; justify-content: center; }
+.close-form { position: absolute; top: 1rem; right: 1.25rem; background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--mist); transition: color 0.3s; }
+.close-form:hover { color: var(--navy); }
+
+/* Review cards from users */
+.user-reviews { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.25rem; }
+.user-review-card { background: #fff; border: 1px solid var(--light-border); border-radius: var(--radius-sm); padding: 1.5rem; }
+.user-review-card .review-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.user-review-card .review-name { font-weight: 700; font-size: 0.88rem; }
+.user-review-card .review-date { font-size: 0.72rem; color: var(--mist); }
+.user-review-card .review-stars { color: var(--gold); font-size: 0.82rem; letter-spacing: 1px; margin-bottom: 0.6rem; }
+.user-review-card .review-text { font-size: 0.86rem; color: var(--slate); line-height: 1.65; }
+.user-review-card .review-type { display: inline-block; margin-top: 0.75rem; font-size: 0.72rem; font-weight: 700; color: var(--teal); background: var(--teal-glow); padding: 0.2rem 0.6rem; border-radius: 100px; }
+.review-likes { display: flex; align-items: center; gap: 0.35rem; margin-top: 0.75rem; }
+.like-btn { background: none; border: 1px solid var(--light-border); border-radius: 100px; padding: 0.3rem 0.7rem; font-size: 0.75rem; cursor: pointer; display: flex; align-items: center; gap: 0.3rem; color: var(--slate); transition: all 0.3s; font-family: var(--font-body); }
+.like-btn:hover { border-color: var(--gold); color: var(--gold); }
+.like-btn.liked { border-color: var(--gold); color: var(--gold); background: var(--gold-glow); }
+.no-reviews { text-align: center; padding: 2.5rem; color: var(--mist); font-size: 0.9rem; }
+
+/* FAQ */
+.faq-grid { max-width: 700px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid var(--light-border); }
+.faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 0; background: none; border: none; cursor: pointer; font-family: var(--font-body); font-size: 0.95rem; font-weight: 700; color: var(--navy); text-align: left; gap: 1rem; }
+.faq-icon { font-size: 1.2rem; color: var(--gold); transition: transform 0.3s; flex-shrink: 0; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+.faq-item.open .faq-answer { max-height: 200px; }
+.faq-answer p { padding-bottom: 1.25rem; font-size: 0.88rem; color: var(--slate); line-height: 1.7; }
+
+.cta-section { padding: 6rem 2rem; text-align: center; background: linear-gradient(180deg, var(--ivory) 0%, var(--cream) 100%); }
+.footer { padding: 2.5rem 2rem; text-align: center; border-top: 1px solid var(--light-border); }
+.footer p { font-size: 0.8rem; color: var(--mist); }
+.footer a { color: var(--gold); text-decoration: none; font-weight: 600; }
+
+.sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; padding: 0.75rem 1.5rem; background: rgba(250,248,245,0.95); backdrop-filter: blur(16px); border-top: 1px solid var(--light-border); z-index: 999; }
+.sticky-cta .btn { width: 100%; justify-content: center; }
+
+@media (max-width: 900px) {
+  .features-grid, .testimonials-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+  .steps { grid-template-columns: repeat(2,1fr); }
+  .trial-banner { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
+  .nav-links, .nav-cta { display: none; }
+  .menu-toggle { display: block; }
+  .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(250,248,245,0.98); backdrop-filter: blur(20px); padding: 1.25rem 2rem 1.5rem; gap: 0.75rem; border-bottom: 1px solid var(--light-border); }
+  .sticky-cta { display: block; }
+  .footer { padding-bottom: 5rem; }
+  .pricing-selector-card { min-width: 0; flex: 1; }
+  .user-reviews { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .hero { padding: 6.5rem 1.25rem 3.5rem; min-height: auto; }
+  .section { padding: 4.5rem 1.25rem; }
+  .steps { grid-template-columns: 1fr; }
+  .trust-bar { gap: 1.25rem; padding: 2rem 1.25rem; }
+  .pricing-selector { flex-direction: column; align-items: center; }
+  .pricing-selector-card { width: 100%; max-width: 300px; }
+}
+</style>
+</head>
+<body data-lang="en">
+
+<nav class="navbar" id="navbar">
+  <a href="#" class="nav-logo">Maj Jaffrey</a>
+  <div class="nav-right">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" data-en>About</a><a href="#about" data-it>Chi Sono</a></li>
+      <li><a href="#services" data-en>Services</a><a href="#services" data-it>Servizi</a></li>
+      <li><a href="#pricing" data-en>Pricing</a><a href="#pricing" data-it>Prezzi</a></li>
+      <li><a href="#faq" data-en>FAQ</a><a href="#faq" data-it>FAQ</a></li>
+    </ul>
+    <div class="lang-switch">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('it')">IT</button>
     </div>
+    <a href="https://cal.com/cal.com-maj-jaffrey/free-trial" target="_blank" class="nav-cta"><span data-en>Free Trial</span><span data-it>Prova Gratis</span></a>
+    <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span data-en>Private Lessons · Rome & Online</span><span data-it>Lezioni Private · Roma & Online</span></div>
+    <h1>
+      <span data-en>Speak English like you've <span class="hero-accent">always wanted to</span></span>
+      <span data-it>Parla inglese come hai <span class="hero-accent">sempre desiderato</span></span>
+    </h1>
+    <p class="hero-sub">
+      <span data-en>One-on-one lessons built around your life, your goals, and the way you actually learn. Whether it's exam preparation, career growth, or everyday confidence, we'll get you there.</span>
+      <span data-it>Lezioni individuali costruite intorno alla tua vita, ai tuoi obiettivi e al modo in cui impari davvero. Che si tratti di preparazione esami, carriera o sicurezza quotidiana, ci arriveremo insieme.</span>
+    </p>
+    <div class="hero-actions">
+      <a href="https://cal.com/cal.com-maj-jaffrey/free-trial" target="_blank" class="btn btn-primary"><span data-en>Start with a Free 20-Minute Trial</span><span data-it>Inizia con una Prova Gratuita di 20 Minuti</span> →</a>
+      <a href="#pricing" class="btn btn-outline" onclick="smoothScroll(event,'pricing')"><span data-en>See Prices</span><span data-it>Vedi i Prezzi</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><div class="trust-icon">🎯</div><span data-en>One-to-One Lessons</span><span data-it>Lezioni Individuali</span></div>
+  <div class="trust-item"><div class="trust-icon">🌍</div><span data-en>Online & In Rome</span><span data-it>Online & a Roma</span></div>
+  <div class="trust-item"><div class="trust-icon">📚</div><span data-en>IELTS · Business · General</span><span data-it>IELTS · Business · Generale</span></div>
+  <div class="trust-item"><div class="trust-icon">🇬🇧🇮🇹</div><span data-en>English & Italian Support</span><span data-it>Supporto EN & IT</span></div>
 </div>
-	        </div>
-	        <div class="clear"></div>
-	        <div class="footer">
-		        <div style="FLOAT: left"><span id="LBL_PAG_COP">&copy;2023 Atac Spa</span></div>
-		        <div style="FLOAT: right"><span id="LBL_PAG_DEV"><p class="css-valid"><a href="https://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss" alt="CSS Valido!"/></a></p></span></div>
-            </div>
-	        <div class="footer-sub">
-		        <div style="FLOAT: left"><span id="LBT_PAG_FOT_SUB">ATAC S.p.A. Azienda per la mobilità - Via Prenestina, 45 - 00176 Roma - Tel.: 06.46951 - Posta Elettronica Certificata: <A href="mailto:protocollo@cert2.atac.roma.it">protocollo@cert2.atac.roma.it</A><BR>Società con socio unico soggetta alla direzione e coordinamento di Roma Capitale - P. Iva 06341981006 - Codice destinatario ATAC fatturazione elettronica: HQ1KLB - Codice iPA: asalm<BR>Cap. Soc. euro 179.519.299,00 int. versato - Iscr. CCIAA di Roma n. 961692 del 18/12/2000</span></div>
-            </div>
+
+<!-- ABOUT (no photo, no dashes, rewritten text) -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-content">
+      <div class="section-label"><span data-en>About Me</span><span data-it>Chi Sono</span></div>
+      <h2><span data-en>I help you feel <span class="hero-accent">calm, clear & confident</span> in English</span><span data-it>Ti aiuto a sentirti <span class="hero-accent">calmo, chiaro e sicuro</span> in inglese</span></h2>
+      <div class="about-body">
+        <p><span data-en>Hi, I'm Maj. I'm a private English teacher based in Rome, and I work with students both online and face to face. My focus is simple: I help people who feel stuck, nervous, or frustrated with English finally start making real progress.</span><span data-it>Ciao, sono Maj. Sono un insegnante privato di inglese con sede a Roma e lavoro con studenti sia online che di persona. Il mio obiettivo è semplice: aiuto le persone che si sentono bloccate, nervose o frustrate con l'inglese a iniziare finalmente a fare progressi reali.</span></p>
+        <p><span data-en>I don't follow a textbook cover to cover. Instead, I build every lesson around <strong>what you need</strong>. If you're preparing for IELTS, we train with real exam strategies. If English is holding you back at work, we practise the exact situations that matter to you. If you just want to feel more comfortable in everyday conversations, we start there.</span><span data-it>Non seguo un libro di testo dalla prima all'ultima pagina. Costruisco ogni lezione intorno a <strong>ciò di cui hai bisogno</strong>. Se ti stai preparando per l'IELTS, ci alleniamo con strategie d'esame reali. Se l'inglese ti frena al lavoro, esercitiamo le situazioni che contano per te. Se vuoi semplicemente sentirti più a tuo agio nelle conversazioni quotidiane, partiamo da lì.</span></p>
+        <p><span data-en>My students say the thing they appreciate most is that lessons never feel like a chore. They feel like <strong>real conversations with a purpose</strong>. That's the environment I create: relaxed, focused, and always moving you forward.</span><span data-it>I miei studenti dicono che la cosa che apprezzano di più è che le lezioni non sembrano mai un compito. Sembrano <strong>conversazioni vere con un obiettivo</strong>. Questo è l'ambiente che creo: rilassato, mirato e sempre orientato al progresso.</span></p>
+      </div>
+      <div class="about-highlights">
+        <div class="about-tag">🗣️ <span data-en>Conversation-focused</span><span data-it>Focus conversazione</span></div>
+        <div class="about-tag">📋 <span data-en>Custom lesson plans</span><span data-it>Piani personalizzati</span></div>
+        <div class="about-tag">🤝 <span data-en>Patient & supportive</span><span data-it>Paziente & di supporto</span></div>
+        <div class="about-tag">🧠 <span data-en>Practical, not theoretical</span><span data-it>Pratico, non teorico</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section section-cream" id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label"><span data-en>What I Offer</span><span data-it>Cosa Offro</span></div>
+      <div class="section-title"><span data-en>Lessons designed around <em>your</em> goals</span><span data-it>Lezioni progettate intorno ai <em>tuoi</em> obiettivi</span></div>
+      <p class="section-subtitle"><span data-en>Every student is different. I create a learning path that fits your needs and gets results.</span><span data-it>Ogni studente è diverso. Creo un percorso su misura per le tue esigenze.</span></p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card"><div class="feature-icon">🗣️</div><h3><span data-en>General English</span><span data-it>Inglese Generale</span></h3><p><span data-en>Build confidence in everyday conversations, grammar, vocabulary, and pronunciation. From beginner to advanced.</span><span data-it>Acquisisci sicurezza nelle conversazioni quotidiane, grammatica, vocabolario e pronuncia.</span></p></div>
+      <div class="feature-card"><div class="feature-icon">💼</div><h3><span data-en>Business English</span><span data-it>Inglese Commerciale</span></h3><p><span data-en>Presentations, meetings, negotiations, and email writing. Communicate with confidence in the global workplace.</span><span data-it>Presentazioni, riunioni, negoziazioni e email. Comunica con sicurezza nel mondo del lavoro.</span></p></div>
+      <div class="feature-card"><div class="feature-icon">🎯</div><h3><span data-en>IELTS & Cambridge Prep</span><span data-it>Preparazione IELTS & Cambridge</span></h3><p><span data-en>Focused IELTS and Cambridge exam preparation. Proven strategies, mock exams, and personalised score improvement plans.</span><span data-it>Preparazione mirata per IELTS e Cambridge. Strategie comprovate, simulazioni d'esame e piani personalizzati.</span></p></div>
+    </div>
+
+    <!-- Corporate / Group banner -->
+    <div style="margin-top:2rem; padding:2.25rem 2rem; background:linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); border-radius:var(--radius); display:flex; align-items:center; gap:2rem; flex-wrap:wrap; color:var(--ivory); position:relative; overflow:hidden;">
+      <div style="position:absolute; top:-30%; right:-5%; width:200px; height:200px; border-radius:50%; background:radial-gradient(circle, rgba(196,154,60,0.12) 0%, transparent 70%);"></div>
+      <div style="font-size:2.5rem;">🏢</div>
+      <div style="flex:1; min-width:240px;">
+        <div style="font-family:var(--font-display); font-size:1.3rem; margin-bottom:0.35rem;"><span data-en>Companies, Groups & Semi-Private Lessons</span><span data-it>Aziende, Gruppi & Lezioni Semi-Private</span></div>
+        <p style="font-size:0.88rem; color:var(--mist); line-height:1.6;"><span data-en>I also work with companies, small groups, and pairs. Whether you need team training, semi-private sessions with a friend or colleague, or a tailored corporate programme, get in touch and I'll create a plan that fits.</span><span data-it>Lavoro anche con aziende, piccoli gruppi e coppie. Che tu abbia bisogno di formazione aziendale, sessioni semi-private con un amico o collega, o un programma aziendale su misura, contattami e creerò un piano adatto.</span></p>
+      </div>
+      <a href="mailto:m.jeffrey2023@gmail.com" class="btn btn-gold" style="flex-shrink:0;"><span data-en>Get in Touch</span><span data-it>Contattami</span></a>
+    </div>
+
+    <div class="features-cta"><a href="#pricing" class="btn btn-primary btn-sm" onclick="smoothScroll(event,'pricing')"><span data-en>Choose Your Lesson</span><span data-it>Scegli la Tua Lezione</span> →</a></div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pricing">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label"><span data-en>Pricing</span><span data-it>Prezzi</span></div>
+      <div class="section-title"><span data-en>Simple, transparent pricing</span><span data-it>Prezzi semplici e trasparenti</span></div>
+      <p class="section-subtitle"><span data-en>Choose a single lesson or save with a package. All lessons are 60 minutes.</span><span data-it>Scegli una lezione singola o risparmia con un pacchetto. Tutte le lezioni durano 60 minuti.</span></p>
+    </div>
+
+    <!-- Big visible selector cards -->
+    <div class="pricing-selector">
+      <div class="pricing-selector-card active" onclick="showCategory('general',this)">
+        <div class="selector-icon">🗣️💼</div>
+        <div class="selector-text">
+          <h4><span data-en>General & Business</span><span data-it>Generale & Business</span></h4>
+          <p><span data-en>From €18/lesson</span><span data-it>Da €18/lezione</span></p>
         </div>
-    </form>
+      </div>
+      <div class="pricing-selector-card" onclick="showCategory('exam',this)">
+        <div class="selector-icon">🎯📝</div>
+        <div class="selector-text">
+          <h4><span data-en>IELTS & Cambridge</span><span data-it>IELTS & Cambridge</span></h4>
+          <p><span data-en>From €20.70/lesson</span><span data-it>Da €20,70/lezione</span></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- General / Business -->
+    <div class="pricing-category active" id="cat-general">
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="plan-name"><span data-en>Single Lesson</span><span data-it>Lezione Singola</span></div>
+          <div class="plan-for"><span data-en>Ideal for flexible students</span><span data-it>Ideale per studenti flessibili</span></div>
+          <div class="plan-price">€20</div>
+          <div class="plan-per"><span data-en>per lesson</span><span data-it>a lezione</span></div>
+          <ul class="plan-features">
+            <li><span data-en>60-minute session</span><span data-it>Sessione di 60 minuti</span></li>
+            <li><span data-en>Personalized lesson plan</span><span data-it>Piano lezione personalizzato</span></li>
+            <li><span data-en>Flexible scheduling</span><span data-it>Orario flessibile</span></li>
+          </ul>
+          <a href="https://cal.com/cal.com-maj-jaffrey/english-lesson-general" target="_blank" class="btn btn-outline btn-sm"><span data-en>Book Now</span><span data-it>Prenota Ora</span></a>
+        </div>
+        <div class="pricing-card featured">
+          <div class="card-badge"><span data-en>Best for Progress</span><span data-it>Migliore per Progresso</span></div>
+          <div class="plan-name"><span data-en>5-Lesson Pack</span><span data-it>Pacchetto 5 Lezioni</span></div>
+          <div class="plan-for"><span data-en>Best for steady progress</span><span data-it>Migliore per progressi costanti</span></div>
+          <div class="plan-price">€95</div>
+          <div class="plan-per"><span data-en>€19 per lesson</span><span data-it>€19 a lezione</span></div>
+          <div class="plan-savings"><span data-en>Save €5 (5% off)</span><span data-it>Risparmi €5 (5%)</span></div>
+          <ul class="plan-features">
+            <li><span data-en>5 × 60-minute sessions</span><span data-it>5 × sessioni da 60 minuti</span></li>
+            <li><span data-en>Personalized learning path</span><span data-it>Percorso personalizzato</span></li>
+            <li><span data-en>Progress tracking</span><span data-it>Monitoraggio progressi</span></li>
+            <li><span data-en>Priority scheduling</span><span data-it>Prenotazione prioritaria</span></li>
+          </ul>
+          <a href="https://cal.com/cal.com-maj-jaffrey/5-lesson-pack" target="_blank" class="btn btn-gold btn-sm"><span data-en>Get Started</span><span data-it>Inizia Ora</span></a>
+        </div>
+        <div class="pricing-card">
+          <div class="plan-name"><span data-en>10-Lesson Pack</span><span data-it>Pacchetto 10 Lezioni</span></div>
+          <div class="plan-for"><span data-en>Best value for serious learners</span><span data-it>Miglior valore per studenti seri</span></div>
+          <div class="plan-price">€180</div>
+          <div class="plan-per"><span data-en>€18 per lesson</span><span data-it>€18 a lezione</span></div>
+          <div class="plan-savings"><span data-en>Save €20 (10% off)</span><span data-it>Risparmi €20 (10%)</span></div>
+          <ul class="plan-features">
+            <li><span data-en>10 × 60-minute sessions</span><span data-it>10 × sessioni da 60 minuti</span></li>
+            <li><span data-en>Custom curriculum</span><span data-it>Curriculum personalizzato</span></li>
+            <li><span data-en>Weekly progress reports</span><span data-it>Report settimanali</span></li>
+            <li><span data-en>Priority scheduling</span><span data-it>Prenotazione prioritaria</span></li>
+            <li><span data-en>WhatsApp support between lessons</span><span data-it>Supporto WhatsApp tra le lezioni</span></li>
+          </ul>
+          <a href="https://cal.com/cal.com-maj-jaffrey/10-lesson-pack" target="_blank" class="btn btn-outline btn-sm"><span data-en>Get Started</span><span data-it>Inizia Ora</span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Exam Prep -->
+    <div class="pricing-category" id="cat-exam">
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="plan-name"><span data-en>Single Lesson</span><span data-it>Lezione Singola</span></div>
+          <div class="plan-for"><span data-en>Targeted exam practice</span><span data-it>Pratica d'esame mirata</span></div>
+          <div class="plan-price">€23</div>
+          <div class="plan-per"><span data-en>per lesson</span><span data-it>a lezione</span></div>
+          <ul class="plan-features">
+            <li><span data-en>60-minute session</span><span data-it>Sessione di 60 minuti</span></li>
+            <li><span data-en>IELTS or Cambridge focus</span><span data-it>Focus IELTS o Cambridge</span></li>
+            <li><span data-en>Exam strategies & techniques</span><span data-it>Strategie e tecniche d'esame</span></li>
+          </ul>
+          <a href="https://cal.com/cal.com-maj-jaffrey/english-lesson" target="_blank" class="btn btn-outline btn-sm"><span data-en>Book Now</span><span data-it>Prenota Ora</span></a>
+        </div>
+        <div class="pricing-card featured">
+          <div class="card-badge"><span data-en>Recommended</span><span data-it>Consigliato</span></div>
+          <div class="plan-name"><span data-en>5-Lesson Pack</span><span data-it>Pacchetto 5 Lezioni</span></div>
+          <div class="plan-for"><span data-en>Focused exam preparation</span><span data-it>Preparazione focalizzata</span></div>
+          <div class="plan-price">€109</div>
+          <div class="plan-per"><span data-en>€21.80 per lesson</span><span data-it>€21,80 a lezione</span></div>
+          <div class="plan-savings"><span data-en>Save €6 (5% off)</span><span data-it>Risparmi €6 (5%)</span></div>
+          <ul class="plan-features">
+            <li><span data-en>5 × 60-minute sessions</span><span data-it>5 × sessioni da 60 minuti</span></li>
+            <li><span data-en>Full mock exam included</span><span data-it>Simulazione completa inclusa</span></li>
+            <li><span data-en>Section-by-section strategies</span><span data-it>Strategie sezione per sezione</span></li>
+            <li><span data-en>Score prediction & feedback</span><span data-it>Previsione punteggio & feedback</span></li>
+          </ul>
+          <a href="https://cal.com/cal.com-maj-jaffrey/5-lesson-pack-exam-preparation" target="_blank" class="btn btn-gold btn-sm"><span data-en>Get Started</span><span data-it>Inizia Ora</span></a>
+        </div>
+        <div class="pricing-card">
+          <div class="plan-name"><span data-en>10-Lesson Pack</span><span data-it>Pacchetto 10 Lezioni</span></div>
+          <div class="plan-for"><span data-en>Complete exam mastery</span><span data-it>Padronanza completa</span></div>
+          <div class="plan-price">€207</div>
+          <div class="plan-per"><span data-en>€20.70 per lesson</span><span data-it>€20,70 a lezione</span></div>
+          <div class="plan-savings"><span data-en>Save €23 (10% off)</span><span data-it>Risparmi €23 (10%)</span></div>
+          <ul class="plan-features">
+            <li><span data-en>10 × 60-minute sessions</span><span data-it>10 × sessioni da 60 minuti</span></li>
+            <li><span data-en>Complete exam curriculum</span><span data-it>Curriculum d'esame completo</span></li>
+            <li><span data-en>Multiple mock exams</span><span data-it>Simulazioni multiple</span></li>
+            <li><span data-en>Detailed score analysis</span><span data-it>Analisi dettagliata punteggio</span></li>
+            <li><span data-en>WhatsApp support</span><span data-it>Supporto WhatsApp</span></li>
+          </ul>
+          <a href="https://cal.com/cal.com-maj-jaffrey/10-lesson-pack-exam-preparation" target="_blank" class="btn btn-outline btn-sm"><span data-en>Get Started</span><span data-it>Inizia Ora</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="trial-banner">
+      <div class="trial-text">
+        <h3><span data-en>🎁 Not sure yet? Try a free lesson first</span><span data-it>🎁 Non sei sicuro? Prova prima una lezione gratuita</span></h3>
+        <p><span data-en>Book a free 20-minute trial. No commitment, no payment required.</span><span data-it>Prenota una prova gratuita di 20 minuti. Nessun impegno, nessun pagamento.</span></p>
+      </div>
+      <a href="https://cal.com/cal.com-maj-jaffrey/free-trial" target="_blank" class="btn btn-gold"><span data-en>Book Free Trial</span><span data-it>Prova Gratuita</span> →</a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section section-dark" id="how">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label"><span data-en>How It Works</span><span data-it>Come Funziona</span></div>
+      <div class="section-title" style="color:var(--ivory)"><span data-en>Start learning in 4 simple steps</span><span data-it>Inizia a imparare in 4 semplici passi</span></div>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><h4><span data-en>Choose Your Plan</span><span data-it>Scegli il Piano</span></h4><p><span data-en>Pick a single lesson or save with a package.</span><span data-it>Scegli una lezione singola o risparmia con un pacchetto.</span></p></div>
+      <div class="step"><div class="step-num">2</div><h4><span data-en>Pay Securely</span><span data-it>Paga in Sicurezza</span></h4><p><span data-en>Safe payment through Stripe. All major cards accepted.</span><span data-it>Pagamento sicuro tramite Stripe. Tutte le carte accettate.</span></p></div>
+      <div class="step"><div class="step-num">3</div><h4><span data-en>Book Your Time</span><span data-it>Prenota l'Orario</span></h4><p><span data-en>Choose any available slot from my live calendar.</span><span data-it>Scegli qualsiasi slot dal mio calendario.</span></p></div>
+      <div class="step"><div class="step-num">4</div><h4><span data-en>Start Learning</span><span data-it>Inizia a Imparare</span></h4><p><span data-en>Join the video call and begin your English journey.</span><span data-it>Partecipa alla videochiamata e inizia il tuo percorso.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS + REVIEW WALL -->
+<section class="section" id="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label"><span data-en>Student Stories</span><span data-it>Storie degli Studenti</span></div>
+      <div class="section-title"><span data-en>What my students say</span><span data-it>Cosa dicono i miei studenti</span></div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <blockquote><span data-en>"Before working with Maj, I was afraid to speak English at work. After two months, I could join meetings and even lead a presentation. The personalized approach made all the difference."</span><span data-it>"Prima di lavorare con Maj, avevo paura di parlare inglese al lavoro. Dopo due mesi, riuscivo a partecipare alle riunioni e persino a condurre una presentazione."</span></blockquote>
+        <div class="testimonial-author">— Giulia R.</div>
+        <div class="testimonial-role"><span data-en>Business English · Rome</span><span data-it>Inglese Commerciale · Roma</span></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <blockquote><span data-en>"I needed a 6.5 on IELTS for my master's application. Maj helped me understand exactly what the examiners look for. I got a 7.0 on my first attempt."</span><span data-it>"Avevo bisogno di un 6.5 all'IELTS per il master. Maj mi ha aiutato a capire cosa cercano gli esaminatori. Ho ottenuto un 7.0 al primo tentativo."</span></blockquote>
+        <div class="testimonial-author">— Marco T.</div>
+        <div class="testimonial-role"><span data-en>IELTS Prep · Online</span><span data-it>Preparazione IELTS · Online</span></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <blockquote><span data-en>"Maj is patient, well-prepared, and makes every lesson feel relevant to my life. I actually look forward to our sessions."</span><span data-it>"Maj è paziente, ben preparato e rende ogni lezione rilevante per la mia vita. Non vedo l'ora delle nostre sessioni."</span></blockquote>
+        <div class="testimonial-author">— Alessia F.</div>
+        <div class="testimonial-role"><span data-en>General English · Rome</span><span data-it>Inglese Generale · Roma</span></div>
+      </div>
+    </div>
+
+    <!-- REVIEW WALL: students leave their own reviews -->
+    <div class="review-wall">
+      <div class="review-wall-header">
+        <h3><span data-en>💬 Student Reviews</span><span data-it>💬 Recensioni degli Studenti</span></h3>
+        <button class="leave-review-btn" onclick="openReviewForm()"><span data-en>Leave a Review</span><span data-it>Lascia una Recensione</span></button>
+      </div>
+      <div class="user-reviews" id="userReviews">
+        <div class="no-reviews" id="noReviews"><span data-en>Be the first to leave a review!</span><span data-it>Sii il primo a lasciare una recensione!</span></div>
+      </div>
+    </div>
+
+    <div class="features-cta" style="margin-top:2.5rem;">
+      <a href="https://cal.com/cal.com-maj-jaffrey/free-trial" target="_blank" class="btn btn-primary btn-sm"><span data-en>Start with a Free Trial</span><span data-it>Inizia con una Prova Gratuita</span> →</a>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEW FORM MODAL -->
+<div class="review-form-overlay" id="reviewOverlay">
+  <div class="review-form">
+    <button class="close-form" onclick="closeReviewForm()">✕</button>
+    <h3><span data-en>Share your experience</span><span data-it>Condividi la tua esperienza</span></h3>
+    <p class="form-sub"><span data-en>Your review helps other students find the right teacher.</span><span data-it>La tua recensione aiuta altri studenti a trovare l'insegnante giusto.</span></p>
+    <label><span data-en>Your Name</span><span data-it>Il Tuo Nome</span></label>
+    <input type="text" id="reviewName" placeholder="e.g. Maria S.">
+    <label><span data-en>Rating</span><span data-it>Valutazione</span></label>
+    <div class="star-select" id="starSelect">
+      <span onclick="setStars(1)">★</span>
+      <span onclick="setStars(2)">★</span>
+      <span onclick="setStars(3)">★</span>
+      <span onclick="setStars(4)">★</span>
+      <span onclick="setStars(5)">★</span>
+    </div>
+    <label><span data-en>Lesson Type</span><span data-it>Tipo di Lezione</span></label>
+    <select id="reviewType">
+      <option value="General English">General English</option>
+      <option value="Business English">Business English</option>
+      <option value="IELTS Prep">IELTS Prep</option>
+      <option value="Cambridge Prep">Cambridge Prep</option>
+    </select>
+    <label><span data-en>Your Review</span><span data-it>La Tua Recensione</span></label>
+    <textarea id="reviewText" placeholder="What was your experience like?"></textarea>
+    <div class="form-actions">
+      <button class="btn btn-outline btn-sm" onclick="closeReviewForm()"><span data-en>Cancel</span><span data-it>Annulla</span></button>
+      <button class="btn btn-gold btn-sm" onclick="submitReview()"><span data-en>Submit Review</span><span data-it>Invia Recensione</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="section section-cream" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">FAQ</div>
+      <div class="section-title"><span data-en>Common questions</span><span data-it>Domande frequenti</span></div>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span><span data-en>Who are your lessons for?</span><span data-it>Per chi sono le tue lezioni?</span></span><span class="faq-icon">+</span></button><div class="faq-answer"><p><span data-en>Anyone who wants to improve their English. I work with professionals, students preparing for exams, and anyone who wants to feel more confident speaking.</span><span data-it>Chiunque voglia migliorare il proprio inglese. Lavoro con professionisti, studenti e chiunque voglia sentirsi più sicuro nel parlare.</span></p></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span><span data-en>Are lessons online or in person?</span><span data-it>Le lezioni sono online o di persona?</span></span><span class="faq-icon">+</span></button><div class="faq-answer"><p><span data-en>Both! I teach online via video call and in person in Rome. Most students prefer online for flexibility.</span><span data-it>Entrambi! Insegno online tramite videochiamata e di persona a Roma.</span></p></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span><span data-en>How does the free trial work?</span><span data-it>Come funziona la prova gratuita?</span></span><span class="faq-icon">+</span></button><div class="faq-answer"><p><span data-en>It's a free 20-minute session with no commitment. We talk about your goals, I assess your level, and explain how I can help. No payment needed.</span><span data-it>È una sessione gratuita di 20 minuti senza impegno. Parliamo dei tuoi obiettivi, valuto il tuo livello e ti spiego come posso aiutarti.</span></p></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span><span data-en>Can I reschedule or cancel a lesson?</span><span data-it>Posso riprogrammare o annullare una lezione?</span></span><span class="faq-icon">+</span></button><div class="faq-answer"><p><span data-en>Yes, just give me at least 24 hours' notice. Package lessons never expire.</span><span data-it>Sì, basta avvisarmi almeno 24 ore prima. Le lezioni dei pacchetti non scadono mai.</span></p></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span><span data-en>Do I need to buy any books?</span><span data-it>Devo comprare dei libri?</span></span><span class="faq-icon">+</span></button><div class="faq-answer"><p><span data-en>For general and business lessons, I provide handouts and resources. For exam preparation, I'll recommend the official preparation book for your exam, which you'll need to purchase separately.</span><span data-it>Per le lezioni generali e di business, fornisco dispense e risorse. Per la preparazione esami, ti consiglierò il libro ufficiale di preparazione, che dovrai acquistare separatamente.</span></p></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span><span data-en>Do package lessons expire?</span><span data-it>Le lezioni dei pacchetti scadono?</span></span><span class="faq-icon">+</span></button><div class="faq-answer"><p><span data-en>No. Once purchased, the lessons are yours to use at your own pace. No rush, no pressure.</span><span data-it>No. Una volta acquistato, le lezioni sono tue da usare al tuo ritmo.</span></p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section">
+  <div class="container" style="text-align:center;">
+    <div class="section-label"><span data-en>Ready?</span><span data-it>Pronto?</span></div>
+    <div class="section-title"><span data-en>Your English journey starts here</span><span data-it>Il tuo viaggio in inglese inizia qui</span></div>
+    <p class="section-subtitle" style="margin:0 auto 2.5rem;"><span data-en>Book your free 20-minute trial today. No commitment, no pressure, just a friendly conversation to understand your goals.</span><span data-it>Prenota la tua prova gratuita di 20 minuti. Nessun impegno, nessuna pressione, solo una conversazione amichevole.</span></p>
+    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+      <a href="https://cal.com/cal.com-maj-jaffrey/free-trial" target="_blank" class="btn btn-primary" style="font-size:0.95rem; padding:1rem 2.25rem;"><span data-en>Book Your Free Trial</span><span data-it>Prenota la Prova Gratuita</span> →</a>
+      <a href="mailto:m.jeffrey2023@gmail.com" class="btn btn-outline" style="font-size:0.95rem; padding:1rem 2.25rem;" onclick="window.location.href='mailto:m.jeffrey2023@gmail.com'"><span data-en>Email Me</span><span data-it>Scrivimi</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p><span data-en>© 2026 Maj Jaffrey · English Lessons · Rome & Online · </span><span data-it>© 2026 Maj Jaffrey · Lezioni di Inglese · Roma & Online · </span><a href="mailto:m.jeffrey2023@gmail.com">m.jeffrey2023@gmail.com</a></p>
+</footer>
+
+<div class="sticky-cta">
+  <a href="https://cal.com/cal.com-maj-jaffrey/free-trial" target="_blank" class="btn btn-gold btn-sm"><span data-en>Book Your Free Trial</span><span data-it>Prenota Prova Gratuita</span> →</a>
+</div>
+
+<script>
+// --- Language ---
+function setLang(l){document.body.setAttribute('data-lang',l);document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.textContent.trim()===l.toUpperCase());});}
+
+// --- Smooth scroll ---
+function smoothScroll(e,id){e.preventDefault();var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}
+
+// --- Navbar ---
+window.addEventListener('scroll',function(){document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40);});
+function toggleMenu(){document.getElementById('menuToggle').classList.toggle('active');document.getElementById('navLinks').classList.toggle('open');}
+document.querySelectorAll('.nav-links a').forEach(function(link){link.addEventListener('click',function(e){var href=link.getAttribute('href');document.getElementById('menuToggle').classList.remove('active');document.getElementById('navLinks').classList.remove('open');if(href&&href.startsWith('#')){e.preventDefault();setTimeout(function(){var t=document.querySelector(href);if(t)t.scrollIntoView({behavior:'smooth',block:'start'});},150);}});});
+
+// --- Pricing selector ---
+function showCategory(id,el){
+  document.querySelectorAll('.pricing-category').forEach(function(c){c.classList.remove('active');});
+  document.querySelectorAll('.pricing-selector-card').forEach(function(c){c.classList.remove('active');});
+  document.getElementById('cat-'+id).classList.add('active');
+  el.classList.add('active');
+}
+
+// --- FAQ ---
+function toggleFaq(btn){var item=btn.closest('.faq-item');document.querySelectorAll('.faq-item').forEach(function(i){if(i!==item)i.classList.remove('open');});item.classList.toggle('open');}
+
+// --- Review System (localStorage) ---
+var selectedStars = 0;
+function setStars(n){
+  selectedStars=n;
+  document.querySelectorAll('#starSelect span').forEach(function(s,i){s.classList.toggle('lit',i<n);});
+}
+function openReviewForm(){document.getElementById('reviewOverlay').classList.add('open');}
+function closeReviewForm(){document.getElementById('reviewOverlay').classList.remove('open');document.getElementById('reviewName').value='';document.getElementById('reviewText').value='';selectedStars=0;setStars(0);}
+
+function getReviews(){try{return JSON.parse(localStorage.getItem('maj_reviews')||'[]');}catch(e){return[];}}
+function saveReviews(r){localStorage.setItem('maj_reviews',JSON.stringify(r));}
+
+function submitReview(){
+  var name=document.getElementById('reviewName').value.trim();
+  var text=document.getElementById('reviewText').value.trim();
+  var type=document.getElementById('reviewType').value;
+  if(!name||!text||!selectedStars){alert('Please fill in all fields and select a rating.');return;}
+  var reviews=getReviews();
+  reviews.unshift({name:name,text:text,stars:selectedStars,type:type,likes:0,date:new Date().toLocaleDateString('en-GB'),id:Date.now()});
+  saveReviews(reviews);
+  closeReviewForm();
+  renderReviews();
+}
+
+function toggleLike(id){
+  var reviews=getReviews();
+  var liked=JSON.parse(localStorage.getItem('maj_liked')||'[]');
+  var idx=reviews.findIndex(function(r){return r.id===id;});
+  if(idx===-1)return;
+  if(liked.includes(id)){liked=liked.filter(function(l){return l!==id;});reviews[idx].likes=Math.max(0,reviews[idx].likes-1);}
+  else{liked.push(id);reviews[idx].likes=(reviews[idx].likes||0)+1;}
+  saveReviews(reviews);
+  localStorage.setItem('maj_liked',JSON.stringify(liked));
+  renderReviews();
+}
+
+function renderReviews(){
+  var reviews=getReviews();
+  var container=document.getElementById('userReviews');
+  var noReviews=document.getElementById('noReviews');
+  if(reviews.length===0){container.innerHTML='';container.appendChild(noReviews);noReviews.style.display='block';return;}
+  noReviews.style.display='none';
+  var liked=JSON.parse(localStorage.getItem('maj_liked')||'[]');
+  var html='';
+  reviews.forEach(function(r){
+    var stars='';for(var i=0;i<5;i++)stars+=(i<r.stars)?'★':'☆';
+    var isLiked=liked.includes(r.id);
+    html+='<div class="user-review-card">'
+      +'<div class="review-top"><span class="review-name">'+r.name+'</span><span class="review-date">'+r.date+'</span></div>'
+      +'<div class="review-stars">'+stars+'</div>'
+      +'<div class="review-text">'+r.text.replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</div>'
+      +'<div class="review-type">'+r.type+'</div>'
+      +'<div class="review-likes"><button class="like-btn'+(isLiked?' liked':'')+'" onclick="toggleLike('+r.id+')">👍 '+(r.likes||0)+'</button></div>'
+      +'</div>';
+  });
+  container.innerHTML=html;
+}
+renderReviews();
+
+// --- Scroll reveal ---
+var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.style.opacity='1';entry.target.style.transform='translateY(0)';}});},{threshold:0.08});
+document.querySelectorAll('.feature-card,.pricing-card,.step,.trial-banner,.testimonial-card,.faq-item,.about-content,.pricing-selector-card,.review-wall').forEach(function(el){el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity 0.5s ease, transform 0.5s ease';observer.observe(el);});
+</script>
 </body>
 </html>

@@ -170,49 +170,6 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 .testimonial-author { font-size: 0.85rem; font-weight: 700; color: var(--navy); }
 .testimonial-role { font-size: 0.75rem; color: var(--mist); margin-top: 0.1rem; }
 
-/* REVIEW WALL */
-.review-wall { margin-top: 3.5rem; }
-.review-wall-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem; }
-.review-wall-header h3 { font-family: var(--font-display); font-size: 1.4rem; }
-.leave-review-btn { padding: 0.6rem 1.3rem; background: var(--gold); color: #fff; border: none; border-radius: 100px; font-family: var(--font-body); font-size: 0.82rem; font-weight: 700; cursor: pointer; transition: all 0.3s; }
-.leave-review-btn:hover { background: #b38a30; transform: translateY(-1px); }
-
-/* Review form */
-.review-form-overlay { display: none; position: fixed; inset: 0; background: rgba(11,29,51,0.5); z-index: 2000; align-items: center; justify-content: center; padding: 1.5rem; }
-.review-form-overlay.open { display: flex; }
-.review-form { background: #fff; border-radius: var(--radius); padding: 2.5rem; max-width: 480px; width: 100%; position: relative; box-shadow: 0 24px 80px rgba(11,29,51,0.2); }
-.review-form h3 { font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 0.4rem; }
-.review-form .form-sub { font-size: 0.85rem; color: var(--mist); margin-bottom: 1.5rem; }
-.review-form label { display: block; font-size: 0.82rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; margin-top: 1rem; }
-.review-form input, .review-form textarea, .review-form select {
-  width: 100%; padding: 0.7rem 1rem; border: 1.5px solid var(--light-border); border-radius: var(--radius-sm);
-  font-family: var(--font-body); font-size: 0.88rem; color: var(--navy); background: var(--ivory);
-  transition: border-color 0.3s; outline: none;
-}
-.review-form input:focus, .review-form textarea:focus { border-color: var(--gold); }
-.review-form textarea { resize: vertical; min-height: 90px; }
-.star-select { display: flex; gap: 0.35rem; margin-bottom: 0.5rem; }
-.star-select span { font-size: 1.6rem; cursor: pointer; color: var(--cream); transition: color 0.2s; }
-.star-select span.lit { color: var(--gold); }
-.form-actions { display: flex; gap: 0.75rem; margin-top: 1.5rem; }
-.form-actions .btn { flex: 1; justify-content: center; }
-.close-form { position: absolute; top: 1rem; right: 1.25rem; background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--mist); transition: color 0.3s; }
-.close-form:hover { color: var(--navy); }
-
-/* Review cards from users */
-.user-reviews { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.25rem; }
-.user-review-card { background: #fff; border: 1px solid var(--light-border); border-radius: var(--radius-sm); padding: 1.5rem; }
-.user-review-card .review-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
-.user-review-card .review-name { font-weight: 700; font-size: 0.88rem; }
-.user-review-card .review-date { font-size: 0.72rem; color: var(--mist); }
-.user-review-card .review-stars { color: var(--gold); font-size: 0.82rem; letter-spacing: 1px; margin-bottom: 0.6rem; }
-.user-review-card .review-text { font-size: 0.86rem; color: var(--slate); line-height: 1.65; }
-.user-review-card .review-type { display: inline-block; margin-top: 0.75rem; font-size: 0.72rem; font-weight: 700; color: var(--teal); background: var(--teal-glow); padding: 0.2rem 0.6rem; border-radius: 100px; }
-.review-likes { display: flex; align-items: center; gap: 0.35rem; margin-top: 0.75rem; }
-.like-btn { background: none; border: 1px solid var(--light-border); border-radius: 100px; padding: 0.3rem 0.7rem; font-size: 0.75rem; cursor: pointer; display: flex; align-items: center; gap: 0.3rem; color: var(--slate); transition: all 0.3s; font-family: var(--font-body); }
-.like-btn:hover { border-color: var(--gold); color: var(--gold); }
-.like-btn.liked { border-color: var(--gold); color: var(--gold); background: var(--gold-glow); }
-.no-reviews { text-align: center; padding: 2.5rem; color: var(--mist); font-size: 0.9rem; }
 
 /* FAQ */
 .faq-grid { max-width: 700px; margin: 0 auto; }
@@ -243,7 +200,7 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
   .sticky-cta { display: block; }
   .footer { padding-bottom: 5rem; }
   .pricing-selector-card { min-width: 0; flex: 1; }
-  .user-reviews { grid-template-columns: 1fr; }
+
 }
 @media (max-width: 600px) {
   .hero { padding: 6.5rem 1.25rem 3.5rem; min-height: auto; }
@@ -514,32 +471,30 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
       <div class="testimonial-card">
         <div class="testimonial-stars">★★★★★</div>
         <blockquote><span data-en>"Before working with Maj, I was afraid to speak English at work. After two months, I could join meetings and even lead a presentation. The personalized approach made all the difference."</span><span data-it>"Prima di lavorare con Maj, avevo paura di parlare inglese al lavoro. Dopo due mesi, riuscivo a partecipare alle riunioni e persino a condurre una presentazione."</span></blockquote>
-        <div class="testimonial-author">— Giulia R.</div>
+        <div class="testimonial-author">Giulia</div>
         <div class="testimonial-role"><span data-en>Business English · Rome</span><span data-it>Inglese Commerciale · Roma</span></div>
       </div>
       <div class="testimonial-card">
         <div class="testimonial-stars">★★★★★</div>
         <blockquote><span data-en>"I needed a 6.5 on IELTS for my master's application. Maj helped me understand exactly what the examiners look for. I got a 7.0 on my first attempt."</span><span data-it>"Avevo bisogno di un 6.5 all'IELTS per il master. Maj mi ha aiutato a capire cosa cercano gli esaminatori. Ho ottenuto un 7.0 al primo tentativo."</span></blockquote>
-        <div class="testimonial-author">— Marco T.</div>
+        <div class="testimonial-author">Marco</div>
         <div class="testimonial-role"><span data-en>IELTS Prep · Online</span><span data-it>Preparazione IELTS · Online</span></div>
       </div>
       <div class="testimonial-card">
         <div class="testimonial-stars">★★★★★</div>
         <blockquote><span data-en>"Maj is patient, well-prepared, and makes every lesson feel relevant to my life. I actually look forward to our sessions."</span><span data-it>"Maj è paziente, ben preparato e rende ogni lezione rilevante per la mia vita. Non vedo l'ora delle nostre sessioni."</span></blockquote>
-        <div class="testimonial-author">— Alessia F.</div>
+        <div class="testimonial-author">Alessia</div>
         <div class="testimonial-role"><span data-en>General English · Rome</span><span data-it>Inglese Generale · Roma</span></div>
       </div>
     </div>
 
-    <!-- REVIEW WALL: students leave their own reviews -->
-    <div class="review-wall">
-      <div class="review-wall-header">
-        <h3><span data-en>💬 Student Reviews</span><span data-it>💬 Recensioni degli Studenti</span></h3>
-        <button class="leave-review-btn" onclick="openReviewForm()"><span data-en>Leave a Review</span><span data-it>Lascia una Recensione</span></button>
+    <!-- LEAVE A REVIEW -->
+    <div style="margin-top:3rem; padding:2.25rem 2.5rem; background:linear-gradient(135deg, var(--cream) 0%, var(--warm) 100%); border-radius:var(--radius); display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap; border:1px solid var(--light-border);">
+      <div>
+        <div style="font-family:var(--font-display); font-size:1.3rem; margin-bottom:0.35rem;"><span data-en>💬 Enjoyed your lessons?</span><span data-it>💬 Ti sono piaciute le lezioni?</span></div>
+        <p style="font-size:0.88rem; color:var(--slate); line-height:1.6;"><span data-en>Your feedback helps other students find the right teacher. It only takes a minute!</span><span data-it>Il tuo feedback aiuta altri studenti a trovare l'insegnante giusto. Ci vuole solo un minuto!</span></p>
       </div>
-      <div class="user-reviews" id="userReviews">
-        <div class="no-reviews" id="noReviews"><span data-en>Be the first to leave a review!</span><span data-it>Sii il primo a lasciare una recensione!</span></div>
-      </div>
+      <a href="GOOGLE_FORM_URL" target="_blank" class="btn btn-gold" id="reviewFormLink"><span data-en>Leave a Review</span><span data-it>Lascia una Recensione</span> →</a>
     </div>
 
     <div class="features-cta" style="margin-top:2.5rem;">
@@ -547,38 +502,6 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
     </div>
   </div>
 </section>
-
-<!-- REVIEW FORM MODAL -->
-<div class="review-form-overlay" id="reviewOverlay">
-  <div class="review-form">
-    <button class="close-form" onclick="closeReviewForm()">✕</button>
-    <h3><span data-en>Share your experience</span><span data-it>Condividi la tua esperienza</span></h3>
-    <p class="form-sub"><span data-en>Your review helps other students find the right teacher.</span><span data-it>La tua recensione aiuta altri studenti a trovare l'insegnante giusto.</span></p>
-    <label><span data-en>Your Name</span><span data-it>Il Tuo Nome</span></label>
-    <input type="text" id="reviewName" placeholder="e.g. Maria S.">
-    <label><span data-en>Rating</span><span data-it>Valutazione</span></label>
-    <div class="star-select" id="starSelect">
-      <span onclick="setStars(1)">★</span>
-      <span onclick="setStars(2)">★</span>
-      <span onclick="setStars(3)">★</span>
-      <span onclick="setStars(4)">★</span>
-      <span onclick="setStars(5)">★</span>
-    </div>
-    <label><span data-en>Lesson Type</span><span data-it>Tipo di Lezione</span></label>
-    <select id="reviewType">
-      <option value="General English">General English</option>
-      <option value="Business English">Business English</option>
-      <option value="IELTS Prep">IELTS Prep</option>
-      <option value="Cambridge Prep">Cambridge Prep</option>
-    </select>
-    <label><span data-en>Your Review</span><span data-it>La Tua Recensione</span></label>
-    <textarea id="reviewText" placeholder="What was your experience like?"></textarea>
-    <div class="form-actions">
-      <button class="btn btn-outline btn-sm" onclick="closeReviewForm()"><span data-en>Cancel</span><span data-it>Annulla</span></button>
-      <button class="btn btn-gold btn-sm" onclick="submitReview()"><span data-en>Submit Review</span><span data-it>Invia Recensione</span></button>
-    </div>
-  </div>
-</div>
 
 <!-- FAQ -->
 <section class="section section-cream" id="faq">
@@ -642,68 +565,9 @@ function showCategory(id,el){
 // --- FAQ ---
 function toggleFaq(btn){var item=btn.closest('.faq-item');document.querySelectorAll('.faq-item').forEach(function(i){if(i!==item)i.classList.remove('open');});item.classList.toggle('open');}
 
-// --- Review System (localStorage) ---
-var selectedStars = 0;
-function setStars(n){
-  selectedStars=n;
-  document.querySelectorAll('#starSelect span').forEach(function(s,i){s.classList.toggle('lit',i<n);});
-}
-function openReviewForm(){document.getElementById('reviewOverlay').classList.add('open');}
-function closeReviewForm(){document.getElementById('reviewOverlay').classList.remove('open');document.getElementById('reviewName').value='';document.getElementById('reviewText').value='';selectedStars=0;setStars(0);}
-
-function getReviews(){try{return JSON.parse(localStorage.getItem('maj_reviews')||'[]');}catch(e){return[];}}
-function saveReviews(r){localStorage.setItem('maj_reviews',JSON.stringify(r));}
-
-function submitReview(){
-  var name=document.getElementById('reviewName').value.trim();
-  var text=document.getElementById('reviewText').value.trim();
-  var type=document.getElementById('reviewType').value;
-  if(!name||!text||!selectedStars){alert('Please fill in all fields and select a rating.');return;}
-  var reviews=getReviews();
-  reviews.unshift({name:name,text:text,stars:selectedStars,type:type,likes:0,date:new Date().toLocaleDateString('en-GB'),id:Date.now()});
-  saveReviews(reviews);
-  closeReviewForm();
-  renderReviews();
-}
-
-function toggleLike(id){
-  var reviews=getReviews();
-  var liked=JSON.parse(localStorage.getItem('maj_liked')||'[]');
-  var idx=reviews.findIndex(function(r){return r.id===id;});
-  if(idx===-1)return;
-  if(liked.includes(id)){liked=liked.filter(function(l){return l!==id;});reviews[idx].likes=Math.max(0,reviews[idx].likes-1);}
-  else{liked.push(id);reviews[idx].likes=(reviews[idx].likes||0)+1;}
-  saveReviews(reviews);
-  localStorage.setItem('maj_liked',JSON.stringify(liked));
-  renderReviews();
-}
-
-function renderReviews(){
-  var reviews=getReviews();
-  var container=document.getElementById('userReviews');
-  var noReviews=document.getElementById('noReviews');
-  if(reviews.length===0){container.innerHTML='';container.appendChild(noReviews);noReviews.style.display='block';return;}
-  noReviews.style.display='none';
-  var liked=JSON.parse(localStorage.getItem('maj_liked')||'[]');
-  var html='';
-  reviews.forEach(function(r){
-    var stars='';for(var i=0;i<5;i++)stars+=(i<r.stars)?'★':'☆';
-    var isLiked=liked.includes(r.id);
-    html+='<div class="user-review-card">'
-      +'<div class="review-top"><span class="review-name">'+r.name+'</span><span class="review-date">'+r.date+'</span></div>'
-      +'<div class="review-stars">'+stars+'</div>'
-      +'<div class="review-text">'+r.text.replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</div>'
-      +'<div class="review-type">'+r.type+'</div>'
-      +'<div class="review-likes"><button class="like-btn'+(isLiked?' liked':'')+'" onclick="toggleLike('+r.id+')">👍 '+(r.likes||0)+'</button></div>'
-      +'</div>';
-  });
-  container.innerHTML=html;
-}
-renderReviews();
-
 // --- Scroll reveal ---
 var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.style.opacity='1';entry.target.style.transform='translateY(0)';}});},{threshold:0.08});
-document.querySelectorAll('.feature-card,.pricing-card,.step,.trial-banner,.testimonial-card,.faq-item,.about-content,.pricing-selector-card,.review-wall').forEach(function(el){el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity 0.5s ease, transform 0.5s ease';observer.observe(el);});
+document.querySelectorAll('.feature-card,.pricing-card,.step,.trial-banner,.testimonial-card,.faq-item,.about-content,.pricing-selector-card').forEach(function(el){el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity 0.5s ease, transform 0.5s ease';observer.observe(el);});
 </script>
 </body>
 </html>

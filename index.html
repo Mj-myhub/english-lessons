@@ -1,642 +1,1220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maj Jaffrey — Private English Lessons in Rome & Online</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='20' fill='%23f2ede6'/%3E%3Crect x='6' y='6' width='108' height='108' rx='16' fill='none' stroke='%230b1d33' stroke-width='1.5'/%3E%3Ctext x='60' y='65' font-family='Georgia,serif' font-size='38' font-weight='bold' fill='%230b1d33' text-anchor='middle' letter-spacing='2'%3EMAJ%3C/text%3E%3Crect x='22' y='74' width='76' height='1.5' fill='%23c49a3c'/%3E%3Ctext x='60' y='92' font-family='system-ui,sans-serif' font-size='7' font-weight='700' letter-spacing='3' fill='%230b1d33' text-anchor='middle'%3EFLUENCY LAB%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root {
-  --navy: #0b1d33;
-  --navy-mid: #132d4f;
-  --ivory: #faf8f5;
-  --cream: #f2ede6;
-  --warm: #f7f3ee;
-  --gold: #c49a3c;
-  --gold-soft: #d4af5a;
-  --gold-glow: rgba(196, 154, 60, 0.12);
-  --gold-border: rgba(196, 154, 60, 0.25);
-  --teal: #3a8f85;
-  --teal-glow: rgba(58, 143, 133, 0.1);
-  --slate: #4a5568;
-  --mist: #7b8794;
-  --light-border: rgba(11, 29, 51, 0.07);
-  --success: #2d7a50;
-  --font-display: 'DM Serif Display', Georgia, serif;
-  --font-body: 'Manrope', system-ui, sans-serif;
-  --radius: 20px;
-  --radius-sm: 12px;
-}
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { font-family: var(--font-body); background: var(--ivory); color: var(--navy); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
-body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E"); pointer-events: none; z-index: 9999; }
-[data-lang="it"] [data-en], [data-lang="en"] [data-it] { display: none !important; }
-[data-lang="it"] [data-it], [data-lang="en"] [data-en] { display: inline; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The English Lounge — Learn English in Comfort</title>
+    <meta name="description" content="Private English lessons in Rome & Online. Native Canadian teacher with 12+ years experience. General English, Business English, IELTS & Cambridge preparation.">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --forest: #1B4D3E;
+            --forest-deep: #0F2E25;
+            --forest-light: #2A6B52;
+            --gold: #C4A35A;
+            --gold-light: #D4B96E;
+            --gold-dark: #A68B3E;
+            --cream: #FAF7F0;
+            --cream-dark: #F0EBE0;
+            --text: #3A3A3A;
+            --text-light: #6B6B6B;
+            --white: #FFFFFF;
+            --shadow: 0 4px 20px rgba(27,77,62,0.08);
+            --shadow-lg: 0 12px 40px rgba(27,77,62,0.12);
+            --shadow-gold: 0 4px 20px rgba(196,163,90,0.2);
+            --radius: 12px;
+            --radius-lg: 20px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-.navbar { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 1.15rem 2rem; display: flex; justify-content: space-between; align-items: center; transition: all 0.4s; }
-.navbar.scrolled { background: rgba(250,248,245,0.95); backdrop-filter: blur(20px); box-shadow: 0 1px 0 var(--light-border); padding: 0.8rem 2rem; }
-.nav-logo { font-family: var(--font-display); font-size: 1.45rem; color: var(--navy); text-decoration: none; }
-.nav-right { display: flex; align-items: center; gap: 1.5rem; }
-.nav-links { display: flex; gap: 1.5rem; list-style: none; }
-.nav-links a { font-size: 0.78rem; font-weight: 700; color: var(--slate); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.3s; }
-.nav-links a:hover { color: var(--gold); }
-.lang-switch { display: flex; background: var(--cream); border-radius: 100px; padding: 3px; }
-.lang-btn { padding: 0.3rem 0.7rem; border: none; border-radius: 100px; font-family: var(--font-body); font-size: 0.7rem; font-weight: 700; cursor: pointer; transition: all 0.3s; background: transparent; color: var(--mist); letter-spacing: 0.05em; }
-.lang-btn.active { background: var(--navy); color: var(--ivory); }
-.nav-cta { padding: 0.55rem 1.25rem; background: var(--gold); color: #fff; border-radius: 100px; font-size: 0.78rem; font-weight: 700; text-decoration: none; transition: all 0.3s; }
-.nav-cta:hover { background: #b38a30; transform: translateY(-1px); }
-.menu-toggle { display: none; background: none; border: none; cursor: pointer; width: 26px; height: 18px; position: relative; }
-.menu-toggle span { display: block; width: 100%; height: 2px; background: var(--navy); position: absolute; left: 0; transition: all 0.3s; }
-.menu-toggle span:nth-child(1) { top: 0; }
-.menu-toggle span:nth-child(2) { top: 8px; }
-.menu-toggle span:nth-child(3) { top: 16px; }
-.menu-toggle.active span:nth-child(1) { top: 8px; transform: rotate(45deg); }
-.menu-toggle.active span:nth-child(2) { opacity: 0; }
-.menu-toggle.active span:nth-child(3) { top: 8px; transform: rotate(-45deg); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Source Sans 3', sans-serif; color: var(--text); background: var(--cream); line-height: 1.7; overflow-x: hidden; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--forest-deep); line-height: 1.3; }
 
-.hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 8rem 2rem 4rem; position: relative; overflow: hidden; background: linear-gradient(175deg, var(--ivory) 0%, var(--cream) 60%, var(--warm) 100%); }
-.hero-orb { position: absolute; border-radius: 50%; filter: blur(80px); animation: orbFloat 12s ease-in-out infinite; }
-.hero-orb-1 { width: 500px; height: 500px; top: -15%; right: -8%; background: var(--gold-glow); }
-.hero-orb-2 { width: 350px; height: 350px; bottom: -10%; left: -5%; background: var(--teal-glow); animation-delay: -4s; }
-@keyframes orbFloat { 0%, 100% { transform: translate(0,0) scale(1); } 50% { transform: translate(25px,-15px) scale(1.05); } }
-.hero-content { position: relative; z-index: 1; max-width: 800px; }
-.hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1.2rem; background: rgba(255,255,255,0.7); backdrop-filter: blur(8px); border: 1px solid var(--gold-border); border-radius: 100px; font-size: 0.78rem; font-weight: 700; color: var(--gold); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 2rem; animation: fadeUp 0.7s ease both; }
-.hero h1 { font-family: var(--font-display); font-size: clamp(2.6rem,6.5vw,4.8rem); font-weight: 400; line-height: 1.12; letter-spacing: -0.02em; color: var(--navy); margin-bottom: 1.5rem; animation: fadeUp 0.7s ease 0.1s both; }
-.hero-accent { color: var(--gold); font-style: italic; }
-.hero-sub { font-size: 1.1rem; color: var(--slate); line-height: 1.75; max-width: 560px; margin: 0 auto 2.5rem; animation: fadeUp 0.7s ease 0.2s both; }
-.hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; animation: fadeUp 0.7s ease 0.3s both; }
-@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        /* ===== LANGUAGE SYSTEM ===== */
+        /* Default: hide all Italian */
+        [data-it] { display: none !important; }
+        /* Italian mode: hide English, show Italian */
+        body.lang-it [data-en] { display: none !important; }
+        body.lang-it span[data-it] { display: inline !important; }
+        body.lang-it div[data-it],
+        body.lang-it p[data-it],
+        body.lang-it h1[data-it],
+        body.lang-it h2[data-it],
+        body.lang-it h3[data-it],
+        body.lang-it h4[data-it],
+        body.lang-it li[data-it],
+        body.lang-it blockquote[data-it] { display: block !important; }
+        body.lang-it a[data-it],
+        body.lang-it button[data-it] { display: inline-flex !important; }
 
-.trust-bar { display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; padding: 2.5rem 2rem; background: var(--navy); }
-.trust-item { display: flex; align-items: center; gap: 0.6rem; font-size: 0.85rem; font-weight: 600; color: rgba(255,255,255,0.85); }
-.trust-icon { width: 36px; height: 36px; border-radius: 10px; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; font-size: 1rem; }
-.ca-flag { width: 20px; height: 13px; display: inline-block; }
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            background: rgba(250,247,240,0.92);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(27,77,62,0.08);
+            transition: var(--transition);
+        }
+        .navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+        .nav-inner {
+            max-width: 1200px; margin: 0 auto; padding: 0.8rem 2rem;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+        .nav-brand img { height: 48px; width: auto; border-radius: 50%; }
+        .nav-brand-text {
+            font-family: 'Playfair Display', serif; font-size: 1.15rem;
+            font-weight: 600; color: var(--forest-deep);
+        }
+        .nav-brand-tagline {
+            font-size: 0.65rem; color: var(--gold-dark);
+            text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600;
+        }
+        .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+        .nav-links a {
+            text-decoration: none; color: var(--text); font-size: 0.9rem;
+            font-weight: 500; transition: var(--transition); position: relative;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -4px; left: 0;
+            width: 0; height: 2px; background: var(--gold); transition: var(--transition);
+        }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { color: var(--forest); }
+        .nav-cta {
+            background: var(--forest) !important; color: var(--white) !important;
+            padding: 0.5rem 1.2rem; border-radius: 8px; font-weight: 600;
+        }
+        .nav-cta:hover { background: var(--forest-deep) !important; transform: translateY(-1px); }
+        .nav-cta::after { display: none !important; }
+        .lang-switch { display: flex; gap: 0.3rem; margin-left: 0.5rem; }
+        .lang-btn {
+            background: none; border: 1.5px solid var(--forest); color: var(--forest);
+            padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem;
+            font-weight: 600; cursor: pointer; transition: var(--transition);
+        }
+        .lang-btn.active { background: var(--forest); color: var(--white); }
+        .hamburger {
+            display: none; flex-direction: column; gap: 5px;
+            cursor: pointer; background: none; border: none; padding: 5px;
+        }
+        .hamburger span { width: 24px; height: 2px; background: var(--forest-deep); transition: var(--transition); }
 
-.btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 1.9rem; border-radius: 100px; font-family: var(--font-body); font-size: 0.88rem; font-weight: 700; text-decoration: none; cursor: pointer; border: none; transition: all 0.3s cubic-bezier(0.4,0,0.2,1); letter-spacing: 0.01em; }
-.btn-primary { background: var(--navy); color: var(--ivory); }
-.btn-primary:hover { background: var(--navy-mid); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(11,29,51,0.2); }
-.btn-gold { background: var(--gold); color: #fff; }
-.btn-gold:hover { background: #b38a30; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(196,154,60,0.3); }
-.btn-outline { background: transparent; color: var(--navy); border: 1.5px solid rgba(11,29,51,0.15); }
-.btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
-.btn-sm { padding: 0.7rem 1.4rem; font-size: 0.82rem; }
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center; justify-content: center;
+            text-align: center; padding: 8rem 2rem 4rem; position: relative;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 50%, rgba(27,77,62,0.03) 100%);
+            overflow: hidden;
+        }
+        .hero::before {
+            content: ''; position: absolute; top: -50%; right: -30%; width: 80%; height: 160%;
+            background: radial-gradient(ellipse, rgba(196,163,90,0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero::after {
+            content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 120px;
+            background: linear-gradient(to bottom, transparent, var(--cream)); pointer-events: none;
+        }
+        .hero-content { max-width: 800px; position: relative; z-index: 2; }
+        .hero-logo {
+            width: 140px; height: 140px; border-radius: 50%;
+            margin: 0 auto 1.5rem; box-shadow: var(--shadow-gold);
+            animation: fadeInDown 0.8s ease-out; display: block;
+        }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: var(--white); border: 1px solid rgba(196,163,90,0.3);
+            padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.82rem;
+            font-weight: 500; color: var(--forest); margin-bottom: 1.5rem;
+            animation: fadeInDown 0.8s ease-out 0.1s both;
+        }
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.6rem); margin-bottom: 1.2rem;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+        .hero h1 em { color: var(--gold-dark); font-style: italic; }
+        .hero p {
+            font-size: 1.15rem; color: var(--text-light); max-width: 600px;
+            margin: 0 auto 2rem; line-height: 1.8;
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+        .hero-buttons {
+            display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+        .btn-primary {
+            background: var(--forest); color: var(--white); padding: 0.9rem 2rem;
+            border-radius: 10px; text-decoration: none; font-weight: 600;
+            font-size: 0.95rem; transition: var(--transition);
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            border: 2px solid var(--forest);
+        }
+        .btn-primary:hover {
+            background: var(--forest-deep); border-color: var(--forest-deep);
+            transform: translateY(-2px); box-shadow: var(--shadow-lg);
+        }
+        .btn-secondary {
+            background: transparent; color: var(--forest); padding: 0.9rem 2rem;
+            border-radius: 10px; text-decoration: none; font-weight: 600;
+            font-size: 0.95rem; border: 2px solid var(--forest); transition: var(--transition);
+        }
+        .btn-secondary:hover { background: var(--forest); color: var(--white); transform: translateY(-2px); }
+        .hero-stats {
+            display: flex; justify-content: center; gap: 2.5rem; margin-top: 3rem;
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+        }
+        .hero-stat { text-align: center; }
+        .hero-stat-icon { font-size: 1.3rem; margin-bottom: 0.3rem; }
+        .hero-stat-label { font-size: 0.78rem; color: var(--text-light); font-weight: 500; }
 
-.section { padding: 6.5rem 2rem; }
-.section-cream { background: var(--cream); }
-.section-dark { background: var(--navy); color: var(--ivory); }
-.container { max-width: 1080px; margin: 0 auto; }
-.section-header { text-align: center; margin-bottom: 3.5rem; }
-.section-label { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold); margin-bottom: 0.85rem; }
-.section-title { font-family: var(--font-display); font-size: clamp(1.9rem,4vw,2.8rem); font-weight: 400; letter-spacing: -0.015em; line-height: 1.2; margin-bottom: 1rem; }
-.section-subtitle { font-size: 1rem; color: var(--slate); line-height: 1.7; max-width: 520px; margin: 0 auto; }
-.section-dark .section-subtitle { color: var(--mist); }
+        /* ===== SECTIONS ===== */
+        section { padding: 5rem 2rem; }
+        .section-inner { max-width: 1100px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 0.8rem; }
+        .section-header p { color: var(--text-light); font-size: 1.05rem; max-width: 550px; margin: 0 auto; }
+        .section-label {
+            display: inline-block; font-size: 0.75rem; text-transform: uppercase;
+            letter-spacing: 0.15em; color: var(--gold-dark); font-weight: 700; margin-bottom: 0.5rem;
+        }
 
-.about-content { max-width: 720px; margin: 0 auto; text-align: center; }
-.about-content h2 { font-family: var(--font-display); font-size: clamp(1.9rem,4vw,2.6rem); margin-bottom: 1.5rem; line-height: 1.2; }
-.about-body { text-align: left; max-width: 620px; margin: 0 auto; }
-.about-body p { font-size: 0.95rem; color: var(--slate); line-height: 1.85; margin-bottom: 1.15rem; }
-.about-body p strong { color: var(--navy); }
-.about-highlights { display: flex; gap: 1rem; margin-top: 1.75rem; flex-wrap: wrap; justify-content: center; }
-.about-tag { display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 1rem; background: var(--gold-glow); border: 1px solid var(--gold-border); border-radius: 100px; font-size: 0.78rem; font-weight: 700; color: var(--gold); }
+        /* ===== ABOUT ===== */
+        .about { background: var(--white); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .about-text h2 { font-size: 2rem; margin-bottom: 1.2rem; }
+        .about-text p { margin-bottom: 1rem; color: var(--text-light); line-height: 1.8; }
+        .about-credentials { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+        .credential {
+            display: flex; align-items: center; gap: 0.7rem;
+            padding: 0.8rem 1rem; background: var(--cream); border-radius: 10px;
+            font-size: 0.88rem; font-weight: 500;
+        }
 
-.features-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
-.feature-card { padding: 2.25rem 1.75rem; border-radius: var(--radius); background: #fff; border: 1px solid var(--light-border); transition: all 0.35s; }
-.feature-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(11,29,51,0.06); }
-.feature-icon { width: 48px; height: 48px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1.25rem; background: var(--gold-glow); }
-.feature-card h3 { font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 0.6rem; }
-.feature-card p { font-size: 0.88rem; color: var(--slate); line-height: 1.65; }
-.features-cta { text-align: center; margin-top: 2.5rem; }
+        /* ===== SERVICES ===== */
+        .services { background: var(--cream); }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .service-card {
+            background: var(--white); border-radius: var(--radius-lg); overflow: hidden;
+            transition: var(--transition); border: 1px solid rgba(27,77,62,0.06);
+        }
+        .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+        .service-img { width: 100%; height: 180px; object-fit: cover; }
+        .service-body { padding: 1.5rem; }
+        .service-body h3 { font-size: 1.2rem; margin-bottom: 0.6rem; }
+        .service-body p { color: var(--text-light); font-size: 0.92rem; line-height: 1.7; }
+        .corporate-banner {
+            margin-top: 1.5rem;
+            background: linear-gradient(135deg, var(--forest) 0%, var(--forest-deep) 100%);
+            border-radius: var(--radius-lg); padding: 2rem 2.5rem; color: var(--white);
+            display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+        }
+        .corporate-banner h3 { color: var(--white); font-size: 1.3rem; margin-bottom: 0.3rem; }
+        .corporate-banner p { color: rgba(255,255,255,0.8); font-size: 0.9rem; }
+        .btn-gold {
+            background: var(--gold); color: var(--forest-deep); padding: 0.7rem 1.5rem;
+            border-radius: 8px; text-decoration: none; font-weight: 700;
+            font-size: 0.9rem; white-space: nowrap; transition: var(--transition);
+        }
+        .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
 
-.pricing-selector { display: flex; justify-content: center; gap: 1rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
-.pricing-selector-card { display: flex; align-items: center; gap: 0.75rem; padding: 1rem 1.75rem; background: #fff; border: 2px solid var(--light-border); border-radius: var(--radius-sm); cursor: pointer; transition: all 0.3s; min-width: 220px; }
-.pricing-selector-card:hover { border-color: var(--gold-border); }
-.pricing-selector-card.active { border-color: var(--gold); background: var(--gold-glow); box-shadow: 0 4px 20px var(--gold-glow); }
-.selector-icon { font-size: 1.6rem; }
-.selector-text { text-align: left; }
-.selector-text h4 { font-family: var(--font-display); font-size: 1.05rem; margin-bottom: 0.1rem; }
-.selector-text p { font-size: 0.75rem; color: var(--mist); font-weight: 500; }
-.pricing-selector-card.active .selector-text p { color: var(--slate); }
-.pricing-category { display: none; }
-.pricing-category.active { display: block; }
-.pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
-.pricing-card { background: #fff; border-radius: var(--radius); padding: 2.25rem 1.75rem; border: 1.5px solid var(--light-border); position: relative; transition: all 0.35s; display: flex; flex-direction: column; }
-.pricing-card:hover { transform: translateY(-3px); box-shadow: 0 16px 48px rgba(11,29,51,0.07); }
-.pricing-card.featured { border-color: var(--gold); box-shadow: 0 4px 30px var(--gold-glow); }
-.pricing-card.featured::before { content: ''; position: absolute; top: -1.5px; left: 1.5rem; right: 1.5rem; height: 3px; background: linear-gradient(90deg, var(--gold), var(--gold-soft)); border-radius: 0 0 4px 4px; }
-.card-badge { position: absolute; top: -11px; right: 1.25rem; background: var(--gold); color: #fff; font-size: 0.68rem; font-weight: 800; padding: 0.25rem 0.8rem; border-radius: 100px; letter-spacing: 0.06em; text-transform: uppercase; }
-.plan-name { font-family: var(--font-display); font-size: 1.2rem; margin-bottom: 0.2rem; }
-.plan-for { font-size: 0.78rem; color: var(--teal); font-weight: 600; margin-bottom: 1.25rem; }
-.plan-price { font-family: var(--font-display); font-size: 2.8rem; color: var(--navy); margin-bottom: 0.15rem; }
-.plan-per { font-size: 0.78rem; color: var(--mist); margin-bottom: 1.25rem; }
-.plan-savings { display: inline-block; background: rgba(45,122,80,0.08); color: var(--success); font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 100px; margin-bottom: 1.25rem; }
-.plan-features { list-style: none; margin-bottom: 1.75rem; flex-grow: 1; }
-.plan-features li { display: flex; align-items: flex-start; gap: 0.55rem; font-size: 0.84rem; color: var(--slate); padding: 0.4rem 0; line-height: 1.45; }
-.plan-features li::before { content: '\2713'; color: var(--gold); font-weight: 800; font-size: 0.8rem; flex-shrink: 0; margin-top: 1px; }
-.pricing-card .btn { width: 100%; justify-content: center; }
+        /* ===== FREE RESOURCES ===== */
+        .resources { background: var(--white); }
+        .resources-categories { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; margin-bottom: 2rem; }
+        .cat-btn {
+            background: var(--cream); border: 1.5px solid transparent; padding: 0.5rem 1rem;
+            border-radius: 50px; font-size: 0.85rem; font-weight: 600; cursor: pointer;
+            transition: var(--transition); color: var(--text); font-family: 'Source Sans 3', sans-serif;
+        }
+        .cat-btn.active, .cat-btn:hover { background: var(--forest); color: var(--white); border-color: var(--forest); }
+        .games-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.2rem; }
+        .game-card {
+            background: var(--cream); border-radius: var(--radius); padding: 1.5rem;
+            cursor: pointer; transition: var(--transition); border: 2px solid transparent;
+            position: relative; overflow: hidden;
+        }
+        .game-card:hover { border-color: var(--gold); transform: translateY(-3px); box-shadow: var(--shadow-gold); }
+        .game-card-level {
+            position: absolute; top: 1rem; right: 1rem; font-size: 0.7rem;
+            font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+            padding: 0.2rem 0.6rem; border-radius: 4px;
+        }
+        .level-a1a2 { background: #E8F5E9; color: #2E7D32; }
+        .level-b1b2 { background: #E3F2FD; color: #1565C0; }
+        .level-c1c2 { background: #F3E5F5; color: #7B1FA2; }
+        .level-all { background: #FFF3E0; color: #E65100; }
+        .game-card-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+        .game-card h4 {
+            font-family: 'Source Sans 3', sans-serif; font-size: 1rem;
+            font-weight: 700; margin-bottom: 0.4rem; color: var(--forest-deep);
+        }
+        .game-card p { font-size: 0.85rem; color: var(--text-light); line-height: 1.6; }
 
-.trial-banner { margin-top: 2.5rem; padding: 2.25rem 2.5rem; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); border-radius: var(--radius); display: flex; align-items: center; justify-content: space-between; gap: 2rem; color: var(--ivory); position: relative; overflow: hidden; }
-.trial-banner::before { content: ''; position: absolute; top: -40%; right: -8%; width: 250px; height: 250px; border-radius: 50%; background: radial-gradient(circle, rgba(196,154,60,0.12) 0%, transparent 70%); }
-.trial-text h3 { font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 0.4rem; }
-.trial-text p { font-size: 0.9rem; color: var(--mist); }
+        /* Game Modal */
+        .game-modal-overlay {
+            display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+            z-index: 2000; justify-content: center; align-items: center; padding: 1rem;
+            backdrop-filter: blur(4px);
+        }
+        .game-modal-overlay.active { display: flex; }
+        .game-modal {
+            background: var(--white); border-radius: var(--radius-lg); width: 100%;
+            max-width: 650px; max-height: 90vh; overflow-y: auto; padding: 2rem;
+            position: relative; animation: modalIn 0.3s ease-out;
+        }
+        @keyframes modalIn {
+            from { opacity: 0; transform: scale(0.95) translateY(10px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .game-modal-close {
+            position: absolute; top: 1rem; right: 1rem; background: var(--cream);
+            border: none; width: 36px; height: 36px; border-radius: 50%;
+            font-size: 1.2rem; cursor: pointer; display: flex;
+            align-items: center; justify-content: center;
+        }
+        .game-modal h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
+        .game-instructions {
+            color: var(--text-light); font-size: 0.9rem; margin-bottom: 1.5rem;
+            padding-bottom: 1rem; border-bottom: 1px solid var(--cream-dark);
+        }
+        .game-question { background: var(--cream); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1rem; }
+        .game-question p { font-size: 1.05rem; font-weight: 600; margin-bottom: 1rem; color: var(--forest-deep); }
+        .game-options { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+        .game-option {
+            background: var(--white); border: 2px solid var(--cream-dark); padding: 0.7rem 1rem;
+            border-radius: 8px; cursor: pointer; font-size: 0.92rem; font-weight: 500;
+            transition: var(--transition); text-align: center; font-family: 'Source Sans 3', sans-serif;
+        }
+        .game-option:hover { border-color: var(--gold); }
+        .game-option.correct { background: #E8F5E9; border-color: #4CAF50; color: #2E7D32; }
+        .game-option.wrong { background: #FFEBEE; border-color: #EF5350; color: #C62828; }
+        .game-score { text-align: center; padding: 2rem; }
+        .game-score .score-number { font-size: 3rem; font-weight: 700; color: var(--forest); font-family: 'Playfair Display', serif; }
+        .game-btn {
+            background: var(--forest); color: var(--white); border: none; padding: 0.7rem 1.5rem;
+            border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 0.9rem;
+            transition: var(--transition); font-family: 'Source Sans 3', sans-serif; margin-top: 1rem;
+        }
+        .game-btn:hover { background: var(--forest-deep); }
+        .game-progress { display: flex; gap: 4px; margin-bottom: 1.5rem; }
+        .game-progress-dot { flex: 1; height: 4px; border-radius: 2px; background: var(--cream-dark); transition: var(--transition); }
+        .game-progress-dot.done { background: var(--forest); }
+        .game-progress-dot.current { background: var(--gold); }
 
-.steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; }
-.step { text-align: center; padding: 2rem 1.25rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: var(--radius); }
-.step-num { display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; background: var(--gold-glow); border: 2px solid var(--gold-border); color: var(--gold); font-family: var(--font-display); font-size: 1.3rem; margin: 0 auto 1rem; }
-.step h4 { font-family: var(--font-display); font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--ivory); }
-.step p { font-size: 0.82rem; color: var(--mist); line-height: 1.6; }
+        /* ===== PRICING ===== */
+        .pricing { background: var(--cream); }
+        .pricing-toggle { display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 2.5rem; }
+        .pricing-toggle-btn {
+            background: var(--white); border: 2px solid var(--cream-dark); padding: 0.7rem 1.5rem;
+            border-radius: 10px; font-size: 0.9rem; font-weight: 600; cursor: pointer;
+            transition: var(--transition); font-family: 'Source Sans 3', sans-serif;
+        }
+        .pricing-toggle-btn.active { background: var(--forest); color: var(--white); border-color: var(--forest); }
+        .pricing-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .pricing-card {
+            background: var(--white); border-radius: var(--radius-lg); padding: 2rem;
+            border: 2px solid transparent; transition: var(--transition); position: relative;
+        }
+        .pricing-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+        .pricing-card.featured { border-color: var(--gold); box-shadow: var(--shadow-gold); }
+        .pricing-card.featured::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+        }
+        .pricing-badge {
+            display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--forest-deep); font-size: 0.72rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.1em;
+            padding: 0.3rem 0.8rem; border-radius: 50px; margin-bottom: 1rem;
+        }
+        .pricing-card h3 { font-size: 1.25rem; margin-bottom: 0.3rem; }
+        .pricing-desc { font-size: 0.85rem; color: var(--text-light); margin-bottom: 1.2rem; }
+        .pricing-amount { display: flex; align-items: baseline; gap: 0.3rem; margin-bottom: 0.3rem; }
+        .pricing-amount .currency { font-size: 1.4rem; font-weight: 600; color: var(--forest); }
+        .pricing-amount .amount {
+            font-size: 2.8rem; font-weight: 700; color: var(--forest);
+            font-family: 'Playfair Display', serif; line-height: 1;
+        }
+        .pricing-per { font-size: 0.82rem; color: var(--text-light); margin-bottom: 0.5rem; }
+        .pricing-savings {
+            display: inline-block; background: #E8F5E9; color: #2E7D32;
+            font-size: 0.78rem; font-weight: 600; padding: 0.2rem 0.6rem;
+            border-radius: 4px; margin-bottom: 1.2rem;
+        }
+        .pricing-features { list-style: none; margin-bottom: 1.5rem; }
+        .pricing-features li {
+            padding: 0.4rem 0; font-size: 0.88rem; display: flex;
+            align-items: flex-start; gap: 0.5rem; color: var(--text);
+        }
+        .pricing-features li::before { content: '\2713'; color: var(--forest); font-weight: 700; flex-shrink: 0; }
+        .pricing-link {
+            display: block; text-align: center; background: var(--forest); color: var(--white);
+            padding: 0.8rem; border-radius: 10px; text-decoration: none;
+            font-weight: 600; font-size: 0.92rem; transition: var(--transition);
+        }
+        .pricing-link:hover { background: var(--forest-deep); transform: translateY(-1px); }
+        .pricing-card.featured .pricing-link { background: var(--gold); color: var(--forest-deep); }
+        .pricing-card.featured .pricing-link:hover { background: var(--gold-dark); }
+        .free-trial-box {
+            text-align: center; margin-top: 2.5rem; padding: 2rem;
+            background: var(--white); border-radius: var(--radius-lg); border: 2px dashed var(--gold);
+        }
+        .free-trial-box h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .free-trial-box p { color: var(--text-light); font-size: 0.92rem; margin-bottom: 1rem; }
 
-.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
-.testimonial-card { background: #fff; border: 1px solid var(--light-border); border-radius: var(--radius); padding: 2rem 1.75rem; transition: all 0.35s; }
-.testimonial-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(11,29,51,0.06); }
-.testimonial-stars { color: var(--gold); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 1rem; }
-.testimonial-card blockquote { font-size: 0.9rem; color: var(--slate); line-height: 1.7; font-style: italic; margin-bottom: 1.25rem; }
-.testimonial-author { font-size: 0.85rem; font-weight: 700; color: var(--navy); }
-.testimonial-role { font-size: 0.75rem; color: var(--mist); margin-top: 0.1rem; }
+        /* ===== HOW IT WORKS ===== */
+        .how-it-works { background: var(--white); }
+        .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+        .step { text-align: center; padding: 1.5rem; }
+        .step-number {
+            width: 48px; height: 48px; background: var(--forest); color: var(--white);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700;
+            margin: 0 auto 1rem;
+        }
+        .step h4 { font-size: 1rem; margin-bottom: 0.5rem; }
+        .step p { font-size: 0.85rem; color: var(--text-light); }
 
-/* CALENDAR EMBED */
-.cal-embed-wrapper { margin-top: 2rem; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--light-border); background: #fff; min-height: 500px; }
+        /* ===== TESTIMONIALS ===== */
+        .testimonials { background: linear-gradient(135deg, var(--forest) 0%, var(--forest-deep) 100%); color: var(--white); }
+        .testimonials .section-label { color: var(--gold-light); }
+        .testimonials .section-header h2 { color: var(--white); }
+        .testimonials .section-header p { color: rgba(255,255,255,0.7); }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .testimonial-card {
+            background: rgba(255,255,255,0.08); border-radius: var(--radius); padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px);
+        }
+        .testimonial-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 0.8rem; letter-spacing: 2px; }
+        .testimonial-card blockquote {
+            line-height: 1.7; color: rgba(255,255,255,0.9); margin-bottom: 1rem;
+            font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-style: italic;
+        }
+        .testimonial-author { font-weight: 600; font-size: 0.88rem; }
+        .testimonial-role { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+        .review-cta { text-align: center; margin-top: 2.5rem; }
+        .review-cta a { color: var(--gold-light); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
 
-/* FAQ */
-.faq-grid { max-width: 700px; margin: 0 auto; }
-.faq-item { border-bottom: 1px solid var(--light-border); }
-.faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 0; background: none; border: none; cursor: pointer; font-family: var(--font-body); font-size: 0.95rem; font-weight: 700; color: var(--navy); text-align: left; gap: 1rem; }
-.faq-icon { font-size: 1.2rem; color: var(--gold); transition: transform 0.3s; flex-shrink: 0; }
-.faq-item.open .faq-icon { transform: rotate(45deg); }
-.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
-.faq-item.open .faq-answer { max-height: 200px; }
-.faq-answer p { padding-bottom: 1.25rem; font-size: 0.88rem; color: var(--slate); line-height: 1.7; }
+        /* ===== FAQ ===== */
+        .faq { background: var(--cream); }
+        .faq-list { max-width: 700px; margin: 0 auto; }
+        .faq-item {
+            background: var(--white); border-radius: var(--radius); margin-bottom: 0.8rem;
+            overflow: hidden; border: 1px solid rgba(27,77,62,0.06);
+        }
+        .faq-question {
+            width: 100%; background: none; border: none; padding: 1.2rem 1.5rem;
+            text-align: left; font-family: 'Source Sans 3', sans-serif; font-size: 0.95rem;
+            font-weight: 600; color: var(--forest-deep); cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .faq-question:hover { background: var(--cream); }
+        .faq-question .arrow { transition: var(--transition); font-size: 0.8rem; }
+        .faq-item.open .arrow { transform: rotate(180deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .faq-answer-inner { padding: 0 1.5rem 1.2rem; font-size: 0.9rem; color: var(--text-light); line-height: 1.7; }
 
-.cta-section { padding: 6rem 2rem; text-align: center; background: linear-gradient(180deg, var(--ivory) 0%, var(--cream) 100%); }
-.footer { padding: 2.5rem 2rem; text-align: center; border-top: 1px solid var(--light-border); }
-.footer p { font-size: 0.8rem; color: var(--mist); }
-.footer a { color: var(--gold); text-decoration: none; font-weight: 600; }
+        /* ===== FINAL CTA ===== */
+        .final-cta { background: var(--white); text-align: center; }
+        .final-cta h2 { font-size: 2rem; margin-bottom: 0.8rem; }
+        .final-cta p { color: var(--text-light); max-width: 500px; margin: 0 auto 1.5rem; }
+        .final-cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
-.sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; padding: 0.75rem 1.5rem; background: rgba(250,248,245,0.95); backdrop-filter: blur(16px); border-top: 1px solid var(--light-border); z-index: 999; }
-.sticky-cta .btn { width: 100%; justify-content: center; }
+        /* ===== FOOTER ===== */
+        footer { background: var(--forest-deep); color: rgba(255,255,255,0.6); text-align: center; padding: 2rem; font-size: 0.82rem; }
+        footer a { color: var(--gold-light); text-decoration: none; }
 
-/* CHATBOT */
-.chat-fab { position: fixed; bottom: 1.5rem; right: 1.5rem; width: 60px; height: 60px; border-radius: 50%; background: var(--gold); color: #fff; border: none; cursor: pointer; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(196,154,60,0.4); z-index: 1001; transition: all 0.3s; }
-.chat-fab:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(196,154,60,0.5); }
-.chat-fab.open { background: var(--navy); }
-.chat-window { position: fixed; bottom: 5.5rem; right: 1.5rem; width: 380px; max-height: 520px; background: #fff; border-radius: var(--radius); box-shadow: 0 12px 48px rgba(11,29,51,0.15); z-index: 1001; display: none; flex-direction: column; overflow: hidden; border: 1px solid var(--light-border); }
-.chat-window.open { display: flex; }
-.chat-header { padding: 1rem 1.25rem; background: var(--navy); color: var(--ivory); display: flex; align-items: center; gap: 0.75rem; }
-.chat-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 0.9rem; font-weight: 700; color: #fff; }
-.chat-header-text h4 { font-family: var(--font-display); font-size: 1rem; }
-.chat-header-text p { font-size: 0.72rem; color: var(--mist); }
-.chat-messages { flex: 1; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem; max-height: 340px; }
-.chat-msg { max-width: 85%; padding: 0.7rem 1rem; border-radius: 16px; font-size: 0.85rem; line-height: 1.55; }
-.chat-msg.bot { background: var(--cream); color: var(--navy); align-self: flex-start; border-bottom-left-radius: 4px; }
-.chat-msg.user { background: var(--navy); color: var(--ivory); align-self: flex-end; border-bottom-right-radius: 4px; }
-.chat-msg.typing { background: var(--cream); align-self: flex-start; border-bottom-left-radius: 4px; }
-.typing-dots { display: flex; gap: 4px; padding: 4px 0; }
-.typing-dots span { width: 7px; height: 7px; border-radius: 50%; background: var(--mist); animation: typeBounce 1.4s infinite; }
-.typing-dots span:nth-child(2) { animation-delay: 0.2s; }
-.typing-dots span:nth-child(3) { animation-delay: 0.4s; }
-@keyframes typeBounce { 0%,60%,100% { transform: translateY(0); } 30% { transform: translateY(-6px); } }
-.chat-input-area { padding: 0.75rem; border-top: 1px solid var(--light-border); display: flex; gap: 0.5rem; }
-.chat-input { flex: 1; padding: 0.6rem 1rem; border: 1.5px solid var(--light-border); border-radius: 100px; font-family: var(--font-body); font-size: 0.85rem; outline: none; transition: border-color 0.3s; }
-.chat-input:focus { border-color: var(--gold); }
-.chat-send { width: 38px; height: 38px; border-radius: 50%; background: var(--gold); color: #fff; border: none; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; transition: background 0.3s; flex-shrink: 0; }
-.chat-send:hover { background: #b38a30; }
-.chat-quick-btns { display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 0 1rem 0.75rem; }
-.chat-quick { padding: 0.4rem 0.8rem; border: 1px solid var(--light-border); border-radius: 100px; font-size: 0.75rem; font-family: var(--font-body); font-weight: 600; color: var(--slate); background: #fff; cursor: pointer; transition: all 0.3s; }
-.chat-quick:hover { border-color: var(--gold); color: var(--gold); }
+        /* ===== CHATBOT ===== */
+        .chat-fab {
+            position: fixed; bottom: 1.5rem; right: 1.5rem; width: 56px; height: 56px;
+            background: var(--forest); color: var(--white); border: none; border-radius: 50%;
+            font-size: 1.5rem; cursor: pointer; z-index: 1500; box-shadow: var(--shadow-lg);
+            transition: var(--transition); display: flex; align-items: center; justify-content: center;
+        }
+        .chat-fab:hover { background: var(--forest-deep); transform: scale(1.05); }
+        .chat-window {
+            display: none; position: fixed; bottom: 5.5rem; right: 1.5rem; width: 360px;
+            max-height: 480px; background: var(--white); border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg); z-index: 1500; flex-direction: column;
+            overflow: hidden; animation: modalIn 0.3s ease-out;
+        }
+        .chat-window.open { display: flex; }
+        .chat-header {
+            background: var(--forest); color: var(--white); padding: 1rem 1.2rem;
+            display: flex; align-items: center; gap: 0.8rem;
+        }
+        .chat-header-avatar {
+            width: 36px; height: 36px; background: var(--gold); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 0.8rem; color: var(--forest-deep);
+        }
+        .chat-header-info h4 { color: var(--white); font-family: 'Source Sans 3', sans-serif; font-size: 0.92rem; }
+        .chat-header-info span { font-size: 0.72rem; color: rgba(255,255,255,0.7); }
+        .chat-messages {
+            flex: 1; overflow-y: auto; padding: 1rem; display: flex;
+            flex-direction: column; gap: 0.8rem; min-height: 200px; max-height: 280px;
+        }
+        .chat-msg {
+            max-width: 85%; padding: 0.7rem 1rem; border-radius: 12px;
+            font-size: 0.85rem; line-height: 1.5; white-space: pre-line;
+        }
+        .chat-msg.bot { background: var(--cream); align-self: flex-start; border-bottom-left-radius: 4px; }
+        .chat-msg.user { background: var(--forest); color: var(--white); align-self: flex-end; border-bottom-right-radius: 4px; }
+        .chat-quick-replies { display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 0 1rem 0.5rem; }
+        .chat-quick-btn {
+            background: var(--cream); border: 1.5px solid var(--cream-dark); padding: 0.35rem 0.75rem;
+            border-radius: 50px; font-size: 0.78rem; font-weight: 500; cursor: pointer;
+            transition: var(--transition); font-family: 'Source Sans 3', sans-serif; color: var(--forest);
+        }
+        .chat-quick-btn:hover { background: var(--forest); color: var(--white); border-color: var(--forest); }
+        .chat-input-area { display: flex; border-top: 1px solid var(--cream-dark); padding: 0.6rem; gap: 0.4rem; }
+        .chat-input {
+            flex: 1; border: 1.5px solid var(--cream-dark); padding: 0.6rem 0.8rem;
+            border-radius: 8px; font-size: 0.85rem; outline: none;
+            font-family: 'Source Sans 3', sans-serif;
+        }
+        .chat-input:focus { border-color: var(--forest); }
+        .chat-send {
+            background: var(--forest); color: var(--white); border: none; width: 38px;
+            height: 38px; border-radius: 8px; cursor: pointer; font-size: 1rem;
+            display: flex; align-items: center; justify-content: center;
+        }
 
-@media (max-width: 900px) {
-  .features-grid, .testimonials-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
-  .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
-  .steps { grid-template-columns: repeat(2,1fr); }
-  .trial-banner { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
-  .nav-links, .nav-cta { display: none; }
-  .menu-toggle { display: block; }
-  .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(250,248,245,0.98); backdrop-filter: blur(20px); padding: 1.25rem 2rem 1.5rem; gap: 0.75rem; border-bottom: 1px solid var(--light-border); }
-  .sticky-cta { display: block; }
-  .footer { padding-bottom: 5rem; }
-  .pricing-selector-card { min-width: 0; flex: 1; }
-  .chat-window { width: calc(100vw - 2rem); right: 1rem; bottom: 5rem; }
-  .chat-fab { bottom: 4.5rem; }
-}
-@media (max-width: 600px) {
-  .hero { padding: 6.5rem 1.25rem 3.5rem; min-height: auto; }
-  .section { padding: 4.5rem 1.25rem; }
-  .steps { grid-template-columns: 1fr; }
-  .trust-bar { gap: 1.25rem; padding: 2rem 1.25rem; }
-  .pricing-selector { flex-direction: column; align-items: center; }
-  .pricing-selector-card { width: 100%; max-width: 300px; }
-}
-</style>
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .services-grid { grid-template-columns: 1fr; }
+            .pricing-cards { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+            .testimonials-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+            .steps-grid { grid-template-columns: repeat(2, 1fr); }
+            .about-grid { grid-template-columns: 1fr; }
+            .corporate-banner { flex-direction: column; text-align: center; }
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; position: absolute; top: 100%; left: 0; right: 0;
+                background: var(--cream); flex-direction: column; padding: 1.5rem 2rem;
+                gap: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            }
+            .nav-links.open { display: flex; }
+            .hamburger { display: flex; }
+            .hero { padding: 6rem 1.5rem 3rem; min-height: auto; }
+            .hero-logo { width: 100px; height: 100px; }
+            section { padding: 3rem 1.5rem; }
+            .games-grid { grid-template-columns: 1fr; }
+            .game-options { grid-template-columns: 1fr; }
+            .chat-window { right: 0.5rem; left: 0.5rem; width: auto; bottom: 5rem; }
+            .about-credentials { grid-template-columns: 1fr; }
+            .hero-stats { flex-wrap: wrap; gap: 1rem; }
+        }
+    </style>
 </head>
-<body data-lang="en">
+<body>
 
+<!-- ===== NAVBAR ===== -->
 <nav class="navbar" id="navbar">
-  <a href="#" class="nav-logo">Maj Jaffrey</a>
-  <div class="nav-right">
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#about" data-en>About</a><a href="#about" data-it>Chi Sono</a></li>
-      <li><a href="#services" data-en>Services</a><a href="#services" data-it>Servizi</a></li>
-      <li><a href="#pricing" data-en>Pricing</a><a href="#pricing" data-it>Prezzi</a></li>
-      <li><a href="#book" data-en>Book</a><a href="#book" data-it>Prenota</a></li>
-      <li><a href="#faq" data-en>FAQ</a><a href="#faq" data-it>FAQ</a></li>
-    </ul>
-    <div class="lang-switch">
-      <button class="lang-btn active" onclick="setLang('en')">EN</button>
-      <button class="lang-btn" onclick="setLang('it')">IT</button>
+    <div class="nav-inner">
+        <a href="#" class="nav-brand">
+            <img src="logo.png" alt="The English Lounge">
+            <div>
+                <div class="nav-brand-text">The English Lounge</div>
+                <div class="nav-brand-tagline">
+                    <span data-en>Learn English in Comfort</span><span data-it>Impara l&#39;Inglese con Comodita</span>
+                </div>
+            </div>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about"><span data-en>About</span><span data-it>Chi Sono</span></a></li>
+            <li><a href="#services"><span data-en>Services</span><span data-it>Servizi</span></a></li>
+            <li><a href="#resources"><span data-en>Free Resources</span><span data-it>Risorse Gratuite</span></a></li>
+            <li><a href="#pricing"><span data-en>Pricing</span><span data-it>Prezzi</span></a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#pricing" class="nav-cta"><span data-en>Book Now</span><span data-it>Prenota</span></a></li>
+            <li>
+                <div class="lang-switch">
+                    <button class="lang-btn active" id="btnEn" onclick="setLang('en')">EN</button>
+                    <button class="lang-btn" id="btnIt" onclick="setLang('it')">IT</button>
+                </div>
+            </li>
+        </ul>
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </button>
     </div>
-    <a href="#book" class="nav-cta" onclick="smoothScroll(event,'book')"><span data-en>Book Now</span><span data-it>Prenota</span></a>
-    <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()"><span></span><span></span><span></span></button>
-  </div>
 </nav>
 
-<section class="hero">
-  <div class="hero-orb hero-orb-1"></div>
-  <div class="hero-orb hero-orb-2"></div>
-  <div class="hero-content">
-    <div class="hero-badge"><span data-en>Native Canadian Teacher · Rome & Online</span><span data-it>Insegnante Madrelingua Canadese · Roma & Online</span></div>
-    <h1>
-      <span data-en>Speak English like you've <span class="hero-accent">always wanted to</span></span>
-      <span data-it>Parla inglese come hai <span class="hero-accent">sempre desiderato</span></span>
-    </h1>
-    <p class="hero-sub">
-      <span data-en>One-on-one lessons built around your life, your goals, and the way you actually learn. Whether it's exam preparation, career growth, or everyday confidence, we'll get you there.</span>
-      <span data-it>Lezioni individuali costruite intorno alla tua vita, ai tuoi obiettivi e al modo in cui impari davvero. Che si tratti di preparazione esami, carriera o sicurezza quotidiana, ci arriveremo insieme.</span>
-    </p>
-    <div class="hero-actions">
-      <a href="#book" class="btn btn-primary" onclick="smoothScroll(event,'book')"><span data-en>Book Your Free Trial</span><span data-it>Prenota la Prova Gratuita</span> &#8594;</a>
-      <a href="#pricing" class="btn btn-outline" onclick="smoothScroll(event,'pricing')"><span data-en>See Prices</span><span data-it>Vedi i Prezzi</span></a>
-    </div>
-  </div>
-</section>
-
-<div class="trust-bar">
-  <div class="trust-item"><div class="trust-icon"><svg class="ca-flag" viewBox="0 0 20 13" xmlns="http://www.w3.org/2000/svg"><rect width="5" height="13" fill="#ff0000"/><rect x="5" width="10" height="13" fill="#fff"/><rect x="15" width="5" height="13" fill="#ff0000"/><path d="M10 2.5l-.7 2.2H7l1.8 1.3-.7 2.2L10 6.9l1.9 1.3-.7-2.2L13 4.7h-2.3z" fill="#ff0000"/></svg></div><span data-en>Native English Speaker</span><span data-it>Madrelingua Inglese</span></div>
-  <div class="trust-item"><div class="trust-icon">&#127757;</div><span data-en>Online & In Rome</span><span data-it>Online & a Roma</span></div>
-  <div class="trust-item"><div class="trust-icon">&#128218;</div><span data-en>IELTS · Business · General</span><span data-it>IELTS · Business · Generale</span></div>
-  <div class="trust-item"><div class="trust-icon">&#127891;</div><span data-en>12+ Years Teaching</span><span data-it>12+ Anni di Insegnamento</span></div>
-</div>
-
-<section class="section" id="about">
-  <div class="container">
-    <div class="about-content">
-      <div class="section-label"><span data-en>About Me</span><span data-it>Chi Sono</span></div>
-      <h2><span data-en>I help you feel <span class="hero-accent">calm, clear & confident</span> in English</span><span data-it>Ti aiuto a sentirti <span class="hero-accent">calmo, chiaro e sicuro</span> in inglese</span></h2>
-      <div class="about-body">
-        <p><span data-en>Hi, I'm Maj. I'm a native English speaker from Canada, and I've been teaching English for over 12 years. I hold a Master's degree in Linguistics and Mind from the University of Siena, and I'm TTC and TEFL certified to teach both adults and children. I've worked in schools, at university level, and as a private tutor, both in person and online.</span><span data-it>Ciao, sono Maj. Sono madrelingua inglese dal Canada e insegno inglese da oltre 12 anni. Ho una Laurea Magistrale in Linguistica e Mente presso l'Universit&agrave; di Siena e sono certificato TTC e TEFL per l'insegnamento ad adulti e bambini. Ho lavorato nelle scuole, a livello universitario e come tutor privato, sia di persona che online.</span></p>
-        <p><span data-en>But credentials only tell half the story. What I really bring to every lesson is the ability to understand how language actually works in your brain and use that to help you learn faster, remember more, and speak with real confidence.</span><span data-it>Ma le credenziali raccontano solo met&agrave; della storia. Quello che porto davvero in ogni lezione &egrave; la capacit&agrave; di capire come il linguaggio funziona nel tuo cervello e usare questa conoscenza per aiutarti a imparare pi&ugrave; velocemente, ricordare di pi&ugrave; e parlare con vera sicurezza.</span></p>
-        <p><span data-en>I don't follow a textbook cover to cover. I build every lesson around what you need. If you're preparing for IELTS or Cambridge, we train with real exam strategies. If English is holding you back at work, we practise the exact situations that matter to you. If you just want to feel more comfortable in everyday conversations, we start there.</span><span data-it>Non seguo un libro di testo dalla prima all'ultima pagina. Costruisco ogni lezione intorno a ci&ograve; di cui hai bisogno. Se ti stai preparando per IELTS o Cambridge, ci alleniamo con strategie d'esame reali. Se l'inglese ti frena al lavoro, esercitiamo le situazioni che contano per te. Se vuoi semplicemente sentirti pi&ugrave; a tuo agio nelle conversazioni quotidiane, partiamo da l&igrave;.</span></p>
-      </div>
-      <div class="about-highlights">
-        <div class="about-tag"><svg class="ca-flag" viewBox="0 0 20 13" xmlns="http://www.w3.org/2000/svg" style="width:16px;height:11px"><rect width="5" height="13" fill="#ff0000"/><rect x="5" width="10" height="13" fill="#fff"/><rect x="15" width="5" height="13" fill="#ff0000"/><path d="M10 2.5l-.7 2.2H7l1.8 1.3-.7 2.2L10 6.9l1.9 1.3-.7-2.2L13 4.7h-2.3z" fill="#ff0000"/></svg> <span data-en>Native English Speaker</span><span data-it>Madrelingua Inglese</span></div>
-        <div class="about-tag">&#127891; <span data-en>Master's in Linguistics</span><span data-it>Laurea in Linguistica</span></div>
-        <div class="about-tag">&#128220; <span data-en>TTC & TEFL Certified</span><span data-it>Certificato TTC & TEFL</span></div>
-        <div class="about-tag">&#128483;&#65039; <span data-en>12+ Years Teaching</span><span data-it>12+ Anni di Insegnamento</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-cream" id="services">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-label"><span data-en>What I Offer</span><span data-it>Cosa Offro</span></div>
-      <div class="section-title"><span data-en>Lessons designed around <em>your</em> goals</span><span data-it>Lezioni progettate intorno ai <em>tuoi</em> obiettivi</span></div>
-      <p class="section-subtitle"><span data-en>Every student is different. I create a learning path that fits your needs and gets results.</span><span data-it>Ogni studente &egrave; diverso. Creo un percorso su misura per le tue esigenze.</span></p>
-    </div>
-    <div class="features-grid">
-      <div class="feature-card"><img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=600&q=80" alt="General English lessons" style="width:100%;height:180px;object-fit:cover;border-radius:12px;margin-bottom:1.25rem;"><div class="feature-icon">&#128483;&#65039;</div><h3><span data-en>General English</span><span data-it>Inglese Generale</span></h3><p><span data-en>Build confidence in everyday conversations, grammar, vocabulary, and pronunciation. From beginner to advanced.</span><span data-it>Acquisisci sicurezza nelle conversazioni quotidiane, grammatica, vocabolario e pronuncia.</span></p></div>
-      <div class="feature-card"><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&q=80" alt="Business English lessons" style="width:100%;height:180px;object-fit:cover;border-radius:12px;margin-bottom:1.25rem;"><div class="feature-icon">&#128188;</div><h3><span data-en>Business English</span><span data-it>Inglese Commerciale</span></h3><p><span data-en>Presentations, meetings, negotiations, and email writing. Communicate with confidence in the global workplace.</span><span data-it>Presentazioni, riunioni, negoziazioni e email. Comunica con sicurezza nel mondo del lavoro.</span></p></div>
-      <div class="feature-card"><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80" alt="IELTS and Cambridge exam preparation" style="width:100%;height:180px;object-fit:cover;border-radius:12px;margin-bottom:1.25rem;"><div class="feature-icon">&#127919;</div><h3><span data-en>IELTS & Cambridge Prep</span><span data-it>Preparazione IELTS & Cambridge</span></h3><p><span data-en>Focused IELTS and Cambridge exam preparation. Proven strategies, mock exams, and personalised score improvement plans.</span><span data-it>Preparazione mirata per IELTS e Cambridge. Strategie comprovate, simulazioni d'esame e piani personalizzati.</span></p></div>
-    </div>
-    <div style="margin-top:2rem; padding:2.25rem 2rem; background:linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); border-radius:var(--radius); display:flex; align-items:center; gap:2rem; flex-wrap:wrap; color:var(--ivory); position:relative; overflow:hidden;">
-      <div style="position:absolute; top:-30%; right:-5%; width:200px; height:200px; border-radius:50%; background:radial-gradient(circle, rgba(196,154,60,0.12) 0%, transparent 70%);"></div>
-      <div style="font-size:2.5rem;">&#127970;</div>
-      <div style="flex:1; min-width:240px;">
-        <div style="font-family:var(--font-display); font-size:1.3rem; margin-bottom:0.35rem;"><span data-en>Companies, Groups & Semi-Private Lessons</span><span data-it>Aziende, Gruppi & Lezioni Semi-Private</span></div>
-        <p style="font-size:0.88rem; color:var(--mist); line-height:1.6;"><span data-en>I also work with companies, small groups, and pairs. Whether you need team training, semi-private sessions with a friend or colleague, or a tailored corporate programme, get in touch and I'll create a plan that fits.</span><span data-it>Lavoro anche con aziende, piccoli gruppi e coppie. Che tu abbia bisogno di formazione aziendale, sessioni semi-private con un amico o collega, o un programma aziendale su misura, contattami e creer&ograve; un piano adatto.</span></p>
-      </div>
-      <a href="mailto:m.jeffrey2023@gmail.com" class="btn btn-gold" style="flex-shrink:0;"><span data-en>Get in Touch</span><span data-it>Contattami</span></a>
-    </div>
-    <div class="features-cta"><a href="#book" class="btn btn-primary btn-sm" onclick="smoothScroll(event,'book')"><span data-en>Choose Your Lesson</span><span data-it>Scegli la Tua Lezione</span> &#8594;</a></div>
-  </div>
-</section>
-
-<section class="section" id="pricing">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-label"><span data-en>Pricing</span><span data-it>Prezzi</span></div>
-      <div class="section-title"><span data-en>Simple, transparent pricing</span><span data-it>Prezzi semplici e trasparenti</span></div>
-      <p class="section-subtitle"><span data-en>Choose a single lesson or save with a package. All lessons are 60 minutes.</span><span data-it>Scegli una lezione singola o risparmia con un pacchetto. Tutte le lezioni durano 60 minuti.</span></p>
-    </div>
-    <div class="pricing-selector">
-      <div class="pricing-selector-card active" onclick="showCategory('general',this)"><div class="selector-icon">&#128483;&#65039;&#128188;</div><div class="selector-text"><h4><span data-en>General & Business</span><span data-it>Generale & Business</span></h4><p><span data-en>From &euro;18/lesson</span><span data-it>Da &euro;18/lezione</span></p></div></div>
-      <div class="pricing-selector-card" onclick="showCategory('exam',this)"><div class="selector-icon">&#127919;&#128221;</div><div class="selector-text"><h4><span data-en>IELTS & Cambridge</span><span data-it>IELTS & Cambridge</span></h4><p><span data-en>From &euro;20.70/lesson</span><span data-it>Da &euro;20,70/lezione</span></p></div></div>
-    </div>
-    <div class="pricing-category active" id="cat-general">
-      <div class="pricing-grid">
-        <div class="pricing-card">
-          <div class="plan-name"><span data-en>Single Lesson</span><span data-it>Lezione Singola</span></div>
-          <div class="plan-for"><span data-en>Ideal for flexible students</span><span data-it>Ideale per studenti flessibili</span></div>
-          <div class="plan-price">&euro;20</div>
-          <div class="plan-per"><span data-en>per lesson</span><span data-it>a lezione</span></div>
-          <ul class="plan-features"><li><span data-en>60-minute session</span><span data-it>Sessione di 60 minuti</span></li><li><span data-en>Personalized lesson plan</span><span data-it>Piano lezione personalizzato</span></li><li><span data-en>Flexible scheduling</span><span data-it>Orario flessibile</span></li></ul>
-          <a href="https://cal.com/cal.com-maj-jaffrey/english-lesson-general" target="_blank" class="btn btn-outline btn-sm"><span data-en>Book Now</span><span data-it>Prenota Ora</span></a>
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <img src="logo.png" alt="The English Lounge" class="hero-logo">
+        <div class="hero-badge">
+            <span data-en>Native Canadian Teacher &middot; Rome &amp; Online</span>
+            <span data-it>Insegnante Madrelingua Canadese &middot; Roma &amp; Online</span>
         </div>
-        <div class="pricing-card featured">
-          <div class="card-badge"><span data-en>Best for Progress</span><span data-it>Migliore per Progresso</span></div>
-          <div class="plan-name"><span data-en>5-Lesson Pack</span><span data-it>Pacchetto 5 Lezioni</span></div>
-          <div class="plan-for"><span data-en>Best for steady progress</span><span data-it>Migliore per progressi costanti</span></div>
-          <div class="plan-price">&euro;95</div>
-          <div class="plan-per"><span data-en>&euro;19 per lesson</span><span data-it>&euro;19 a lezione</span></div>
-          <div class="plan-savings"><span data-en>Save &euro;5 (5% off)</span><span data-it>Risparmi &euro;5 (5%)</span></div>
-          <ul class="plan-features"><li><span data-en>5 x 60-minute sessions</span><span data-it>5 x sessioni da 60 minuti</span></li><li><span data-en>Personalized learning path</span><span data-it>Percorso personalizzato</span></li><li><span data-en>Progress tracking</span><span data-it>Monitoraggio progressi</span></li><li><span data-en>Priority scheduling</span><span data-it>Prenotazione prioritaria</span></li></ul>
-          <a href="https://cal.com/cal.com-maj-jaffrey/5-lesson-pack" target="_blank" class="btn btn-gold btn-sm"><span data-en>Get Started</span><span data-it>Inizia Ora</span></a>
+        <h1>
+            <span data-en>Speak English like you have <em>always</em> wanted to</span>
+            <span data-it>Parla inglese come hai <em>sempre</em> desiderato</span>
+        </h1>
+        <p>
+            <span data-en>One-on-one lessons built around your life, your goals, and the way you actually learn. Whether it is exam preparation, career growth, or everyday confidence.</span>
+            <span data-it>Lezioni individuali costruite intorno alla tua vita, ai tuoi obiettivi e al modo in cui impari davvero.</span>
+        </p>
+        <div class="hero-buttons">
+            <a href="#pricing" class="btn-primary"><span data-en>See Pricing</span><span data-it>Vedi i Prezzi</span> &rarr;</a>
+            <a href="#resources" class="btn-secondary"><span data-en>Free Resources</span><span data-it>Risorse Gratuite</span></a>
         </div>
-        <div class="pricing-card">
-          <div class="plan-name"><span data-en>10-Lesson Pack</span><span data-it>Pacchetto 10 Lezioni</span></div>
-          <div class="plan-for"><span data-en>Best value for serious learners</span><span data-it>Miglior valore per studenti seri</span></div>
-          <div class="plan-price">&euro;180</div>
-          <div class="plan-per"><span data-en>&euro;18 per lesson</span><span data-it>&euro;18 a lezione</span></div>
-          <div class="plan-savings"><span data-en>Save &euro;20 (10% off)</span><span data-it>Risparmi &euro;20 (10%)</span></div>
-          <ul class="plan-features"><li><span data-en>10 x 60-minute sessions</span><span data-it>10 x sessioni da 60 minuti</span></li><li><span data-en>Custom curriculum</span><span data-it>Curriculum personalizzato</span></li><li><span data-en>Weekly progress reports</span><span data-it>Report settimanali</span></li><li><span data-en>Priority scheduling</span><span data-it>Prenotazione prioritaria</span></li><li><span data-en>WhatsApp support between lessons</span><span data-it>Supporto WhatsApp tra le lezioni</span></li></ul>
-          <a href="https://cal.com/cal.com-maj-jaffrey/10-lesson-pack" target="_blank" class="btn btn-outline btn-sm"><span data-en>Get Started</span><span data-it>Inizia Ora</span></a>
+        <div class="hero-stats">
+            <div class="hero-stat"><div class="hero-stat-icon">&#127468;&#127463;</div><div class="hero-stat-label"><span data-en>Native Speaker</span><span data-it>Madrelingua</span></div></div>
+            <div class="hero-stat"><div class="hero-stat-icon">&#127758;</div><div class="hero-stat-label"><span data-en>Online &amp; In Rome</span><span data-it>Online &amp; a Roma</span></div></div>
+            <div class="hero-stat"><div class="hero-stat-icon">&#128218;</div><div class="hero-stat-label">IELTS &middot; Business &middot; General</div></div>
+            <div class="hero-stat"><div class="hero-stat-icon">&#127891;</div><div class="hero-stat-label"><span data-en>12+ Years Experience</span><span data-it>12+ Anni Esperienza</span></div></div>
         </div>
-      </div>
     </div>
-    <div class="pricing-category" id="cat-exam">
-      <div class="pricing-grid">
-        <div class="pricing-card">
-          <div class="plan-name"><span data-en>Single Lesson</span><span data-it>Lezione Singola</span></div>
-          <div class="plan-for"><span data-en>Targeted exam practice</span><span data-it>Pratica d'esame mirata</span></div>
-          <div class="plan-price">&euro;23</div>
-          <div class="plan-per"><span data-en>per lesson</span><span data-it>a lezione</span></div>
-          <ul class="plan-features"><li><span data-en>60-minute session</span><span data-it>Sessione di 60 minuti</span></li><li><span data-en>IELTS or Cambridge focus</span><span data-it>Focus IELTS o Cambridge</span></li><li><span data-en>Exam strategies & techniques</span><span data-it>Strategie e tecniche d'esame</span></li></ul>
-          <a href="https://cal.com/cal.com-maj-jaffrey/english-lesson" target="_blank" class="btn btn-outline btn-sm"><span data-en>Book Now</span><span data-it>Prenota Ora</span></a>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="about" id="about">
+    <div class="section-inner">
+        <div class="about-grid">
+            <div class="about-text">
+                <span class="section-label"><span data-en>About Me</span><span data-it>Chi Sono</span></span>
+                <h2>
+                    <span data-en>I help you feel calm, clear &amp; confident in English</span>
+                    <span data-it>Ti aiuto a sentirti calmo, chiaro e sicuro in inglese</span>
+                </h2>
+                <p>
+                    <span data-en>Hi, I am Maj. I am a native English speaker from Canada, and I have been teaching English for over 12 years. I hold a Masters degree in Linguistics and Mind from the University of Siena, and I am TTC and TEFL certified to teach both adults and children.</span>
+                    <span data-it>Ciao, sono Maj. Sono madrelingua inglese dal Canada e insegno inglese da oltre 12 anni. Ho una Laurea Magistrale in Linguistica e Mente presso l&#39;Universita di Siena e sono certificato TTC e TEFL.</span>
+                </p>
+                <p>
+                    <span data-en>I do not follow a textbook cover to cover. I build every lesson around what you need. If you are preparing for IELTS or Cambridge, we train with real exam strategies. If English is holding you back at work, we practise the exact situations that matter to you.</span>
+                    <span data-it>Non seguo un libro di testo dalla prima all&#39;ultima pagina. Costruisco ogni lezione intorno a cio di cui hai bisogno. Se ti stai preparando per IELTS o Cambridge, ci alleniamo con strategie reali.</span>
+                </p>
+            </div>
+            <div>
+                <div class="about-credentials">
+                    <div class="credential">&#127468;&#127463; <span data-en>Native English Speaker</span><span data-it>Madrelingua Inglese</span></div>
+                    <div class="credential">&#127891; <span data-en>Masters in Linguistics</span><span data-it>Laurea in Linguistica</span></div>
+                    <div class="credential">&#128220; <span data-en>TTC &amp; TEFL Certified</span><span data-it>Certificato TTC &amp; TEFL</span></div>
+                    <div class="credential">&#128483;&#65039; <span data-en>12+ Years Teaching</span><span data-it>12+ Anni Insegnamento</span></div>
+                </div>
+            </div>
         </div>
-        <div class="pricing-card featured">
-          <div class="card-badge"><span data-en>Recommended</span><span data-it>Consigliato</span></div>
-          <div class="plan-name"><span data-en>5-Lesson Pack</span><span data-it>Pacchetto 5 Lezioni</span></div>
-          <div class="plan-for"><span data-en>Focused exam preparation</span><span data-it>Preparazione focalizzata</span></div>
-          <div class="plan-price">&euro;109</div>
-          <div class="plan-per"><span data-en>&euro;21.80 per lesson</span><span data-it>&euro;21,80 a lezione</span></div>
-          <div class="plan-savings"><span data-en>Save &euro;6 (5% off)</span><span data-it>Risparmi &euro;6 (5%)</span></div>
-          <ul class="plan-features"><li><span data-en>5 x 60-minute sessions</span><span data-it>5 x sessioni da 60 minuti</span></li><li><span data-en>Full mock exam included</span><span data-it>Simulazione completa inclusa</span></li><li><span data-en>Section-by-section strategies</span><span data-it>Strategie sezione per sezione</span></li><li><span data-en>Score prediction & feedback</span><span data-it>Previsione punteggio & feedback</span></li></ul>
-          <a href="https://cal.com/cal.com-maj-jaffrey/5-lesson-pack-exam-preparation" target="_blank" class="btn btn-gold btn-sm"><span data-en>Get Started</span><span data-it>Inizia Ora</span></a>
+    </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services" id="services">
+    <div class="section-inner">
+        <div class="section-header">
+            <span class="section-label"><span data-en>What I Offer</span><span data-it>Cosa Offro</span></span>
+            <h2><span data-en>Lessons designed around your goals</span><span data-it>Lezioni progettate intorno ai tuoi obiettivi</span></h2>
+            <p><span data-en>Every student is different. I create a learning path that fits your needs.</span><span data-it>Ogni studente e diverso. Creo un percorso su misura per le tue esigenze.</span></p>
         </div>
-        <div class="pricing-card">
-          <div class="plan-name"><span data-en>10-Lesson Pack</span><span data-it>Pacchetto 10 Lezioni</span></div>
-          <div class="plan-for"><span data-en>Complete exam mastery</span><span data-it>Padronanza completa</span></div>
-          <div class="plan-price">&euro;207</div>
-          <div class="plan-per"><span data-en>&euro;20.70 per lesson</span><span data-it>&euro;20,70 a lezione</span></div>
-          <div class="plan-savings"><span data-en>Save &euro;23 (10% off)</span><span data-it>Risparmi &euro;23 (10%)</span></div>
-          <ul class="plan-features"><li><span data-en>10 x 60-minute sessions</span><span data-it>10 x sessioni da 60 minuti</span></li><li><span data-en>Complete exam curriculum</span><span data-it>Curriculum d'esame completo</span></li><li><span data-en>Multiple mock exams</span><span data-it>Simulazioni multiple</span></li><li><span data-en>Detailed score analysis</span><span data-it>Analisi dettagliata punteggio</span></li><li><span data-en>WhatsApp support</span><span data-it>Supporto WhatsApp</span></li></ul>
-          <a href="https://cal.com/cal.com-maj-jaffrey/10-lesson-pack-exam-preparation" target="_blank" class="btn btn-outline btn-sm"><span data-en>Get Started</span><span data-it>Inizia Ora</span></a>
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=600&q=80" alt="General English" class="service-img">
+                <div class="service-body">
+                    <h3><span data-en>&#128483;&#65039; General English</span><span data-it>&#128483;&#65039; Inglese Generale</span></h3>
+                    <p><span data-en>Build confidence in everyday conversations, grammar, vocabulary, and pronunciation. From beginner to advanced.</span><span data-it>Acquisisci sicurezza nelle conversazioni quotidiane, grammatica, vocabolario e pronuncia.</span></p>
+                </div>
+            </div>
+            <div class="service-card fade-in">
+                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&q=80" alt="Business English" class="service-img">
+                <div class="service-body">
+                    <h3><span data-en>&#128188; Business English</span><span data-it>&#128188; Inglese Commerciale</span></h3>
+                    <p><span data-en>Presentations, meetings, negotiations, and email writing. Communicate with confidence in the global workplace.</span><span data-it>Presentazioni, riunioni, negoziazioni e email. Comunica con sicurezza nel mondo del lavoro.</span></p>
+                </div>
+            </div>
+            <div class="service-card fade-in">
+                <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80" alt="Exam Preparation" class="service-img">
+                <div class="service-body">
+                    <h3><span data-en>&#127919; IELTS &amp; Cambridge Prep</span><span data-it>&#127919; Preparazione IELTS &amp; Cambridge</span></h3>
+                    <p><span data-en>Focused exam preparation. Proven strategies, mock exams, and personalised score improvement plans.</span><span data-it>Preparazione mirata. Strategie comprovate, simulazioni e piani personalizzati.</span></p>
+                </div>
+            </div>
         </div>
-      </div>
+        <div class="corporate-banner fade-in">
+            <div>
+                <h3><span data-en>&#127970; Companies, Groups &amp; Semi-Private</span><span data-it>&#127970; Aziende, Gruppi &amp; Semi-Private</span></h3>
+                <p><span data-en>Team training, semi-private sessions, or tailored corporate programmes.</span><span data-it>Formazione aziendale, sessioni semi-private o programmi aziendali su misura.</span></p>
+            </div>
+            <a href="mailto:m.jeffrey2023@gmail.com" class="btn-gold"><span data-en>Get in Touch</span><span data-it>Contattami</span></a>
+        </div>
     </div>
-    <div class="trial-banner">
-      <div class="trial-text"><h3><span data-en>&#127873; Not sure yet? Try a free lesson first</span><span data-it>&#127873; Non sei sicuro? Prova prima una lezione gratuita</span></h3><p><span data-en>Book a free 20-minute trial. No commitment, no payment required.</span><span data-it>Prenota una prova gratuita di 20 minuti. Nessun impegno, nessun pagamento.</span></p></div>
-      <a href="https://cal.com/cal.com-maj-jaffrey/free-trial" target="_blank" class="btn btn-gold"><span data-en>Book Free Trial</span><span data-it>Prova Gratuita</span> &#8594;</a>
-    </div>
-  </div>
 </section>
 
-<!-- BOOK -->
-<section class="section section-cream" id="book">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-label"><span data-en>Book a Lesson</span><span data-it>Prenota una Lezione</span></div>
-      <div class="section-title"><span data-en>Choose a time that works for you</span><span data-it>Scegli un orario che fa per te</span></div>
-      <p class="section-subtitle"><span data-en>Select your lesson type and pick an available slot directly from my calendar.</span><span data-it>Seleziona il tipo di lezione e scegli uno slot disponibile direttamente dal mio calendario.</span></p>
+<!-- ===== FREE RESOURCES ===== -->
+<section class="resources" id="resources">
+    <div class="section-inner">
+        <div class="section-header">
+            <span class="section-label"><span data-en>Free Resources</span><span data-it>Risorse Gratuite</span></span>
+            <h2><span data-en>Practice English for Free</span><span data-it>Pratica l&#39;Inglese Gratuitamente</span></h2>
+            <p><span data-en>Interactive grammar games and exercises to sharpen your skills between lessons.</span><span data-it>Giochi di grammatica interattivi per migliorare le tue competenze tra una lezione e l&#39;altra.</span></p>
+        </div>
+        <div class="resources-categories" id="catButtons">
+            <button class="cat-btn active" data-cat="all"><span data-en>All</span><span data-it>Tutti</span></button>
+            <button class="cat-btn" data-cat="tenses"><span data-en>Tenses</span><span data-it>Tempi Verbali</span></button>
+            <button class="cat-btn" data-cat="grammar"><span data-en>Grammar</span><span data-it>Grammatica</span></button>
+            <button class="cat-btn" data-cat="vocabulary"><span data-en>Vocabulary</span><span data-it>Vocabolario</span></button>
+            <button class="cat-btn" data-cat="exam"><span data-en>Exam Practice</span><span data-it>Pratica Esame</span></button>
+        </div>
+        <div class="games-grid" id="gamesGrid"></div>
     </div>
-    <div class="cal-embed-wrapper">
-      <iframe id="calFrame" src="https://cal.com/cal.com-maj-jaffrey/free-trial" style="width:100%;height:700px;border:none;" loading="lazy"></iframe>
-    </div>
-  </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="section section-dark" id="how">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-label"><span data-en>How It Works</span><span data-it>Come Funziona</span></div>
-      <div class="section-title" style="color:var(--ivory)"><span data-en>Start learning in 4 simple steps</span><span data-it>Inizia a imparare in 4 semplici passi</span></div>
+<!-- ===== PRICING ===== -->
+<section class="pricing" id="pricing">
+    <div class="section-inner">
+        <div class="section-header">
+            <span class="section-label"><span data-en>Pricing</span><span data-it>Prezzi</span></span>
+            <h2><span data-en>Simple, transparent pricing</span><span data-it>Prezzi semplici e trasparenti</span></h2>
+            <p><span data-en>Choose a single lesson or save with a package. All lessons are 60 minutes.</span><span data-it>Scegli una lezione singola o risparmia con un pacchetto. Tutte le lezioni durano 60 minuti.</span></p>
+        </div>
+        <div class="pricing-toggle">
+            <button class="pricing-toggle-btn active" id="togGeneral" onclick="showPricing('general')">
+                <span data-en>&#128483;&#65039;&#128188; General &amp; Business</span><span data-it>&#128483;&#65039;&#128188; Generale &amp; Business</span>
+            </button>
+            <button class="pricing-toggle-btn" id="togExam" onclick="showPricing('exam')">
+                <span data-en>&#127919; IELTS &amp; Cambridge</span><span data-it>&#127919; IELTS &amp; Cambridge</span>
+            </button>
+        </div>
+
+        <!-- General & Business Pricing -->
+        <div class="pricing-cards" id="pricingGeneral">
+            <div class="pricing-card fade-in">
+                <h3><span data-en>Single Lesson</span><span data-it>Lezione Singola</span></h3>
+                <p class="pricing-desc"><span data-en>Ideal for flexible students</span><span data-it>Ideale per studenti flessibili</span></p>
+                <div class="pricing-amount"><span class="currency">&euro;</span><span class="amount">20</span></div>
+                <p class="pricing-per"><span data-en>per lesson</span><span data-it>a lezione</span></p>
+                <ul class="pricing-features">
+                    <li><span data-en>60-minute session</span><span data-it>Sessione di 60 minuti</span></li>
+                    <li><span data-en>Personalized lesson plan</span><span data-it>Piano lezione personalizzato</span></li>
+                    <li><span data-en>Flexible scheduling</span><span data-it>Orario flessibile</span></li>
+                </ul>
+                <a href="https://cal.com/cal.com-maj-jaffrey/english-lesson-general" class="pricing-link"><span data-en>Book Now</span><span data-it>Prenota Ora</span></a>
+            </div>
+            <div class="pricing-card featured fade-in">
+                <span class="pricing-badge"><span data-en>Best for Progress</span><span data-it>Migliore per Progresso</span></span>
+                <h3><span data-en>5-Lesson Pack</span><span data-it>Pacchetto 5 Lezioni</span></h3>
+                <p class="pricing-desc"><span data-en>Best for steady progress</span><span data-it>Migliore per progressi costanti</span></p>
+                <div class="pricing-amount"><span class="currency">&euro;</span><span class="amount">95</span></div>
+                <p class="pricing-per"><span data-en>&euro;19 per lesson</span><span data-it>&euro;19 a lezione</span></p>
+                <span class="pricing-savings"><span data-en>Save &euro;5 (5% off)</span><span data-it>Risparmi &euro;5 (5%)</span></span>
+                <ul class="pricing-features">
+                    <li><span data-en>5 x 60-minute sessions</span><span data-it>5 x sessioni da 60 minuti</span></li>
+                    <li><span data-en>Personalized learning path</span><span data-it>Percorso personalizzato</span></li>
+                    <li><span data-en>Progress tracking</span><span data-it>Monitoraggio progressi</span></li>
+                    <li><span data-en>Priority scheduling</span><span data-it>Prenotazione prioritaria</span></li>
+                </ul>
+                <a href="https://cal.com/cal.com-maj-jaffrey/5-lesson-pack" class="pricing-link"><span data-en>Get Started</span><span data-it>Inizia Ora</span></a>
+            </div>
+            <div class="pricing-card fade-in">
+                <h3><span data-en>10-Lesson Pack</span><span data-it>Pacchetto 10 Lezioni</span></h3>
+                <p class="pricing-desc"><span data-en>Best value for serious learners</span><span data-it>Miglior valore per studenti seri</span></p>
+                <div class="pricing-amount"><span class="currency">&euro;</span><span class="amount">180</span></div>
+                <p class="pricing-per"><span data-en>&euro;18 per lesson</span><span data-it>&euro;18 a lezione</span></p>
+                <span class="pricing-savings"><span data-en>Save &euro;20 (10% off)</span><span data-it>Risparmi &euro;20 (10%)</span></span>
+                <ul class="pricing-features">
+                    <li><span data-en>10 x 60-minute sessions</span><span data-it>10 x sessioni da 60 minuti</span></li>
+                    <li><span data-en>Custom curriculum</span><span data-it>Curriculum personalizzato</span></li>
+                    <li><span data-en>Weekly progress reports</span><span data-it>Report settimanali</span></li>
+                    <li><span data-en>Priority scheduling</span><span data-it>Prenotazione prioritaria</span></li>
+                    <li><span data-en>WhatsApp support between lessons</span><span data-it>Supporto WhatsApp tra le lezioni</span></li>
+                </ul>
+                <a href="https://cal.com/cal.com-maj-jaffrey/10-lesson-pack" class="pricing-link"><span data-en>Get Started</span><span data-it>Inizia Ora</span></a>
+            </div>
+        </div>
+
+        <!-- IELTS & Cambridge Pricing -->
+        <div class="pricing-cards" id="pricingExam" style="display:none;">
+            <div class="pricing-card fade-in">
+                <h3><span data-en>Single Lesson</span><span data-it>Lezione Singola</span></h3>
+                <p class="pricing-desc"><span data-en>Targeted exam practice</span><span data-it>Pratica d&#39;esame mirata</span></p>
+                <div class="pricing-amount"><span class="currency">&euro;</span><span class="amount">23</span></div>
+                <p class="pricing-per"><span data-en>per lesson</span><span data-it>a lezione</span></p>
+                <ul class="pricing-features">
+                    <li><span data-en>60-minute session</span><span data-it>Sessione di 60 minuti</span></li>
+                    <li><span data-en>IELTS or Cambridge focus</span><span data-it>Focus IELTS o Cambridge</span></li>
+                    <li><span data-en>Exam strategies &amp; techniques</span><span data-it>Strategie e tecniche d&#39;esame</span></li>
+                </ul>
+                <a href="https://cal.com/cal.com-maj-jaffrey/english-lesson" class="pricing-link"><span data-en>Book Now</span><span data-it>Prenota Ora</span></a>
+            </div>
+            <div class="pricing-card featured fade-in">
+                <span class="pricing-badge"><span data-en>Recommended</span><span data-it>Consigliato</span></span>
+                <h3><span data-en>5-Lesson Pack</span><span data-it>Pacchetto 5 Lezioni</span></h3>
+                <p class="pricing-desc"><span data-en>Focused exam preparation</span><span data-it>Preparazione focalizzata</span></p>
+                <div class="pricing-amount"><span class="currency">&euro;</span><span class="amount">109</span></div>
+                <p class="pricing-per"><span data-en>&euro;21.80 per lesson</span><span data-it>&euro;21,80 a lezione</span></p>
+                <span class="pricing-savings"><span data-en>Save &euro;6 (5% off)</span><span data-it>Risparmi &euro;6 (5%)</span></span>
+                <ul class="pricing-features">
+                    <li><span data-en>5 x 60-minute sessions</span><span data-it>5 x sessioni da 60 minuti</span></li>
+                    <li><span data-en>Full mock exam included</span><span data-it>Simulazione completa inclusa</span></li>
+                    <li><span data-en>Section-by-section strategies</span><span data-it>Strategie sezione per sezione</span></li>
+                    <li><span data-en>Score prediction &amp; feedback</span><span data-it>Previsione punteggio &amp; feedback</span></li>
+                </ul>
+                <a href="https://cal.com/cal.com-maj-jaffrey/5-lesson-pack-exam-preparation" class="pricing-link"><span data-en>Get Started</span><span data-it>Inizia Ora</span></a>
+            </div>
+            <div class="pricing-card fade-in">
+                <h3><span data-en>10-Lesson Pack</span><span data-it>Pacchetto 10 Lezioni</span></h3>
+                <p class="pricing-desc"><span data-en>Complete exam mastery</span><span data-it>Padronanza completa</span></p>
+                <div class="pricing-amount"><span class="currency">&euro;</span><span class="amount">207</span></div>
+                <p class="pricing-per"><span data-en>&euro;20.70 per lesson</span><span data-it>&euro;20,70 a lezione</span></p>
+                <span class="pricing-savings"><span data-en>Save &euro;23 (10% off)</span><span data-it>Risparmi &euro;23 (10%)</span></span>
+                <ul class="pricing-features">
+                    <li><span data-en>10 x 60-minute sessions</span><span data-it>10 x sessioni da 60 minuti</span></li>
+                    <li><span data-en>Complete exam curriculum</span><span data-it>Curriculum d&#39;esame completo</span></li>
+                    <li><span data-en>Multiple mock exams</span><span data-it>Simulazioni multiple</span></li>
+                    <li><span data-en>Detailed score analysis</span><span data-it>Analisi dettagliata punteggio</span></li>
+                    <li><span data-en>WhatsApp support</span><span data-it>Supporto WhatsApp</span></li>
+                </ul>
+                <a href="https://cal.com/cal.com-maj-jaffrey/10-lesson-pack-exam-preparation" class="pricing-link"><span data-en>Get Started</span><span data-it>Inizia Ora</span></a>
+            </div>
+        </div>
+
+        <div class="free-trial-box fade-in">
+            <h3><span data-en>Not sure yet? Try a free lesson first</span><span data-it>Non sei sicuro? Prova prima una lezione gratuita</span></h3>
+            <p><span data-en>Book a free 20-minute trial. No commitment, no payment required.</span><span data-it>Prenota una prova gratuita di 20 minuti. Nessun impegno, nessun pagamento.</span></p>
+            <a href="https://cal.com/cal.com-maj-jaffrey/free-trial" class="btn-primary"><span data-en>Book Free Trial</span><span data-it>Prova Gratuita</span> &rarr;</a>
+        </div>
     </div>
-    <div class="steps">
-      <div class="step"><div class="step-num">1</div><h4><span data-en>Choose Your Plan</span><span data-it>Scegli il Piano</span></h4><p><span data-en>Pick a single lesson or save with a package.</span><span data-it>Scegli una lezione singola o risparmia con un pacchetto.</span></p></div>
-      <div class="step"><div class="step-num">2</div><h4><span data-en>Pay Securely</span><span data-it>Paga in Sicurezza</span></h4><p><span data-en>Safe payment through Stripe. All major cards accepted.</span><span data-it>Pagamento sicuro tramite Stripe. Tutte le carte accettate.</span></p></div>
-      <div class="step"><div class="step-num">3</div><h4><span data-en>Book Your Time</span><span data-it>Prenota l'Orario</span></h4><p><span data-en>Choose any available slot from my live calendar above.</span><span data-it>Scegli qualsiasi slot dal mio calendario qui sopra.</span></p></div>
-      <div class="step"><div class="step-num">4</div><h4><span data-en>Start Learning</span><span data-it>Inizia a Imparare</span></h4><p><span data-en>Join the video call and begin your English journey.</span><span data-it>Partecipa alla videochiamata e inizia il tuo percorso.</span></p></div>
-    </div>
-  </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="section" id="testimonials">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-label"><span data-en>Student Stories</span><span data-it>Storie degli Studenti</span></div>
-      <div class="section-title"><span data-en>What my students say</span><span data-it>Cosa dicono i miei studenti</span></div>
+<!-- ===== HOW IT WORKS ===== -->
+<section class="how-it-works">
+    <div class="section-inner">
+        <div class="section-header">
+            <span class="section-label"><span data-en>How It Works</span><span data-it>Come Funziona</span></span>
+            <h2><span data-en>Start learning in 4 simple steps</span><span data-it>Inizia a imparare in 4 semplici passi</span></h2>
+        </div>
+        <div class="steps-grid">
+            <div class="step fade-in"><div class="step-number">1</div><h4><span data-en>Choose Your Plan</span><span data-it>Scegli il Piano</span></h4><p><span data-en>Pick a single lesson or save with a package.</span><span data-it>Scegli una lezione singola o risparmia con un pacchetto.</span></p></div>
+            <div class="step fade-in"><div class="step-number">2</div><h4><span data-en>Pay Securely</span><span data-it>Paga in Sicurezza</span></h4><p><span data-en>Safe payment through Stripe. All major cards accepted.</span><span data-it>Pagamento sicuro tramite Stripe. Tutte le carte accettate.</span></p></div>
+            <div class="step fade-in"><div class="step-number">3</div><h4><span data-en>Book Your Time</span><span data-it>Prenota l&#39;Orario</span></h4><p><span data-en>Choose any available slot from the booking calendar.</span><span data-it>Scegli qualsiasi slot dal calendario di prenotazione.</span></p></div>
+            <div class="step fade-in"><div class="step-number">4</div><h4><span data-en>Start Learning</span><span data-it>Inizia a Imparare</span></h4><p><span data-en>Join the video call and begin your English journey.</span><span data-it>Partecipa alla videochiamata e inizia il tuo percorso.</span></p></div>
+        </div>
     </div>
-    <div class="testimonials-grid">
-      <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote><span data-en>Before working with Maj, I was afraid to speak English at work. After two months, I could join meetings and even lead a presentation. The personalized approach made all the difference.</span><span data-it>Prima di lavorare con Maj, avevo paura di parlare inglese al lavoro. Dopo due mesi, riuscivo a partecipare alle riunioni e persino a condurre una presentazione. L'approccio personalizzato ha fatto tutta la differenza.</span></blockquote><div class="testimonial-author">Giulia</div><div class="testimonial-role"><span data-en>Business English · Rome</span><span data-it>Inglese Commerciale · Roma</span></div></div>
-      <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote><span data-en>I needed a 6.5 on IELTS for my master application. Maj helped me understand exactly what the examiners look for. I got a 7.0 on my first attempt.</span><span data-it>Avevo bisogno di un 6.5 all'IELTS per la domanda di master. Maj mi ha aiutato a capire esattamente cosa cercano gli esaminatori. Ho ottenuto un 7.0 al primo tentativo.</span></blockquote><div class="testimonial-author">Marco</div><div class="testimonial-role"><span data-en>IELTS Prep · Online</span><span data-it>Preparazione IELTS · Online</span></div></div>
-      <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote><span data-en>Maj is patient, well-prepared, and makes every lesson feel relevant to my life. I actually look forward to our sessions.</span><span data-it>Maj &egrave; paziente, ben preparato e rende ogni lezione rilevante per la mia vita. Non vedo l'ora delle nostre sessioni.</span></blockquote><div class="testimonial-author">Alessia</div><div class="testimonial-role"><span data-en>General English · Rome</span><span data-it>Inglese Generale · Roma</span></div></div>
-      <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote><span data-en>I had tried other teachers before but never felt comfortable enough to actually speak. With Maj it was different from the first lesson. He creates a relaxed environment where you are not afraid to make mistakes.</span><span data-it>Avevo provato altri insegnanti ma non mi sentivo mai abbastanza a mio agio per parlare davvero. Con Maj &egrave; stato diverso dalla prima lezione. Crea un ambiente rilassato dove non hai paura di sbagliare.</span></blockquote><div class="testimonial-author">Francesca</div><div class="testimonial-role"><span data-en>General English · Online</span><span data-it>Inglese Generale · Online</span></div></div>
-      <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote><span data-en>My company needed someone to help our sales team communicate better with international clients. Maj prepared a programme tailored to our specific industry. The team improved noticeably within weeks.</span><span data-it>La mia azienda aveva bisogno di qualcuno che aiutasse il team commerciale a comunicare meglio con i clienti internazionali. Maj ha preparato un programma su misura per il nostro settore. Il team &egrave; migliorato notevolmente in poche settimane.</span></blockquote><div class="testimonial-author">Lorenzo</div><div class="testimonial-role"><span data-en>Business English · Rome</span><span data-it>Inglese Commerciale · Roma</span></div></div>
-      <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote><span data-en>What I appreciate most is that Maj never makes you feel judged. He explains things clearly and always adapts the lesson to what I need that week. Best English teacher I have had.</span><span data-it>Quello che apprezzo di pi&ugrave; &egrave; che Maj non ti fa mai sentire giudicato. Spiega le cose in modo chiaro e adatta sempre la lezione a ci&ograve; di cui ho bisogno quella settimana. Il miglior insegnante di inglese che abbia mai avuto.</span></blockquote><div class="testimonial-author">Sara</div><div class="testimonial-role"><span data-en>General English · Online</span><span data-it>Inglese Generale · Online</span></div></div>
-      <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote><span data-en>I was preparing for Cambridge B2 and felt completely lost. Maj broke down every section of the exam and gave me a clear plan. I passed with flying colours and it was thanks to his method.</span><span data-it>Mi stavo preparando per il Cambridge B2 e mi sentivo completamente persa. Maj ha scomposto ogni sezione dell'esame e mi ha dato un piano chiaro. Ho superato l'esame a pieni voti grazie al suo metodo.</span></blockquote><div class="testimonial-author">Elena</div><div class="testimonial-role"><span data-en>Cambridge Prep · Rome</span><span data-it>Preparazione Cambridge · Roma</span></div></div>
-    </div>
-    <div style="margin-top:3rem; padding:2.25rem 2.5rem; background:linear-gradient(135deg, var(--cream) 0%, var(--warm) 100%); border-radius:var(--radius); display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap; border:1px solid var(--light-border);">
-      <div><div style="font-family:var(--font-display); font-size:1.3rem; margin-bottom:0.35rem;"><span data-en>&#128172; Enjoyed your lessons?</span><span data-it>&#128172; Ti sono piaciute le lezioni?</span></div><p style="font-size:0.88rem; color:var(--slate); line-height:1.6;"><span data-en>Your feedback helps other students find the right teacher. It only takes a minute!</span><span data-it>Il tuo feedback aiuta altri studenti a trovare l'insegnante giusto. Ci vuole solo un minuto!</span></p></div>
-      <a href="https://forms.gle/M59nfTyRSs2woLej7" target="_blank" class="btn btn-gold"><span data-en>Leave a Review</span><span data-it>Lascia una Recensione</span> &#8594;</a>
-    </div>
-    <div class="features-cta" style="margin-top:2.5rem;"><a href="#book" class="btn btn-primary btn-sm" onclick="smoothScroll(event,'book')"><span data-en>Start with a Free Trial</span><span data-it>Inizia con una Prova Gratuita</span> &#8594;</a></div>
-  </div>
 </section>
 
-<!-- FAQ -->
-<section class="section section-cream" id="faq">
-  <div class="container">
-    <div class="section-header"><div class="section-label">FAQ</div><div class="section-title"><span data-en>Common questions</span><span data-it>Domande frequenti</span></div></div>
-    <div class="faq-grid">
-      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span><span data-en>Who are your lessons for?</span><span data-it>Per chi sono le tue lezioni?</span></span><span class="faq-icon">+</span></button><div class="faq-answer"><p><span data-en>Anyone who wants to improve their English. I work with professionals, students preparing for exams, and anyone who wants to feel more confident speaking.</span><span data-it>Chiunque voglia migliorare il proprio inglese. Lavoro con professionisti, studenti e chiunque voglia sentirsi pi&ugrave; sicuro nel parlare.</span></p></div></div>
-      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span><span data-en>Are lessons online or in person?</span><span data-it>Le lezioni sono online o di persona?</span></span><span class="faq-icon">+</span></button><div class="faq-answer"><p><span data-en>Both! I teach online via video call and in person in Rome. Most students prefer online for flexibility.</span><span data-it>Entrambi! Insegno online tramite videochiamata e di persona a Roma.</span></p></div></div>
-      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span><span data-en>How does the free trial work?</span><span data-it>Come funziona la prova gratuita?</span></span><span class="faq-icon">+</span></button><div class="faq-answer"><p><span data-en>It's a free 20-minute session with no commitment. We talk about your goals, I assess your level, and explain how I can help. No payment needed.</span><span data-it>&Egrave; una sessione gratuita di 20 minuti senza impegno. Parliamo dei tuoi obiettivi, valuto il tuo livello e ti spiego come posso aiutarti.</span></p></div></div>
-      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span><span data-en>Can I reschedule or cancel a lesson?</span><span data-it>Posso riprogrammare o annullare una lezione?</span></span><span class="faq-icon">+</span></button><div class="faq-answer"><p><span data-en>Yes, just give me at least 24 hours notice. Package lessons never expire.</span><span data-it>S&igrave;, basta avvisarmi almeno 24 ore prima. Le lezioni dei pacchetti non scadono mai.</span></p></div></div>
-      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span><span data-en>Do I need to buy any books?</span><span data-it>Devo comprare dei libri?</span></span><span class="faq-icon">+</span></button><div class="faq-answer"><p><span data-en>For general and business lessons, I provide handouts and resources. For exam preparation, I will recommend the official preparation book for your exam, which you will need to purchase separately.</span><span data-it>Per le lezioni generali e di business, fornisco dispense e risorse. Per la preparazione esami, ti consiglier&ograve; il libro ufficiale di preparazione, che dovrai acquistare separatamente.</span></p></div></div>
-      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span><span data-en>Do package lessons expire?</span><span data-it>Le lezioni dei pacchetti scadono?</span></span><span class="faq-icon">+</span></button><div class="faq-answer"><p><span data-en>No. Once purchased, the lessons are yours to use at your own pace. No rush, no pressure.</span><span data-it>No. Una volta acquistato, le lezioni sono tue da usare al tuo ritmo.</span></p></div></div>
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials">
+    <div class="section-inner">
+        <div class="section-header">
+            <span class="section-label"><span data-en>Student Stories</span><span data-it>Storie degli Studenti</span></span>
+            <h2><span data-en>What my students say</span><span data-it>Cosa dicono i miei studenti</span></h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote><span data-en>Before working with Maj, I was afraid to speak English at work. After two months, I could join meetings and even lead a presentation.</span><span data-it>Prima di lavorare con Maj, avevo paura di parlare inglese al lavoro. Dopo due mesi, riuscivo a partecipare alle riunioni.</span></blockquote>
+                <div class="testimonial-author">Giulia</div>
+                <div class="testimonial-role"><span data-en>Business English &middot; Rome</span><span data-it>Inglese Commerciale &middot; Roma</span></div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote><span data-en>I needed a 6.5 on IELTS for my master application. Maj helped me understand exactly what the examiners look for. I got a 7.0.</span><span data-it>Avevo bisogno di un 6.5 all&#39;IELTS. Maj mi ha aiutato a capire cosa cercano gli esaminatori. Ho ottenuto un 7.0.</span></blockquote>
+                <div class="testimonial-author">Marco</div>
+                <div class="testimonial-role"><span data-en>IELTS Prep &middot; Online</span><span data-it>Preparazione IELTS &middot; Online</span></div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote><span data-en>Maj is patient, well-prepared, and makes every lesson feel relevant to my life. I actually look forward to our sessions.</span><span data-it>Maj e paziente, ben preparato e rende ogni lezione rilevante per la mia vita.</span></blockquote>
+                <div class="testimonial-author">Alessia</div>
+                <div class="testimonial-role"><span data-en>General English &middot; Rome</span><span data-it>Inglese Generale &middot; Roma</span></div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote><span data-en>I had tried other teachers before but never felt comfortable. With Maj it was different from the first lesson. He creates a relaxed environment.</span><span data-it>Avevo provato altri insegnanti ma non mi sentivo a mio agio. Con Maj e stato diverso dalla prima lezione.</span></blockquote>
+                <div class="testimonial-author">Francesca</div>
+                <div class="testimonial-role"><span data-en>General English &middot; Online</span><span data-it>Inglese Generale &middot; Online</span></div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote><span data-en>My company needed help with international clients. Maj prepared a programme tailored to our industry. The team improved within weeks.</span><span data-it>La mia azienda aveva bisogno di aiuto con clienti internazionali. Il team e migliorato in poche settimane.</span></blockquote>
+                <div class="testimonial-author">Lorenzo</div>
+                <div class="testimonial-role"><span data-en>Business English &middot; Rome</span><span data-it>Inglese Commerciale &middot; Roma</span></div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote><span data-en>I was preparing for Cambridge B2 and felt completely lost. Maj broke down every section and gave me a clear plan. I passed with flying colours.</span><span data-it>Mi preparavo per il Cambridge B2 e mi sentivo persa. Maj mi ha dato un piano chiaro. Ho superato l&#39;esame a pieni voti.</span></blockquote>
+                <div class="testimonial-author">Elena</div>
+                <div class="testimonial-role"><span data-en>Cambridge Prep &middot; Rome</span><span data-it>Preparazione Cambridge &middot; Roma</span></div>
+            </div>
+        </div>
+        <div class="review-cta">
+            <p style="color:rgba(255,255,255,0.6);font-size:0.88rem;margin-bottom:0.5rem;">
+                <span data-en>Enjoyed your lessons? Your feedback helps other students.</span>
+                <span data-it>Ti sono piaciute le lezioni? Il tuo feedback aiuta altri studenti.</span>
+            </p>
+            <a href="https://forms.gle/M59nfTyRSs2woLej7"><span data-en>Leave a Review &rarr;</span><span data-it>Lascia una Recensione &rarr;</span></a>
+        </div>
     </div>
-  </div>
 </section>
 
-<section class="cta-section">
-  <div class="container" style="text-align:center;">
-    <div class="section-label"><span data-en>Ready?</span><span data-it>Pronto?</span></div>
-    <div class="section-title"><span data-en>Your English journey starts here</span><span data-it>Il tuo viaggio in inglese inizia qui</span></div>
-    <p class="section-subtitle" style="margin:0 auto 2.5rem;"><span data-en>Book your free 20-minute trial today. No commitment, no pressure, just a friendly conversation to understand your goals.</span><span data-it>Prenota la tua prova gratuita di 20 minuti. Nessun impegno, nessuna pressione, solo una conversazione amichevole.</span></p>
-    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
-      <a href="#book" class="btn btn-primary" style="font-size:0.95rem; padding:1rem 2.25rem;" onclick="smoothScroll(event,'book')"><span data-en>Book Your Free Trial</span><span data-it>Prenota la Prova Gratuita</span> &#8594;</a>
-      <a href="mailto:m.jeffrey2023@gmail.com" class="btn btn-outline" style="font-size:0.95rem; padding:1rem 2.25rem;"><span data-en>Email Me</span><span data-it>Scrivimi</span></a>
+<!-- ===== FAQ ===== -->
+<section class="faq" id="faq">
+    <div class="section-inner">
+        <div class="section-header">
+            <span class="section-label">FAQ</span>
+            <h2><span data-en>Common questions</span><span data-it>Domande frequenti</span></h2>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span><span data-en>Who are your lessons for?</span><span data-it>Per chi sono le tue lezioni?</span></span><span class="arrow">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner"><span data-en>Anyone who wants to improve their English. I work with professionals, students preparing for exams, and anyone who wants to feel more confident.</span><span data-it>Chiunque voglia migliorare il proprio inglese. Lavoro con professionisti, studenti e chiunque voglia sentirsi piu sicuro.</span></div></div></div>
+            <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span><span data-en>Are lessons online or in person?</span><span data-it>Le lezioni sono online o di persona?</span></span><span class="arrow">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner"><span data-en>Both! I teach online via video call and in person in Rome.</span><span data-it>Entrambi! Insegno online tramite videochiamata e di persona a Roma.</span></div></div></div>
+            <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span><span data-en>How does the free trial work?</span><span data-it>Come funziona la prova gratuita?</span></span><span class="arrow">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner"><span data-en>It is a free 20-minute session with no commitment. We talk about your goals, I assess your level, and explain how I can help.</span><span data-it>E una sessione gratuita di 20 minuti. Parliamo dei tuoi obiettivi, valuto il tuo livello e ti spiego come posso aiutarti.</span></div></div></div>
+            <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span><span data-en>Can I reschedule or cancel a lesson?</span><span data-it>Posso riprogrammare o annullare una lezione?</span></span><span class="arrow">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner"><span data-en>Yes, just give me at least 24 hours notice. Package lessons never expire.</span><span data-it>Si, basta avvisarmi almeno 24 ore prima. Le lezioni dei pacchetti non scadono mai.</span></div></div></div>
+            <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span><span data-en>Do package lessons expire?</span><span data-it>Le lezioni dei pacchetti scadono?</span></span><span class="arrow">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner"><span data-en>No. Once purchased, the lessons are yours to use at your own pace.</span><span data-it>No. Una volta acquistato, le lezioni sono tue da usare al tuo ritmo.</span></div></div></div>
+            <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span><span data-en>Do I need to buy any books?</span><span data-it>Devo comprare dei libri?</span></span><span class="arrow">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner"><span data-en>For general and business lessons, I provide handouts and resources. For exam preparation, I will recommend the official preparation book.</span><span data-it>Per le lezioni generali e di business, fornisco dispense. Per la preparazione esami, ti consiglio il libro ufficiale.</span></div></div></div>
+        </div>
     </div>
-  </div>
 </section>
 
-<footer class="footer">
-  <p><span data-en>&copy; 2026 Maj Jaffrey &middot; English Lessons &middot; Rome & Online &middot; </span><span data-it>&copy; 2026 Maj Jaffrey &middot; Lezioni di Inglese &middot; Roma & Online &middot; </span><a href="mailto:m.jeffrey2023@gmail.com">m.jeffrey2023@gmail.com</a></p>
+<!-- ===== FINAL CTA ===== -->
+<section class="final-cta">
+    <div class="section-inner">
+        <h2><span data-en>Your English journey starts here</span><span data-it>Il tuo viaggio in inglese inizia qui</span></h2>
+        <p><span data-en>Get in touch to discuss your goals, or explore the free resources above to start practising today.</span><span data-it>Contattami per discutere i tuoi obiettivi, o esplora le risorse gratuite per iniziare a praticare.</span></p>
+        <div class="final-cta-buttons">
+            <a href="#pricing" class="btn-primary"><span data-en>See Pricing</span><span data-it>Vedi i Prezzi</span></a>
+            <a href="mailto:m.jeffrey2023@gmail.com" class="btn-secondary"><span data-en>Email Me</span><span data-it>Scrivimi</span></a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <p>&copy; 2026 The English Lounge &middot; <span data-en>Learn English in Comfort</span><span data-it>Impara l&#39;Inglese con Comodita</span> &middot; <a href="mailto:m.jeffrey2023@gmail.com">m.jeffrey2023@gmail.com</a></p>
 </footer>
 
-<div class="sticky-cta">
-  <a href="#book" class="btn btn-gold btn-sm" onclick="smoothScroll(event,'book')"><span data-en>Book Your Free Trial</span><span data-it>Prenota Prova Gratuita</span> &#8594;</a>
-</div>
-
-<!-- CHATBOT -->
+<!-- ===== CHATBOT ===== -->
 <button class="chat-fab" id="chatFab" onclick="toggleChat()">&#128172;</button>
 <div class="chat-window" id="chatWindow">
-  <div class="chat-header">
-    <div class="chat-avatar">MJ</div>
-    <div class="chat-header-text"><h4>Maj's Assistant</h4><p><span data-en>Ask me anything about lessons</span><span data-it>Chiedimi qualsiasi cosa sulle lezioni</span></p></div>
-  </div>
-  <div class="chat-messages" id="chatMessages">
-    <div class="chat-msg bot"><span data-en>Hi! I'm Maj's virtual assistant. I can help you with questions about lessons, pricing, scheduling, or anything else. How can I help you today?</span><span data-it>Ciao! Sono l'assistente virtuale di Maj. Posso aiutarti con domande su lezioni, prezzi, orari o qualsiasi altra cosa. Come posso aiutarti oggi?</span></div>
-  </div>
-  <div class="chat-quick-btns" id="quickBtns">
-    <button class="chat-quick" onclick="sendQuick('What lessons do you offer?')">Lesson types</button>
-    <button class="chat-quick" onclick="sendQuick('How much do lessons cost?')">Pricing</button>
-    <button class="chat-quick" onclick="sendQuick('How do I book a free trial?')">Free trial</button>
-    <button class="chat-quick" onclick="sendQuick('Tell me about Maj')">About Maj</button>
-    <button class="chat-quick" onclick="sendQuick('I want to speak with Maj directly')" style="background:var(--gold-glow);border-color:var(--gold-border);color:var(--gold);">Talk to Maj</button>
-  </div>
-  <div class="chat-input-area">
-    <input class="chat-input" id="chatInput" placeholder="Type your question..." onkeydown="if(event.key==='Enter')sendChat()">
-    <button class="chat-send" onclick="sendChat()">&#10148;</button>
-  </div>
+    <div class="chat-header">
+        <div class="chat-header-avatar">EL</div>
+        <div class="chat-header-info">
+            <h4 id="chatTitle">The English Lounge Assistant</h4>
+            <span id="chatSubtitle">Usually replies instantly</span>
+        </div>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+        <div class="chat-msg bot" id="chatWelcome">Hi! I can help you with questions about lessons, pricing, scheduling, or anything else. How can I help?</div>
+    </div>
+    <div class="chat-quick-replies" id="chatQuickReplies"></div>
+    <div class="chat-input-area">
+        <input class="chat-input" id="chatInput" placeholder="Type a message..." onkeydown="if(event.key==='Enter')sendChat()">
+        <button class="chat-send" onclick="sendChat()">&#10148;</button>
+    </div>
+</div>
+
+<!-- ===== GAME MODAL ===== -->
+<div class="game-modal-overlay" id="gameModal">
+    <div class="game-modal">
+        <button class="game-modal-close" onclick="closeGame()">&times;</button>
+        <div id="gameContent"></div>
+    </div>
 </div>
 
 <script>
-function setLang(l){document.body.setAttribute('data-lang',l);document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.textContent.trim()===l.toUpperCase());});}
-function smoothScroll(e,id){e.preventDefault();var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}
-window.addEventListener('scroll',function(){document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40);});
-function toggleMenu(){document.getElementById('menuToggle').classList.toggle('active');document.getElementById('navLinks').classList.toggle('open');}
-document.querySelectorAll('.nav-links a').forEach(function(link){link.addEventListener('click',function(e){var href=link.getAttribute('href');document.getElementById('menuToggle').classList.remove('active');document.getElementById('navLinks').classList.remove('open');if(href&&href.startsWith('#')){e.preventDefault();setTimeout(function(){var t=document.querySelector(href);if(t)t.scrollIntoView({behavior:'smooth',block:'start'});},150);}});});
-function showCategory(id,el){document.querySelectorAll('.pricing-category').forEach(function(c){c.classList.remove('active');});document.querySelectorAll('.pricing-selector-card').forEach(function(c){c.classList.remove('active');});document.getElementById('cat-'+id).classList.add('active');el.classList.add('active');}
+// ===== LANGUAGE SYSTEM =====
+var currentLang = 'en';
 
-function switchCal(slug,el){
-  document.getElementById('calFrame').src='https://cal.com/cal.com-maj-jaffrey/'+slug;
-  if(el){document.querySelectorAll('#calTabs .pricing-selector-card').forEach(function(c){c.classList.remove('active');});el.classList.add('active');}
+function detectLanguage() {
+    var bl = navigator.language || (navigator.languages && navigator.languages[0]) || 'en';
+    return bl.toLowerCase().startsWith('it') ? 'it' : 'en';
 }
-function scrollAndBook(e,slug){
-  e.preventDefault();
-  switchCal(slug,null);
-  document.getElementById('book').scrollIntoView({behavior:'smooth',block:'start'});
-}
-function toggleFaq(btn){var item=btn.closest('.faq-item');document.querySelectorAll('.faq-item').forEach(function(i){if(i!==item)i.classList.remove('open');});item.classList.toggle('open');}
 
-// CHATBOT
-var chatKB = {
-  lessons: "I offer three types of lessons: General English (everyday conversation, grammar, vocabulary), Business English (presentations, meetings, email writing), and IELTS & Cambridge exam preparation. All lessons are 60 minutes, one-on-one, and fully personalized.",
-  pricing: "General & Business English: Single lesson is 20 euros, 5-lesson pack is 95 euros (19 euros each, 5% off), 10-lesson pack is 180 euros (18 euros each, 10% off). Exam Prep: Single is 23 euros, 5-pack is 109 euros, 10-pack is 207 euros. Package lessons never expire!",
-  trial: "You can book a free 20-minute trial lesson! No payment required, no commitment. We will talk about your goals, I will assess your level, and explain how I can help. Just scroll down to the calendar section or click 'Book Your Free Trial' at the top of the page.",
-  about: "Maj is a native English speaker from Canada with over 12 years of teaching experience. He holds a Master's degree in Linguistics and Mind from the University of Siena and is TTC and TEFL certified. He teaches both adults and children, in person in Rome and online worldwide.",
-  schedule: "You can book directly from the calendar on this page! Just scroll down to the 'Book a Lesson' section, pick your lesson type, and choose an available time slot. Payments are handled securely through Stripe.",
-  cancel: "Yes, you can reschedule or cancel. Just give at least 24 hours notice. Package lessons never expire, so you can use them at your own pace.",
-  books: "For general and business lessons, Maj provides all handouts and resources. For exam preparation (IELTS or Cambridge), he will recommend the official preparation book, which you will need to purchase separately.",
-  group: "Yes! Maj also works with companies, small groups, and pairs. For group or corporate lessons, send an email to m.jeffrey2023@gmail.com and he will create a tailored programme.",
-  online: "Lessons are available both online (via Zoom, Google Meet, or similar) and in person in Rome. Most students prefer online for flexibility.",
-  contact: "You can reach Maj at m.jeffrey2023@gmail.com or book directly through the calendar on this page."
+function setLang(lang) {
+    currentLang = lang;
+    if (lang === 'it') {
+        document.body.classList.add('lang-it');
+    } else {
+        document.body.classList.remove('lang-it');
+    }
+    document.getElementById('btnEn').classList.toggle('active', lang === 'en');
+    document.getElementById('btnIt').classList.toggle('active', lang === 'it');
+    document.getElementById('chatInput').placeholder = lang === 'it' ? 'Scrivi un messaggio...' : 'Type a message...';
+    document.getElementById('chatTitle').textContent = lang === 'it' ? 'Assistente The English Lounge' : 'The English Lounge Assistant';
+    document.getElementById('chatSubtitle').textContent = lang === 'it' ? 'Risponde subito' : 'Usually replies instantly';
+    document.getElementById('chatWelcome').textContent = lang === 'it'
+        ? 'Ciao! Posso aiutarti con domande su lezioni, prezzi, orari o qualsiasi altra cosa.'
+        : 'Hi! I can help you with questions about lessons, pricing, scheduling, or anything else. How can I help?';
+    updateQuickReplies();
+    renderGames();
+    try { localStorage.setItem('lang', lang); } catch(e) {}
+}
+
+function updateQuickReplies() {
+    var qr = document.getElementById('chatQuickReplies');
+    var labels = currentLang === 'it'
+        ? ['Tipi di lezione', 'Prezzi', 'Prova gratuita', 'Chi e Maj', 'Contatta Amministratore']
+        : ['Lesson types', 'Pricing', 'Free trial', 'About Maj', 'Contact Administrator'];
+    var topics = ['lessons', 'pricing', 'trial', 'about', 'contact'];
+    qr.innerHTML = labels.map(function(l, i) {
+        return '<button class="chat-quick-btn" onclick="chatQuick(\'' + topics[i] + '\')">' + l + '</button>';
+    }).join('');
+}
+
+// Auto-detect on load
+(function() {
+    var saved = null;
+    try { saved = localStorage.getItem('lang'); } catch(e) {}
+    setLang(saved || detectLanguage());
+})();
+
+// ===== NAVBAR =====
+window.addEventListener('scroll', function() {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+}
+document.querySelectorAll('.nav-links a').forEach(function(a) {
+    a.addEventListener('click', function() { document.getElementById('navLinks').classList.remove('open'); });
+});
+
+// ===== FAQ =====
+function toggleFaq(btn) {
+    var item = btn.parentElement;
+    var answer = item.querySelector('.faq-answer');
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i) {
+        i.classList.remove('open');
+        i.querySelector('.faq-answer').style.maxHeight = '0';
+    });
+    if (!isOpen) {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+}
+
+// ===== PRICING TOGGLE =====
+function showPricing(type) {
+    document.getElementById('pricingGeneral').style.display = type === 'general' ? 'grid' : 'none';
+    document.getElementById('pricingExam').style.display = type === 'exam' ? 'grid' : 'none';
+    document.getElementById('togGeneral').classList.toggle('active', type === 'general');
+    document.getElementById('togExam').classList.toggle('active', type === 'exam');
+}
+
+// ===== CHATBOT =====
+function toggleChat() {
+    document.getElementById('chatWindow').classList.toggle('open');
+}
+
+var chatData = {
+    lessons: {
+        en: "I offer three main types of lessons:\n\nGeneral English - everyday conversation, grammar, vocabulary\nBusiness English - meetings, presentations, emails\nIELTS & Cambridge Prep - exam strategies and mock tests\n\nI also offer corporate and group lessons. All lessons are 60 minutes.",
+        it: "Offro tre tipi principali di lezioni:\n\nInglese Generale - conversazione, grammatica, vocabolario\nInglese Business - riunioni, presentazioni, email\nPreparazione IELTS & Cambridge - strategie e simulazioni\n\nOffro anche lezioni aziendali e di gruppo."
+    },
+    pricing: {
+        en: "General & Business English:\n- Single lesson: 20 euro\n- 5-pack: 95 euro (19 euro/lesson, save 5%)\n- 10-pack: 180 euro (18 euro/lesson, save 10%)\n\nIELTS & Cambridge:\n- Single: 23 euro\n- 5-pack: 109 euro\n- 10-pack: 207 euro\n\nAll lessons are 60 minutes.",
+        it: "Inglese Generale & Business:\n- Lezione singola: 20 euro\n- Pacchetto 5: 95 euro (19 euro/lezione)\n- Pacchetto 10: 180 euro (18 euro/lezione)\n\nIELTS & Cambridge:\n- Singola: 23 euro\n- Pacchetto 5: 109 euro\n- Pacchetto 10: 207 euro"
+    },
+    trial: {
+        en: "You can book a free 20-minute trial lesson! No payment needed, no commitment. We will chat about your goals and I will assess your level.",
+        it: "Puoi prenotare una lezione di prova gratuita di 20 minuti! Nessun pagamento, nessun impegno."
+    },
+    about: {
+        en: "Maj is a native English speaker from Canada with over 12 years of teaching experience. He holds a Masters in Linguistics and Mind from the University of Siena and is TTC & TEFL certified.",
+        it: "Maj e madrelingua inglese dal Canada con oltre 12 anni di esperienza. Ha una Laurea Magistrale in Linguistica e Mente dall'Universita di Siena."
+    },
+    contact: {
+        en: "You can reach the administrator directly at:\nm.jeffrey2023@gmail.com\n\nYou can also book a free trial to discuss your needs.",
+        it: "Puoi contattare l'amministratore a:\nm.jeffrey2023@gmail.com\n\nPuoi anche prenotare una prova gratuita."
+    }
 };
 
-function getBotReply(msg) {
-  var m = msg.toLowerCase();
-  if (m.includes('lesson') && (m.includes('type') || m.includes('offer') || m.includes('kind') || m.includes('what'))) return chatKB.lessons;
-  if (m.includes('price') || m.includes('cost') || m.includes('how much') || m.includes('euro') || m.includes('pack')) return chatKB.pricing;
-  if (m.includes('trial') || m.includes('free') || m.includes('try')) return chatKB.trial;
-  if (m.includes('about') || m.includes('who') || m.includes('maj') || m.includes('teacher') || m.includes('qualification') || m.includes('experience') || m.includes('native')) return chatKB.about;
-  if (m.includes('book') || m.includes('schedule') || m.includes('calendar') || m.includes('reserve') || m.includes('appointment')) return chatKB.schedule;
-  if (m.includes('cancel') || m.includes('reschedule') || m.includes('expire')) return chatKB.cancel;
-  if (m.includes('book') && (m.includes('buy') || m.includes('material') || m.includes('textbook'))) return chatKB.books;
-  if (m.includes('group') || m.includes('company') || m.includes('corporate') || m.includes('team') || m.includes('semi')) return chatKB.group;
-  if (m.includes('online') || m.includes('person') || m.includes('rome') || m.includes('zoom') || m.includes('where')) return chatKB.online;
-  if (m.includes('contact') || m.includes('email') || m.includes('reach') || m.includes('touch')) return chatKB.contact;
-  if (m.includes('speak') || m.includes('real') || m.includes('human') || m.includes('live') || m.includes('agent') || m.includes('person') || m.includes('directly') || m.includes('chat with maj')) return "LIVE_AGENT";
-  if (m.includes('hi') || m.includes('hello') || m.includes('hey') || m.includes('ciao') || m.includes('buongiorno') || m.includes('salve')) return "Hello! How can I help you today? Feel free to ask about lessons, pricing, booking, or anything else.";
-  if (m.includes('thank') || m.includes('grazie')) return "You are welcome! If you have any other questions, just ask. Otherwise, you can book your free trial from the calendar on this page!";
-  return "FALLBACK";
-}
-
-function toggleChat() {
-  var w = document.getElementById('chatWindow');
-  var f = document.getElementById('chatFab');
-  w.classList.toggle('open');
-  f.classList.toggle('open');
-  f.innerHTML = w.classList.contains('open') ? '&#10005;' : '&#128172;';
-}
-
-function addMsg(text, type) {
-  var msgs = document.getElementById('chatMessages');
-  var d = document.createElement('div');
-  d.className = 'chat-msg ' + type;
-  if (type === 'bot') { d.innerHTML = text; } else { d.textContent = text; }
-  msgs.appendChild(d);
-  msgs.scrollTop = msgs.scrollHeight;
-  return d;
-}
-
-function addBotWithEmail(text) {
-  var msgs = document.getElementById('chatMessages');
-  var d = document.createElement('div');
-  d.className = 'chat-msg bot';
-  d.innerHTML = text + '<br><br><a href="mailto:m.jeffrey2023@gmail.com" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#c49a3c;color:#fff;border-radius:100px;font-size:13px;font-weight:700;text-decoration:none;margin-top:4px;">&#9993; Email Maj Directly</a>';
-  msgs.appendChild(d);
-  msgs.scrollTop = msgs.scrollHeight;
-}
-
-function showTyping() {
-  var msgs = document.getElementById('chatMessages');
-  var d = document.createElement('div');
-  d.className = 'chat-msg typing';
-  d.id = 'typingIndicator';
-  d.innerHTML = '<div class="typing-dots"><span></span><span></span><span></span></div>';
-  msgs.appendChild(d);
-  msgs.scrollTop = msgs.scrollHeight;
-}
-
-function removeTyping() {
-  var t = document.getElementById('typingIndicator');
-  if (t) t.remove();
+function chatQuick(topic) {
+    var userMsg = {
+        lessons: { en: 'What lesson types do you offer?', it: 'Che tipi di lezione offri?' },
+        pricing: { en: 'What are the prices?', it: 'Quali sono i prezzi?' },
+        trial: { en: 'How does the free trial work?', it: 'Come funziona la prova gratuita?' },
+        about: { en: 'Tell me about Maj', it: 'Parlami di Maj' },
+        contact: { en: 'How can I contact the administrator?', it: "Come posso contattare l'amministratore?" }
+    };
+    addChatMsg(userMsg[topic][currentLang], 'user');
+    setTimeout(function() { addChatMsg(chatData[topic][currentLang], 'bot'); }, 400);
 }
 
 function sendChat() {
-  var input = document.getElementById('chatInput');
-  var msg = input.value.trim();
-  if (!msg) return;
-  addMsg(msg, 'user');
-  input.value = '';
-  document.getElementById('quickBtns').style.display = 'none';
-  showTyping();
-  setTimeout(function() {
-    removeTyping();
-    var reply = getBotReply(msg);
-    if (reply === 'LIVE_AGENT') {
-      addBotWithEmail("I'd be happy to connect you with Maj directly! Just send him an email and he will get back to you shortly:");
-    } else if (reply === 'FALLBACK') {
-      addBotWithEmail("That's a great question! I don't have the specific answer, but Maj can help you directly. Send him a quick email, or book a free 20-minute trial from the calendar on this page:");
-    } else {
-      addMsg(reply, 'bot');
-    }
-  }, 800 + Math.random() * 700);
+    var input = document.getElementById('chatInput');
+    var msg = input.value.trim();
+    if (!msg) return;
+    addChatMsg(msg, 'user');
+    input.value = '';
+
+    setTimeout(function() {
+        var l = msg.toLowerCase();
+        var r;
+        if (/pric|cost|prezz|quanto|euro/i.test(l)) r = chatData.pricing[currentLang];
+        else if (/lesson|lezione|type|tipo|offer|offr/i.test(l)) r = chatData.lessons[currentLang];
+        else if (/trial|prova|free|gratu/i.test(l)) r = chatData.trial[currentLang];
+        else if (/who|chi|about|maj|teacher|insegnante/i.test(l)) r = chatData.about[currentLang];
+        else if (/contact|email|contatt|admin|reach/i.test(l)) r = chatData.contact[currentLang];
+        else if (/cancel|reschedul|annul/i.test(l)) r = currentLang === 'it' ? 'Si! Basta avvisare almeno 24 ore prima. Le lezioni dei pacchetti non scadono mai.' : 'Yes! Just give at least 24 hours notice. Package lessons never expire.';
+        else if (/book|prenot|schedule/i.test(l)) r = currentLang === 'it' ? 'Puoi prenotare dalla sezione Prezzi qui sopra!' : 'You can book from the Pricing section above!';
+        else if (/online|persona|rome|roma/i.test(l)) r = currentLang === 'it' ? 'Offro lezioni sia online che di persona a Roma.' : 'I offer both online and in-person lessons in Rome.';
+        else if (/hi|hello|ciao|hey|buon/i.test(l)) r = currentLang === 'it' ? 'Ciao! Come posso aiutarti?' : 'Hi! How can I help you?';
+        else r = currentLang === 'it' ? "Grazie per la domanda! Contatta l'amministratore a m.jeffrey2023@gmail.com" : 'Thanks for your question! Contact the administrator at m.jeffrey2023@gmail.com';
+        addChatMsg(r, 'bot');
+    }, 500);
 }
 
-function sendQuick(msg) {
-  document.getElementById('chatInput').value = msg;
-  sendChat();
+function addChatMsg(text, type) {
+    var msgs = document.getElementById('chatMessages');
+    var div = document.createElement('div');
+    div.className = 'chat-msg ' + type;
+    div.textContent = text;
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
 }
 
-// Scroll reveal
-var observer = new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.style.opacity='1';entry.target.style.transform='translateY(0)';}});},{threshold:0.08});
-document.querySelectorAll('.feature-card,.pricing-card,.step,.trial-banner,.testimonial-card,.faq-item,.about-content,.pricing-selector-card,.cal-embed-wrapper').forEach(function(el){el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity 0.5s ease, transform 0.5s ease';observer.observe(el);});
+// ===== GRAMMAR GAMES =====
+var gamesDB = [
+    { id:'ps_pc', cat:'tenses', level:'a1a2', icon:'&#128260;', en:{title:'Present Simple vs Continuous',desc:'Choose the correct tense.'}, it:{title:'Present Simple vs Continuous',desc:'Scegli il tempo corretto.'}, questions:[{q:'She ___ to work every day.',opts:['goes','is going'],ans:0},{q:'Look! It ___ outside.',opts:['rains','is raining'],ans:1},{q:'I usually ___ coffee in the morning.',opts:['drink','am drinking'],ans:0},{q:'They ___ a meeting right now.',opts:['have','are having'],ans:1},{q:'Water ___ at 100 degrees.',opts:['boils','is boiling'],ans:0},{q:'He ___ on a new project this week.',opts:['works','is working'],ans:1},{q:'The sun ___ in the east.',opts:['rises','is rising'],ans:0},{q:'Why ___ you looking at me?',opts:['do','are'],ans:1}] },
+    { id:'past_pp', cat:'tenses', level:'b1b2', icon:'&#9203;', en:{title:'Past Simple vs Present Perfect',desc:'Test your knowledge of these tricky tenses.'}, it:{title:'Past Simple vs Present Perfect',desc:'Metti alla prova questi tempi.'}, questions:[{q:'I ___ to Paris three times.',opts:['went','have been'],ans:1},{q:'She ___ her keys yesterday.',opts:['lost','has lost'],ans:0},{q:'We ___ here since 2010.',opts:['lived','have lived'],ans:1},{q:'He ___ the movie last night.',opts:['watched','has watched'],ans:0},{q:'I have never ___ sushi.',opts:['tried','try'],ans:0},{q:'They ___ married in 2015.',opts:['got','have got'],ans:0},{q:'Have you ever ___ a horse?',opts:['rode','ridden'],ans:1},{q:'She ___ to London when she was 20.',opts:['moved','has moved'],ans:0}] },
+    { id:'irregular', cat:'tenses', level:'a1a2', icon:'&#128221;', en:{title:'Irregular Verbs',desc:'Choose the correct past form.'}, it:{title:'Verbi Irregolari',desc:'Scegli la forma passata corretta.'}, questions:[{q:'go - went - ___',opts:['gone','goed'],ans:0},{q:'buy - ___ - bought',opts:['bought','buyed'],ans:0},{q:'write - wrote - ___',opts:['writed','written'],ans:1},{q:'swim - ___ - swum',opts:['swam','swimmed'],ans:0},{q:'break - broke - ___',opts:['breaked','broken'],ans:1},{q:'choose - ___ - chosen',opts:['choosed','chose'],ans:1},{q:'fly - flew - ___',opts:['flown','flied'],ans:0},{q:'teach - ___ - taught',opts:['teached','taught'],ans:1}] },
+    { id:'conditionals', cat:'grammar', level:'b1b2', icon:'&#128302;', en:{title:'Conditionals',desc:'Complete with the correct conditional form.'}, it:{title:'Condizionali',desc:'Completa con la forma condizionale corretta.'}, questions:[{q:'If I ___ you, I would apologize.',opts:['am','were'],ans:1},{q:'If it rains, we ___ inside.',opts:['will stay','would stay'],ans:0},{q:'If I had studied, I ___ the exam.',opts:['would pass','would have passed'],ans:1},{q:'If you heat water to 100C, it ___.',opts:['boils','will boil'],ans:0},{q:'If she ___ earlier, she would have caught the train.',opts:['left','had left'],ans:1},{q:'I will call you if I ___ time.',opts:['have','had'],ans:0},{q:'If I won the lottery, I ___ a house.',opts:['will buy','would buy'],ans:1},{q:'If you mix blue and yellow, you ___ green.',opts:['get','will get'],ans:0}] },
+    { id:'modals', cat:'grammar', level:'b1b2', icon:'&#9878;&#65039;', en:{title:'Modal Verbs',desc:'Choose the correct modal verb.'}, it:{title:'Verbi Modali',desc:'Scegli il verbo modale corretto.'}, questions:[{q:'You ___ drive without a license.',opts:['must not','do not have to'],ans:0},{q:'You ___ wear a tie. It is optional.',opts:['must not','do not have to'],ans:1},{q:'___ I borrow your pen?',opts:['Could','Should'],ans:0},{q:'You ___ see a doctor.',opts:['should','must'],ans:0},{q:'She ___ speak three languages.',opts:['can','may'],ans:0},{q:'It ___ rain later.',opts:['might','can'],ans:0},{q:'You ___ work harder to pass.',opts:['ought to','must'],ans:0},{q:'Students ___ use phones in exams.',opts:['must not','do not have to'],ans:0}] },
+    { id:'prepositions', cat:'grammar', level:'a1a2', icon:'&#128205;', en:{title:'Prepositions of Time & Place',desc:'Fill in the correct preposition.'}, it:{title:'Preposizioni di Tempo e Luogo',desc:'Inserisci la preposizione corretta.'}, questions:[{q:'I was born ___ July.',opts:['in','on'],ans:0},{q:'The meeting is ___ Monday.',opts:['in','on'],ans:1},{q:'She lives ___ Rome.',opts:['in','at'],ans:0},{q:'See you ___ 3 o\'clock.',opts:['in','at'],ans:1},{q:'The picture is ___ the wall.',opts:['in','on'],ans:1},{q:'He arrived ___ the airport.',opts:['at','in'],ans:0},{q:'We met ___ Christmas Day.',opts:['at','on'],ans:1},{q:'The keys are ___ the drawer.',opts:['in','on'],ans:0}] },
+    { id:'articles', cat:'grammar', level:'a1a2', icon:'&#128214;', en:{title:'Articles: A, An, The',desc:'Choose the correct article.'}, it:{title:'Articoli: A, An, The',desc:'Scegli l\'articolo corretto.'}, questions:[{q:'She is ___ honest person.',opts:['a','an'],ans:1},{q:'I saw ___ moon last night.',opts:['a','the'],ans:1},{q:'He wants to be ___ doctor.',opts:['a','the'],ans:0},{q:'___ Eiffel Tower is in Paris.',opts:['A','The'],ans:1},{q:'Can I have ___ apple?',opts:['a','an'],ans:1},{q:'She plays ___ piano well.',opts:['a','the'],ans:1},{q:'I need ___ new laptop.',opts:['a','an'],ans:0},{q:'___ sun rises in the east.',opts:['A','The'],ans:1}] },
+    { id:'passive', cat:'grammar', level:'b1b2', icon:'&#128295;', en:{title:'Active vs Passive Voice',desc:'Identify or complete passive sentences.'}, it:{title:'Attivo vs Passivo',desc:'Identifica o completa frasi passive.'}, questions:[{q:'"The cake was eaten by the children." This is...',opts:['active','passive'],ans:1},{q:'"Shakespeare wrote Hamlet." This is...',opts:['active','passive'],ans:0},{q:'The letter ___ yesterday.',opts:['sent','was sent'],ans:1},{q:'The bridge ___ in 1883.',opts:['built','was built'],ans:1},{q:'A new school ___ right now.',opts:['is being built','is building'],ans:0},{q:'English ___ in many countries.',opts:['speaks','is spoken'],ans:1},{q:'My bike ___. (someone stole it)',opts:['was stolen','stole'],ans:0},{q:'The report ___ by Friday.',opts:['will finish','will be finished'],ans:1}] },
+    { id:'reported', cat:'grammar', level:'b1b2', icon:'&#128172;', en:{title:'Reported Speech',desc:'Convert direct to reported speech.'}, it:{title:'Discorso Indiretto',desc:'Converti il discorso diretto in indiretto.'}, questions:[{q:'"I am tired." She said she ___ tired.',opts:['is','was'],ans:1},{q:'"I will help." He said he ___ help.',opts:['will','would'],ans:1},{q:'"I can swim." She said she ___.',opts:['can','could'],ans:1},{q:'"I have finished." He said he ___.',opts:['has','had'],ans:1},{q:'"We are leaving." They said they ___.',opts:['are','were'],ans:1},{q:'"I went to the cinema." She said she ___.',opts:['went','had gone'],ans:1},{q:'"Do you like it?" He asked ___ I liked it.',opts:['if','that'],ans:0},{q:'"Where do you live?" She asked where I ___.',opts:['live','lived'],ans:1}] },
+    { id:'relative', cat:'grammar', level:'b1b2', icon:'&#128279;', en:{title:'Relative Clauses',desc:'Choose the correct relative pronoun.'}, it:{title:'Frasi Relative',desc:'Scegli il pronome relativo corretto.'}, questions:[{q:'The woman ___ lives next door is a doctor.',opts:['who','which'],ans:0},{q:'The book ___ I read was excellent.',opts:['who','which'],ans:1},{q:'The city ___ I was born is small.',opts:['where','which'],ans:0},{q:'The man ___ car was stolen called police.',opts:['whose','who'],ans:0},{q:'The day ___ we met was unforgettable.',opts:['when','where'],ans:0},{q:'The reason ___ I called is important.',opts:['why','which'],ans:0},{q:'People ___ exercise are healthier.',opts:['who','which'],ans:0},{q:'The hotel ___ we stayed was great.',opts:['where','whose'],ans:0}] },
+    { id:'phrasal', cat:'vocabulary', level:'b1b2', icon:'&#129513;', en:{title:'Phrasal Verbs',desc:'Match the phrasal verb to its meaning.'}, it:{title:'Phrasal Verbs',desc:'Abbina il phrasal verb al suo significato.'}, questions:[{q:'"Look after" means...',opts:['take care of','search for'],ans:0},{q:'"Take off" (plane) means...',opts:['leave the ground','slow down'],ans:0},{q:'"Give up" means...',opts:['start','stop'],ans:1},{q:'"Turn down" the music means...',opts:['make louder','make quieter'],ans:1},{q:'"Come across" means...',opts:['find by chance','throw away'],ans:0},{q:'"Put off" means...',opts:['cancel forever','postpone'],ans:1},{q:'"Get along" means...',opts:['have good relationships','argue'],ans:0},{q:'"Figure out" means...',opts:['forget','solve'],ans:1}] },
+    { id:'collocations', cat:'vocabulary', level:'b1b2', icon:'&#129309;', en:{title:'Make vs Do Collocations',desc:'Choose the word that fits.'}, it:{title:'Collocazioni Make vs Do',desc:'Scegli la parola corretta.'}, questions:[{q:'___ a decision',opts:['make','do'],ans:0},{q:'___ homework',opts:['make','do'],ans:1},{q:'___ a mistake',opts:['make','do'],ans:0},{q:'___ the dishes',opts:['make','do'],ans:1},{q:'___ an effort',opts:['make','do'],ans:0},{q:'___ research',opts:['make','do'],ans:1},{q:'___ a suggestion',opts:['make','do'],ans:0},{q:'___ your best',opts:['make','do'],ans:1}] },
+    { id:'confusing', cat:'vocabulary', level:'all', icon:'&#129300;', en:{title:'Confusing Words',desc:'Choose the correct word.'}, it:{title:'Parole Confuse',desc:'Scegli la parola corretta.'}, questions:[{q:'The weather had a big ___ on our plans.',opts:['effect','affect'],ans:0},{q:'Can I give you some ___?',opts:['advice','advise'],ans:0},{q:'I ___ my wallet at home.',opts:['forgot','left'],ans:1},{q:'She ___ me to help her.',opts:['said','told'],ans:1},{q:'There are ___ people in the room.',opts:['less','fewer'],ans:1},{q:'I am not ___ in football.',opts:['interested','interesting'],ans:0},{q:'The movie was really ___.',opts:['bored','boring'],ans:1},{q:'He speaks English very ___.',opts:['good','well'],ans:1}] },
+    { id:'word_formation', cat:'exam', level:'b1b2', icon:'&#127959;&#65039;', en:{title:'Word Formation',desc:'Choose the correct form of the word.'}, it:{title:'Formazione Parole',desc:'Scegli la forma corretta.'}, questions:[{q:'His ___ was impressive. (perform)',opts:['performance','performing'],ans:0},{q:'The food was ___. (taste)',opts:['tasteful','tasty'],ans:1},{q:'She gave a ___ speech. (power)',opts:['powerful','powered'],ans:0},{q:'This exercise is ___. (benefit)',opts:['beneficial','benefited'],ans:0},{q:'He is an ___ worker. (efficiency)',opts:['efficient','efficiently'],ans:0},{q:'The view was ___. (breath)',opts:['breathless','breathtaking'],ans:1},{q:'We need more ___. (inform)',opts:['information','informative'],ans:0},{q:'She felt a sense of ___. (achieve)',opts:['achievement','achievable'],ans:0}] },
+    { id:'connectors', cat:'exam', level:'c1c2', icon:'&#128279;', en:{title:'Linking Words & Connectors',desc:'Choose the best connector.'}, it:{title:'Connettori',desc:'Scegli il connettore migliore.'}, questions:[{q:'I stayed home ___ I was ill.',opts:['because','although'],ans:0},{q:'___ it was raining, we went out.',opts:['Because','Although'],ans:1},{q:'She studied hard. ___, she passed.',opts:['Therefore','However'],ans:0},{q:'He is rich. ___, he is not happy.',opts:['Therefore','However'],ans:1},{q:'I like tea ___ coffee.',opts:['as well as','in spite of'],ans:0},{q:'___ the delay, we arrived on time.',opts:['Despite','Because of'],ans:0},{q:'She works hard ___ to support her family.',opts:['in order','even though'],ans:0},{q:'He passed ___ not studying much.',opts:['despite','because'],ans:0}] }
+];
+
+function renderGames(filter) {
+    filter = filter || 'all';
+    var grid = document.getElementById('gamesGrid');
+    var filtered = filter === 'all' ? gamesDB : gamesDB.filter(function(g) { return g.cat === filter; });
+    var lang = currentLang;
+    grid.innerHTML = filtered.map(function(g) {
+        return '<div class="game-card fade-in visible" onclick="openGame(\'' + g.id + '\')" data-cat="' + g.cat + '">'
+            + '<span class="game-card-level level-' + g.level + '">' + g.level.toUpperCase() + '</span>'
+            + '<div class="game-card-icon">' + g.icon + '</div>'
+            + '<h4>' + g[lang].title + '</h4>'
+            + '<p>' + g[lang].desc + '</p>'
+            + '</div>';
+    }).join('');
+}
+
+// Category filter buttons
+document.getElementById('catButtons').addEventListener('click', function(e) {
+    var btn = e.target.closest('.cat-btn');
+    if (!btn) return;
+    document.querySelectorAll('.cat-btn').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    renderGames(btn.getAttribute('data-cat'));
+});
+
+// ===== GAME ENGINE =====
+var currentGame = null, currentQ = 0, score = 0;
+
+function openGame(id) {
+    currentGame = gamesDB.find(function(g) { return g.id === id; });
+    currentQ = 0;
+    score = 0;
+    document.getElementById('gameModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+    renderQuestion();
+}
+
+function closeGame() {
+    document.getElementById('gameModal').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function renderQuestion() {
+    var g = currentGame;
+    var total = g.questions.length;
+    if (currentQ >= total) { showScore(); return; }
+    var qq = g.questions[currentQ];
+    var title = g[currentLang].title;
+    var qLabel = currentLang === 'it' ? 'Domanda' : 'Question';
+
+    var progressHtml = g.questions.map(function(_, i) {
+        var cls = i < currentQ ? 'done' : (i === currentQ ? 'current' : '');
+        return '<div class="game-progress-dot ' + cls + '"></div>';
+    }).join('');
+
+    var optsHtml = qq.opts.map(function(o, i) {
+        return '<button class="game-option" onclick="checkAnswer(' + i + ',' + qq.ans + ')">' + o + '</button>';
+    }).join('');
+
+    document.getElementById('gameContent').innerHTML =
+        '<h3>' + title + '</h3>'
+        + '<p class="game-instructions">' + qLabel + ' ' + (currentQ + 1) + ' / ' + total + '</p>'
+        + '<div class="game-progress">' + progressHtml + '</div>'
+        + '<div class="game-question"><p>' + qq.q + '</p>'
+        + '<div class="game-options">' + optsHtml + '</div></div>';
+}
+
+function checkAnswer(sel, cor) {
+    var btns = document.querySelectorAll('.game-option');
+    btns.forEach(function(b, i) {
+        b.onclick = null;
+        b.style.pointerEvents = 'none';
+        if (i === cor) b.classList.add('correct');
+        if (i === sel && i !== cor) b.classList.add('wrong');
+    });
+    if (sel === cor) score++;
+    setTimeout(function() { currentQ++; renderQuestion(); }, 800);
+}
+
+function showScore() {
+    var total = currentGame.questions.length;
+    var pct = Math.round((score / total) * 100);
+    var msg, emoji;
+    if (pct === 100) { msg = currentLang === 'it' ? 'Perfetto!' : 'Perfect!'; emoji = '&#127942;'; }
+    else if (pct >= 75) { msg = currentLang === 'it' ? 'Ottimo!' : 'Great job!'; emoji = '&#127775;'; }
+    else if (pct >= 50) { msg = currentLang === 'it' ? 'Buon lavoro!' : 'Good effort!'; emoji = '&#128077;'; }
+    else { msg = currentLang === 'it' ? 'Continua a praticare!' : 'Keep practising!'; emoji = '&#128170;'; }
+    var playAgain = currentLang === 'it' ? 'Gioca di nuovo' : 'Play Again';
+    var closeLabel = currentLang === 'it' ? 'Chiudi' : 'Close';
+    var correctLabel = currentLang === 'it' ? 'corretto' : 'correct';
+
+    document.getElementById('gameContent').innerHTML =
+        '<div class="game-score">'
+        + '<div style="font-size:3rem;">' + emoji + '</div>'
+        + '<h3>' + msg + '</h3>'
+        + '<div class="score-number">' + score + '/' + total + '</div>'
+        + '<p style="color:var(--text-light);margin-top:0.5rem;">' + pct + '% ' + correctLabel + '</p>'
+        + '<button class="game-btn" onclick="openGame(\'' + currentGame.id + '\')">' + playAgain + '</button> '
+        + '<button class="game-btn" style="background:var(--gold);color:var(--forest-deep);" onclick="closeGame()">' + closeLabel + '</button>'
+        + '</div>';
+}
+
+// ===== SCROLL ANIMATIONS =====
+var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+}, { threshold: 0.1 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    renderGames();
+    updateQuickReplies();
+    document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
+});
+
+// Close game modal on overlay click
+document.getElementById('gameModal').addEventListener('click', function(e) {
+    if (e.target === document.getElementById('gameModal')) closeGame();
+});
 </script>
 </body>
 </html>

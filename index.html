@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -28,499 +29,496 @@
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Source Sans 3', sans-serif; color: var(--text); background: var(--cream); line-height: 1.7; overflow-x: hidden; }
-        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--forest-deep); line-height: 1.3; }
+```
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Source Sans 3', sans-serif; color: var(--text); background: var(--cream); line-height: 1.7; overflow-x: hidden; }
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--forest-deep); line-height: 1.3; }
 
-        /* ===== LANGUAGE SYSTEM ===== */
-        /* Default: hide all Italian */
-        [data-it] { display: none !important; }
-        /* Italian mode: hide English, show Italian */
-        body.lang-it [data-en] { display: none !important; }
-        body.lang-it span[data-it] { display: inline !important; }
-        body.lang-it div[data-it],
-        body.lang-it p[data-it],
-        body.lang-it h1[data-it],
-        body.lang-it h2[data-it],
-        body.lang-it h3[data-it],
-        body.lang-it h4[data-it],
-        body.lang-it li[data-it],
-        body.lang-it blockquote[data-it] { display: block !important; }
-        body.lang-it a[data-it],
-        body.lang-it button[data-it] { display: inline-flex !important; }
+    /* ===== LANGUAGE SYSTEM ===== */
+    /* Default: hide all Italian */
+    [data-it] { display: none !important; }
+    /* Italian mode: hide English, show Italian */
+    body.lang-it [data-en] { display: none !important; }
+    body.lang-it span[data-it] { display: inline !important; }
+    body.lang-it div[data-it],
+    body.lang-it p[data-it],
+    body.lang-it h1[data-it],
+    body.lang-it h2[data-it],
+    body.lang-it h3[data-it],
+    body.lang-it h4[data-it],
+    body.lang-it li[data-it],
+    body.lang-it blockquote[data-it] { display: block !important; }
+    body.lang-it a[data-it],
+    body.lang-it button[data-it] { display: inline-flex !important; }
 
-        /* ===== NAVBAR ===== */
-        .navbar {
-            position: fixed; top: 0; width: 100%; z-index: 1000;
-            background: rgba(250,247,240,0.92);
-            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(27,77,62,0.08);
-            transition: var(--transition);
-        }
-        .navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
-        .nav-inner {
-            max-width: 1200px; margin: 0 auto; padding: 0.8rem 2rem;
-            display: flex; align-items: center; justify-content: space-between;
-        }
-        .nav-brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
-        .nav-brand img { height: 48px; width: auto; border-radius: 50%; }
-        .nav-brand-text {
-            font-family: 'Playfair Display', serif; font-size: 1.15rem;
-            font-weight: 600; color: var(--forest-deep);
-        }
-        .nav-brand-tagline {
-            font-size: 0.65rem; color: var(--gold-dark);
-            text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600;
-        }
-        .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
-        .nav-links a {
-            text-decoration: none; color: var(--text); font-size: 0.9rem;
-            font-weight: 500; transition: var(--transition); position: relative;
-        }
-        .nav-links a::after {
-            content: ''; position: absolute; bottom: -4px; left: 0;
-            width: 0; height: 2px; background: var(--gold); transition: var(--transition);
-        }
-        .nav-links a:hover::after { width: 100%; }
-        .nav-links a:hover { color: var(--forest); }
-        .nav-cta {
-            background: var(--forest) !important; color: var(--white) !important;
-            padding: 0.5rem 1.2rem; border-radius: 8px; font-weight: 600;
-        }
-        .nav-cta:hover { background: var(--forest-deep) !important; transform: translateY(-1px); }
-        .nav-cta::after { display: none !important; }
-        .lang-switch { display: flex; gap: 0.3rem; margin-left: 0.5rem; }
-        .lang-btn {
-            background: none; border: 1.5px solid var(--forest); color: var(--forest);
-            padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem;
-            font-weight: 600; cursor: pointer; transition: var(--transition);
-        }
-        .lang-btn.active { background: var(--forest); color: var(--white); }
-        .hamburger {
-            display: none; flex-direction: column; gap: 5px;
-            cursor: pointer; background: none; border: none; padding: 5px;
-        }
-        .hamburger span { width: 24px; height: 2px; background: var(--forest-deep); transition: var(--transition); }
+    /* ===== NAVBAR ===== */
+    .navbar {
+        position: fixed; top: 0; width: 100%; z-index: 1000;
+        background: rgba(250,247,240,0.92);
+        backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(27,77,62,0.08);
+        transition: var(--transition);
+    }
+    .navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+    .nav-inner {
+        max-width: 1200px; margin: 0 auto; padding: 0.8rem 2rem;
+        display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .nav-brand img { height: 48px; width: auto; border-radius: 50%; }
+    .nav-brand-text {
+        font-family: 'Playfair Display', serif; font-size: 1.15rem;
+        font-weight: 600; color: var(--forest-deep);
+    }
+    .nav-brand-tagline {
+        font-size: 0.65rem; color: var(--gold-dark);
+        text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+    .nav-links a {
+        text-decoration: none; color: var(--text); font-size: 0.9rem;
+        font-weight: 500; transition: var(--transition); position: relative;
+    }
+    .nav-links a::after {
+        content: ''; position: absolute; bottom: -4px; left: 0;
+        width: 0; height: 2px; background: var(--gold); transition: var(--transition);
+    }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a:hover { color: var(--forest); }
+    .nav-cta {
+        background: var(--forest) !important; color: var(--white) !important;
+        padding: 0.5rem 1.2rem; border-radius: 8px; font-weight: 600;
+    }
+    .nav-cta:hover { background: var(--forest-deep) !important; transform: translateY(-1px); }
+    .nav-cta::after { display: none !important; }
+    .lang-switch { display: flex; gap: 0.3rem; margin-left: 0.5rem; }
+    .lang-btn {
+        background: none; border: 1.5px solid var(--forest); color: var(--forest);
+        padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem;
+        font-weight: 600; cursor: pointer; transition: var(--transition);
+    }
+    .lang-btn.active { background: var(--forest); color: var(--white); }
+    .hamburger {
+        display: none; flex-direction: column; gap: 5px;
+        cursor: pointer; background: none; border: none; padding: 5px;
+    }
+    .hamburger span { width: 24px; height: 2px; background: var(--forest-deep); transition: var(--transition); }
 
-        /* ===== HERO ===== */
-        .hero {
-            min-height: 100vh; display: flex; align-items: center; justify-content: center;
-            text-align: center; padding: 8rem 2rem 4rem; position: relative;
-            background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 50%, rgba(27,77,62,0.03) 100%);
-            overflow: hidden;
-        }
-        .hero::before {
-            content: ''; position: absolute; top: -50%; right: -30%; width: 80%; height: 160%;
-            background: radial-gradient(ellipse, rgba(196,163,90,0.06) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        .hero::after {
-            content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 120px;
-            background: linear-gradient(to bottom, transparent, var(--cream)); pointer-events: none;
-        }
-        .hero-content { max-width: 800px; position: relative; z-index: 2; }
-        .hero-logo {
-            width: 140px; height: 140px; border-radius: 50%;
-            margin: 0 auto 1.5rem; box-shadow: var(--shadow-gold);
-            animation: fadeInDown 0.8s ease-out; display: block;
-        }
-        .hero-badge {
-            display: inline-flex; align-items: center; gap: 0.5rem;
-            background: var(--white); border: 1px solid rgba(196,163,90,0.3);
-            padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.82rem;
-            font-weight: 500; color: var(--forest); margin-bottom: 1.5rem;
-            animation: fadeInDown 0.8s ease-out 0.1s both;
-        }
-        .hero h1 {
-            font-size: clamp(2.2rem, 5vw, 3.6rem); margin-bottom: 1.2rem;
-            animation: fadeInUp 0.8s ease-out 0.2s both;
-        }
-        .hero h1 em { color: var(--gold-dark); font-style: italic; }
-        .hero p {
-            font-size: 1.15rem; color: var(--text-light); max-width: 600px;
-            margin: 0 auto 2rem; line-height: 1.8;
-            animation: fadeInUp 0.8s ease-out 0.3s both;
-        }
-        .hero-buttons {
-            display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
-            animation: fadeInUp 0.8s ease-out 0.4s both;
-        }
-        .btn-primary {
-            background: var(--forest); color: var(--white); padding: 0.9rem 2rem;
-            border-radius: 10px; text-decoration: none; font-weight: 600;
-            font-size: 0.95rem; transition: var(--transition);
-            display: inline-flex; align-items: center; gap: 0.5rem;
-            border: 2px solid var(--forest);
-        }
-        .btn-primary:hover {
-            background: var(--forest-deep); border-color: var(--forest-deep);
-            transform: translateY(-2px); box-shadow: var(--shadow-lg);
-        }
-        .btn-secondary {
-            background: transparent; color: var(--forest); padding: 0.9rem 2rem;
-            border-radius: 10px; text-decoration: none; font-weight: 600;
-            font-size: 0.95rem; border: 2px solid var(--forest); transition: var(--transition);
-        }
-        .btn-secondary:hover { background: var(--forest); color: var(--white); transform: translateY(-2px); }
-        .hero-stats {
-            display: flex; justify-content: center; gap: 2.5rem; margin-top: 3rem;
-            animation: fadeInUp 0.8s ease-out 0.5s both;
-        }
-        .hero-stat { text-align: center; }
-        .hero-stat-icon { font-size: 1.3rem; margin-bottom: 0.3rem; }
-        .hero-stat-label { font-size: 0.78rem; color: var(--text-light); font-weight: 500; }
+    /* ===== HERO ===== */
+    .hero {
+        min-height: 100vh; display: flex; align-items: center; justify-content: center;
+        text-align: center; padding: 8rem 2rem 4rem; position: relative;
+        background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 50%, rgba(27,77,62,0.03) 100%);
+        overflow: hidden;
+    }
+    .hero::before {
+        content: ''; position: absolute; top: -50%; right: -30%; width: 80%; height: 160%;
+        background: radial-gradient(ellipse, rgba(196,163,90,0.06) 0%, transparent 70%);
+        pointer-events: none;
+    }
+    .hero::after {
+        content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 120px;
+        background: linear-gradient(to bottom, transparent, var(--cream)); pointer-events: none;
+    }
+    .hero-content { max-width: 800px; position: relative; z-index: 2; }
+    .hero-badge {
+        display: inline-flex; align-items: center; gap: 0.5rem;
+        background: var(--white); border: 1px solid rgba(196,163,90,0.3);
+        padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.82rem;
+        font-weight: 500; color: var(--forest); margin-bottom: 1.5rem;
+        animation: fadeInDown 0.8s ease-out 0.1s both;
+    }
+    .hero h1 {
+        font-size: clamp(2.2rem, 5vw, 3.6rem); margin-bottom: 1.2rem;
+        animation: fadeInUp 0.8s ease-out 0.2s both;
+    }
+    .hero h1 em { color: var(--gold-dark); font-style: italic; }
+    .hero p {
+        font-size: 1.15rem; color: var(--text-light); max-width: 600px;
+        margin: 0 auto 2rem; line-height: 1.8;
+        animation: fadeInUp 0.8s ease-out 0.3s both;
+    }
+    .hero-buttons {
+        display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+        animation: fadeInUp 0.8s ease-out 0.4s both;
+    }
+    .btn-primary {
+        background: var(--forest); color: var(--white); padding: 0.9rem 2rem;
+        border-radius: 10px; text-decoration: none; font-weight: 600;
+        font-size: 0.95rem; transition: var(--transition);
+        display: inline-flex; align-items: center; gap: 0.5rem;
+        border: 2px solid var(--forest);
+    }
+    .btn-primary:hover {
+        background: var(--forest-deep); border-color: var(--forest-deep);
+        transform: translateY(-2px); box-shadow: var(--shadow-lg);
+    }
+    .btn-secondary {
+        background: transparent; color: var(--forest); padding: 0.9rem 2rem;
+        border-radius: 10px; text-decoration: none; font-weight: 600;
+        font-size: 0.95rem; border: 2px solid var(--forest); transition: var(--transition);
+    }
+    .btn-secondary:hover { background: var(--forest); color: var(--white); transform: translateY(-2px); }
+    .hero-stats {
+        display: flex; justify-content: center; gap: 2.5rem; margin-top: 3rem;
+        animation: fadeInUp 0.8s ease-out 0.5s both;
+    }
+    .hero-stat { text-align: center; }
+    .hero-stat-icon { font-size: 1.3rem; margin-bottom: 0.3rem; }
+    .hero-stat-label { font-size: 0.78rem; color: var(--text-light); font-weight: 500; }
 
-        /* ===== SECTIONS ===== */
-        section { padding: 5rem 2rem; }
-        .section-inner { max-width: 1100px; margin: 0 auto; }
-        .section-header { text-align: center; margin-bottom: 3rem; }
-        .section-header h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 0.8rem; }
-        .section-header p { color: var(--text-light); font-size: 1.05rem; max-width: 550px; margin: 0 auto; }
-        .section-label {
-            display: inline-block; font-size: 0.75rem; text-transform: uppercase;
-            letter-spacing: 0.15em; color: var(--gold-dark); font-weight: 700; margin-bottom: 0.5rem;
-        }
+    /* ===== SECTIONS ===== */
+    section { padding: 5rem 2rem; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 3rem; }
+    .section-header h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 0.8rem; }
+    .section-header p { color: var(--text-light); font-size: 1.05rem; max-width: 550px; margin: 0 auto; }
+    .section-label {
+        display: inline-block; font-size: 0.75rem; text-transform: uppercase;
+        letter-spacing: 0.15em; color: var(--gold-dark); font-weight: 700; margin-bottom: 0.5rem;
+    }
 
-        /* ===== ABOUT ===== */
-        .about { background: var(--white); }
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-        .about-text h2 { font-size: 2rem; margin-bottom: 1.2rem; }
-        .about-text p { margin-bottom: 1rem; color: var(--text-light); line-height: 1.8; }
-        .about-credentials { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
-        .credential {
-            display: flex; align-items: center; gap: 0.7rem;
-            padding: 0.8rem 1rem; background: var(--cream); border-radius: 10px;
-            font-size: 0.88rem; font-weight: 500;
-        }
+    /* ===== ABOUT ===== */
+    .about { background: var(--white); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .about-text h2 { font-size: 2rem; margin-bottom: 1.2rem; }
+    .about-text p { margin-bottom: 1rem; color: var(--text-light); line-height: 1.8; }
+    .about-credentials { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+    .credential {
+        display: flex; align-items: center; gap: 0.7rem;
+        padding: 0.8rem 1rem; background: var(--cream); border-radius: 10px;
+        font-size: 0.88rem; font-weight: 500;
+    }
 
-        /* ===== SERVICES ===== */
-        .services { background: var(--cream); }
-        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-        .service-card {
-            background: var(--white); border-radius: var(--radius-lg); overflow: hidden;
-            transition: var(--transition); border: 1px solid rgba(27,77,62,0.06);
-        }
-        .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-        .service-img { width: 100%; height: 180px; object-fit: cover; }
-        .service-body { padding: 1.5rem; }
-        .service-body h3 { font-size: 1.2rem; margin-bottom: 0.6rem; }
-        .service-body p { color: var(--text-light); font-size: 0.92rem; line-height: 1.7; }
-        .corporate-banner {
-            margin-top: 1.5rem;
-            background: linear-gradient(135deg, var(--forest) 0%, var(--forest-deep) 100%);
-            border-radius: var(--radius-lg); padding: 2rem 2.5rem; color: var(--white);
-            display: flex; align-items: center; justify-content: space-between; gap: 2rem;
-        }
-        .corporate-banner h3 { color: var(--white); font-size: 1.3rem; margin-bottom: 0.3rem; }
-        .corporate-banner p { color: rgba(255,255,255,0.8); font-size: 0.9rem; }
-        .btn-gold {
-            background: var(--gold); color: var(--forest-deep); padding: 0.7rem 1.5rem;
-            border-radius: 8px; text-decoration: none; font-weight: 700;
-            font-size: 0.9rem; white-space: nowrap; transition: var(--transition);
-        }
-        .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+    /* ===== SERVICES ===== */
+    .services { background: var(--cream); }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .service-card {
+        background: var(--white); border-radius: var(--radius-lg); overflow: hidden;
+        transition: var(--transition); border: 1px solid rgba(27,77,62,0.06);
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .service-img { width: 100%; height: 180px; object-fit: cover; }
+    .service-body { padding: 1.5rem; }
+    .service-body h3 { font-size: 1.2rem; margin-bottom: 0.6rem; }
+    .service-body p { color: var(--text-light); font-size: 0.92rem; line-height: 1.7; }
+    .corporate-banner {
+        margin-top: 1.5rem;
+        background: linear-gradient(135deg, var(--forest) 0%, var(--forest-deep) 100%);
+        border-radius: var(--radius-lg); padding: 2rem 2.5rem; color: var(--white);
+        display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+    }
+    .corporate-banner h3 { color: var(--white); font-size: 1.3rem; margin-bottom: 0.3rem; }
+    .corporate-banner p { color: rgba(255,255,255,0.8); font-size: 0.9rem; }
+    .btn-gold {
+        background: var(--gold); color: var(--forest-deep); padding: 0.7rem 1.5rem;
+        border-radius: 8px; text-decoration: none; font-weight: 700;
+        font-size: 0.9rem; white-space: nowrap; transition: var(--transition);
+    }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
 
-        /* ===== FREE RESOURCES ===== */
-        .resources { background: var(--white); }
-        .resources-categories { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; margin-bottom: 2rem; }
-        .cat-btn {
-            background: var(--cream); border: 1.5px solid transparent; padding: 0.5rem 1rem;
-            border-radius: 50px; font-size: 0.85rem; font-weight: 600; cursor: pointer;
-            transition: var(--transition); color: var(--text); font-family: 'Source Sans 3', sans-serif;
-        }
-        .cat-btn.active, .cat-btn:hover { background: var(--forest); color: var(--white); border-color: var(--forest); }
-        .games-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.2rem; }
-        .game-card {
-            background: var(--cream); border-radius: var(--radius); padding: 1.5rem;
-            cursor: pointer; transition: var(--transition); border: 2px solid transparent;
-            position: relative; overflow: hidden;
-        }
-        .game-card:hover { border-color: var(--gold); transform: translateY(-3px); box-shadow: var(--shadow-gold); }
-        .game-card-level {
-            position: absolute; top: 1rem; right: 1rem; font-size: 0.7rem;
-            font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
-            padding: 0.2rem 0.6rem; border-radius: 4px;
-        }
-        .level-a1a2 { background: #E8F5E9; color: #2E7D32; }
-        .level-b1b2 { background: #E3F2FD; color: #1565C0; }
-        .level-c1c2 { background: #F3E5F5; color: #7B1FA2; }
-        .level-all { background: #FFF3E0; color: #E65100; }
-        .game-card-icon { font-size: 2rem; margin-bottom: 0.8rem; }
-        .game-card h4 {
-            font-family: 'Source Sans 3', sans-serif; font-size: 1rem;
-            font-weight: 700; margin-bottom: 0.4rem; color: var(--forest-deep);
-        }
-        .game-card p { font-size: 0.85rem; color: var(--text-light); line-height: 1.6; }
+    /* ===== FREE RESOURCES ===== */
+    .resources { background: var(--white); }
+    .resources-categories { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; margin-bottom: 2rem; }
+    .cat-btn {
+        background: var(--cream); border: 1.5px solid transparent; padding: 0.5rem 1rem;
+        border-radius: 50px; font-size: 0.85rem; font-weight: 600; cursor: pointer;
+        transition: var(--transition); color: var(--text); font-family: 'Source Sans 3', sans-serif;
+    }
+    .cat-btn.active, .cat-btn:hover { background: var(--forest); color: var(--white); border-color: var(--forest); }
+    .games-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.2rem; }
+    .game-card {
+        background: var(--cream); border-radius: var(--radius); padding: 1.5rem;
+        cursor: pointer; transition: var(--transition); border: 2px solid transparent;
+        position: relative; overflow: hidden;
+    }
+    .game-card:hover { border-color: var(--gold); transform: translateY(-3px); box-shadow: var(--shadow-gold); }
+    .game-card-level {
+        position: absolute; top: 1rem; right: 1rem; font-size: 0.7rem;
+        font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+        padding: 0.2rem 0.6rem; border-radius: 4px;
+    }
+    .level-a1a2 { background: #E8F5E9; color: #2E7D32; }
+    .level-b1b2 { background: #E3F2FD; color: #1565C0; }
+    .level-c1c2 { background: #F3E5F5; color: #7B1FA2; }
+    .level-all { background: #FFF3E0; color: #E65100; }
+    .game-card-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+    .game-card h4 {
+        font-family: 'Source Sans 3', sans-serif; font-size: 1rem;
+        font-weight: 700; margin-bottom: 0.4rem; color: var(--forest-deep);
+    }
+    .game-card p { font-size: 0.85rem; color: var(--text-light); line-height: 1.6; }
 
-        /* Game Modal */
-        .game-modal-overlay {
-            display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6);
-            z-index: 2000; justify-content: center; align-items: center; padding: 1rem;
-            backdrop-filter: blur(4px);
-        }
-        .game-modal-overlay.active { display: flex; }
-        .game-modal {
-            background: var(--white); border-radius: var(--radius-lg); width: 100%;
-            max-width: 650px; max-height: 90vh; overflow-y: auto; padding: 2rem;
-            position: relative; animation: modalIn 0.3s ease-out;
-        }
-        @keyframes modalIn {
-            from { opacity: 0; transform: scale(0.95) translateY(10px); }
-            to { opacity: 1; transform: scale(1) translateY(0); }
-        }
-        .game-modal-close {
-            position: absolute; top: 1rem; right: 1rem; background: var(--cream);
-            border: none; width: 36px; height: 36px; border-radius: 50%;
-            font-size: 1.2rem; cursor: pointer; display: flex;
-            align-items: center; justify-content: center;
-        }
-        .game-modal h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
-        .game-instructions {
-            color: var(--text-light); font-size: 0.9rem; margin-bottom: 1.5rem;
-            padding-bottom: 1rem; border-bottom: 1px solid var(--cream-dark);
-        }
-        .game-question { background: var(--cream); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1rem; }
-        .game-question p { font-size: 1.05rem; font-weight: 600; margin-bottom: 1rem; color: var(--forest-deep); }
-        .game-options { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
-        .game-option {
-            background: var(--white); border: 2px solid var(--cream-dark); padding: 0.7rem 1rem;
-            border-radius: 8px; cursor: pointer; font-size: 0.92rem; font-weight: 500;
-            transition: var(--transition); text-align: center; font-family: 'Source Sans 3', sans-serif;
-        }
-        .game-option:hover { border-color: var(--gold); }
-        .game-option.correct { background: #E8F5E9; border-color: #4CAF50; color: #2E7D32; }
-        .game-option.wrong { background: #FFEBEE; border-color: #EF5350; color: #C62828; }
-        .game-score { text-align: center; padding: 2rem; }
-        .game-score .score-number { font-size: 3rem; font-weight: 700; color: var(--forest); font-family: 'Playfair Display', serif; }
-        .game-btn {
-            background: var(--forest); color: var(--white); border: none; padding: 0.7rem 1.5rem;
-            border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 0.9rem;
-            transition: var(--transition); font-family: 'Source Sans 3', sans-serif; margin-top: 1rem;
-        }
-        .game-btn:hover { background: var(--forest-deep); }
-        .game-progress { display: flex; gap: 4px; margin-bottom: 1.5rem; }
-        .game-progress-dot { flex: 1; height: 4px; border-radius: 2px; background: var(--cream-dark); transition: var(--transition); }
-        .game-progress-dot.done { background: var(--forest); }
-        .game-progress-dot.current { background: var(--gold); }
+    /* Game Modal */
+    .game-modal-overlay {
+        display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+        z-index: 2000; justify-content: center; align-items: center; padding: 1rem;
+        backdrop-filter: blur(4px);
+    }
+    .game-modal-overlay.active { display: flex; }
+    .game-modal {
+        background: var(--white); border-radius: var(--radius-lg); width: 100%;
+        max-width: 650px; max-height: 90vh; overflow-y: auto; padding: 2rem;
+        position: relative; animation: modalIn 0.3s ease-out;
+    }
+    @keyframes modalIn {
+        from { opacity: 0; transform: scale(0.95) translateY(10px); }
+        to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .game-modal-close {
+        position: absolute; top: 1rem; right: 1rem; background: var(--cream);
+        border: none; width: 36px; height: 36px; border-radius: 50%;
+        font-size: 1.2rem; cursor: pointer; display: flex;
+        align-items: center; justify-content: center;
+    }
+    .game-modal h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
+    .game-instructions {
+        color: var(--text-light); font-size: 0.9rem; margin-bottom: 1.5rem;
+        padding-bottom: 1rem; border-bottom: 1px solid var(--cream-dark);
+    }
+    .game-question { background: var(--cream); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1rem; }
+    .game-question p { font-size: 1.05rem; font-weight: 600; margin-bottom: 1rem; color: var(--forest-deep); }
+    .game-options { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+    .game-option {
+        background: var(--white); border: 2px solid var(--cream-dark); padding: 0.7rem 1rem;
+        border-radius: 8px; cursor: pointer; font-size: 0.92rem; font-weight: 500;
+        transition: var(--transition); text-align: center; font-family: 'Source Sans 3', sans-serif;
+    }
+    .game-option:hover { border-color: var(--gold); }
+    .game-option.correct { background: #E8F5E9; border-color: #4CAF50; color: #2E7D32; }
+    .game-option.wrong { background: #FFEBEE; border-color: #EF5350; color: #C62828; }
+    .game-score { text-align: center; padding: 2rem; }
+    .game-score .score-number { font-size: 3rem; font-weight: 700; color: var(--forest); font-family: 'Playfair Display', serif; }
+    .game-btn {
+        background: var(--forest); color: var(--white); border: none; padding: 0.7rem 1.5rem;
+        border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 0.9rem;
+        transition: var(--transition); font-family: 'Source Sans 3', sans-serif; margin-top: 1rem;
+    }
+    .game-btn:hover { background: var(--forest-deep); }
+    .game-progress { display: flex; gap: 4px; margin-bottom: 1.5rem; }
+    .game-progress-dot { flex: 1; height: 4px; border-radius: 2px; background: var(--cream-dark); transition: var(--transition); }
+    .game-progress-dot.done { background: var(--forest); }
+    .game-progress-dot.current { background: var(--gold); }
 
-        /* ===== PRICING ===== */
-        .pricing { background: var(--cream); }
-        .pricing-toggle { display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 2.5rem; }
-        .pricing-toggle-btn {
-            background: var(--white); border: 2px solid var(--cream-dark); padding: 0.7rem 1.5rem;
-            border-radius: 10px; font-size: 0.9rem; font-weight: 600; cursor: pointer;
-            transition: var(--transition); font-family: 'Source Sans 3', sans-serif;
-        }
-        .pricing-toggle-btn.active { background: var(--forest); color: var(--white); border-color: var(--forest); }
-        .pricing-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-        .pricing-card {
-            background: var(--white); border-radius: var(--radius-lg); padding: 2rem;
-            border: 2px solid transparent; transition: var(--transition); position: relative;
-        }
-        .pricing-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-        .pricing-card.featured { border-color: var(--gold); box-shadow: var(--shadow-gold); }
-        .pricing-card.featured::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
-            background: linear-gradient(90deg, var(--gold), var(--gold-light));
-            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-        }
-        .pricing-badge {
-            display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold-light));
-            color: var(--forest-deep); font-size: 0.72rem; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 0.1em;
-            padding: 0.3rem 0.8rem; border-radius: 50px; margin-bottom: 1rem;
-        }
-        .pricing-card h3 { font-size: 1.25rem; margin-bottom: 0.3rem; }
-        .pricing-desc { font-size: 0.85rem; color: var(--text-light); margin-bottom: 1.2rem; }
-        .pricing-amount { display: flex; align-items: baseline; gap: 0.3rem; margin-bottom: 0.3rem; }
-        .pricing-amount .currency { font-size: 1.4rem; font-weight: 600; color: var(--forest); }
-        .pricing-amount .amount {
-            font-size: 2.8rem; font-weight: 700; color: var(--forest);
-            font-family: 'Playfair Display', serif; line-height: 1;
-        }
-        .pricing-per { font-size: 0.82rem; color: var(--text-light); margin-bottom: 0.5rem; }
-        .pricing-savings {
-            display: inline-block; background: #E8F5E9; color: #2E7D32;
-            font-size: 0.78rem; font-weight: 600; padding: 0.2rem 0.6rem;
-            border-radius: 4px; margin-bottom: 1.2rem;
-        }
-        .pricing-features { list-style: none; margin-bottom: 1.5rem; }
-        .pricing-features li {
-            padding: 0.4rem 0; font-size: 0.88rem; display: flex;
-            align-items: flex-start; gap: 0.5rem; color: var(--text);
-        }
-        .pricing-features li::before { content: '\2713'; color: var(--forest); font-weight: 700; flex-shrink: 0; }
-        .pricing-link {
-            display: block; text-align: center; background: var(--forest); color: var(--white);
-            padding: 0.8rem; border-radius: 10px; text-decoration: none;
-            font-weight: 600; font-size: 0.92rem; transition: var(--transition);
-        }
-        .pricing-link:hover { background: var(--forest-deep); transform: translateY(-1px); }
-        .pricing-card.featured .pricing-link { background: var(--gold); color: var(--forest-deep); }
-        .pricing-card.featured .pricing-link:hover { background: var(--gold-dark); }
-        .free-trial-box {
-            text-align: center; margin-top: 2.5rem; padding: 2rem;
-            background: var(--white); border-radius: var(--radius-lg); border: 2px dashed var(--gold);
-        }
-        .free-trial-box h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
-        .free-trial-box p { color: var(--text-light); font-size: 0.92rem; margin-bottom: 1rem; }
+    /* ===== PRICING ===== */
+    .pricing { background: var(--cream); }
+    .pricing-toggle { display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 2.5rem; }
+    .pricing-toggle-btn {
+        background: var(--white); border: 2px solid var(--cream-dark); padding: 0.7rem 1.5rem;
+        border-radius: 10px; font-size: 0.9rem; font-weight: 600; cursor: pointer;
+        transition: var(--transition); font-family: 'Source Sans 3', sans-serif;
+    }
+    .pricing-toggle-btn.active { background: var(--forest); color: var(--white); border-color: var(--forest); }
+    .pricing-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .pricing-card {
+        background: var(--white); border-radius: var(--radius-lg); padding: 2rem;
+        border: 2px solid transparent; transition: var(--transition); position: relative;
+    }
+    .pricing-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .pricing-card.featured { border-color: var(--gold); box-shadow: var(--shadow-gold); }
+    .pricing-card.featured::before {
+        content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+        background: linear-gradient(90deg, var(--gold), var(--gold-light));
+        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+    .pricing-badge {
+        display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold-light));
+        color: var(--forest-deep); font-size: 0.72rem; font-weight: 700;
+        text-transform: uppercase; letter-spacing: 0.1em;
+        padding: 0.3rem 0.8rem; border-radius: 50px; margin-bottom: 1rem;
+    }
+    .pricing-card h3 { font-size: 1.25rem; margin-bottom: 0.3rem; }
+    .pricing-desc { font-size: 0.85rem; color: var(--text-light); margin-bottom: 1.2rem; }
+    .pricing-amount { display: flex; align-items: baseline; gap: 0.3rem; margin-bottom: 0.3rem; }
+    .pricing-amount .currency { font-size: 1.4rem; font-weight: 600; color: var(--forest); }
+    .pricing-amount .amount {
+        font-size: 2.8rem; font-weight: 700; color: var(--forest);
+        font-family: 'Playfair Display', serif; line-height: 1;
+    }
+    .pricing-per { font-size: 0.82rem; color: var(--text-light); margin-bottom: 0.5rem; }
+    .pricing-savings {
+        display: inline-block; background: #E8F5E9; color: #2E7D32;
+        font-size: 0.78rem; font-weight: 600; padding: 0.2rem 0.6rem;
+        border-radius: 4px; margin-bottom: 1.2rem;
+    }
+    .pricing-features { list-style: none; margin-bottom: 1.5rem; }
+    .pricing-features li {
+        padding: 0.4rem 0; font-size: 0.88rem; display: flex;
+        align-items: flex-start; gap: 0.5rem; color: var(--text);
+    }
+    .pricing-features li::before { content: '\2713'; color: var(--forest); font-weight: 700; flex-shrink: 0; }
+    .pricing-link {
+        display: block; text-align: center; background: var(--forest); color: var(--white);
+        padding: 0.8rem; border-radius: 10px; text-decoration: none;
+        font-weight: 600; font-size: 0.92rem; transition: var(--transition);
+    }
+    .pricing-link:hover { background: var(--forest-deep); transform: translateY(-1px); }
+    .pricing-card.featured .pricing-link { background: var(--gold); color: var(--forest-deep); }
+    .pricing-card.featured .pricing-link:hover { background: var(--gold-dark); }
+    .free-trial-box {
+        text-align: center; margin-top: 2.5rem; padding: 2rem;
+        background: var(--white); border-radius: var(--radius-lg); border: 2px dashed var(--gold);
+    }
+    .free-trial-box h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+    .free-trial-box p { color: var(--text-light); font-size: 0.92rem; margin-bottom: 1rem; }
 
-        /* ===== HOW IT WORKS ===== */
-        .how-it-works { background: var(--white); }
-        .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
-        .step { text-align: center; padding: 1.5rem; }
-        .step-number {
-            width: 48px; height: 48px; background: var(--forest); color: var(--white);
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700;
-            margin: 0 auto 1rem;
-        }
-        .step h4 { font-size: 1rem; margin-bottom: 0.5rem; }
-        .step p { font-size: 0.85rem; color: var(--text-light); }
+    /* ===== HOW IT WORKS ===== */
+    .how-it-works { background: var(--white); }
+    .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    .step { text-align: center; padding: 1.5rem; }
+    .step-number {
+        width: 48px; height: 48px; background: var(--forest); color: var(--white);
+        border-radius: 50%; display: flex; align-items: center; justify-content: center;
+        font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700;
+        margin: 0 auto 1rem;
+    }
+    .step h4 { font-size: 1rem; margin-bottom: 0.5rem; }
+    .step p { font-size: 0.85rem; color: var(--text-light); }
 
-        /* ===== TESTIMONIALS ===== */
-        .testimonials { background: linear-gradient(135deg, var(--forest) 0%, var(--forest-deep) 100%); color: var(--white); }
-        .testimonials .section-label { color: var(--gold-light); }
-        .testimonials .section-header h2 { color: var(--white); }
-        .testimonials .section-header p { color: rgba(255,255,255,0.7); }
-        .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-        .testimonial-card {
-            background: rgba(255,255,255,0.08); border-radius: var(--radius); padding: 1.5rem;
-            border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px);
-        }
-        .testimonial-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 0.8rem; letter-spacing: 2px; }
-        .testimonial-card blockquote {
-            line-height: 1.7; color: rgba(255,255,255,0.9); margin-bottom: 1rem;
-            font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-style: italic;
-        }
-        .testimonial-author { font-weight: 600; font-size: 0.88rem; }
-        .testimonial-role { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
-        .review-cta { text-align: center; margin-top: 2.5rem; }
-        .review-cta a { color: var(--gold-light); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+    /* ===== TESTIMONIALS ===== */
+    .testimonials { background: linear-gradient(135deg, var(--forest) 0%, var(--forest-deep) 100%); color: var(--white); }
+    .testimonials .section-label { color: var(--gold-light); }
+    .testimonials .section-header h2 { color: var(--white); }
+    .testimonials .section-header p { color: rgba(255,255,255,0.7); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .testimonial-card {
+        background: rgba(255,255,255,0.08); border-radius: var(--radius); padding: 1.5rem;
+        border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px);
+    }
+    .testimonial-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 0.8rem; letter-spacing: 2px; }
+    .testimonial-card blockquote {
+        line-height: 1.7; color: rgba(255,255,255,0.9); margin-bottom: 1rem;
+        font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-style: italic;
+    }
+    .testimonial-author { font-weight: 600; font-size: 0.88rem; }
+    .testimonial-role { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+    .review-cta { text-align: center; margin-top: 2.5rem; }
+    .review-cta a { color: var(--gold-light); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
 
-        /* ===== FAQ ===== */
-        .faq { background: var(--cream); }
-        .faq-list { max-width: 700px; margin: 0 auto; }
-        .faq-item {
-            background: var(--white); border-radius: var(--radius); margin-bottom: 0.8rem;
-            overflow: hidden; border: 1px solid rgba(27,77,62,0.06);
-        }
-        .faq-question {
-            width: 100%; background: none; border: none; padding: 1.2rem 1.5rem;
-            text-align: left; font-family: 'Source Sans 3', sans-serif; font-size: 0.95rem;
-            font-weight: 600; color: var(--forest-deep); cursor: pointer;
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        .faq-question:hover { background: var(--cream); }
-        .faq-question .arrow { transition: var(--transition); font-size: 0.8rem; }
-        .faq-item.open .arrow { transform: rotate(180deg); }
-        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-        .faq-answer-inner { padding: 0 1.5rem 1.2rem; font-size: 0.9rem; color: var(--text-light); line-height: 1.7; }
+    /* ===== FAQ ===== */
+    .faq { background: var(--cream); }
+    .faq-list { max-width: 700px; margin: 0 auto; }
+    .faq-item {
+        background: var(--white); border-radius: var(--radius); margin-bottom: 0.8rem;
+        overflow: hidden; border: 1px solid rgba(27,77,62,0.06);
+    }
+    .faq-question {
+        width: 100%; background: none; border: none; padding: 1.2rem 1.5rem;
+        text-align: left; font-family: 'Source Sans 3', sans-serif; font-size: 0.95rem;
+        font-weight: 600; color: var(--forest-deep); cursor: pointer;
+        display: flex; justify-content: space-between; align-items: center;
+    }
+    .faq-question:hover { background: var(--cream); }
+    .faq-question .arrow { transition: var(--transition); font-size: 0.8rem; }
+    .faq-item.open .arrow { transform: rotate(180deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .faq-answer-inner { padding: 0 1.5rem 1.2rem; font-size: 0.9rem; color: var(--text-light); line-height: 1.7; }
 
-        /* ===== FINAL CTA ===== */
-        .final-cta { background: var(--white); text-align: center; }
-        .final-cta h2 { font-size: 2rem; margin-bottom: 0.8rem; }
-        .final-cta p { color: var(--text-light); max-width: 500px; margin: 0 auto 1.5rem; }
-        .final-cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    /* ===== FINAL CTA ===== */
+    .final-cta { background: var(--white); text-align: center; }
+    .final-cta h2 { font-size: 2rem; margin-bottom: 0.8rem; }
+    .final-cta p { color: var(--text-light); max-width: 500px; margin: 0 auto 1.5rem; }
+    .final-cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
-        /* ===== FOOTER ===== */
-        footer { background: var(--forest-deep); color: rgba(255,255,255,0.6); text-align: center; padding: 2rem; font-size: 0.82rem; }
-        footer a { color: var(--gold-light); text-decoration: none; }
+    /* ===== FOOTER ===== */
+    footer { background: var(--forest-deep); color: rgba(255,255,255,0.6); text-align: center; padding: 2rem; font-size: 0.82rem; }
+    footer a { color: var(--gold-light); text-decoration: none; }
 
-        /* ===== CHATBOT ===== */
-        .chat-fab {
-            position: fixed; bottom: 1.5rem; right: 1.5rem; width: 56px; height: 56px;
-            background: var(--forest); color: var(--white); border: none; border-radius: 50%;
-            font-size: 1.5rem; cursor: pointer; z-index: 1500; box-shadow: var(--shadow-lg);
-            transition: var(--transition); display: flex; align-items: center; justify-content: center;
-        }
-        .chat-fab:hover { background: var(--forest-deep); transform: scale(1.05); }
-        .chat-window {
-            display: none; position: fixed; bottom: 5.5rem; right: 1.5rem; width: 360px;
-            max-height: 480px; background: var(--white); border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-lg); z-index: 1500; flex-direction: column;
-            overflow: hidden; animation: modalIn 0.3s ease-out;
-        }
-        .chat-window.open { display: flex; }
-        .chat-header {
-            background: var(--forest); color: var(--white); padding: 1rem 1.2rem;
-            display: flex; align-items: center; gap: 0.8rem;
-        }
-        .chat-header-avatar {
-            width: 36px; height: 36px; background: var(--gold); border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-weight: 700; font-size: 0.8rem; color: var(--forest-deep);
-        }
-        .chat-header-info h4 { color: var(--white); font-family: 'Source Sans 3', sans-serif; font-size: 0.92rem; }
-        .chat-header-info span { font-size: 0.72rem; color: rgba(255,255,255,0.7); }
-        .chat-messages {
-            flex: 1; overflow-y: auto; padding: 1rem; display: flex;
-            flex-direction: column; gap: 0.8rem; min-height: 200px; max-height: 280px;
-        }
-        .chat-msg {
-            max-width: 85%; padding: 0.7rem 1rem; border-radius: 12px;
-            font-size: 0.85rem; line-height: 1.5; white-space: pre-line;
-        }
-        .chat-msg.bot { background: var(--cream); align-self: flex-start; border-bottom-left-radius: 4px; }
-        .chat-msg.user { background: var(--forest); color: var(--white); align-self: flex-end; border-bottom-right-radius: 4px; }
-        .chat-quick-replies { display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 0 1rem 0.5rem; }
-        .chat-quick-btn {
-            background: var(--cream); border: 1.5px solid var(--cream-dark); padding: 0.35rem 0.75rem;
-            border-radius: 50px; font-size: 0.78rem; font-weight: 500; cursor: pointer;
-            transition: var(--transition); font-family: 'Source Sans 3', sans-serif; color: var(--forest);
-        }
-        .chat-quick-btn:hover { background: var(--forest); color: var(--white); border-color: var(--forest); }
-        .chat-input-area { display: flex; border-top: 1px solid var(--cream-dark); padding: 0.6rem; gap: 0.4rem; }
-        .chat-input {
-            flex: 1; border: 1.5px solid var(--cream-dark); padding: 0.6rem 0.8rem;
-            border-radius: 8px; font-size: 0.85rem; outline: none;
-            font-family: 'Source Sans 3', sans-serif;
-        }
-        .chat-input:focus { border-color: var(--forest); }
-        .chat-send {
-            background: var(--forest); color: var(--white); border: none; width: 38px;
-            height: 38px; border-radius: 8px; cursor: pointer; font-size: 1rem;
-            display: flex; align-items: center; justify-content: center;
-        }
+    /* ===== CHATBOT ===== */
+    .chat-fab {
+        position: fixed; bottom: 1.5rem; right: 1.5rem; width: 56px; height: 56px;
+        background: var(--forest); color: var(--white); border: none; border-radius: 50%;
+        font-size: 1.5rem; cursor: pointer; z-index: 1500; box-shadow: var(--shadow-lg);
+        transition: var(--transition); display: flex; align-items: center; justify-content: center;
+    }
+    .chat-fab:hover { background: var(--forest-deep); transform: scale(1.05); }
+    .chat-window {
+        display: none; position: fixed; bottom: 5.5rem; right: 1.5rem; width: 360px;
+        max-height: 480px; background: var(--white); border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-lg); z-index: 1500; flex-direction: column;
+        overflow: hidden; animation: modalIn 0.3s ease-out;
+    }
+    .chat-window.open { display: flex; }
+    .chat-header {
+        background: var(--forest); color: var(--white); padding: 1rem 1.2rem;
+        display: flex; align-items: center; gap: 0.8rem;
+    }
+    .chat-header-avatar {
+        width: 36px; height: 36px; background: var(--gold); border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-weight: 700; font-size: 0.8rem; color: var(--forest-deep);
+    }
+    .chat-header-info h4 { color: var(--white); font-family: 'Source Sans 3', sans-serif; font-size: 0.92rem; }
+    .chat-header-info span { font-size: 0.72rem; color: rgba(255,255,255,0.7); }
+    .chat-messages {
+        flex: 1; overflow-y: auto; padding: 1rem; display: flex;
+        flex-direction: column; gap: 0.8rem; min-height: 200px; max-height: 280px;
+    }
+    .chat-msg {
+        max-width: 85%; padding: 0.7rem 1rem; border-radius: 12px;
+        font-size: 0.85rem; line-height: 1.5; white-space: pre-line;
+    }
+    .chat-msg.bot { background: var(--cream); align-self: flex-start; border-bottom-left-radius: 4px; }
+    .chat-msg.user { background: var(--forest); color: var(--white); align-self: flex-end; border-bottom-right-radius: 4px; }
+    .chat-quick-replies { display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 0 1rem 0.5rem; }
+    .chat-quick-btn {
+        background: var(--cream); border: 1.5px solid var(--cream-dark); padding: 0.35rem 0.75rem;
+        border-radius: 50px; font-size: 0.78rem; font-weight: 500; cursor: pointer;
+        transition: var(--transition); font-family: 'Source Sans 3', sans-serif; color: var(--forest);
+    }
+    .chat-quick-btn:hover { background: var(--forest); color: var(--white); border-color: var(--forest); }
+    .chat-input-area { display: flex; border-top: 1px solid var(--cream-dark); padding: 0.6rem; gap: 0.4rem; }
+    .chat-input {
+        flex: 1; border: 1.5px solid var(--cream-dark); padding: 0.6rem 0.8rem;
+        border-radius: 8px; font-size: 0.85rem; outline: none;
+        font-family: 'Source Sans 3', sans-serif;
+    }
+    .chat-input:focus { border-color: var(--forest); }
+    .chat-send {
+        background: var(--forest); color: var(--white); border: none; width: 38px;
+        height: 38px; border-radius: 8px; cursor: pointer; font-size: 1rem;
+        display: flex; align-items: center; justify-content: center;
+    }
 
-        /* ===== ANIMATIONS ===== */
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
-        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-in { animation: fadeInUp 0.6s ease-out both; }
 
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 900px) {
-            .services-grid { grid-template-columns: 1fr; }
-            .pricing-cards { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
-            .testimonials-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
-            .steps-grid { grid-template-columns: repeat(2, 1fr); }
-            .about-grid { grid-template-columns: 1fr; }
-            .corporate-banner { flex-direction: column; text-align: center; }
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+        .services-grid { grid-template-columns: 1fr; }
+        .pricing-cards { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+        .testimonials-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+        .steps-grid { grid-template-columns: repeat(2, 1fr); }
+        .about-grid { grid-template-columns: 1fr; }
+        .corporate-banner { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 768px) {
+        .nav-links {
+            display: none; position: absolute; top: 100%; left: 0; right: 0;
+            background: var(--cream); flex-direction: column; padding: 1.5rem 2rem;
+            gap: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none; position: absolute; top: 100%; left: 0; right: 0;
-                background: var(--cream); flex-direction: column; padding: 1.5rem 2rem;
-                gap: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            }
-            .nav-links.open { display: flex; }
-            .hamburger { display: flex; }
-            .hero { padding: 6rem 1.5rem 3rem; min-height: auto; }
-            .hero-logo { width: 100px; height: 100px; }
-            section { padding: 3rem 1.5rem; }
-            .games-grid { grid-template-columns: 1fr; }
-            .game-options { grid-template-columns: 1fr; }
-            .chat-window { right: 0.5rem; left: 0.5rem; width: auto; bottom: 5rem; }
-            .about-credentials { grid-template-columns: 1fr; }
-            .hero-stats { flex-wrap: wrap; gap: 1rem; }
-        }
-    </style>
+        .nav-links.open { display: flex; }
+        .hamburger { display: flex; }
+        .hero { padding: 6rem 1.5rem 3rem; min-height: auto; }
+        section { padding: 3rem 1.5rem; }
+        .games-grid { grid-template-columns: 1fr; }
+        .game-options { grid-template-columns: 1fr; }
+        .chat-window { right: 0.5rem; left: 0.5rem; width: auto; bottom: 5rem; }
+        .about-credentials { grid-template-columns: 1fr; }
+        .hero-stats { flex-wrap: wrap; gap: 1rem; }
+    }
+</style>
+```
+
 </head>
 <body>
 
 <!-- ===== NAVBAR ===== -->
+
 <nav class="navbar" id="navbar">
     <div class="nav-inner">
         <a href="#" class="nav-brand">
@@ -553,9 +551,9 @@
 </nav>
 
 <!-- ===== HERO ===== -->
+
 <section class="hero" id="home">
     <div class="hero-content">
-        <img src="logo.png" alt="The English Lounge" class="hero-logo">
         <div class="hero-badge">
             <span data-en>Native Canadian Teacher &middot; Rome &amp; Online</span>
             <span data-it>Insegnante Madrelingua Canadese &middot; Roma &amp; Online</span>
@@ -582,6 +580,7 @@
 </section>
 
 <!-- ===== ABOUT ===== -->
+
 <section class="about" id="about">
     <div class="section-inner">
         <div class="about-grid">
@@ -613,6 +612,7 @@
 </section>
 
 <!-- ===== SERVICES ===== -->
+
 <section class="services" id="services">
     <div class="section-inner">
         <div class="section-header">
@@ -654,6 +654,7 @@
 </section>
 
 <!-- ===== FREE RESOURCES ===== -->
+
 <section class="resources" id="resources">
     <div class="section-inner">
         <div class="section-header">
@@ -673,6 +674,7 @@
 </section>
 
 <!-- ===== PRICING ===== -->
+
 <section class="pricing" id="pricing">
     <div class="section-inner">
         <div class="section-header">
@@ -689,107 +691,111 @@
             </button>
         </div>
 
-        <!-- General & Business Pricing -->
-        <div class="pricing-cards" id="pricingGeneral">
-            <div class="pricing-card fade-in">
-                <h3><span data-en>Single Lesson</span><span data-it>Lezione Singola</span></h3>
-                <p class="pricing-desc"><span data-en>Ideal for flexible students</span><span data-it>Ideale per studenti flessibili</span></p>
-                <div class="pricing-amount"><span class="currency">&euro;</span><span class="amount">20</span></div>
-                <p class="pricing-per"><span data-en>per lesson</span><span data-it>a lezione</span></p>
-                <ul class="pricing-features">
-                    <li><span data-en>60-minute session</span><span data-it>Sessione di 60 minuti</span></li>
-                    <li><span data-en>Personalized lesson plan</span><span data-it>Piano lezione personalizzato</span></li>
-                    <li><span data-en>Flexible scheduling</span><span data-it>Orario flessibile</span></li>
-                </ul>
-                <a href="https://cal.com/cal.com-maj-jaffrey/english-lesson-general" class="pricing-link"><span data-en>Book Now</span><span data-it>Prenota Ora</span></a>
-            </div>
-            <div class="pricing-card featured fade-in">
-                <span class="pricing-badge"><span data-en>Best for Progress</span><span data-it>Migliore per Progresso</span></span>
-                <h3><span data-en>5-Lesson Pack</span><span data-it>Pacchetto 5 Lezioni</span></h3>
-                <p class="pricing-desc"><span data-en>Best for steady progress</span><span data-it>Migliore per progressi costanti</span></p>
-                <div class="pricing-amount"><span class="currency">&euro;</span><span class="amount">95</span></div>
-                <p class="pricing-per"><span data-en>&euro;19 per lesson</span><span data-it>&euro;19 a lezione</span></p>
-                <span class="pricing-savings"><span data-en>Save &euro;5 (5% off)</span><span data-it>Risparmi &euro;5 (5%)</span></span>
-                <ul class="pricing-features">
-                    <li><span data-en>5 x 60-minute sessions</span><span data-it>5 x sessioni da 60 minuti</span></li>
-                    <li><span data-en>Personalized learning path</span><span data-it>Percorso personalizzato</span></li>
-                    <li><span data-en>Progress tracking</span><span data-it>Monitoraggio progressi</span></li>
-                    <li><span data-en>Priority scheduling</span><span data-it>Prenotazione prioritaria</span></li>
-                </ul>
-                <a href="https://cal.com/cal.com-maj-jaffrey/5-lesson-pack" class="pricing-link"><span data-en>Get Started</span><span data-it>Inizia Ora</span></a>
-            </div>
-            <div class="pricing-card fade-in">
-                <h3><span data-en>10-Lesson Pack</span><span data-it>Pacchetto 10 Lezioni</span></h3>
-                <p class="pricing-desc"><span data-en>Best value for serious learners</span><span data-it>Miglior valore per studenti seri</span></p>
-                <div class="pricing-amount"><span class="currency">&euro;</span><span class="amount">180</span></div>
-                <p class="pricing-per"><span data-en>&euro;18 per lesson</span><span data-it>&euro;18 a lezione</span></p>
-                <span class="pricing-savings"><span data-en>Save &euro;20 (10% off)</span><span data-it>Risparmi &euro;20 (10%)</span></span>
-                <ul class="pricing-features">
-                    <li><span data-en>10 x 60-minute sessions</span><span data-it>10 x sessioni da 60 minuti</span></li>
-                    <li><span data-en>Custom curriculum</span><span data-it>Curriculum personalizzato</span></li>
-                    <li><span data-en>Weekly progress reports</span><span data-it>Report settimanali</span></li>
-                    <li><span data-en>Priority scheduling</span><span data-it>Prenotazione prioritaria</span></li>
-                    <li><span data-en>WhatsApp support between lessons</span><span data-it>Supporto WhatsApp tra le lezioni</span></li>
-                </ul>
-                <a href="https://cal.com/cal.com-maj-jaffrey/10-lesson-pack" class="pricing-link"><span data-en>Get Started</span><span data-it>Inizia Ora</span></a>
-            </div>
+```
+    <!-- General & Business Pricing -->
+    <div class="pricing-cards" id="pricingGeneral">
+        <div class="pricing-card fade-in">
+            <h3><span data-en>Single Lesson</span><span data-it>Lezione Singola</span></h3>
+            <p class="pricing-desc"><span data-en>Ideal for flexible students</span><span data-it>Ideale per studenti flessibili</span></p>
+            <div class="pricing-amount"><span class="currency">&euro;</span><span class="amount">20</span></div>
+            <p class="pricing-per"><span data-en>per lesson</span><span data-it>a lezione</span></p>
+            <ul class="pricing-features">
+                <li><span data-en>60-minute session</span><span data-it>Sessione di 60 minuti</span></li>
+                <li><span data-en>Personalized lesson plan</span><span data-it>Piano lezione personalizzato</span></li>
+                <li><span data-en>Flexible scheduling</span><span data-it>Orario flessibile</span></li>
+            </ul>
+            <a href="https://cal.com/cal.com-maj-jaffrey/english-lesson-general" class="pricing-link"><span data-en>Book Now</span><span data-it>Prenota Ora</span></a>
         </div>
-
-        <!-- IELTS & Cambridge Pricing -->
-        <div class="pricing-cards" id="pricingExam" style="display:none;">
-            <div class="pricing-card fade-in">
-                <h3><span data-en>Single Lesson</span><span data-it>Lezione Singola</span></h3>
-                <p class="pricing-desc"><span data-en>Targeted exam practice</span><span data-it>Pratica d&#39;esame mirata</span></p>
-                <div class="pricing-amount"><span class="currency">&euro;</span><span class="amount">23</span></div>
-                <p class="pricing-per"><span data-en>per lesson</span><span data-it>a lezione</span></p>
-                <ul class="pricing-features">
-                    <li><span data-en>60-minute session</span><span data-it>Sessione di 60 minuti</span></li>
-                    <li><span data-en>IELTS or Cambridge focus</span><span data-it>Focus IELTS o Cambridge</span></li>
-                    <li><span data-en>Exam strategies &amp; techniques</span><span data-it>Strategie e tecniche d&#39;esame</span></li>
-                </ul>
-                <a href="https://cal.com/cal.com-maj-jaffrey/english-lesson" class="pricing-link"><span data-en>Book Now</span><span data-it>Prenota Ora</span></a>
-            </div>
-            <div class="pricing-card featured fade-in">
-                <span class="pricing-badge"><span data-en>Recommended</span><span data-it>Consigliato</span></span>
-                <h3><span data-en>5-Lesson Pack</span><span data-it>Pacchetto 5 Lezioni</span></h3>
-                <p class="pricing-desc"><span data-en>Focused exam preparation</span><span data-it>Preparazione focalizzata</span></p>
-                <div class="pricing-amount"><span class="currency">&euro;</span><span class="amount">109</span></div>
-                <p class="pricing-per"><span data-en>&euro;21.80 per lesson</span><span data-it>&euro;21,80 a lezione</span></p>
-                <span class="pricing-savings"><span data-en>Save &euro;6 (5% off)</span><span data-it>Risparmi &euro;6 (5%)</span></span>
-                <ul class="pricing-features">
-                    <li><span data-en>5 x 60-minute sessions</span><span data-it>5 x sessioni da 60 minuti</span></li>
-                    <li><span data-en>Full mock exam included</span><span data-it>Simulazione completa inclusa</span></li>
-                    <li><span data-en>Section-by-section strategies</span><span data-it>Strategie sezione per sezione</span></li>
-                    <li><span data-en>Score prediction &amp; feedback</span><span data-it>Previsione punteggio &amp; feedback</span></li>
-                </ul>
-                <a href="https://cal.com/cal.com-maj-jaffrey/5-lesson-pack-exam-preparation" class="pricing-link"><span data-en>Get Started</span><span data-it>Inizia Ora</span></a>
-            </div>
-            <div class="pricing-card fade-in">
-                <h3><span data-en>10-Lesson Pack</span><span data-it>Pacchetto 10 Lezioni</span></h3>
-                <p class="pricing-desc"><span data-en>Complete exam mastery</span><span data-it>Padronanza completa</span></p>
-                <div class="pricing-amount"><span class="currency">&euro;</span><span class="amount">207</span></div>
-                <p class="pricing-per"><span data-en>&euro;20.70 per lesson</span><span data-it>&euro;20,70 a lezione</span></p>
-                <span class="pricing-savings"><span data-en>Save &euro;23 (10% off)</span><span data-it>Risparmi &euro;23 (10%)</span></span>
-                <ul class="pricing-features">
-                    <li><span data-en>10 x 60-minute sessions</span><span data-it>10 x sessioni da 60 minuti</span></li>
-                    <li><span data-en>Complete exam curriculum</span><span data-it>Curriculum d&#39;esame completo</span></li>
-                    <li><span data-en>Multiple mock exams</span><span data-it>Simulazioni multiple</span></li>
-                    <li><span data-en>Detailed score analysis</span><span data-it>Analisi dettagliata punteggio</span></li>
-                    <li><span data-en>WhatsApp support</span><span data-it>Supporto WhatsApp</span></li>
-                </ul>
-                <a href="https://cal.com/cal.com-maj-jaffrey/10-lesson-pack-exam-preparation" class="pricing-link"><span data-en>Get Started</span><span data-it>Inizia Ora</span></a>
-            </div>
+        <div class="pricing-card featured fade-in">
+            <span class="pricing-badge"><span data-en>Best for Progress</span><span data-it>Migliore per Progresso</span></span>
+            <h3><span data-en>5-Lesson Pack</span><span data-it>Pacchetto 5 Lezioni</span></h3>
+            <p class="pricing-desc"><span data-en>Best for steady progress</span><span data-it>Migliore per progressi costanti</span></p>
+            <div class="pricing-amount"><span class="currency">&euro;</span><span class="amount">95</span></div>
+            <p class="pricing-per"><span data-en>&euro;19 per lesson</span><span data-it>&euro;19 a lezione</span></p>
+            <span class="pricing-savings"><span data-en>Save &euro;5 (5% off)</span><span data-it>Risparmi &euro;5 (5%)</span></span>
+            <ul class="pricing-features">
+                <li><span data-en>5 x 60-minute sessions</span><span data-it>5 x sessioni da 60 minuti</span></li>
+                <li><span data-en>Personalized learning path</span><span data-it>Percorso personalizzato</span></li>
+                <li><span data-en>Progress tracking</span><span data-it>Monitoraggio progressi</span></li>
+                <li><span data-en>Priority scheduling</span><span data-it>Prenotazione prioritaria</span></li>
+            </ul>
+            <a href="https://cal.com/cal.com-maj-jaffrey/5-lesson-pack" class="pricing-link"><span data-en>Get Started</span><span data-it>Inizia Ora</span></a>
         </div>
-
-        <div class="free-trial-box fade-in">
-            <h3><span data-en>Not sure yet? Try a free lesson first</span><span data-it>Non sei sicuro? Prova prima una lezione gratuita</span></h3>
-            <p><span data-en>Book a free 20-minute trial. No commitment, no payment required.</span><span data-it>Prenota una prova gratuita di 20 minuti. Nessun impegno, nessun pagamento.</span></p>
-            <a href="https://cal.com/cal.com-maj-jaffrey/free-trial" class="btn-primary"><span data-en>Book Free Trial</span><span data-it>Prova Gratuita</span> &rarr;</a>
+        <div class="pricing-card fade-in">
+            <h3><span data-en>10-Lesson Pack</span><span data-it>Pacchetto 10 Lezioni</span></h3>
+            <p class="pricing-desc"><span data-en>Best value for serious learners</span><span data-it>Miglior valore per studenti seri</span></p>
+            <div class="pricing-amount"><span class="currency">&euro;</span><span class="amount">180</span></div>
+            <p class="pricing-per"><span data-en>&euro;18 per lesson</span><span data-it>&euro;18 a lezione</span></p>
+            <span class="pricing-savings"><span data-en>Save &euro;20 (10% off)</span><span data-it>Risparmi &euro;20 (10%)</span></span>
+            <ul class="pricing-features">
+                <li><span data-en>10 x 60-minute sessions</span><span data-it>10 x sessioni da 60 minuti</span></li>
+                <li><span data-en>Custom curriculum</span><span data-it>Curriculum personalizzato</span></li>
+                <li><span data-en>Weekly progress reports</span><span data-it>Report settimanali</span></li>
+                <li><span data-en>Priority scheduling</span><span data-it>Prenotazione prioritaria</span></li>
+                <li><span data-en>WhatsApp support between lessons</span><span data-it>Supporto WhatsApp tra le lezioni</span></li>
+            </ul>
+            <a href="https://cal.com/cal.com-maj-jaffrey/10-lesson-pack" class="pricing-link"><span data-en>Get Started</span><span data-it>Inizia Ora</span></a>
         </div>
     </div>
+
+    <!-- IELTS & Cambridge Pricing -->
+    <div class="pricing-cards" id="pricingExam" style="display:none;">
+        <div class="pricing-card fade-in">
+            <h3><span data-en>Single Lesson</span><span data-it>Lezione Singola</span></h3>
+            <p class="pricing-desc"><span data-en>Targeted exam practice</span><span data-it>Pratica d&#39;esame mirata</span></p>
+            <div class="pricing-amount"><span class="currency">&euro;</span><span class="amount">23</span></div>
+            <p class="pricing-per"><span data-en>per lesson</span><span data-it>a lezione</span></p>
+            <ul class="pricing-features">
+                <li><span data-en>60-minute session</span><span data-it>Sessione di 60 minuti</span></li>
+                <li><span data-en>IELTS or Cambridge focus</span><span data-it>Focus IELTS o Cambridge</span></li>
+                <li><span data-en>Exam strategies &amp; techniques</span><span data-it>Strategie e tecniche d&#39;esame</span></li>
+            </ul>
+            <a href="https://cal.com/cal.com-maj-jaffrey/english-lesson" class="pricing-link"><span data-en>Book Now</span><span data-it>Prenota Ora</span></a>
+        </div>
+        <div class="pricing-card featured fade-in">
+            <span class="pricing-badge"><span data-en>Recommended</span><span data-it>Consigliato</span></span>
+            <h3><span data-en>5-Lesson Pack</span><span data-it>Pacchetto 5 Lezioni</span></h3>
+            <p class="pricing-desc"><span data-en>Focused exam preparation</span><span data-it>Preparazione focalizzata</span></p>
+            <div class="pricing-amount"><span class="currency">&euro;</span><span class="amount">109</span></div>
+            <p class="pricing-per"><span data-en>&euro;21.80 per lesson</span><span data-it>&euro;21,80 a lezione</span></p>
+            <span class="pricing-savings"><span data-en>Save &euro;6 (5% off)</span><span data-it>Risparmi &euro;6 (5%)</span></span>
+            <ul class="pricing-features">
+                <li><span data-en>5 x 60-minute sessions</span><span data-it>5 x sessioni da 60 minuti</span></li>
+                <li><span data-en>Full mock exam included</span><span data-it>Simulazione completa inclusa</span></li>
+                <li><span data-en>Section-by-section strategies</span><span data-it>Strategie sezione per sezione</span></li>
+                <li><span data-en>Score prediction &amp; feedback</span><span data-it>Previsione punteggio &amp; feedback</span></li>
+            </ul>
+            <a href="https://cal.com/cal.com-maj-jaffrey/5-lesson-pack-exam-preparation" class="pricing-link"><span data-en>Get Started</span><span data-it>Inizia Ora</span></a>
+        </div>
+        <div class="pricing-card fade-in">
+            <h3><span data-en>10-Lesson Pack</span><span data-it>Pacchetto 10 Lezioni</span></h3>
+            <p class="pricing-desc"><span data-en>Complete exam mastery</span><span data-it>Padronanza completa</span></p>
+            <div class="pricing-amount"><span class="currency">&euro;</span><span class="amount">207</span></div>
+            <p class="pricing-per"><span data-en>&euro;20.70 per lesson</span><span data-it>&euro;20,70 a lezione</span></p>
+            <span class="pricing-savings"><span data-en>Save &euro;23 (10% off)</span><span data-it>Risparmi &euro;23 (10%)</span></span>
+            <ul class="pricing-features">
+                <li><span data-en>10 x 60-minute sessions</span><span data-it>10 x sessioni da 60 minuti</span></li>
+                <li><span data-en>Complete exam curriculum</span><span data-it>Curriculum d&#39;esame completo</span></li>
+                <li><span data-en>Multiple mock exams</span><span data-it>Simulazioni multiple</span></li>
+                <li><span data-en>Detailed score analysis</span><span data-it>Analisi dettagliata punteggio</span></li>
+                <li><span data-en>WhatsApp support</span><span data-it>Supporto WhatsApp</span></li>
+            </ul>
+            <a href="https://cal.com/cal.com-maj-jaffrey/10-lesson-pack-exam-preparation" class="pricing-link"><span data-en>Get Started</span><span data-it>Inizia Ora</span></a>
+        </div>
+    </div>
+
+    <div class="free-trial-box fade-in">
+        <h3><span data-en>Not sure yet? Try a free lesson first</span><span data-it>Non sei sicuro? Prova prima una lezione gratuita</span></h3>
+        <p><span data-en>Book a free 20-minute trial. No commitment, no payment required.</span><span data-it>Prenota una prova gratuita di 20 minuti. Nessun impegno, nessun pagamento.</span></p>
+        <a href="https://cal.com/cal.com-maj-jaffrey/free-trial" class="btn-primary"><span data-en>Book Free Trial</span><span data-it>Prova Gratuita</span> &rarr;</a>
+    </div>
+</div>
+```
+
 </section>
 
 <!-- ===== HOW IT WORKS ===== -->
+
 <section class="how-it-works">
     <div class="section-inner">
         <div class="section-header">
@@ -806,6 +812,7 @@
 </section>
 
 <!-- ===== TESTIMONIALS ===== -->
+
 <section class="testimonials">
     <div class="section-inner">
         <div class="section-header">
@@ -861,6 +868,7 @@
 </section>
 
 <!-- ===== FAQ ===== -->
+
 <section class="faq" id="faq">
     <div class="section-inner">
         <div class="section-header">
@@ -879,6 +887,7 @@
 </section>
 
 <!-- ===== FINAL CTA ===== -->
+
 <section class="final-cta">
     <div class="section-inner">
         <h2><span data-en>Your English journey starts here</span><span data-it>Il tuo viaggio in inglese inizia qui</span></h2>
@@ -891,12 +900,15 @@
 </section>
 
 <!-- ===== FOOTER ===== -->
+
 <footer>
     <p>&copy; 2026 The English Lounge &middot; <span data-en>Learn English in Comfort</span><span data-it>Impara l&#39;Inglese con Comodita</span> &middot; <a href="mailto:m.jeffrey2023@gmail.com">m.jeffrey2023@gmail.com</a></p>
 </footer>
 
 <!-- ===== CHATBOT ===== -->
-<button class="chat-fab" id="chatFab" onclick="toggleChat()">&#128172;</button>
+
+<button class="chat-fab" id="chatFab" onclick="toggleChat()">💬</button>
+
 <div class="chat-window" id="chatWindow">
     <div class="chat-header">
         <div class="chat-header-avatar">EL</div>
@@ -916,6 +928,7 @@
 </div>
 
 <!-- ===== GAME MODAL ===== -->
+
 <div class="game-modal-overlay" id="gameModal">
     <div class="game-modal">
         <button class="game-modal-close" onclick="closeGame()">&times;</button>
@@ -939,21 +952,28 @@ function setLang(lang) {
     } else {
         document.body.classList.remove('lang-it');
     }
-    document.getElementById('btnEn').classList.toggle('active', lang === 'en');
-    document.getElementById('btnIt').classList.toggle('active', lang === 'it');
-    document.getElementById('chatInput').placeholder = lang === 'it' ? 'Scrivi un messaggio...' : 'Type a message...';
-    document.getElementById('chatTitle').textContent = lang === 'it' ? 'Assistente The English Lounge' : 'The English Lounge Assistant';
-    document.getElementById('chatSubtitle').textContent = lang === 'it' ? 'Risponde subito' : 'Usually replies instantly';
-    document.getElementById('chatWelcome').textContent = lang === 'it'
+    var btnEn = document.getElementById('btnEn');
+    var btnIt = document.getElementById('btnIt');
+    if (btnEn) btnEn.classList.toggle('active', lang === 'en');
+    if (btnIt) btnIt.classList.toggle('active', lang === 'it');
+    var chatInput = document.getElementById('chatInput');
+    if (chatInput) chatInput.placeholder = lang === 'it' ? 'Scrivi un messaggio...' : 'Type a message...';
+    var chatTitle = document.getElementById('chatTitle');
+    if (chatTitle) chatTitle.textContent = lang === 'it' ? 'Assistente The English Lounge' : 'The English Lounge Assistant';
+    var chatSubtitle = document.getElementById('chatSubtitle');
+    if (chatSubtitle) chatSubtitle.textContent = lang === 'it' ? 'Risponde subito' : 'Usually replies instantly';
+    var chatWelcome = document.getElementById('chatWelcome');
+    if (chatWelcome) chatWelcome.textContent = lang === 'it'
         ? 'Ciao! Posso aiutarti con domande su lezioni, prezzi, orari o qualsiasi altra cosa.'
         : 'Hi! I can help you with questions about lessons, pricing, scheduling, or anything else. How can I help?';
-    updateQuickReplies();
-    renderGames();
+    try { updateQuickReplies(); } catch(e) {}
+    try { renderGames(); } catch(e) {}
     try { localStorage.setItem('lang', lang); } catch(e) {}
 }
 
 function updateQuickReplies() {
     var qr = document.getElementById('chatQuickReplies');
+    if (!qr) return;
     var labels = currentLang === 'it'
         ? ['Tipi di lezione', 'Prezzi', 'Prova gratuita', 'Chi e Maj', 'Contatta Amministratore']
         : ['Lesson types', 'Pricing', 'Free trial', 'About Maj', 'Contact Administrator'];
@@ -1100,6 +1120,7 @@ var gamesDB = [
 function renderGames(filter) {
     filter = filter || 'all';
     var grid = document.getElementById('gamesGrid');
+    if (!grid) return;
     var filtered = filter === 'all' ? gamesDB : gamesDB.filter(function(g) { return g.cat === filter; });
     var lang = currentLang;
     grid.innerHTML = filtered.map(function(g) {
@@ -1113,13 +1134,16 @@ function renderGames(filter) {
 }
 
 // Category filter buttons
-document.getElementById('catButtons').addEventListener('click', function(e) {
-    var btn = e.target.closest('.cat-btn');
-    if (!btn) return;
-    document.querySelectorAll('.cat-btn').forEach(function(b) { b.classList.remove('active'); });
-    btn.classList.add('active');
-    renderGames(btn.getAttribute('data-cat'));
-});
+var catBtns = document.getElementById('catButtons');
+if (catBtns) {
+    catBtns.addEventListener('click', function(e) {
+        var btn = e.target.closest('.cat-btn');
+        if (!btn) return;
+        document.querySelectorAll('.cat-btn').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        renderGames(btn.getAttribute('data-cat'));
+    });
+}
 
 // ===== GAME ENGINE =====
 var currentGame = null, currentQ = 0, score = 0;
@@ -1206,15 +1230,17 @@ var observer = new IntersectionObserver(function(entries) {
 }, { threshold: 0.1 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    renderGames();
-    updateQuickReplies();
-    document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
+    try { renderGames(); } catch(e) { console.error('Games error:', e); }
+    try { updateQuickReplies(); } catch(e) { console.error('Chat error:', e); }
 });
 
-// Close game modal on overlay click
-document.getElementById('gameModal').addEventListener('click', function(e) {
-    if (e.target === document.getElementById('gameModal')) closeGame();
-});
+var gm = document.getElementById('gameModal');
+if (gm) {
+    gm.addEventListener('click', function(e) {
+        if (e.target === document.getElementById('gameModal')) closeGame();
+    });
+}
 </script>
+
 </body>
 </html>

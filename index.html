@@ -235,9 +235,10 @@
     }
     .game-card:hover { border-color: var(--gold); transform: translateY(-3px); box-shadow: var(--shadow-gold); }
     .game-card-level {
-        position: absolute; top: 1rem; right: 1rem; font-size: 0.7rem;
-        font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
-        padding: 0.2rem 0.6rem; border-radius: 4px;
+        position: absolute; top: 1rem; right: 1rem; font-size: 0.72rem;
+        font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+        padding: 0.25rem 0.7rem; border-radius: 50px;
+        display: flex; align-items: center; gap: 0.3rem;
     }
     .level-a1a2 { background: #E8F5E9; color: #2E7D32; }
     .level-b1b2 { background: #E3F2FD; color: #1565C0; }
@@ -571,7 +572,7 @@
             <a href="#resources" class="btn-secondary"><span data-en>Free Resources</span><span data-it>Risorse Gratuite</span></a>
         </div>
         <div class="hero-stats">
-            <div class="hero-stat"><div class="hero-stat-icon">&#127468;&#127463;</div><div class="hero-stat-label"><span data-en>Native Speaker</span><span data-it>Madrelingua</span></div></div>
+            <div class="hero-stat"><div class="hero-stat-icon">&#127464;&#127462;</div><div class="hero-stat-label"><span data-en>Native Speaker</span><span data-it>Madrelingua</span></div></div>
             <div class="hero-stat"><div class="hero-stat-icon">&#127758;</div><div class="hero-stat-label"><span data-en>Online &amp; In Rome</span><span data-it>Online &amp; a Roma</span></div></div>
             <div class="hero-stat"><div class="hero-stat-icon">&#128218;</div><div class="hero-stat-label">IELTS &middot; Business &middot; General</div></div>
             <div class="hero-stat"><div class="hero-stat-icon">&#127891;</div><div class="hero-stat-label"><span data-en>12+ Years Experience</span><span data-it>12+ Anni Esperienza</span></div></div>
@@ -601,7 +602,7 @@
             </div>
             <div>
                 <div class="about-credentials">
-                    <div class="credential">&#127468;&#127463; <span data-en>Native English Speaker</span><span data-it>Madrelingua Inglese</span></div>
+                    <div class="credential">&#127464;&#127462; <span data-en>Native English Speaker</span><span data-it>Madrelingua Inglese</span></div>
                     <div class="credential">&#127891; <span data-en>Masters in Linguistics</span><span data-it>Laurea in Linguistica</span></div>
                     <div class="credential">&#128220; <span data-en>TTC &amp; TEFL Certified</span><span data-it>Certificato TTC &amp; TEFL</span></div>
                     <div class="credential">&#128483;&#65039; <span data-en>12+ Years Teaching</span><span data-it>12+ Anni Insegnamento</span></div>
@@ -1123,9 +1124,16 @@ function renderGames(filter) {
     if (!grid) return;
     var filtered = filter === 'all' ? gamesDB : gamesDB.filter(function(g) { return g.cat === filter; });
     var lang = currentLang;
+    var levelLabels = {
+        'a1a2': { en: '&#9679; A1-A2 Beginner', it: '&#9679; A1-A2 Principiante' },
+        'b1b2': { en: '&#9679; B1-B2 Intermediate', it: '&#9679; B1-B2 Intermedio' },
+        'c1c2': { en: '&#9679; C1-C2 Advanced', it: '&#9679; C1-C2 Avanzato' },
+        'all':  { en: '&#9679; All Levels', it: '&#9679; Tutti i Livelli' }
+    };
     grid.innerHTML = filtered.map(function(g) {
-        return '<div class="game-card fade-in visible" onclick="openGame(\'' + g.id + '\')" data-cat="' + g.cat + '">'
-            + '<span class="game-card-level level-' + g.level + '">' + g.level.toUpperCase() + '</span>'
+        var lvl = levelLabels[g.level] ? levelLabels[g.level][lang] : g.level.toUpperCase();
+        return '<div class="game-card fade-in" onclick="openGame(\'' + g.id + '\')" data-cat="' + g.cat + '">'
+            + '<span class="game-card-level level-' + g.level + '">' + lvl + '</span>'
             + '<div class="game-card-icon">' + g.icon + '</div>'
             + '<h4>' + g[lang].title + '</h4>'
             + '<p>' + g[lang].desc + '</p>'

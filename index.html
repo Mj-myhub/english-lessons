@@ -1,4 +1,4 @@
-e<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -6,12 +6,10 @@ e<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The English Lounge — Learn English in Comfort</title>
     <meta name="description" content="Private English lessons in Rome & Online. Native Canadian teacher with 12+ years experience. General English, Business English, IELTS & Cambridge preparation.">
-    
-             <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32-crest.png">
-            <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16-crest.png">
-            <link rel="shortcut icon" href="favicon-crest.ico">
-                     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-crest.png">
-                <style>          >   <style>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="favicon-180.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
         :root {
             --forest: #1B4D3E;
             --forest-deep: #0F2E25;
@@ -69,47 +67,32 @@ e<!DOCTYPE html>
         display: flex; align-items: center; justify-content: space-between;
     }
     .nav-brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
-.nav-brand img {
-    height: 56px;
-    width: auto;
-    display: block;
-    object-fit: contain;
-    border-radius: 0;
-  }
-  
- .nav-cta {
-  background: var(--forest) !i!mportant;
-  color: var(--white) !importa!nt;
-  padding: 0.5rem 1.2rem;
-  border-radius: 8px;
-  font-weight: 600;
-}
-.nav-cta:hover {
-  background: var(--forest-deep)! !important;
-  transform: translateY(-1px);
-}
-.nav-cta::after {
-  display: none !important;
-}
-
-                        .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-      margin: 0;
+    .nav-brand img { height: 48px; width: auto; border-radius: 8px; }
+    .nav-brand-text {
+        font-family: 'Playfair Display', serif; font-size: 1.15rem;
+        font-weight: 600; color: var(--forest-deep);
     }
+    .nav-brand-tagline {
+        font-size: 0.65rem; color: var(--gold-dark);
+        text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
     .nav-links a {
-      color: var(--forest);
-      text-decoration: none;
-      font-weight: 600;
-      transition: var(--transition);
+        text-decoration: none; color: var(--text); font-size: 0.9rem;
+        font-weight: 500; transition: var(--transition); position: relative;
     }
-    .nav-links a:hover {
-      color: var(--forest-deep);
+    .nav-links a::after {
+        content: ''; position: absolute; bottom: -4px; left: 0;
+        width: 0; height: 2px; background: var(--gold); transition: var(--transition);
     }
-
-
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a:hover { color: var(--forest); }
+    .nav-cta {
+        background: var(--forest) !important; color: var(--white) !important;
+        padding: 0.5rem 1.2rem; border-radius: 8px; font-weight: 600;
+    }
+    .nav-cta:hover { background: var(--forest-deep) !important; transform: translateY(-1px); }
+    .nav-cta::after { display: none !important; }
     .lang-switch { display: flex; gap: 0.3rem; margin-left: 0.5rem; }
     .lang-btn {
         background: none; border: 1.5px solid var(--forest); color: var(--forest);
@@ -541,7 +524,7 @@ e<!DOCTYPE html>
 <nav class="navbar" id="navbar">
     <div class="nav-inner">
         <a href="#" class="nav-brand">
-            <img src="logo-nav-transparent.png" alt="The English Lounge">
+            <img src="logo.png" alt="The English Lounge">
             <div>
                 <div class="nav-brand-text">The English Lounge</div>
                 <div class="nav-brand-tagline">

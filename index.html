@@ -2133,9 +2133,9 @@ function submitLead() {
     }).join(' ');
 
     // Submit to Web3Forms (free, no signup needed beyond email verification)
-    // To activate: replace YOUR_ACCESS_KEY_HERE with key from https://web3forms.com (free 1000 submissions/month)
+    // To activate: replace  6843cbdc-c4d3-4d2b-963f-c7811e8a56e1 with key from https://web3forms.com (free 1000 submissions/month)
     var formData = new FormData();
-    formData.append('access_key', 'YOUR_ACCESS_KEY_HERE');
+    formData.append('access_key', '6843cbdc-c4d3-4d2b-963f-c7811e8a56e1');
     formData.append('subject', 'New Level Test: ' + name + ' = ' + result.level);
     formData.append('from_name', 'The English Lounge - Level Test');
     formData.append('name', name);

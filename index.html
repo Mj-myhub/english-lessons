@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,618 +8,1043 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --forest: #1B4D3E;
-            --forest-deep: #0F2E25;
-            --forest-light: #2A6B52;
-            --gold: #C4A35A;
-            --gold-light: #D4B96E;
-            --gold-dark: #A68B3E;
-            --cream: #FAF7F0;
-            --cream-dark: #F0EBE0;
-            --text: #3A3A3A;
-            --text-light: #6B6B6B;
+            /* Primary: Sophisticated Editorial Navy */
+            --forest: #1F3A5F;
+            --forest-deep: #142847;
+            --forest-light: #2F5081;
+            --forest-shadow: #0A1A2F;
+
+            /* Accent: Deep Wine / Bordeaux (replaces all gold tones) */
+            --gold: #8C2F3D;
+            --gold-light: #B14758;
+            --gold-dark: #5C1E28;
+            --gold-rich: #722837;
+
+            /* Secondary accent: Muted clay rose for soft highlights */
+            --terra: #C97B84;
+            --terra-deep: #A35E68;
+
+            /* Warm ivory backgrounds */
+            --cream: #F5EFE3;
+            --cream-dark: #EAE1CB;
+            --cream-rich: #DAD1B7;
+            --paper-shadow: #1F3A5F0F;
+
+            /* Text colors */
+            --text: #2A2620;
+            --text-light: #6B645A;
+            --text-muted: #948A7E;
             --white: #FFFFFF;
-            --shadow: 0 4px 20px rgba(27,77,62,0.08);
-            --shadow-lg: 0 12px 40px rgba(27,77,62,0.12);
-            --shadow-gold: 0 4px 20px rgba(196,163,90,0.2);
-            --radius: 12px;
-            --radius-lg: 20px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --ink: #14110D;
+
+            /* Refined shadows tuned for navy + wine */
+            --shadow: 0 4px 20px rgba(20,40,71,0.07);
+            --shadow-lg: 0 16px 48px rgba(20,40,71,0.13);
+            --shadow-xl: 0 24px 64px rgba(20,40,71,0.20);
+            --shadow-gold: 0 4px 24px rgba(140,47,61,0.30);
+            --shadow-terra: 0 4px 24px rgba(201,123,132,0.22);
+
+            /* Geometry */
+            --radius-sm: 6px;
+            --radius: 14px;
+            --radius-lg: 24px;
+            --radius-xl: 36px;
+            --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: all 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+
+            /* Fonts */
+            --font-display: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            --font-accent: 'Cormorant Garamond', Georgia, serif;
         }
 
-```
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Source Sans 3', sans-serif; color: var(--text); background: var(--cream); line-height: 1.7; overflow-x: hidden; }
-    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--forest-deep); line-height: 1.3; }
-
-    /* ===== LANGUAGE SYSTEM ===== */
-    /* Default: hide all Italian */
-    [data-it] { display: none !important; }
-    /* Italian mode: hide English, show Italian */
-    body.lang-it [data-en] { display: none !important; }
-    body.lang-it span[data-it] { display: inline !important; }
-    body.lang-it div[data-it],
-    body.lang-it p[data-it],
-    body.lang-it h1[data-it],
-    body.lang-it h2[data-it],
-    body.lang-it h3[data-it],
-    body.lang-it h4[data-it],
-    body.lang-it li[data-it],
-    body.lang-it blockquote[data-it] { display: block !important; }
-    body.lang-it a[data-it],
-    body.lang-it button[data-it] { display: inline-flex !important; }
-
-    /* ===== NAVBAR ===== */
-    .navbar {
-        position: fixed; top: 0; width: 100%; z-index: 1000;
-        background: rgba(250,247,240,0.92);
-        backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-        border-bottom: 1px solid rgba(27,77,62,0.08);
-        transition: var(--transition);
-    }
-    .navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
-    .nav-inner {
-        max-width: 1200px; margin: 0 auto; padding: 0.8rem 2rem;
-        display: flex; align-items: center; justify-content: space-between;
-    }
-    .nav-brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
-    .nav-brand img { height: 48px; width: auto; border-radius: 8px; }
-    .nav-brand-text {
-        font-family: 'Playfair Display', serif; font-size: 1.15rem;
-        font-weight: 600; color: var(--forest-deep);
-    }
-    .nav-brand-tagline {
-        font-size: 0.65rem; color: var(--gold-dark);
-        text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600;
-    }
-    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
-    .nav-links a {
-        text-decoration: none; color: var(--text); font-size: 0.9rem;
-        font-weight: 500; transition: var(--transition); position: relative;
-    }
-    .nav-links a::after {
-        content: ''; position: absolute; bottom: -4px; left: 0;
-        width: 0; height: 2px; background: var(--gold); transition: var(--transition);
-    }
-    .nav-links a:hover::after { width: 100%; }
-    .nav-links a:hover { color: var(--forest); }
-    .nav-cta {
-        background: var(--forest) !important; color: var(--white) !important;
-        padding: 0.5rem 1.2rem; border-radius: 8px; font-weight: 600;
-    }
-    .nav-cta:hover { background: var(--forest-deep) !important; transform: translateY(-1px); }
-    .nav-cta::after { display: none !important; }
-    .lang-switch { display: flex; gap: 0.3rem; margin-left: 0.5rem; }
-    .lang-btn {
-        background: none; border: 1.5px solid var(--forest); color: var(--forest);
-        padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem;
-        font-weight: 600; cursor: pointer; transition: var(--transition);
-    }
-    .lang-btn.active { background: var(--forest); color: var(--white); }
-    .hamburger {
-        display: none; flex-direction: column; gap: 5px;
-        cursor: pointer; background: none; border: none; padding: 5px;
-    }
-    .hamburger span { width: 24px; height: 2px; background: var(--forest-deep); transition: var(--transition); }
-
-    /* ===== HERO ===== */
-    .hero {
-        min-height: 100vh; display: flex; align-items: center; justify-content: center;
-        text-align: center; padding: 8rem 2rem 4rem; position: relative;
-        background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 50%, rgba(27,77,62,0.03) 100%);
-        overflow: hidden;
-    }
-    .hero::before {
-        content: ''; position: absolute; top: -50%; right: -30%; width: 80%; height: 160%;
-        background: radial-gradient(ellipse, rgba(196,163,90,0.06) 0%, transparent 70%);
-        pointer-events: none;
-    }
-    .hero::after {
-        content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 120px;
-        background: linear-gradient(to bottom, transparent, var(--cream)); pointer-events: none;
-    }
-    .hero-content { max-width: 800px; position: relative; z-index: 2; }
-    .hero-badge {
-        display: inline-flex; align-items: center; gap: 0.5rem;
-        background: var(--white); border: 1px solid rgba(196,163,90,0.3);
-        padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.82rem;
-        font-weight: 500; color: var(--forest); margin-bottom: 1.5rem;
-        animation: fadeInDown 0.8s ease-out 0.1s both;
-    }
-    .hero h1 {
-        font-size: clamp(2.2rem, 5vw, 3.6rem); margin-bottom: 1.2rem;
-        animation: fadeInUp 0.8s ease-out 0.2s both;
-    }
-    .hero h1 em { color: var(--gold-dark); font-style: italic; }
-    .hero p {
-        font-size: 1.15rem; color: var(--text-light); max-width: 600px;
-        margin: 0 auto 2rem; line-height: 1.8;
-        animation: fadeInUp 0.8s ease-out 0.3s both;
-    }
-    .hero-buttons {
-        display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
-        animation: fadeInUp 0.8s ease-out 0.4s both;
-    }
-    .btn-primary {
-        background: var(--forest); color: var(--white); padding: 0.9rem 2rem;
-        border-radius: 10px; text-decoration: none; font-weight: 600;
-        font-size: 0.95rem; transition: var(--transition);
-        display: inline-flex; align-items: center; gap: 0.5rem;
-        border: 2px solid var(--forest);
-    }
-    .btn-primary:hover {
-        background: var(--forest-deep); border-color: var(--forest-deep);
-        transform: translateY(-2px); box-shadow: var(--shadow-lg);
-    }
-    .btn-secondary {
-        background: transparent; color: var(--forest); padding: 0.9rem 2rem;
-        border-radius: 10px; text-decoration: none; font-weight: 600;
-        font-size: 0.95rem; border: 2px solid var(--forest); transition: var(--transition);
-    }
-    .btn-whatsapp {
-        background: #25D366; color: var(--white); padding: 0.9rem 2rem;
-        border-radius: 10px; text-decoration: none; font-weight: 600;
-        font-size: 0.95rem; transition: var(--transition);
-        display: inline-flex; align-items: center; gap: 0.4rem;
-    }
-    .btn-whatsapp:hover { background: #1FA855; transform: translateY(-2px); }
-    .wa-fab {
-        position: fixed; bottom: 1.5rem; left: 1.5rem; width: 56px; height: 56px;
-        background: #25D366; color: white; border-radius: 50%; border: none;
-        font-size: 1.6rem; cursor: pointer; z-index: 999;
-        box-shadow: 0 4px 16px rgba(37,211,102,0.4);
-        display: flex; align-items: center; justify-content: center;
-        transition: var(--transition); text-decoration: none;
-    }
-    .wa-fab:hover { background: #1FA855; transform: scale(1.08); }
-    .btn-secondary:hover { background: var(--forest); color: var(--white); transform: translateY(-2px); }
-    .hero-stats {
-        display: flex; justify-content: center; gap: 2.5rem; margin-top: 3rem;
-        animation: fadeInUp 0.8s ease-out 0.5s both;
-    }
-    .hero-stat { text-align: center; }
-    .hero-stat-icon { font-size: 1.3rem; margin-bottom: 0.3rem; }
-    .hero-stat-label { font-size: 0.78rem; color: var(--text-light); font-weight: 500; }
-
-    /* ===== SECTIONS ===== */
-    section { padding: 5rem 2rem; }
-    .section-inner { max-width: 1100px; margin: 0 auto; }
-    .section-header { text-align: center; margin-bottom: 3rem; }
-    .section-header h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 0.8rem; }
-    .section-header p { color: var(--text-light); font-size: 1.05rem; max-width: 550px; margin: 0 auto; }
-    .section-label {
-        display: inline-block; font-size: 0.75rem; text-transform: uppercase;
-        letter-spacing: 0.15em; color: var(--gold-dark); font-weight: 700; margin-bottom: 0.5rem;
-    }
-
-    /* ===== ABOUT ===== */
-    .about { background: var(--white); }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-    .about-text h2 { font-size: 2rem; margin-bottom: 1.2rem; }
-    .about-text p { margin-bottom: 1rem; color: var(--text-light); line-height: 1.8; }
-    .about-credentials { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
-    .credential {
-        display: flex; align-items: center; gap: 0.7rem;
-        padding: 0.8rem 1rem; background: var(--cream); border-radius: 10px;
-        font-size: 0.88rem; font-weight: 500;
-    }
-
-    /* ===== RESULTS ===== */
-    .results { background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%); position: relative; overflow: hidden; }
-    .results::before {
-        content: ''; position: absolute; top: -100px; left: -100px;
-        width: 400px; height: 400px; border-radius: 50%;
-        background: radial-gradient(circle, rgba(196,163,90,0.08) 0%, transparent 70%);
-        pointer-events: none;
-    }
-    .results::after {
-        content: ''; position: absolute; bottom: -100px; right: -100px;
-        width: 400px; height: 400px; border-radius: 50%;
-        background: radial-gradient(circle, rgba(27,77,62,0.06) 0%, transparent 70%);
-        pointer-events: none;
-    }
-    .results-grid {
-        display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
-        position: relative; z-index: 2;
-    }
-    .result-card {
-        background: var(--white); padding: 2rem 1.5rem; border-radius: var(--radius-lg);
-        text-align: center; box-shadow: var(--shadow); transition: var(--transition);
-        border: 1px solid rgba(196,163,90,0.15); position: relative; overflow: hidden;
-    }
-    .result-card:hover {
-        transform: translateY(-6px); box-shadow: var(--shadow-lg);
-        border-color: var(--gold);
-    }
-    .result-card::before {
-        content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-        background: linear-gradient(90deg, var(--gold), var(--forest));
-        transform: scaleX(0); transition: var(--transition); transform-origin: left;
-    }
-    .result-card:hover::before { transform: scaleX(1); }
-    .result-number {
-        font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 700;
-        color: var(--forest); line-height: 1; margin-bottom: 0.5rem;
-        background: linear-gradient(135deg, var(--forest) 0%, var(--gold-dark) 100%);
-        -webkit-background-clip: text; background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-    .result-label {
-        font-size: 0.95rem; font-weight: 700; color: var(--forest-deep);
-        margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 0.05em;
-    }
-    .result-desc {
-        font-size: 0.82rem; color: var(--text-light); line-height: 1.6;
-    }
-
-    /* ===== SERVICES ===== */
-    .services { background: var(--cream); }
-    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    .service-card {
-        background: var(--white); border-radius: var(--radius-lg); overflow: hidden;
-        transition: var(--transition); border: 1px solid rgba(27,77,62,0.06);
-    }
-    .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-    .service-img { width: 100%; height: 180px; object-fit: cover; }
-    .service-body { padding: 1.5rem; }
-    .service-body h3 { font-size: 1.2rem; margin-bottom: 0.6rem; }
-    .service-body p { color: var(--text-light); font-size: 0.92rem; line-height: 1.7; }
-    .corporate-banner {
-        margin-top: 1.5rem;
-        background: linear-gradient(135deg, var(--forest) 0%, var(--forest-deep) 100%);
-        border-radius: var(--radius-lg); padding: 2rem 2.5rem; color: var(--white);
-        display: flex; align-items: center; justify-content: space-between; gap: 2rem;
-    }
-    .corporate-banner h3 { color: var(--white); font-size: 1.3rem; margin-bottom: 0.3rem; }
-    .corporate-banner p { color: rgba(255,255,255,0.8); font-size: 0.9rem; }
-    .btn-gold {
-        background: var(--gold); color: var(--forest-deep); padding: 0.7rem 1.5rem;
-        border-radius: 8px; text-decoration: none; font-weight: 700;
-        font-size: 0.9rem; white-space: nowrap; transition: var(--transition);
-    }
-    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
-
-    /* ===== FREE RESOURCES ===== */
-    .resources { background: var(--white); }
-    .resources-categories { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; margin-bottom: 2rem; }
-    .cat-btn {
-        background: var(--cream); border: 1.5px solid transparent; padding: 0.5rem 1rem;
-        border-radius: 50px; font-size: 0.85rem; font-weight: 600; cursor: pointer;
-        transition: var(--transition); color: var(--text); font-family: 'Source Sans 3', sans-serif;
-    }
-    .cat-btn.active, .cat-btn:hover { background: var(--forest); color: var(--white); border-color: var(--forest); }
-    .games-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.2rem; }
-    .game-card {
-        background: var(--cream); border-radius: var(--radius); padding: 1.5rem;
-        cursor: pointer; transition: var(--transition); border: 2px solid transparent;
-        position: relative; overflow: hidden;
-    }
-    .game-card:hover { border-color: var(--gold); transform: translateY(-3px); box-shadow: var(--shadow-gold); }
-    .game-card-level {
-        position: absolute; top: 1rem; right: 1rem; font-size: 0.72rem;
-        font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
-        padding: 0.25rem 0.7rem; border-radius: 50px;
-        display: flex; align-items: center; gap: 0.3rem;
-    }
-    .level-a1a2 { background: #E8F5E9; color: #2E7D32; }
-    .level-b1b2 { background: #E3F2FD; color: #1565C0; }
-    .level-c1c2 { background: #F3E5F5; color: #7B1FA2; }
-    .level-all { background: #FFF3E0; color: #E65100; }
-    .game-card-icon { font-size: 2rem; margin-bottom: 0.8rem; }
-    .game-card h4 {
-        font-family: 'Source Sans 3', sans-serif; font-size: 1rem;
-        font-weight: 700; margin-bottom: 0.4rem; color: var(--forest-deep);
-    }
-    .game-card p { font-size: 0.85rem; color: var(--text-light); line-height: 1.6; }
-
-    /* Game Modal */
-    .game-modal-overlay {
-        display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6);
-        z-index: 2000; justify-content: center; align-items: center; padding: 1rem;
-        backdrop-filter: blur(4px);
-    }
-    .game-modal-overlay.active { display: flex; }
-    .game-modal {
-        background: var(--white); border-radius: var(--radius-lg); width: 100%;
-        max-width: 650px; max-height: 90vh; overflow-y: auto; padding: 2rem;
-        position: relative; animation: modalIn 0.3s ease-out;
-    }
-    @keyframes modalIn {
-        from { opacity: 0; transform: scale(0.95) translateY(10px); }
-        to { opacity: 1; transform: scale(1) translateY(0); }
-    }
-    .game-modal-close {
-        position: absolute; top: 1rem; right: 1rem; background: var(--cream);
-        border: none; width: 36px; height: 36px; border-radius: 50%;
-        font-size: 1.2rem; cursor: pointer; display: flex;
-        align-items: center; justify-content: center;
-    }
-    .game-modal h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
-    .game-instructions {
-        color: var(--text-light); font-size: 0.9rem; margin-bottom: 1.5rem;
-        padding-bottom: 1rem; border-bottom: 1px solid var(--cream-dark);
-    }
-    .game-question { background: var(--cream); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1rem; }
-    .game-question p { font-size: 1.05rem; font-weight: 600; margin-bottom: 1rem; color: var(--forest-deep); }
-    .game-options { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
-    .game-option {
-        background: var(--white); border: 2px solid var(--cream-dark); padding: 0.7rem 1rem;
-        border-radius: 8px; cursor: pointer; font-size: 0.92rem; font-weight: 500;
-        transition: var(--transition); text-align: center; font-family: 'Source Sans 3', sans-serif;
-    }
-    .game-option:hover { border-color: var(--gold); }
-    .game-option.correct { background: #E8F5E9; border-color: #4CAF50; color: #2E7D32; }
-    .game-option.wrong { background: #FFEBEE; border-color: #EF5350; color: #C62828; }
-    .game-score { text-align: center; padding: 2rem; }
-    .game-score .score-number { font-size: 3rem; font-weight: 700; color: var(--forest); font-family: 'Playfair Display', serif; }
-    .game-btn {
-        background: var(--forest); color: var(--white); border: none; padding: 0.7rem 1.5rem;
-        border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 0.9rem;
-        transition: var(--transition); font-family: 'Source Sans 3', sans-serif; margin-top: 1rem;
-    }
-    .game-btn:hover { background: var(--forest-deep); }
-    .game-progress { display: flex; gap: 4px; margin-bottom: 1.5rem; }
-    .game-progress-dot { flex: 1; height: 4px; border-radius: 2px; background: var(--cream-dark); transition: var(--transition); }
-    .game-progress-dot.done { background: var(--forest); }
-    .game-progress-dot.current { background: var(--gold); }
-
-    /* ===== PRICING ===== */
-    .pricing { background: var(--cream); }
-    .pricing-toggle { display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 2.5rem; }
-    .pricing-toggle-btn {
-        background: var(--white); border: 2px solid var(--cream-dark); padding: 0.7rem 1.5rem;
-        border-radius: 10px; font-size: 0.9rem; font-weight: 600; cursor: pointer;
-        transition: var(--transition); font-family: 'Source Sans 3', sans-serif;
-    }
-    .pricing-toggle-btn.active { background: var(--forest); color: var(--white); border-color: var(--forest); }
-    .pricing-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    .pricing-card {
-        background: var(--white); border-radius: var(--radius-lg); padding: 2rem;
-        border: 2px solid transparent; transition: var(--transition); position: relative;
-    }
-    .pricing-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-    .pricing-card.featured { border-color: var(--gold); box-shadow: var(--shadow-gold); }
-    .pricing-card.featured::before {
-        content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
-        background: linear-gradient(90deg, var(--gold), var(--gold-light));
-        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-    }
-    .pricing-badge {
-        display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold-light));
-        color: var(--forest-deep); font-size: 0.72rem; font-weight: 700;
-        text-transform: uppercase; letter-spacing: 0.1em;
-        padding: 0.3rem 0.8rem; border-radius: 50px; margin-bottom: 1rem;
-    }
-    .pricing-card h3 { font-size: 1.25rem; margin-bottom: 0.3rem; }
-    .pricing-desc { font-size: 0.85rem; color: var(--text-light); margin-bottom: 1.2rem; }
-    .pricing-amount { display: flex; align-items: baseline; gap: 0.3rem; margin-bottom: 0.3rem; }
-    .pricing-amount .currency { font-size: 1.4rem; font-weight: 600; color: var(--forest); }
-    .pricing-amount .amount {
-        font-size: 2.8rem; font-weight: 700; color: var(--forest);
-        font-family: 'Playfair Display', serif; line-height: 1;
-    }
-    .pricing-per { font-size: 0.82rem; color: var(--text-light); margin-bottom: 0.5rem; }
-    .pricing-savings {
-        display: inline-block; background: #E8F5E9; color: #2E7D32;
-        font-size: 0.78rem; font-weight: 600; padding: 0.2rem 0.6rem;
-        border-radius: 4px; margin-bottom: 1.2rem;
-    }
-    .pricing-features { list-style: none; margin-bottom: 1.5rem; }
-    .pricing-features li {
-        padding: 0.4rem 0; font-size: 0.88rem; display: flex;
-        align-items: flex-start; gap: 0.5rem; color: var(--text);
-    }
-    .pricing-features li::before { content: '\2713'; color: var(--forest); font-weight: 700; flex-shrink: 0; }
-    .pricing-link {
-        display: block; text-align: center; background: var(--forest); color: var(--white);
-        padding: 0.8rem; border-radius: 10px; text-decoration: none;
-        font-weight: 600; font-size: 0.92rem; transition: var(--transition);
-    }
-    .pricing-link:hover { background: var(--forest-deep); transform: translateY(-1px); }
-    .pricing-card.featured .pricing-link { background: var(--gold); color: var(--forest-deep); }
-    .pricing-card.featured .pricing-link:hover { background: var(--gold-dark); }
-    .free-trial-box {
-        text-align: center; margin-top: 2.5rem; padding: 2rem;
-        background: var(--white); border-radius: var(--radius-lg); border: 2px dashed var(--gold);
-    }
-    .free-trial-box h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
-    .free-trial-box p { color: var(--text-light); font-size: 0.92rem; margin-bottom: 1rem; }
-
-    /* ===== HOW IT WORKS ===== */
-    .how-it-works { background: var(--white); }
-    .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
-    .step { text-align: center; padding: 1.5rem; }
-    .step-number {
-        width: 48px; height: 48px; background: var(--forest); color: var(--white);
-        border-radius: 50%; display: flex; align-items: center; justify-content: center;
-        font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700;
-        margin: 0 auto 1rem;
-    }
-    .step h4 { font-size: 1rem; margin-bottom: 0.5rem; }
-    .step p { font-size: 0.85rem; color: var(--text-light); }
-
-    /* ===== TESTIMONIALS ===== */
-    .testimonials { background: linear-gradient(135deg, var(--forest) 0%, var(--forest-deep) 100%); color: var(--white); }
-    .testimonials .section-label { color: var(--gold-light); }
-    .testimonials .section-header h2 { color: var(--white); }
-    .testimonials .section-header p { color: rgba(255,255,255,0.7); }
-    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    .testimonial-card {
-        background: rgba(255,255,255,0.08); border-radius: var(--radius); padding: 1.5rem;
-        border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px);
-    }
-    .testimonial-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 0.8rem; letter-spacing: 2px; }
-    .testimonial-card blockquote {
-        line-height: 1.7; color: rgba(255,255,255,0.9); margin-bottom: 1rem;
-        font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-style: italic;
-    }
-    .testimonial-author { font-weight: 600; font-size: 0.88rem; }
-    .testimonial-role { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
-    .review-cta { text-align: center; margin-top: 2.5rem; }
-    .review-cta a { color: var(--gold-light); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
-    .google-reviews-cta {
-        margin-top: 3rem; padding: 2rem; background: rgba(255,255,255,0.08);
-        border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,0.1);
-        display: flex; flex-direction: column; align-items: center; gap: 1.5rem;
-        backdrop-filter: blur(10px);
-    }
-    .google-badge {
-        display: flex; align-items: center; gap: 1rem;
-    }
-    .google-badge-stars {
-        color: var(--gold); font-size: 1.1rem; letter-spacing: 3px; line-height: 1;
-    }
-    .google-badge-label {
-        font-size: 0.85rem; color: rgba(255,255,255,0.8);
-        font-weight: 600; margin-top: 0.3rem;
-    }
-    .google-cta-buttons {
-        display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center;
-    }
-    .btn-google-view, .btn-google-leave {
-        padding: 0.7rem 1.5rem; border-radius: 10px; text-decoration: none;
-        font-weight: 600; font-size: 0.88rem; transition: var(--transition);
-        display: inline-flex; align-items: center; gap: 0.4rem;
-    }
-    .btn-google-view {
-        background: var(--white); color: var(--forest-deep);
-    }
-    .btn-google-view:hover { background: var(--gold); transform: translateY(-2px); }
-    .btn-google-leave {
-        background: var(--gold); color: var(--forest-deep);
-    }
-    .btn-google-leave:hover { background: var(--gold-light); transform: translateY(-2px); }
-
-    /* ===== FAQ ===== */
-    .faq { background: var(--cream); }
-    .faq-list { max-width: 700px; margin: 0 auto; }
-    .faq-item {
-        background: var(--white); border-radius: var(--radius); margin-bottom: 0.8rem;
-        overflow: hidden; border: 1px solid rgba(27,77,62,0.06);
-    }
-    .faq-question {
-        width: 100%; background: none; border: none; padding: 1.2rem 1.5rem;
-        text-align: left; font-family: 'Source Sans 3', sans-serif; font-size: 0.95rem;
-        font-weight: 600; color: var(--forest-deep); cursor: pointer;
-        display: flex; justify-content: space-between; align-items: center;
-    }
-    .faq-question:hover { background: var(--cream); }
-    .faq-question .arrow { transition: var(--transition); font-size: 0.8rem; }
-    .faq-item.open .arrow { transform: rotate(180deg); }
-    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-    .faq-answer-inner { padding: 0 1.5rem 1.2rem; font-size: 0.9rem; color: var(--text-light); line-height: 1.7; }
-
-    /* ===== FINAL CTA ===== */
-    .final-cta { background: var(--white); text-align: center; }
-    .final-cta h2 { font-size: 2rem; margin-bottom: 0.8rem; }
-    .final-cta p { color: var(--text-light); max-width: 500px; margin: 0 auto 1.5rem; }
-    .final-cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-
-    /* ===== FOOTER ===== */
-    footer { background: var(--forest-deep); color: rgba(255,255,255,0.6); text-align: center; padding: 2rem; font-size: 0.82rem; }
-    footer a { color: var(--gold-light); text-decoration: none; }
-
-    /* ===== CHATBOT ===== */
-    .chat-fab {
-        position: fixed; bottom: 1.5rem; right: 1.5rem; width: 56px; height: 56px;
-        background: var(--forest); color: var(--white); border: none; border-radius: 50%;
-        font-size: 1.5rem; cursor: pointer; z-index: 1500; box-shadow: var(--shadow-lg);
-        transition: var(--transition); display: flex; align-items: center; justify-content: center;
-    }
-    .chat-fab:hover { background: var(--forest-deep); transform: scale(1.05); }
-    .chat-window {
-        display: none; position: fixed; bottom: 5.5rem; right: 1.5rem; width: 360px;
-        max-height: 480px; background: var(--white); border-radius: var(--radius-lg);
-        box-shadow: var(--shadow-lg); z-index: 1500; flex-direction: column;
-        overflow: hidden; animation: modalIn 0.3s ease-out;
-    }
-    .chat-window.open { display: flex; }
-    .chat-header {
-        background: var(--forest); color: var(--white); padding: 1rem 1.2rem;
-        display: flex; align-items: center; gap: 0.8rem;
-    }
-    .chat-header-avatar {
-        width: 36px; height: 36px; background: var(--gold); border-radius: 50%;
-        display: flex; align-items: center; justify-content: center;
-        font-weight: 700; font-size: 0.8rem; color: var(--forest-deep);
-    }
-    .chat-header-info h4 { color: var(--white); font-family: 'Source Sans 3', sans-serif; font-size: 0.92rem; }
-    .chat-header-info span { font-size: 0.72rem; color: rgba(255,255,255,0.7); }
-    .chat-messages {
-        flex: 1; overflow-y: auto; padding: 1rem; display: flex;
-        flex-direction: column; gap: 0.8rem; min-height: 200px; max-height: 280px;
-    }
-    .chat-msg {
-        max-width: 85%; padding: 0.7rem 1rem; border-radius: 12px;
-        font-size: 0.85rem; line-height: 1.5; white-space: pre-line;
-    }
-    .chat-msg.bot { background: var(--cream); align-self: flex-start; border-bottom-left-radius: 4px; }
-    .chat-msg.user { background: var(--forest); color: var(--white); align-self: flex-end; border-bottom-right-radius: 4px; }
-    .chat-quick-replies { display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 0 1rem 0.5rem; }
-    .chat-quick-btn {
-        background: var(--cream); border: 1.5px solid var(--cream-dark); padding: 0.35rem 0.75rem;
-        border-radius: 50px; font-size: 0.78rem; font-weight: 500; cursor: pointer;
-        transition: var(--transition); font-family: 'Source Sans 3', sans-serif; color: var(--forest);
-    }
-    .chat-quick-btn:hover { background: var(--forest); color: var(--white); border-color: var(--forest); }
-    .chat-input-area { display: flex; border-top: 1px solid var(--cream-dark); padding: 0.6rem; gap: 0.4rem; }
-    .chat-input {
-        flex: 1; border: 1.5px solid var(--cream-dark); padding: 0.6rem 0.8rem;
-        border-radius: 8px; font-size: 0.85rem; outline: none;
-        font-family: 'Source Sans 3', sans-serif;
-    }
-    .chat-input:focus { border-color: var(--forest); }
-    .chat-send {
-        background: var(--forest); color: var(--white); border: none; width: 38px;
-        height: 38px; border-radius: 8px; cursor: pointer; font-size: 1rem;
-        display: flex; align-items: center; justify-content: center;
-    }
-
-    /* ===== ANIMATIONS ===== */
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
-    .fade-in { animation: fadeInUp 0.6s ease-out both; }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 900px) {
-        .services-grid { grid-template-columns: 1fr; }
-        .pricing-cards { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
-        .testimonials-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
-        .steps-grid { grid-template-columns: repeat(2, 1fr); }
-        .about-grid { grid-template-columns: 1fr; }
-        .corporate-banner { flex-direction: column; text-align: center; }
-        .results-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 768px) {
-        .nav-links {
-            display: none; position: absolute; top: 100%; left: 0; right: 0;
-            background: var(--cream); flex-direction: column; padding: 1.5rem 2rem;
-            gap: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-body);
+            color: var(--text);
+            background: var(--cream);
+            line-height: 1.7;
+            overflow-x: hidden;
+            font-feature-settings: "ss01" on, "ss02" on, "cv11" on;
         }
-        .nav-links.open { display: flex; }
-        .hamburger { display: flex; }
-        .hero { padding: 6rem 1.5rem 3rem; min-height: auto; }
-        section { padding: 3rem 1.5rem; }
-        .games-grid { grid-template-columns: 1fr; }
-        .game-options { grid-template-columns: 1fr; }
-        .chat-window { right: 0.5rem; left: 0.5rem; width: auto; bottom: 5rem; }
-        .about-credentials { grid-template-columns: 1fr; }
-        .hero-stats { flex-wrap: wrap; gap: 1rem; }
-        .results-grid { grid-template-columns: 1fr; max-width: 320px; margin: 0 auto; }
-        .result-number { font-size: 2.8rem; }
-    }
-</style>
-```
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            color: var(--forest-deep);
+            line-height: 1.1;
+            font-variation-settings: "SOFT" 50, "WONK" 0;
+            letter-spacing: -0.02em;
+        }
+        h1 { font-variation-settings: "SOFT" 100, "WONK" 1; }
 
+        /* Subtle paper texture overlay for depth */
+        body::before {
+            content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+            background-image:
+                radial-gradient(circle at 20% 30%, rgba(140,47,61,0.04) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(31,58,95,0.03) 0%, transparent 50%);
+            mix-blend-mode: multiply;
+        }
+
+        /* ===== LANGUAGE SYSTEM ===== */
+        /* Default: hide all Italian */
+        [data-it] { display: none !important; }
+        /* Italian mode: hide English, show Italian */
+        body.lang-it [data-en] { display: none !important; }
+        body.lang-it span[data-it] { display: inline !important; }
+        body.lang-it div[data-it],
+        body.lang-it p[data-it],
+        body.lang-it h1[data-it],
+        body.lang-it h2[data-it],
+        body.lang-it h3[data-it],
+        body.lang-it h4[data-it],
+        body.lang-it li[data-it],
+        body.lang-it blockquote[data-it] { display: block !important; }
+        body.lang-it a[data-it],
+        body.lang-it button[data-it] { display: inline-flex !important; }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            background: rgba(245,239,227,0.92);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(31,58,95,0.08);
+            transition: var(--transition);
+        }
+        .navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+        .nav-inner {
+            max-width: 1200px; margin: 0 auto; padding: 0.8rem 2rem;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+        .nav-brand img { height: 48px; width: auto; border-radius: 8px; }
+        .nav-brand-text {
+            font-family: var(--font-display); font-size: 1.15rem;
+            font-weight: 600; color: var(--forest-deep);
+        }
+        .nav-brand-tagline {
+            font-size: 0.65rem; color: var(--gold-dark);
+            text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600;
+        }
+        .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+        .nav-links a {
+            text-decoration: none; color: var(--text); font-size: 0.9rem;
+            font-weight: 500; transition: var(--transition); position: relative;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -4px; left: 0;
+            width: 0; height: 2px; background: var(--gold); transition: var(--transition);
+        }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { color: var(--forest); }
+        .nav-cta {
+            background: var(--forest) !important; color: var(--white) !important;
+            padding: 0.5rem 1.2rem; border-radius: 8px; font-weight: 600;
+        }
+        .nav-cta:hover { background: var(--forest-deep) !important; transform: translateY(-1px); }
+        .nav-cta::after { display: none !important; }
+        .lang-switch { display: flex; gap: 0.3rem; margin-left: 0.5rem; }
+        .lang-btn {
+            background: none; border: 1.5px solid var(--forest); color: var(--forest);
+            padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem;
+            font-weight: 600; cursor: pointer; transition: var(--transition);
+        }
+        .lang-btn.active { background: var(--forest); color: var(--white); }
+        .hamburger {
+            display: none; flex-direction: column; gap: 5px;
+            cursor: pointer; background: none; border: none; padding: 5px;
+        }
+        .hamburger span { width: 24px; height: 2px; background: var(--forest-deep); transition: var(--transition); }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center; justify-content: center;
+            text-align: center; padding: 8rem 2rem 4rem; position: relative;
+            background:
+                radial-gradient(ellipse 80% 50% at 50% 0%, rgba(140,47,61,0.08), transparent 60%),
+                radial-gradient(ellipse 60% 40% at 20% 80%, rgba(201,123,132,0.06), transparent 60%),
+                linear-gradient(180deg, var(--cream) 0%, var(--cream-dark) 100%);
+            overflow: hidden;
+        }
+        .hero::before {
+            content: ''; position: absolute; top: -10%; right: -20%; width: 70%; height: 140%;
+            background:
+                radial-gradient(circle at 30% 50%, rgba(140,47,61,0.10) 0%, transparent 50%);
+            pointer-events: none;
+            animation: floatSlow 20s ease-in-out infinite;
+        }
+        .hero::after {
+            content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 140px;
+            background: linear-gradient(to bottom, transparent, var(--cream));
+            pointer-events: none;
+        }
+        @keyframes floatSlow {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-2%, 3%) scale(1.05); }
+        }
+        .hero-content { max-width: 880px; position: relative; z-index: 2; }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: rgba(255,255,255,0.7);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(140,47,61,0.35);
+            padding: 0.5rem 1.2rem; border-radius: 50px; font-size: 0.8rem;
+            font-weight: 600; color: var(--forest-deep); margin-bottom: 1.8rem;
+            letter-spacing: 0.02em; text-transform: uppercase;
+            box-shadow: 0 4px 20px rgba(140,47,61,0.12);
+            animation: fadeInDown 0.8s ease-out 0.1s both;
+        }
+        .hero h1 {
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            letter-spacing: -0.03em;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+        .hero h1 em {
+            color: var(--gold-rich); font-style: italic;
+            font-variation-settings: "SOFT" 100, "WONK" 1;
+            font-weight: 500;
+            position: relative; display: inline-block;
+        }
+        .hero h1 em::after {
+            content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 6px;
+            background: rgba(140,47,61,0.25); border-radius: 4px; z-index: -1;
+            transform: skewX(-12deg);
+        }
+        .hero p {
+            font-size: 1.15rem; color: var(--text-light); max-width: 580px;
+            margin: 0 auto 2.5rem; line-height: 1.7; font-weight: 400;
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+        .hero-buttons {
+            display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+        .btn-primary {
+            background: var(--forest-deep); color: var(--white);
+            padding: 1rem 2.2rem; border-radius: 50px;
+            text-decoration: none; font-weight: 600;
+            font-size: 0.95rem; transition: var(--transition);
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            border: 2px solid var(--forest-deep);
+            box-shadow: 0 8px 24px rgba(10,37,32,0.18);
+            letter-spacing: 0.02em;
+        }
+        .btn-primary:hover {
+            background: var(--forest); border-color: var(--forest);
+            transform: translateY(-3px); box-shadow: 0 14px 36px rgba(10,37,32,0.28);
+        }
+        .btn-secondary {
+            background: transparent; color: var(--forest-deep);
+            padding: 1rem 2.2rem; border-radius: 50px;
+            text-decoration: none; font-weight: 600;
+            font-size: 0.95rem; border: 2px solid var(--forest-deep);
+            transition: var(--transition);
+            letter-spacing: 0.02em;
+        }
+        .btn-secondary:hover {
+            background: var(--forest-deep); color: var(--white);
+            transform: translateY(-3px);
+        }
+        .btn-whatsapp {
+            background: #25D366; color: var(--white);
+            padding: 1rem 2.2rem; border-radius: 50px;
+            text-decoration: none; font-weight: 600;
+            font-size: 0.95rem; transition: var(--transition);
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            box-shadow: 0 8px 24px rgba(37,211,102,0.3);
+        }
+        .btn-whatsapp:hover { background: #1FA855; transform: translateY(-3px); }
+        .wa-fab {
+            position: fixed; bottom: 1.5rem; left: 1.5rem; width: 56px; height: 56px;
+            background: #25D366; color: white; border-radius: 50%; border: none;
+            font-size: 1.6rem; cursor: pointer; z-index: 999;
+            box-shadow: 0 8px 28px rgba(37,211,102,0.45);
+            display: flex; align-items: center; justify-content: center;
+            transition: var(--transition); text-decoration: none;
+        }
+        .wa-fab:hover { background: #1FA855; transform: scale(1.08); }
+        .btn-secondary:hover { background: var(--forest); color: var(--white); transform: translateY(-2px); }
+        .hero-stats {
+            display: flex; justify-content: center; gap: 2.5rem; margin-top: 3rem;
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+        }
+        .hero-stat { text-align: center; }
+        .hero-stat-icon { font-size: 1.3rem; margin-bottom: 0.3rem; }
+        .hero-stat-label { font-size: 0.78rem; color: var(--text-light); font-weight: 500; }
+
+        /* ===== SECTIONS ===== */
+        section { padding: 6rem 2rem; position: relative; }
+        .section-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 2; }
+        .section-header { text-align: center; margin-bottom: 3.5rem; }
+        .section-header h2 {
+            font-size: clamp(2rem, 3.6vw, 3rem); margin-bottom: 1rem;
+            font-weight: 400; letter-spacing: -0.025em;
+        }
+        .section-header p {
+            color: var(--text-light); font-size: 1.05rem; max-width: 580px; margin: 0 auto;
+            line-height: 1.7;
+        }
+        .section-label {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            font-size: 0.72rem; text-transform: uppercase;
+            letter-spacing: 0.18em; color: var(--gold-dark); font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .section-label::before, .section-label::after {
+            content: ''; width: 24px; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+        .section-header h2 em {
+            color: var(--gold-rich); font-style: italic;
+            font-variation-settings: "SOFT" 100, "WONK" 1;
+        }
+
+        /* ===== ABOUT ===== */
+        .about { background: var(--white); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .about-text h2 { font-size: 2rem; margin-bottom: 1.2rem; }
+        .about-text p { margin-bottom: 1rem; color: var(--text-light); line-height: 1.8; }
+        .about-credentials { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+        .credential {
+            display: flex; align-items: center; gap: 0.7rem;
+            padding: 0.8rem 1rem; background: var(--cream); border-radius: 10px;
+            font-size: 0.88rem; font-weight: 500;
+        }
+
+        /* ===== RESULTS ===== */
+        .results { background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%); position: relative; overflow: hidden; }
+        .results::before {
+            content: ''; position: absolute; top: -100px; left: -100px;
+            width: 400px; height: 400px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(140,47,61,0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .results::after {
+            content: ''; position: absolute; bottom: -100px; right: -100px;
+            width: 400px; height: 400px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(31,58,95,0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .results-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+            position: relative; z-index: 2;
+        }
+        .result-card {
+            background: var(--white); padding: 2rem 1.5rem; border-radius: var(--radius-lg);
+            text-align: center; box-shadow: var(--shadow); transition: var(--transition);
+            border: 1px solid rgba(140,47,61,0.15); position: relative; overflow: hidden;
+        }
+        .result-card:hover {
+            transform: translateY(-6px); box-shadow: var(--shadow-lg);
+            border-color: var(--gold);
+        }
+        .result-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--forest));
+            transform: scaleX(0); transition: var(--transition); transform-origin: left;
+        }
+        .result-card:hover::before { transform: scaleX(1); }
+        .result-number {
+            font-family: var(--font-display); font-size: 3.5rem; font-weight: 700;
+            color: var(--forest); line-height: 1; margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--forest) 0%, var(--gold-dark) 100%);
+            -webkit-background-clip: text; background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .result-label {
+            font-size: 0.95rem; font-weight: 700; color: var(--forest-deep);
+            margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 0.05em;
+        }
+        .result-desc {
+            font-size: 0.82rem; color: var(--text-light); line-height: 1.6;
+        }
+
+        /* ===== SERVICES ===== */
+        .services { background: var(--cream); }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .service-card {
+            background: var(--white); border-radius: var(--radius-lg); overflow: hidden;
+            transition: var(--transition); border: 1px solid rgba(31,58,95,0.06);
+        }
+        .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+        .service-img { width: 100%; height: 180px; object-fit: cover; }
+        .service-body { padding: 1.5rem; }
+        .service-body h3 { font-size: 1.2rem; margin-bottom: 0.6rem; }
+        .service-body p { color: var(--text-light); font-size: 0.92rem; line-height: 1.7; }
+        .corporate-banner {
+            margin-top: 1.5rem;
+            background: linear-gradient(135deg, var(--forest) 0%, var(--forest-deep) 100%);
+            border-radius: var(--radius-lg); padding: 2rem 2.5rem; color: var(--white);
+            display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+        }
+        .corporate-banner h3 { color: var(--white); font-size: 1.3rem; margin-bottom: 0.3rem; }
+        .corporate-banner p { color: rgba(255,255,255,0.8); font-size: 0.9rem; }
+        .btn-gold {
+            background: var(--gold); color: var(--forest-deep); padding: 0.7rem 1.5rem;
+            border-radius: 8px; text-decoration: none; font-weight: 700;
+            font-size: 0.9rem; white-space: nowrap; transition: var(--transition);
+        }
+        .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+        /* ===== FREE RESOURCES ===== */
+        .resources { background: var(--white); }
+        .resources-categories { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; margin-bottom: 2rem; }
+        .cat-btn {
+            background: var(--cream); border: 1.5px solid transparent; padding: 0.5rem 1rem;
+            border-radius: 50px; font-size: 0.85rem; font-weight: 600; cursor: pointer;
+            transition: var(--transition); color: var(--text); font-family: var(--font-body);
+        }
+        .cat-btn.active, .cat-btn:hover { background: var(--forest); color: var(--white); border-color: var(--forest); }
+        .games-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.2rem; }
+        .game-card {
+            background: var(--cream); border-radius: var(--radius); padding: 1.5rem;
+            cursor: pointer; transition: var(--transition); border: 2px solid transparent;
+            position: relative; overflow: hidden;
+        }
+        .game-card:hover { border-color: var(--gold); transform: translateY(-3px); box-shadow: var(--shadow-gold); }
+        .game-card-level {
+            position: absolute; top: 1rem; right: 1rem; font-size: 0.72rem;
+            font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+            padding: 0.25rem 0.7rem; border-radius: 50px;
+            display: flex; align-items: center; gap: 0.3rem;
+        }
+        .level-a1a2 { background: #E8F5E9; color: #2E7D32; }
+        .level-b1b2 { background: #E3F2FD; color: #1565C0; }
+        .level-c1c2 { background: #F3E5F5; color: #7B1FA2; }
+        .level-all { background: #FFF3E0; color: #E65100; }
+        .game-card-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+        .game-card h4 {
+            font-family: var(--font-body); font-size: 1rem;
+            font-weight: 700; margin-bottom: 0.4rem; color: var(--forest-deep);
+        }
+        .game-card p { font-size: 0.85rem; color: var(--text-light); line-height: 1.6; }
+
+        /* Game Modal */
+        .game-modal-overlay {
+            display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+            z-index: 2000; justify-content: center; align-items: center; padding: 1rem;
+            backdrop-filter: blur(4px);
+        }
+        .game-modal-overlay.active { display: flex; }
+        .game-modal {
+            background: var(--white); border-radius: var(--radius-lg); width: 100%;
+            max-width: 650px; max-height: 90vh; overflow-y: auto; padding: 2rem;
+            position: relative; animation: modalIn 0.3s ease-out;
+        }
+        @keyframes modalIn {
+            from { opacity: 0; transform: scale(0.95) translateY(10px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .game-modal-close {
+            position: absolute; top: 1rem; right: 1rem; background: var(--cream);
+            border: none; width: 36px; height: 36px; border-radius: 50%;
+            font-size: 1.2rem; cursor: pointer; display: flex;
+            align-items: center; justify-content: center;
+        }
+        .game-modal h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
+        .game-instructions {
+            color: var(--text-light); font-size: 0.9rem; margin-bottom: 1.5rem;
+            padding-bottom: 1rem; border-bottom: 1px solid var(--cream-dark);
+        }
+        .game-question { background: var(--cream); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1rem; }
+        .game-question p { font-size: 1.05rem; font-weight: 600; margin-bottom: 1rem; color: var(--forest-deep); }
+        .game-options { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+        .game-option {
+            background: var(--white); border: 2px solid var(--cream-dark); padding: 0.7rem 1rem;
+            border-radius: 8px; cursor: pointer; font-size: 0.92rem; font-weight: 500;
+            transition: var(--transition); text-align: center; font-family: var(--font-body);
+        }
+        .game-option:hover { border-color: var(--gold); }
+        .game-option.correct { background: #E8F5E9; border-color: #4CAF50; color: #2E7D32; }
+        .game-option.wrong { background: #FFEBEE; border-color: #EF5350; color: #C62828; }
+        .game-score { text-align: center; padding: 2rem; }
+        .game-score .score-number { font-size: 3rem; font-weight: 700; color: var(--forest); font-family: var(--font-display); }
+        .game-btn {
+            background: var(--forest); color: var(--white); border: none; padding: 0.7rem 1.5rem;
+            border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 0.9rem;
+            transition: var(--transition); font-family: var(--font-body); margin-top: 1rem;
+        }
+        .game-btn:hover { background: var(--forest-deep); }
+        .game-progress { display: flex; gap: 4px; margin-bottom: 1.5rem; }
+        .game-progress-dot { flex: 1; height: 4px; border-radius: 2px; background: var(--cream-dark); transition: var(--transition); }
+        .game-progress-dot.done { background: var(--forest); }
+        .game-progress-dot.current { background: var(--gold); }
+
+        /* ===== ENTRY TEST (LEVEL ASSESSMENT) ===== */
+        .entry-test {
+            background: linear-gradient(135deg, var(--forest-deep) 0%, var(--forest) 50%, var(--forest-shadow) 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        .entry-test::before {
+            content: ''; position: absolute; inset: 0; pointer-events: none;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(140,47,61,0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(201,123,132,0.12) 0%, transparent 50%);
+        }
+        .entry-test::after {
+            content: ''; position: absolute; bottom: -200px; right: -100px;
+            width: 500px; height: 500px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(140,47,61,0.08), transparent 70%);
+            pointer-events: none;
+        }
+        .entry-test .section-label { color: var(--gold-light); }
+        .entry-test .section-label::before, .entry-test .section-label::after {
+            background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+        }
+        .entry-test .section-header h2 { color: var(--white); }
+        .entry-test .section-header h2 em { color: var(--gold-light); }
+        .entry-test .section-header p { color: rgba(255,255,255,0.75); }
+
+        .test-intro-card {
+            max-width: 720px; margin: 0 auto;
+            background: rgba(255,255,255,0.06);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: var(--radius-lg);
+            padding: 3rem 2.5rem; text-align: center;
+            position: relative;
+        }
+        .test-features {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 1rem; margin: 2rem 0;
+        }
+        .test-feature {
+            padding: 1.2rem 0.8rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius);
+            transition: var(--transition);
+        }
+        .test-feature:hover {
+            background: rgba(140,47,61,0.1);
+            border-color: rgba(140,47,61,0.3);
+            transform: translateY(-3px);
+        }
+        .test-feature-icon {
+            font-size: 1.8rem; margin-bottom: 0.5rem; display: block;
+        }
+        .test-feature-label {
+            font-size: 0.78rem; color: var(--gold-light);
+            text-transform: uppercase; letter-spacing: 0.08em;
+            font-weight: 700;
+        }
+        .test-feature-value {
+            font-family: var(--font-display); font-size: 1.4rem;
+            color: var(--white); margin-top: 0.2rem;
+        }
+        .btn-start-test {
+            background: var(--gold); color: var(--forest-deep);
+            padding: 1.1rem 2.6rem; border: none; border-radius: 50px;
+            font-weight: 700; font-size: 1rem; cursor: pointer;
+            text-transform: uppercase; letter-spacing: 0.08em;
+            box-shadow: 0 8px 32px rgba(140,47,61,0.35);
+            transition: var(--transition);
+            font-family: var(--font-body);
+        }
+        .btn-start-test:hover {
+            background: var(--gold-light); transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(140,47,61,0.5);
+        }
+
+        /* Test Modal */
+        .test-modal {
+            display: none; position: fixed; inset: 0; z-index: 10000;
+            background: rgba(10,37,32,0.96);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            overflow-y: auto;
+            animation: fadeIn 0.3s ease-out;
+        }
+        .test-modal.open { display: block; }
+        .test-modal-inner {
+            max-width: 720px; margin: 2rem auto;
+            background: var(--cream);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            position: relative;
+            min-height: calc(100vh - 4rem);
+            display: flex; flex-direction: column;
+        }
+        .test-close {
+            position: absolute; top: 1rem; right: 1rem;
+            width: 40px; height: 40px; border-radius: 50%;
+            background: var(--cream-dark); border: none; cursor: pointer;
+            font-size: 1.2rem; color: var(--forest-deep);
+            display: flex; align-items: center; justify-content: center;
+            transition: var(--transition);
+        }
+        .test-close:hover { background: var(--gold); transform: rotate(90deg); }
+        .test-progress {
+            margin-bottom: 2rem;
+        }
+        .test-progress-bar {
+            height: 6px; background: var(--cream-dark);
+            border-radius: 3px; overflow: hidden;
+        }
+        .test-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--gold), var(--terra));
+            border-radius: 3px;
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 0%;
+        }
+        .test-progress-text {
+            display: flex; justify-content: space-between;
+            font-size: 0.82rem; color: var(--text-light);
+            margin-top: 0.6rem; font-weight: 600;
+        }
+        .test-level-indicator {
+            font-family: var(--font-accent);
+            color: var(--gold-dark);
+            font-style: italic;
+        }
+        .test-question {
+            flex: 1;
+        }
+        .test-question-text {
+            font-family: var(--font-display);
+            font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+            color: var(--forest-deep); margin-bottom: 1.8rem;
+            line-height: 1.4; font-weight: 500;
+            letter-spacing: -0.015em;
+        }
+        .test-question-text .blank {
+            display: inline-block; min-width: 60px;
+            border-bottom: 3px solid var(--gold);
+            padding: 0 0.4rem;
+        }
+        .test-options {
+            display: flex; flex-direction: column; gap: 0.8rem;
+        }
+        .test-option {
+            padding: 1rem 1.4rem;
+            background: var(--white);
+            border: 2px solid var(--cream-dark);
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem; color: var(--text);
+            text-align: left;
+            font-family: var(--font-body); font-weight: 500;
+            display: flex; align-items: center; gap: 0.8rem;
+        }
+        .test-option .opt-letter {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 28px; height: 28px; border-radius: 50%;
+            background: var(--cream-dark);
+            color: var(--forest-deep);
+            font-weight: 700; font-size: 0.85rem;
+            flex-shrink: 0; transition: var(--transition);
+        }
+        .test-option:hover {
+            border-color: var(--gold);
+            transform: translateX(4px);
+            box-shadow: var(--shadow);
+        }
+        .test-option:hover .opt-letter {
+            background: var(--gold); color: var(--white);
+        }
+        .test-option.selected {
+            border-color: var(--forest);
+            background: var(--forest);
+            color: var(--white);
+        }
+        .test-option.selected .opt-letter {
+            background: var(--gold); color: var(--forest-deep);
+        }
+
+        /* Lead capture form */
+        .lead-capture {
+            text-align: center;
+        }
+        .lead-capture h3 {
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            margin-bottom: 1rem;
+            color: var(--forest-deep);
+        }
+        .lead-capture p {
+            color: var(--text-light); margin-bottom: 2rem;
+            font-size: 1.02rem;
+        }
+        .lead-form {
+            display: flex; flex-direction: column; gap: 1rem;
+            max-width: 440px; margin: 0 auto;
+        }
+        .lead-form input, .lead-form select {
+            padding: 1rem 1.2rem;
+            border: 2px solid var(--cream-dark);
+            border-radius: var(--radius);
+            font-size: 1rem;
+            font-family: var(--font-body);
+            background: var(--white);
+            color: var(--text);
+            transition: var(--transition);
+        }
+        .lead-form input:focus, .lead-form select:focus {
+            outline: none; border-color: var(--gold);
+            box-shadow: 0 0 0 4px rgba(140,47,61,0.15);
+        }
+        .lead-checkbox {
+            display: flex; align-items: flex-start; gap: 0.6rem;
+            font-size: 0.82rem; color: var(--text-light);
+            text-align: left;
+        }
+        .lead-checkbox input { width: auto; }
+        .btn-submit-lead {
+            background: var(--forest-deep); color: var(--white);
+            padding: 1.1rem 2rem; border: none; border-radius: 50px;
+            font-weight: 700; font-size: 1rem; cursor: pointer;
+            font-family: var(--font-body); margin-top: 0.5rem;
+            transition: var(--transition);
+            box-shadow: 0 8px 28px rgba(10,37,32,0.25);
+        }
+        .btn-submit-lead:hover {
+            background: var(--forest); transform: translateY(-2px);
+            box-shadow: 0 12px 36px rgba(10,37,32,0.35);
+        }
+        .btn-submit-lead:disabled {
+            opacity: 0.6; cursor: not-allowed;
+        }
+
+        /* Test Results */
+        .test-result {
+            text-align: center; padding: 1rem 0;
+        }
+        .result-level-badge {
+            display: inline-block;
+            font-family: var(--font-display);
+            font-size: clamp(4rem, 10vw, 7rem);
+            color: var(--gold-rich); line-height: 1;
+            font-weight: 600;
+            letter-spacing: -0.04em;
+            margin: 1rem 0;
+            position: relative;
+            font-variation-settings: "SOFT" 100, "WONK" 1;
+        }
+        .result-level-badge::after {
+            content: ''; position: absolute;
+            bottom: -8px; left: 10%; right: 10%; height: 4px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+        .result-cefr {
+            font-size: 0.85rem; text-transform: uppercase;
+            letter-spacing: 0.15em; color: var(--gold-dark);
+            font-weight: 700;
+        }
+        .result-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            color: var(--forest-deep);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        .result-description {
+            color: var(--text); font-size: 1.05rem;
+            max-width: 480px; margin: 0 auto 1.5rem;
+            line-height: 1.7;
+        }
+        .result-score-row {
+            display: flex; justify-content: center; gap: 1.5rem;
+            flex-wrap: wrap; margin: 2rem 0;
+        }
+        .result-stat {
+            background: var(--cream-dark);
+            padding: 1rem 1.5rem; border-radius: var(--radius);
+            min-width: 120px;
+        }
+        .result-stat-value {
+            font-family: var(--font-display);
+            font-size: 2rem; color: var(--forest-deep); font-weight: 600;
+        }
+        .result-stat-label {
+            font-size: 0.78rem; color: var(--text-light);
+            text-transform: uppercase; letter-spacing: 0.08em;
+            font-weight: 600;
+        }
+        .result-cta {
+            display: flex; gap: 0.8rem; justify-content: center;
+            flex-wrap: wrap; margin-top: 1.5rem;
+        }
+
+        /* Loading state */
+        .test-loading {
+            text-align: center; padding: 3rem 1rem;
+        }
+        .test-spinner {
+            width: 48px; height: 48px; margin: 0 auto 1.5rem;
+            border: 4px solid var(--cream-dark);
+            border-top-color: var(--gold);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== PRICING ===== */
+        .pricing { background: var(--cream); }
+        .pricing-toggle { display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 2.5rem; }
+        .pricing-toggle-btn {
+            background: var(--white); border: 2px solid var(--cream-dark); padding: 0.7rem 1.5rem;
+            border-radius: 10px; font-size: 0.9rem; font-weight: 600; cursor: pointer;
+            transition: var(--transition); font-family: var(--font-body);
+        }
+        .pricing-toggle-btn.active { background: var(--forest); color: var(--white); border-color: var(--forest); }
+        .pricing-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .pricing-card {
+            background: var(--white); border-radius: var(--radius-lg); padding: 2rem;
+            border: 2px solid transparent; transition: var(--transition); position: relative;
+        }
+        .pricing-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+        .pricing-card.featured { border-color: var(--gold); box-shadow: var(--shadow-gold); }
+        .pricing-card.featured::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+        }
+        .pricing-badge {
+            display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--forest-deep); font-size: 0.72rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.1em;
+            padding: 0.3rem 0.8rem; border-radius: 50px; margin-bottom: 1rem;
+        }
+        .pricing-card h3 { font-size: 1.25rem; margin-bottom: 0.3rem; }
+        .pricing-desc { font-size: 0.85rem; color: var(--text-light); margin-bottom: 1.2rem; }
+        .pricing-amount { display: flex; align-items: baseline; gap: 0.3rem; margin-bottom: 0.3rem; }
+        .pricing-amount .currency { font-size: 1.4rem; font-weight: 600; color: var(--forest); }
+        .pricing-amount .amount {
+            font-size: 2.8rem; font-weight: 700; color: var(--forest);
+            font-family: var(--font-display); line-height: 1;
+        }
+        .pricing-per { font-size: 0.82rem; color: var(--text-light); margin-bottom: 0.5rem; }
+        .pricing-savings {
+            display: inline-block; background: #E8F5E9; color: #2E7D32;
+            font-size: 0.78rem; font-weight: 600; padding: 0.2rem 0.6rem;
+            border-radius: 4px; margin-bottom: 1.2rem;
+        }
+        .pricing-features { list-style: none; margin-bottom: 1.5rem; }
+        .pricing-features li {
+            padding: 0.4rem 0; font-size: 0.88rem; display: flex;
+            align-items: flex-start; gap: 0.5rem; color: var(--text);
+        }
+        .pricing-features li::before { content: '\2713'; color: var(--forest); font-weight: 700; flex-shrink: 0; }
+        .pricing-link {
+            display: block; text-align: center; background: var(--forest); color: var(--white);
+            padding: 0.8rem; border-radius: 10px; text-decoration: none;
+            font-weight: 600; font-size: 0.92rem; transition: var(--transition);
+        }
+        .pricing-link:hover { background: var(--forest-deep); transform: translateY(-1px); }
+        .pricing-card.featured .pricing-link { background: var(--gold); color: var(--forest-deep); }
+        .pricing-card.featured .pricing-link:hover { background: var(--gold-dark); }
+        .free-trial-box {
+            text-align: center; margin-top: 2.5rem; padding: 2rem;
+            background: var(--white); border-radius: var(--radius-lg); border: 2px dashed var(--gold);
+        }
+        .free-trial-box h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .free-trial-box p { color: var(--text-light); font-size: 0.92rem; margin-bottom: 1rem; }
+
+        /* ===== HOW IT WORKS ===== */
+        .how-it-works { background: var(--white); }
+        .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+        .step { text-align: center; padding: 1.5rem; }
+        .step-number {
+            width: 48px; height: 48px; background: var(--forest); color: var(--white);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-family: var(--font-display); font-size: 1.2rem; font-weight: 700;
+            margin: 0 auto 1rem;
+        }
+        .step h4 { font-size: 1rem; margin-bottom: 0.5rem; }
+        .step p { font-size: 0.85rem; color: var(--text-light); }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials { background: linear-gradient(135deg, var(--forest) 0%, var(--forest-deep) 100%); color: var(--white); }
+        .testimonials .section-label { color: var(--gold-light); }
+        .testimonials .section-header h2 { color: var(--white); }
+        .testimonials .section-header p { color: rgba(255,255,255,0.7); }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .testimonial-card {
+            background: rgba(255,255,255,0.08); border-radius: var(--radius); padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px);
+        }
+        .testimonial-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 0.8rem; letter-spacing: 2px; }
+        .testimonial-card blockquote {
+            line-height: 1.7; color: rgba(255,255,255,0.9); margin-bottom: 1rem;
+            font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-style: italic;
+        }
+        .testimonial-author { font-weight: 600; font-size: 0.88rem; }
+        .testimonial-role { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+        .review-cta { text-align: center; margin-top: 2.5rem; }
+        .review-cta a { color: var(--gold-light); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+        .google-reviews-cta {
+            margin-top: 3rem; padding: 2rem; background: rgba(255,255,255,0.08);
+            border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,0.1);
+            display: flex; flex-direction: column; align-items: center; gap: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+        .google-badge {
+            display: flex; align-items: center; gap: 1rem;
+        }
+        .google-badge-stars {
+            color: var(--gold); font-size: 1.1rem; letter-spacing: 3px; line-height: 1;
+        }
+        .google-badge-label {
+            font-size: 0.85rem; color: rgba(255,255,255,0.8);
+            font-weight: 600; margin-top: 0.3rem;
+        }
+        .google-cta-buttons {
+            display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center;
+        }
+        .btn-google-view, .btn-google-leave {
+            padding: 0.7rem 1.5rem; border-radius: 10px; text-decoration: none;
+            font-weight: 600; font-size: 0.88rem; transition: var(--transition);
+            display: inline-flex; align-items: center; gap: 0.4rem;
+        }
+        .btn-google-view {
+            background: var(--white); color: var(--forest-deep);
+        }
+        .btn-google-view:hover { background: var(--gold); transform: translateY(-2px); }
+        .btn-google-leave {
+            background: var(--gold); color: var(--forest-deep);
+        }
+        .btn-google-leave:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+        /* ===== FAQ ===== */
+        .faq { background: var(--cream); }
+        .faq-list { max-width: 700px; margin: 0 auto; }
+        .faq-item {
+            background: var(--white); border-radius: var(--radius); margin-bottom: 0.8rem;
+            overflow: hidden; border: 1px solid rgba(31,58,95,0.06);
+        }
+        .faq-question {
+            width: 100%; background: none; border: none; padding: 1.2rem 1.5rem;
+            text-align: left; font-family: var(--font-body); font-size: 0.95rem;
+            font-weight: 600; color: var(--forest-deep); cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .faq-question:hover { background: var(--cream); }
+        .faq-question .arrow { transition: var(--transition); font-size: 0.8rem; }
+        .faq-item.open .arrow { transform: rotate(180deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .faq-answer-inner { padding: 0 1.5rem 1.2rem; font-size: 0.9rem; color: var(--text-light); line-height: 1.7; }
+
+        /* ===== FINAL CTA ===== */
+        .final-cta { background: var(--white); text-align: center; }
+        .final-cta h2 { font-size: 2rem; margin-bottom: 0.8rem; }
+        .final-cta p { color: var(--text-light); max-width: 500px; margin: 0 auto 1.5rem; }
+        .final-cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+        /* ===== FOOTER ===== */
+        footer { background: var(--forest-deep); color: rgba(255,255,255,0.6); text-align: center; padding: 2rem; font-size: 0.82rem; }
+        footer a { color: var(--gold-light); text-decoration: none; }
+
+        /* ===== CHATBOT ===== */
+        .chat-fab {
+            position: fixed; bottom: 1.5rem; right: 1.5rem; width: 56px; height: 56px;
+            background: var(--forest); color: var(--white); border: none; border-radius: 50%;
+            font-size: 1.5rem; cursor: pointer; z-index: 1500; box-shadow: var(--shadow-lg);
+            transition: var(--transition); display: flex; align-items: center; justify-content: center;
+        }
+        .chat-fab:hover { background: var(--forest-deep); transform: scale(1.05); }
+        .chat-window {
+            display: none; position: fixed; bottom: 5.5rem; right: 1.5rem; width: 360px;
+            max-height: 480px; background: var(--white); border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg); z-index: 1500; flex-direction: column;
+            overflow: hidden; animation: modalIn 0.3s ease-out;
+        }
+        .chat-window.open { display: flex; }
+        .chat-header {
+            background: var(--forest); color: var(--white); padding: 1rem 1.2rem;
+            display: flex; align-items: center; gap: 0.8rem;
+        }
+        .chat-header-avatar {
+            width: 36px; height: 36px; background: var(--gold); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 0.8rem; color: var(--forest-deep);
+        }
+        .chat-header-info h4 { color: var(--white); font-family: var(--font-body); font-size: 0.92rem; }
+        .chat-header-info span { font-size: 0.72rem; color: rgba(255,255,255,0.7); }
+        .chat-messages {
+            flex: 1; overflow-y: auto; padding: 1rem; display: flex;
+            flex-direction: column; gap: 0.8rem; min-height: 200px; max-height: 280px;
+        }
+        .chat-msg {
+            max-width: 85%; padding: 0.7rem 1rem; border-radius: 12px;
+            font-size: 0.85rem; line-height: 1.5; white-space: pre-line;
+        }
+        .chat-msg.bot { background: var(--cream); align-self: flex-start; border-bottom-left-radius: 4px; }
+        .chat-msg.user { background: var(--forest); color: var(--white); align-self: flex-end; border-bottom-right-radius: 4px; }
+        .chat-quick-replies { display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 0 1rem 0.5rem; }
+        .chat-quick-btn {
+            background: var(--cream); border: 1.5px solid var(--cream-dark); padding: 0.35rem 0.75rem;
+            border-radius: 50px; font-size: 0.78rem; font-weight: 500; cursor: pointer;
+            transition: var(--transition); font-family: var(--font-body); color: var(--forest);
+        }
+        .chat-quick-btn:hover { background: var(--forest); color: var(--white); border-color: var(--forest); }
+        .chat-input-area { display: flex; border-top: 1px solid var(--cream-dark); padding: 0.6rem; gap: 0.4rem; }
+        .chat-input {
+            flex: 1; border: 1.5px solid var(--cream-dark); padding: 0.6rem 0.8rem;
+            border-radius: 8px; font-size: 0.85rem; outline: none;
+            font-family: var(--font-body);
+        }
+        .chat-input:focus { border-color: var(--forest); }
+        .chat-send {
+            background: var(--forest); color: var(--white); border: none; width: 38px;
+            height: 38px; border-radius: 8px; cursor: pointer; font-size: 1rem;
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in { animation: fadeInUp 0.6s ease-out both; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .services-grid { grid-template-columns: 1fr; }
+            .pricing-cards { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+            .testimonials-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+            .steps-grid { grid-template-columns: repeat(2, 1fr); }
+            .about-grid { grid-template-columns: 1fr; }
+            .corporate-banner { flex-direction: column; text-align: center; }
+            .results-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; position: absolute; top: 100%; left: 0; right: 0;
+                background: var(--cream); flex-direction: column; padding: 1.5rem 2rem;
+                gap: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            }
+            .nav-links.open { display: flex; }
+            .hamburger { display: flex; }
+            .hero { padding: 6rem 1.5rem 3rem; min-height: auto; }
+            section { padding: 3rem 1.5rem; }
+            .games-grid { grid-template-columns: 1fr; }
+            .game-options { grid-template-columns: 1fr; }
+            .chat-window { right: 0.5rem; left: 0.5rem; width: auto; bottom: 5rem; }
+            .about-credentials { grid-template-columns: 1fr; }
+            .hero-stats { flex-wrap: wrap; gap: 1rem; }
+            .results-grid { grid-template-columns: 1fr; max-width: 320px; margin: 0 auto; }
+            .result-number { font-size: 2.8rem; }
+            .test-features { grid-template-columns: 1fr; }
+            .test-intro-card { padding: 2rem 1.5rem; }
+            .test-modal-inner { margin: 0; min-height: 100vh; border-radius: 0; padding: 1.5rem; }
+            .test-option { padding: 0.85rem 1rem; font-size: 0.95rem; }
+            .result-score-row { gap: 0.8rem; }
+            .result-stat { min-width: 100px; padding: 0.8rem 1rem; }
+        }
+    </style>
 </head>
 <body>
 
 <!-- ===== NAVBAR ===== -->
-
 <nav class="navbar" id="navbar">
     <div class="nav-inner">
         <a href="#" class="nav-brand">
@@ -636,6 +1060,7 @@
             <li><a href="#about"><span data-en>About</span><span data-it>Chi Sono</span></a></li>
             <li><a href="#services"><span data-en>Services</span><span data-it>Servizi</span></a></li>
             <li><a href="#resources"><span data-en>Free Resources</span><span data-it>Risorse Gratuite</span></a></li>
+            <li><a href="#entry-test" style="color:var(--gold-dark);font-weight:600;"><span data-en>Level Test</span><span data-it>Test Livello</span></a></li>
             <li><a href="#pricing"><span data-en>Pricing</span><span data-it>Prezzi</span></a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#pricing" class="nav-cta"><span data-en>Book Now</span><span data-it>Prenota</span></a></li>
@@ -653,7 +1078,6 @@
 </nav>
 
 <!-- ===== HERO ===== -->
-
 <section class="hero" id="home">
     <div class="hero-content">
         <div class="hero-badge">
@@ -670,6 +1094,7 @@
         </p>
         <div class="hero-buttons">
             <a href="#pricing" class="btn-primary"><span data-en>See Pricing</span><span data-it>Vedi i Prezzi</span> &rarr;</a>
+            <a href="#entry-test" class="btn-secondary" style="border-color:var(--gold-dark);color:var(--gold-dark);"><span data-en>Test Your Level</span><span data-it>Testa il tuo Livello</span></a>
             <a href="#resources" class="btn-secondary"><span data-en>Free Resources</span><span data-it>Risorse Gratuite</span></a>
         </div>
         <div class="hero-stats">
@@ -682,7 +1107,6 @@
 </section>
 
 <!-- ===== ABOUT ===== -->
-
 <section class="about" id="about">
     <div class="section-inner">
         <div class="about-grid">
@@ -714,7 +1138,6 @@
 </section>
 
 <!-- ===== RESULTS ===== -->
-
 <section class="results">
     <div class="section-inner">
         <div class="section-header">
@@ -748,7 +1171,6 @@
 </section>
 
 <!-- ===== SERVICES ===== -->
-
 <section class="services" id="services">
     <div class="section-inner">
         <div class="section-header">
@@ -790,7 +1212,6 @@
 </section>
 
 <!-- ===== FREE RESOURCES ===== -->
-
 <section class="resources" id="resources">
     <div class="section-inner">
         <div class="section-header">
@@ -809,8 +1230,54 @@
     </div>
 </section>
 
-<!-- ===== PRICING ===== -->
+<!-- ===== ENTRY TEST ===== -->
+<section class="entry-test" id="entry-test">
+    <div class="section-inner">
+        <div class="section-header">
+            <span class="section-label"><span data-en>Free Level Test</span><span data-it>Test di Livello Gratuito</span></span>
+            <h2><span data-en>Discover your <em>English level</em> in 10 minutes</span><span data-it>Scopri il tuo <em>livello d'inglese</em> in 10 minuti</span></h2>
+            <p><span data-en>40 carefully crafted questions following the CEFR standard (A1 to C1). Get your personalized result and learning path delivered to your inbox.</span><span data-it>40 domande studiate seguendo lo standard CEFR (A1 a C1). Ricevi il tuo risultato personalizzato e un percorso di apprendimento direttamente nella tua email.</span></p>
+        </div>
 
+        <div class="test-intro-card">
+            <div class="test-features">
+                <div class="test-feature">
+                    <span class="test-feature-icon">&#128221;</span>
+                    <div class="test-feature-value">40</div>
+                    <div class="test-feature-label"><span data-en>Questions</span><span data-it>Domande</span></div>
+                </div>
+                <div class="test-feature">
+                    <span class="test-feature-icon">&#9202;</span>
+                    <div class="test-feature-value">10</div>
+                    <div class="test-feature-label"><span data-en>Minutes</span><span data-it>Minuti</span></div>
+                </div>
+                <div class="test-feature">
+                    <span class="test-feature-icon">&#127942;</span>
+                    <div class="test-feature-value">A1&ndash;C1</div>
+                    <div class="test-feature-label"><span data-en>CEFR Levels</span><span data-it>Livelli CEFR</span></div>
+                </div>
+            </div>
+            <p style="color:rgba(255,255,255,0.85);margin-bottom:2rem;font-size:1.02rem;line-height:1.7;">
+                <span data-en>The test covers grammar, vocabulary, and usage from beginner to advanced. At the end, you'll receive your CEFR level and a tailored recommendation for your learning journey.</span>
+                <span data-it>Il test copre grammatica, vocabolario e uso dalla principiante all'avanzato. Alla fine riceverai il tuo livello CEFR e un consiglio su misura per il tuo percorso.</span>
+            </p>
+            <button class="btn-start-test" onclick="openEntryTest()">
+                <span data-en>Start the Test &rarr;</span>
+                <span data-it>Inizia il Test &rarr;</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Test Modal -->
+<div class="test-modal" id="testModal" role="dialog" aria-modal="true" aria-labelledby="testTitle">
+    <div class="test-modal-inner">
+        <button class="test-close" onclick="closeEntryTest()" aria-label="Close test">&times;</button>
+        <div id="testContent"><!-- Filled by JS --></div>
+    </div>
+</div>
+
+<!-- ===== PRICING ===== -->
 <section class="pricing" id="pricing">
     <div class="section-inner">
         <div class="section-header">
@@ -827,111 +1294,107 @@
             </button>
         </div>
 
-```
-    <!-- General & Business Pricing -->
-    <div class="pricing-cards" id="pricingGeneral">
-        <div class="pricing-card fade-in">
-            <h3><span data-en>Single Lesson</span><span data-it>Lezione Singola</span></h3>
-            <p class="pricing-desc"><span data-en>Ideal for flexible students</span><span data-it>Ideale per studenti flessibili</span></p>
-            <div class="pricing-amount"><span class="currency">&euro;</span><span class="amount">20</span></div>
-            <p class="pricing-per"><span data-en>per lesson</span><span data-it>a lezione</span></p>
-            <ul class="pricing-features">
-                <li><span data-en>60-minute session</span><span data-it>Sessione di 60 minuti</span></li>
-                <li><span data-en>Personalized lesson plan</span><span data-it>Piano lezione personalizzato</span></li>
-                <li><span data-en>Flexible scheduling</span><span data-it>Orario flessibile</span></li>
-            </ul>
-            <a href="https://cal.com/the.englishlounge/english-lesson-general" class="pricing-link"><span data-en>Book Now</span><span data-it>Prenota Ora</span></a>
+        <!-- General & Business Pricing -->
+        <div class="pricing-cards" id="pricingGeneral">
+            <div class="pricing-card fade-in">
+                <h3><span data-en>Single Lesson</span><span data-it>Lezione Singola</span></h3>
+                <p class="pricing-desc"><span data-en>Ideal for flexible students</span><span data-it>Ideale per studenti flessibili</span></p>
+                <div class="pricing-amount"><span class="currency">&euro;</span><span class="amount">20</span></div>
+                <p class="pricing-per"><span data-en>per lesson</span><span data-it>a lezione</span></p>
+                <ul class="pricing-features">
+                    <li><span data-en>60-minute session</span><span data-it>Sessione di 60 minuti</span></li>
+                    <li><span data-en>Personalized lesson plan</span><span data-it>Piano lezione personalizzato</span></li>
+                    <li><span data-en>Flexible scheduling</span><span data-it>Orario flessibile</span></li>
+                </ul>
+                <a href="https://cal.com/the.englishlounge/english-lesson-general" class="pricing-link"><span data-en>Book Now</span><span data-it>Prenota Ora</span></a>
+            </div>
+            <div class="pricing-card featured fade-in">
+                <span class="pricing-badge"><span data-en>Best for Progress</span><span data-it>Migliore per Progresso</span></span>
+                <h3><span data-en>5-Lesson Pack</span><span data-it>Pacchetto 5 Lezioni</span></h3>
+                <p class="pricing-desc"><span data-en>Best for steady progress</span><span data-it>Migliore per progressi costanti</span></p>
+                <div class="pricing-amount"><span class="currency">&euro;</span><span class="amount">95</span></div>
+                <p class="pricing-per"><span data-en>&euro;19 per lesson</span><span data-it>&euro;19 a lezione</span></p>
+                <span class="pricing-savings"><span data-en>Save &euro;5 (5% off)</span><span data-it>Risparmi &euro;5 (5%)</span></span>
+                <ul class="pricing-features">
+                    <li><span data-en>5 x 60-minute sessions</span><span data-it>5 x sessioni da 60 minuti</span></li>
+                    <li><span data-en>Personalized learning path</span><span data-it>Percorso personalizzato</span></li>
+                    <li><span data-en>Progress tracking</span><span data-it>Monitoraggio progressi</span></li>
+                    <li><span data-en>Priority scheduling</span><span data-it>Prenotazione prioritaria</span></li>
+                </ul>
+                <a href="https://cal.com/the.englishlounge/5-lesson-pack" class="pricing-link"><span data-en>Get Started</span><span data-it>Inizia Ora</span></a>
+            </div>
+            <div class="pricing-card fade-in">
+                <h3><span data-en>10-Lesson Pack</span><span data-it>Pacchetto 10 Lezioni</span></h3>
+                <p class="pricing-desc"><span data-en>Best value for serious learners</span><span data-it>Miglior valore per studenti seri</span></p>
+                <div class="pricing-amount"><span class="currency">&euro;</span><span class="amount">180</span></div>
+                <p class="pricing-per"><span data-en>&euro;18 per lesson</span><span data-it>&euro;18 a lezione</span></p>
+                <span class="pricing-savings"><span data-en>Save &euro;20 (10% off)</span><span data-it>Risparmi &euro;20 (10%)</span></span>
+                <ul class="pricing-features">
+                    <li><span data-en>10 x 60-minute sessions</span><span data-it>10 x sessioni da 60 minuti</span></li>
+                    <li><span data-en>Custom curriculum</span><span data-it>Curriculum personalizzato</span></li>
+                    <li><span data-en>Weekly progress reports</span><span data-it>Report settimanali</span></li>
+                    <li><span data-en>Priority scheduling</span><span data-it>Prenotazione prioritaria</span></li>
+                    <li><span data-en>WhatsApp support between lessons</span><span data-it>Supporto WhatsApp tra le lezioni</span></li>
+                </ul>
+                <a href="https://cal.com/the.englishlounge/10-lesson-pack" class="pricing-link"><span data-en>Get Started</span><span data-it>Inizia Ora</span></a>
+            </div>
         </div>
-        <div class="pricing-card featured fade-in">
-            <span class="pricing-badge"><span data-en>Best for Progress</span><span data-it>Migliore per Progresso</span></span>
-            <h3><span data-en>5-Lesson Pack</span><span data-it>Pacchetto 5 Lezioni</span></h3>
-            <p class="pricing-desc"><span data-en>Best for steady progress</span><span data-it>Migliore per progressi costanti</span></p>
-            <div class="pricing-amount"><span class="currency">&euro;</span><span class="amount">95</span></div>
-            <p class="pricing-per"><span data-en>&euro;19 per lesson</span><span data-it>&euro;19 a lezione</span></p>
-            <span class="pricing-savings"><span data-en>Save &euro;5 (5% off)</span><span data-it>Risparmi &euro;5 (5%)</span></span>
-            <ul class="pricing-features">
-                <li><span data-en>5 x 60-minute sessions</span><span data-it>5 x sessioni da 60 minuti</span></li>
-                <li><span data-en>Personalized learning path</span><span data-it>Percorso personalizzato</span></li>
-                <li><span data-en>Progress tracking</span><span data-it>Monitoraggio progressi</span></li>
-                <li><span data-en>Priority scheduling</span><span data-it>Prenotazione prioritaria</span></li>
-            </ul>
-            <a href="https://cal.com/the.englishlounge/5-lesson-pack" class="pricing-link"><span data-en>Get Started</span><span data-it>Inizia Ora</span></a>
+
+        <!-- IELTS & Cambridge Pricing -->
+        <div class="pricing-cards" id="pricingExam" style="display:none;">
+            <div class="pricing-card fade-in">
+                <h3><span data-en>Single Lesson</span><span data-it>Lezione Singola</span></h3>
+                <p class="pricing-desc"><span data-en>Targeted exam practice</span><span data-it>Pratica d&#39;esame mirata</span></p>
+                <div class="pricing-amount"><span class="currency">&euro;</span><span class="amount">23</span></div>
+                <p class="pricing-per"><span data-en>per lesson</span><span data-it>a lezione</span></p>
+                <ul class="pricing-features">
+                    <li><span data-en>60-minute session</span><span data-it>Sessione di 60 minuti</span></li>
+                    <li><span data-en>IELTS or Cambridge focus</span><span data-it>Focus IELTS o Cambridge</span></li>
+                    <li><span data-en>Exam strategies &amp; techniques</span><span data-it>Strategie e tecniche d&#39;esame</span></li>
+                </ul>
+                <a href="https://cal.com/the.englishlounge/english-lesson" class="pricing-link"><span data-en>Book Now</span><span data-it>Prenota Ora</span></a>
+            </div>
+            <div class="pricing-card featured fade-in">
+                <span class="pricing-badge"><span data-en>Recommended</span><span data-it>Consigliato</span></span>
+                <h3><span data-en>5-Lesson Pack</span><span data-it>Pacchetto 5 Lezioni</span></h3>
+                <p class="pricing-desc"><span data-en>Focused exam preparation</span><span data-it>Preparazione focalizzata</span></p>
+                <div class="pricing-amount"><span class="currency">&euro;</span><span class="amount">109</span></div>
+                <p class="pricing-per"><span data-en>&euro;21.80 per lesson</span><span data-it>&euro;21,80 a lezione</span></p>
+                <span class="pricing-savings"><span data-en>Save &euro;6 (5% off)</span><span data-it>Risparmi &euro;6 (5%)</span></span>
+                <ul class="pricing-features">
+                    <li><span data-en>5 x 60-minute sessions</span><span data-it>5 x sessioni da 60 minuti</span></li>
+                    <li><span data-en>Full mock exam included</span><span data-it>Simulazione completa inclusa</span></li>
+                    <li><span data-en>Section-by-section strategies</span><span data-it>Strategie sezione per sezione</span></li>
+                    <li><span data-en>Score prediction &amp; feedback</span><span data-it>Previsione punteggio &amp; feedback</span></li>
+                </ul>
+                <a href="https://cal.com/the.englishlounge/5-lesson-pack-exam-preparation" class="pricing-link"><span data-en>Get Started</span><span data-it>Inizia Ora</span></a>
+            </div>
+            <div class="pricing-card fade-in">
+                <h3><span data-en>10-Lesson Pack</span><span data-it>Pacchetto 10 Lezioni</span></h3>
+                <p class="pricing-desc"><span data-en>Complete exam mastery</span><span data-it>Padronanza completa</span></p>
+                <div class="pricing-amount"><span class="currency">&euro;</span><span class="amount">207</span></div>
+                <p class="pricing-per"><span data-en>&euro;20.70 per lesson</span><span data-it>&euro;20,70 a lezione</span></p>
+                <span class="pricing-savings"><span data-en>Save &euro;23 (10% off)</span><span data-it>Risparmi &euro;23 (10%)</span></span>
+                <ul class="pricing-features">
+                    <li><span data-en>10 x 60-minute sessions</span><span data-it>10 x sessioni da 60 minuti</span></li>
+                    <li><span data-en>Complete exam curriculum</span><span data-it>Curriculum d&#39;esame completo</span></li>
+                    <li><span data-en>Multiple mock exams</span><span data-it>Simulazioni multiple</span></li>
+                    <li><span data-en>Detailed score analysis</span><span data-it>Analisi dettagliata punteggio</span></li>
+                    <li><span data-en>WhatsApp support</span><span data-it>Supporto WhatsApp</span></li>
+                </ul>
+                <a href="https://cal.com/the.englishlounge/10-lesson-pack-exam-preparation" class="pricing-link"><span data-en>Get Started</span><span data-it>Inizia Ora</span></a>
+            </div>
         </div>
-        <div class="pricing-card fade-in">
-            <h3><span data-en>10-Lesson Pack</span><span data-it>Pacchetto 10 Lezioni</span></h3>
-            <p class="pricing-desc"><span data-en>Best value for serious learners</span><span data-it>Miglior valore per studenti seri</span></p>
-            <div class="pricing-amount"><span class="currency">&euro;</span><span class="amount">180</span></div>
-            <p class="pricing-per"><span data-en>&euro;18 per lesson</span><span data-it>&euro;18 a lezione</span></p>
-            <span class="pricing-savings"><span data-en>Save &euro;20 (10% off)</span><span data-it>Risparmi &euro;20 (10%)</span></span>
-            <ul class="pricing-features">
-                <li><span data-en>10 x 60-minute sessions</span><span data-it>10 x sessioni da 60 minuti</span></li>
-                <li><span data-en>Custom curriculum</span><span data-it>Curriculum personalizzato</span></li>
-                <li><span data-en>Weekly progress reports</span><span data-it>Report settimanali</span></li>
-                <li><span data-en>Priority scheduling</span><span data-it>Prenotazione prioritaria</span></li>
-                <li><span data-en>WhatsApp support between lessons</span><span data-it>Supporto WhatsApp tra le lezioni</span></li>
-            </ul>
-            <a href="https://cal.com/the.englishlounge/10-lesson-pack" class="pricing-link"><span data-en>Get Started</span><span data-it>Inizia Ora</span></a>
+
+        <div class="free-trial-box fade-in">
+            <h3><span data-en>Not sure yet? Try a free lesson first</span><span data-it>Non sei sicuro? Prova prima una lezione gratuita</span></h3>
+            <p><span data-en>Book a free 20-minute trial. No commitment, no payment required.</span><span data-it>Prenota una prova gratuita di 20 minuti. Nessun impegno, nessun pagamento.</span></p>
+            <a href="https://cal.com/the.englishlounge/free-trial" class="btn-primary"><span data-en>Book Free Trial</span><span data-it>Prova Gratuita</span> &rarr;</a>
         </div>
     </div>
-
-    <!-- IELTS & Cambridge Pricing -->
-    <div class="pricing-cards" id="pricingExam" style="display:none;">
-        <div class="pricing-card fade-in">
-            <h3><span data-en>Single Lesson</span><span data-it>Lezione Singola</span></h3>
-            <p class="pricing-desc"><span data-en>Targeted exam practice</span><span data-it>Pratica d&#39;esame mirata</span></p>
-            <div class="pricing-amount"><span class="currency">&euro;</span><span class="amount">23</span></div>
-            <p class="pricing-per"><span data-en>per lesson</span><span data-it>a lezione</span></p>
-            <ul class="pricing-features">
-                <li><span data-en>60-minute session</span><span data-it>Sessione di 60 minuti</span></li>
-                <li><span data-en>IELTS or Cambridge focus</span><span data-it>Focus IELTS o Cambridge</span></li>
-                <li><span data-en>Exam strategies &amp; techniques</span><span data-it>Strategie e tecniche d&#39;esame</span></li>
-            </ul>
-            <a href="https://cal.com/the.englishlounge/english-lesson" class="pricing-link"><span data-en>Book Now</span><span data-it>Prenota Ora</span></a>
-        </div>
-        <div class="pricing-card featured fade-in">
-            <span class="pricing-badge"><span data-en>Recommended</span><span data-it>Consigliato</span></span>
-            <h3><span data-en>5-Lesson Pack</span><span data-it>Pacchetto 5 Lezioni</span></h3>
-            <p class="pricing-desc"><span data-en>Focused exam preparation</span><span data-it>Preparazione focalizzata</span></p>
-            <div class="pricing-amount"><span class="currency">&euro;</span><span class="amount">109</span></div>
-            <p class="pricing-per"><span data-en>&euro;21.80 per lesson</span><span data-it>&euro;21,80 a lezione</span></p>
-            <span class="pricing-savings"><span data-en>Save &euro;6 (5% off)</span><span data-it>Risparmi &euro;6 (5%)</span></span>
-            <ul class="pricing-features">
-                <li><span data-en>5 x 60-minute sessions</span><span data-it>5 x sessioni da 60 minuti</span></li>
-                <li><span data-en>Full mock exam included</span><span data-it>Simulazione completa inclusa</span></li>
-                <li><span data-en>Section-by-section strategies</span><span data-it>Strategie sezione per sezione</span></li>
-                <li><span data-en>Score prediction &amp; feedback</span><span data-it>Previsione punteggio &amp; feedback</span></li>
-            </ul>
-            <a href="https://cal.com/the.englishlounge/5-lesson-pack-exam-preparation" class="pricing-link"><span data-en>Get Started</span><span data-it>Inizia Ora</span></a>
-        </div>
-        <div class="pricing-card fade-in">
-            <h3><span data-en>10-Lesson Pack</span><span data-it>Pacchetto 10 Lezioni</span></h3>
-            <p class="pricing-desc"><span data-en>Complete exam mastery</span><span data-it>Padronanza completa</span></p>
-            <div class="pricing-amount"><span class="currency">&euro;</span><span class="amount">207</span></div>
-            <p class="pricing-per"><span data-en>&euro;20.70 per lesson</span><span data-it>&euro;20,70 a lezione</span></p>
-            <span class="pricing-savings"><span data-en>Save &euro;23 (10% off)</span><span data-it>Risparmi &euro;23 (10%)</span></span>
-            <ul class="pricing-features">
-                <li><span data-en>10 x 60-minute sessions</span><span data-it>10 x sessioni da 60 minuti</span></li>
-                <li><span data-en>Complete exam curriculum</span><span data-it>Curriculum d&#39;esame completo</span></li>
-                <li><span data-en>Multiple mock exams</span><span data-it>Simulazioni multiple</span></li>
-                <li><span data-en>Detailed score analysis</span><span data-it>Analisi dettagliata punteggio</span></li>
-                <li><span data-en>WhatsApp support</span><span data-it>Supporto WhatsApp</span></li>
-            </ul>
-            <a href="https://cal.com/the.englishlounge/10-lesson-pack-exam-preparation" class="pricing-link"><span data-en>Get Started</span><span data-it>Inizia Ora</span></a>
-        </div>
-    </div>
-
-    <div class="free-trial-box fade-in">
-        <h3><span data-en>Not sure yet? Try a free lesson first</span><span data-it>Non sei sicuro? Prova prima una lezione gratuita</span></h3>
-        <p><span data-en>Book a free 20-minute trial. No commitment, no payment required.</span><span data-it>Prenota una prova gratuita di 20 minuti. Nessun impegno, nessun pagamento.</span></p>
-        <a href="https://cal.com/the.englishlounge/free-trial" class="btn-primary"><span data-en>Book Free Trial</span><span data-it>Prova Gratuita</span> &rarr;</a>
-    </div>
-</div>
-```
-
 </section>
 
 <!-- ===== HOW IT WORKS ===== -->
-
 <section class="how-it-works">
     <div class="section-inner">
         <div class="section-header">
@@ -948,7 +1411,6 @@
 </section>
 
 <!-- ===== TESTIMONIALS ===== -->
-
 <section class="testimonials">
     <div class="section-inner">
         <div class="section-header">
@@ -1014,7 +1476,6 @@
 </section>
 
 <!-- ===== FAQ ===== -->
-
 <section class="faq" id="faq">
     <div class="section-inner">
         <div class="section-header">
@@ -1033,7 +1494,6 @@
 </section>
 
 <!-- ===== FINAL CTA ===== -->
-
 <section class="final-cta">
     <div class="section-inner">
         <h2><span data-en>Your English journey starts here</span><span data-it>Il tuo viaggio in inglese inizia qui</span></h2>
@@ -1047,7 +1507,6 @@
 </section>
 
 <!-- ===== FOOTER ===== -->
-
 <footer>
     <p>&copy; 2026 The English Lounge &middot; <span data-en>Learn English in Comfort</span><span data-it>Impara l&#39;Inglese con Comodita</span></p>
     <p style="margin-top:0.5rem;">
@@ -1058,7 +1517,6 @@
 </footer>
 
 <!-- ===== CHATBOT ===== -->
-
 <a href="https://wa.me/393520809945" target="_blank" rel="noopener" class="wa-fab" aria-label="WhatsApp">
     <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
 </a>
@@ -1082,7 +1540,6 @@
 </div>
 
 <!-- ===== GAME MODAL ===== -->
-
 <div class="game-modal-overlay" id="gameModal">
     <div class="game-modal">
         <button class="game-modal-close" onclick="closeGame()">&times;</button>
@@ -1436,7 +1893,335 @@ try {
     });
 } catch(e) { console.log(e); }
 
-</script>
+// ===== ENTRY LEVEL TEST =====
+var entryTestQuestions = [
+    // A1 - BEGINNER (1-10)
+    { q: { en: "___ name is Maria.", it: "___ name is Maria." }, opts: ["My", "I", "Me", "Mine"], correct: 0, level: "A1" },
+    { q: { en: "She ___ a teacher.", it: "She ___ a teacher." }, opts: ["are", "is", "am", "be"], correct: 1, level: "A1" },
+    { q: { en: "I have two ___.", it: "I have two ___." }, opts: ["cat", "cats", "cates", "catses"], correct: 1, level: "A1" },
+    { q: { en: "___ is your brother?", it: "___ is your brother?" }, opts: ["What", "How", "Who", "When"], correct: 2, level: "A1" },
+    { q: { en: "They ___ TV every evening.", it: "They ___ TV every evening." }, opts: ["watches", "watch", "watching", "watched"], correct: 1, level: "A1" },
+    { q: { en: "I'm ___ Italy.", it: "I'm ___ Italy." }, opts: ["in", "to", "from", "at"], correct: 2, level: "A1" },
+    { q: { en: "___ a book on the table.", it: "___ a book on the table." }, opts: ["There is", "There are", "It is", "Is there"], correct: 0, level: "A1" },
+    { q: { en: "Can you ___ English?", it: "Can you ___ English?" }, opts: ["speaking", "speaks", "speak", "spoke"], correct: 2, level: "A1" },
+    { q: { en: "What time ___ it?", it: "What time ___ it?" }, opts: ["are", "is", "do", "does"], correct: 1, level: "A1" },
+    { q: { en: "We ___ at school yesterday.", it: "We ___ at school yesterday." }, opts: ["was", "are", "were", "be"], correct: 2, level: "A1" },
 
+    // A2 - ELEMENTARY (11-20)
+    { q: { en: "He ___ to the gym every day.", it: "He ___ to the gym every day." }, opts: ["go", "goes", "going", "is go"], correct: 1, level: "A2" },
+    { q: { en: "I ___ pasta last night.", it: "I ___ pasta last night." }, opts: ["eat", "eated", "ate", "eaten"], correct: 2, level: "A2" },
+    { q: { en: "She is ___ than her sister.", it: "She is ___ than her sister." }, opts: ["tall", "taller", "tallest", "more tall"], correct: 1, level: "A2" },
+    { q: { en: "___ you ever been to London?", it: "___ you ever been to London?" }, opts: ["Did", "Have", "Are", "Were"], correct: 1, level: "A2" },
+    { q: { en: "I am going to ___ a doctor.", it: "I am going to ___ a doctor." }, opts: ["be", "being", "been", "to be"], correct: 0, level: "A2" },
+    { q: { en: "There aren't ___ apples in the fridge.", it: "There aren't ___ apples in the fridge." }, opts: ["some", "any", "much", "a"], correct: 1, level: "A2" },
+    { q: { en: "You ___ smoke here. It's not allowed.", it: "You ___ smoke here. It's not allowed." }, opts: ["should", "must", "can't", "have to"], correct: 2, level: "A2" },
+    { q: { en: "I'd like ___ coffee, please.", it: "I'd like ___ coffee, please." }, opts: ["a", "an", "the", "some"], correct: 0, level: "A2" },
+    { q: { en: "He ___ his keys this morning.", it: "He ___ his keys this morning." }, opts: ["losed", "lose", "lost", "loses"], correct: 2, level: "A2" },
+    { q: { en: "How ___ does the ticket cost?", it: "How ___ does the ticket cost?" }, opts: ["many", "much", "long", "far"], correct: 1, level: "A2" },
+
+    // B1 - INTERMEDIATE (21-30)
+    { q: { en: "If I ___ rich, I would travel the world.", it: "If I ___ rich, I would travel the world." }, opts: ["am", "was", "were", "will be"], correct: 2, level: "B1" },
+    { q: { en: "She ___ working here for 5 years.", it: "She ___ working here for 5 years." }, opts: ["is", "has been", "was", "had been"], correct: 1, level: "B1" },
+    { q: { en: "The window ___ by the wind.", it: "The window ___ by the wind." }, opts: ["was broken", "broke", "is breaking", "has broke"], correct: 0, level: "B1" },
+    { q: { en: "He told me he ___ tired.", it: "He told me he ___ tired." }, opts: ["is", "was", "be", "been"], correct: 1, level: "B1" },
+    { q: { en: "I'm not used ___ early.", it: "I'm not used ___ early." }, opts: ["to get up", "to getting up", "getting up", "get up"], correct: 1, level: "B1" },
+    { q: { en: "You should ___ a doctor about that.", it: "You should ___ a doctor about that." }, opts: ["see", "to see", "seeing", "saw"], correct: 0, level: "B1" },
+    { q: { en: "By the time we arrived, the film ___ started.", it: "By the time we arrived, the film ___ started." }, opts: ["has", "have", "had", "was"], correct: 2, level: "B1" },
+    { q: { en: "I wish I ___ taller.", it: "I wish I ___ taller." }, opts: ["am", "was", "were", "will be"], correct: 2, level: "B1" },
+    { q: { en: "He apologized ___ being late.", it: "He apologized ___ being late." }, opts: ["of", "for", "about", "from"], correct: 1, level: "B1" },
+    { q: { en: "She runs ___ than him.", it: "She runs ___ than him." }, opts: ["fast", "more fast", "faster", "fastest"], correct: 2, level: "B1" },
+
+    // B2/C1 - UPPER-INTERMEDIATE TO ADVANCED (31-40)
+    { q: { en: "Had I known about the meeting, I ___ attended.", it: "Had I known about the meeting, I ___ attended." }, opts: ["will have", "would have", "would", "had"], correct: 1, level: "B2" },
+    { q: { en: "The proposal was ___ down by the committee.", it: "The proposal was ___ down by the committee." }, opts: ["turned", "put", "taken", "broken"], correct: 0, level: "B2" },
+    { q: { en: "I would rather you ___ smoke here.", it: "I would rather you ___ smoke here." }, opts: ["don't", "didn't", "wouldn't", "haven't"], correct: 1, level: "B2" },
+    { q: { en: "Were it not for your help, we ___ failed.", it: "Were it not for your help, we ___ failed." }, opts: ["will have", "would have", "had", "have"], correct: 1, level: "B2" },
+    { q: { en: "The new policy will come into ___ next month.", it: "The new policy will come into ___ next month." }, opts: ["place", "effect", "action", "play"], correct: 1, level: "B2" },
+    { q: { en: "She has a ___ command of English.", it: "She has a ___ command of English." }, opts: ["big", "high", "strong", "large"], correct: 2, level: "C1" },
+    { q: { en: "He's been working ___ to finish the project.", it: "He's been working ___ to finish the project." }, opts: ["round the clock", "around the watch", "by the hour", "in the time"], correct: 0, level: "C1" },
+    { q: { en: "___ the rain, the match continued.", it: "___ the rain, the match continued." }, opts: ["Although", "Despite", "However", "Even"], correct: 1, level: "C1" },
+    { q: { en: "The proposal was met with ___ skepticism.", it: "The proposal was met with ___ skepticism." }, opts: ["considerable", "considerate", "considering", "consideration"], correct: 0, level: "C1" },
+    { q: { en: "Not only ___ he late, but he also forgot the documents.", it: "Not only ___ he late, but he also forgot the documents." }, opts: ["he was", "was", "he is", "is"], correct: 1, level: "C1" }
+];
+
+var testState = {
+    current: 0,
+    answers: [],
+    startTime: null
+};
+
+function openEntryTest() {
+    testState = { current: 0, answers: [], startTime: Date.now() };
+    var modal = document.getElementById('testModal');
+    if (!modal) return;
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    renderTestQuestion();
+}
+
+function closeEntryTest() {
+    var modal = document.getElementById('testModal');
+    if (!modal) return;
+    if (testState.current > 0 && testState.current < entryTestQuestions.length) {
+        var confirmMsg = currentLang === 'it' ?
+            'Sei sicuro? Perderai il tuo progresso.' :
+            'Are you sure? You will lose your progress.';
+        if (!confirm(confirmMsg)) return;
+    }
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+function renderTestQuestion() {
+    var q = entryTestQuestions[testState.current];
+    if (!q) return;
+    var content = document.getElementById('testContent');
+    if (!content) return;
+
+    var progressPct = ((testState.current) / entryTestQuestions.length) * 100;
+    var lang = currentLang || 'en';
+    var qText = q.q[lang] || q.q.en;
+    var questionLabel = lang === 'it' ? 'Domanda' : 'Question';
+    var levelLabel = lang === 'it' ? 'Livello attuale' : 'Current level';
+
+    var optionsHTML = '';
+    var letters = ['A', 'B', 'C', 'D'];
+    for (var i = 0; i < q.opts.length; i++) {
+        var selected = testState.answers[testState.current] === i ? ' selected' : '';
+        optionsHTML += '<button class="test-option' + selected + '" onclick="selectAnswer(' + i + ')">' +
+            '<span class="opt-letter">' + letters[i] + '</span>' +
+            '<span>' + escapeHtml(q.opts[i]) + '</span>' +
+            '</button>';
+    }
+
+    var nextBtnLabel = lang === 'it' ?
+        (testState.current === entryTestQuestions.length - 1 ? 'Termina &rarr;' : 'Successiva &rarr;') :
+        (testState.current === entryTestQuestions.length - 1 ? 'Finish &rarr;' : 'Next &rarr;');
+    var prevBtnLabel = lang === 'it' ? '&larr; Indietro' : '&larr; Back';
+    var hasAnswer = testState.answers[testState.current] !== undefined;
+
+    content.innerHTML =
+        '<div class="test-progress">' +
+            '<div class="test-progress-bar"><div class="test-progress-fill" style="width:' + progressPct + '%"></div></div>' +
+            '<div class="test-progress-text">' +
+                '<span>' + questionLabel + ' ' + (testState.current + 1) + ' / ' + entryTestQuestions.length + '</span>' +
+                '<span class="test-level-indicator">' + levelLabel + ': ' + q.level + '</span>' +
+            '</div>' +
+        '</div>' +
+        '<div class="test-question">' +
+            '<div class="test-question-text">' + qText.replace('___', '<span class="blank"></span>') + '</div>' +
+            '<div class="test-options">' + optionsHTML + '</div>' +
+        '</div>' +
+        '<div style="display:flex;gap:0.8rem;justify-content:space-between;margin-top:1.8rem;">' +
+            (testState.current > 0 ?
+                '<button class="btn-secondary" onclick="prevQuestion()" style="padding:0.85rem 1.6rem;font-size:0.92rem;">' + prevBtnLabel + '</button>' :
+                '<span></span>') +
+            '<button class="btn-primary" onclick="nextQuestion()" ' + (hasAnswer ? '' : 'disabled style="opacity:0.5;cursor:not-allowed;"') + ' style="padding:0.85rem 1.6rem;font-size:0.92rem;">' + nextBtnLabel + '</button>' +
+        '</div>';
+}
+
+function selectAnswer(idx) {
+    testState.answers[testState.current] = idx;
+    renderTestQuestion();
+}
+
+function nextQuestion() {
+    if (testState.answers[testState.current] === undefined) return;
+    if (testState.current < entryTestQuestions.length - 1) {
+        testState.current++;
+        renderTestQuestion();
+    } else {
+        showLeadCapture();
+    }
+}
+
+function prevQuestion() {
+    if (testState.current > 0) {
+        testState.current--;
+        renderTestQuestion();
+    }
+}
+
+function showLeadCapture() {
+    var content = document.getElementById('testContent');
+    if (!content) return;
+    var lang = currentLang || 'en';
+
+    var titles = {
+        en: { title: "Almost there!", sub: "Where should we send your level result and personalized learning recommendations?", name: "Your name", email: "Your email", phone: "Phone (optional, for WhatsApp follow-up)", consent: "I agree to receive my test result and occasional learning tips from The English Lounge.", submit: "Get my result" },
+        it: { title: "Quasi fatto!", sub: "Dove ti spediamo il tuo risultato e i consigli personalizzati?", name: "Il tuo nome", email: "La tua email", phone: "Telefono (opzionale, per WhatsApp)", consent: "Accetto di ricevere il risultato del test e consigli occasionali da The English Lounge.", submit: "Ricevi il risultato" }
+    };
+    var t = titles[lang] || titles.en;
+
+    content.innerHTML =
+        '<div class="lead-capture">' +
+            '<div style="font-size:3rem;margin-bottom:0.5rem;">&#127881;</div>' +
+            '<h3>' + t.title + '</h3>' +
+            '<p>' + t.sub + '</p>' +
+            '<div class="lead-form">' +
+                '<input type="text" id="leadName" placeholder="' + t.name + '" required autocomplete="name">' +
+                '<input type="email" id="leadEmail" placeholder="' + t.email + '" required autocomplete="email">' +
+                '<input type="tel" id="leadPhone" placeholder="' + t.phone + '" autocomplete="tel">' +
+                '<label class="lead-checkbox"><input type="checkbox" id="leadConsent" checked> <span>' + t.consent + '</span></label>' +
+                '<button class="btn-submit-lead" onclick="submitLead()">' + t.submit + ' &rarr;</button>' +
+            '</div>' +
+        '</div>';
+}
+
+function calculateLevel() {
+    var correct = 0;
+    var byLevel = { A1: 0, A2: 0, B1: 0, B2: 0, C1: 0 };
+    var totalByLevel = { A1: 0, A2: 0, B1: 0, B2: 0, C1: 0 };
+    for (var i = 0; i < entryTestQuestions.length; i++) {
+        var q = entryTestQuestions[i];
+        totalByLevel[q.level] = (totalByLevel[q.level] || 0) + 1;
+        if (testState.answers[i] === q.correct) {
+            correct++;
+            byLevel[q.level] = (byLevel[q.level] || 0) + 1;
+        }
+    }
+    // Determine level by cumulative score
+    var level = 'A1';
+    if (correct >= 36) level = 'C1';
+    else if (correct >= 30) level = 'B2';
+    else if (correct >= 22) level = 'B1';
+    else if (correct >= 14) level = 'A2';
+    else level = 'A1';
+    return { level: level, correct: correct, total: entryTestQuestions.length, byLevel: byLevel, totalByLevel: totalByLevel };
+}
+
+function submitLead() {
+    var name = document.getElementById('leadName').value.trim();
+    var email = document.getElementById('leadEmail').value.trim();
+    var phone = document.getElementById('leadPhone').value.trim();
+    var consent = document.getElementById('leadConsent').checked;
+    var lang = currentLang || 'en';
+
+    if (!name || !email) {
+        alert(lang === 'it' ? 'Per favore, compila nome e email.' : 'Please fill in your name and email.');
+        return;
+    }
+    if (!consent) {
+        alert(lang === 'it' ? 'Per favore, accetta di ricevere il risultato.' : 'Please agree to receive your result.');
+        return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        alert(lang === 'it' ? 'Inserisci un email valido.' : 'Please enter a valid email.');
+        return;
+    }
+
+    // Show loading
+    var content = document.getElementById('testContent');
+    content.innerHTML = '<div class="test-loading"><div class="test-spinner"></div><p style="color:var(--text-light);">' +
+        (lang === 'it' ? 'Stiamo calcolando il tuo livello...' : 'Calculating your level...') + '</p></div>';
+
+    var result = calculateLevel();
+    var duration = Math.round((Date.now() - testState.startTime) / 1000);
+
+    // Build submission summary
+    var summary = 'Name: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone + '\n';
+    summary += 'Result: ' + result.level + ' (' + result.correct + '/' + result.total + ')\n';
+    summary += 'Duration: ' + duration + ' seconds\n\n';
+    summary += 'Breakdown:\n';
+    Object.keys(result.byLevel).forEach(function(lvl) {
+        summary += '  ' + lvl + ': ' + result.byLevel[lvl] + '/' + result.totalByLevel[lvl] + '\n';
+    });
+    summary += '\nAnswers: ' + testState.answers.map(function(a, i) {
+        var q = entryTestQuestions[i];
+        var letters = ['A','B','C','D'];
+        return (i+1) + '.' + (letters[a] || '-') + (a === q.correct ? '✓' : '✗');
+    }).join(' ');
+
+    // Submit to Web3Forms (free, no signup needed beyond email verification)
+    // To activate: replace YOUR_ACCESS_KEY_HERE with key from https://web3forms.com (free 1000 submissions/month)
+    var formData = new FormData();
+    formData.append('access_key', 'YOUR_ACCESS_KEY_HERE');
+    formData.append('subject', 'New Level Test: ' + name + ' = ' + result.level);
+    formData.append('from_name', 'The English Lounge - Level Test');
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('phone', phone || 'Not provided');
+    formData.append('level', result.level);
+    formData.append('score', result.correct + '/' + result.total);
+    formData.append('details', summary);
+    formData.append('botcheck', '');
+
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+    }).then(function(r) { return r.json(); })
+    .then(function(data) {
+        showResult(result, name);
+    }).catch(function(err) {
+        // Show result anyway even if submission fails
+        showResult(result, name);
+    });
+}
+
+function showResult(result, name) {
+    var content = document.getElementById('testContent');
+    if (!content) return;
+    var lang = currentLang || 'en';
+
+    var levelInfo = {
+        'A1': {
+            en: { title: 'Beginner', desc: 'You can use basic words and phrases for everyday situations like introducing yourself, asking simple questions, and understanding slow, clear speech.' },
+            it: { title: 'Principiante', desc: 'Sai usare parole e frasi base per situazioni quotidiane come presentarti, fare domande semplici e capire un parlato lento e chiaro.' }
+        },
+        'A2': {
+            en: { title: 'Elementary', desc: 'You can communicate in simple, routine situations and describe aspects of your background and immediate environment.' },
+            it: { title: 'Elementare', desc: 'Puoi comunicare in situazioni semplici e di routine e descrivere aspetti del tuo background e ambiente immediato.' }
+        },
+        'B1': {
+            en: { title: 'Intermediate', desc: 'You can handle most situations while traveling, describe experiences and events, and express opinions with reasonable fluency.' },
+            it: { title: 'Intermedio', desc: 'Puoi gestire la maggior parte delle situazioni durante un viaggio, descrivere esperienze ed eventi ed esprimere opinioni con buona fluidità.' }
+        },
+        'B2': {
+            en: { title: 'Upper-Intermediate', desc: 'You can interact with native speakers fluently, understand complex texts, and express yourself clearly on a wide range of topics.' },
+            it: { title: 'Intermedio Superiore', desc: 'Puoi interagire fluentemente con madrelingua, capire testi complessi ed esprimerti chiaramente su una vasta gamma di argomenti.' }
+        },
+        'C1': {
+            en: { title: 'Advanced', desc: 'You can use English flexibly and effectively for social, academic, and professional purposes. Your command is sophisticated and nuanced.' },
+            it: { title: 'Avanzato', desc: "Puoi usare l'inglese in modo flessibile ed efficace per scopi sociali, accademici e professionali. La tua padronanza è sofisticata e ricca di sfumature." }
+        }
+    };
+    var info = (levelInfo[result.level] && levelInfo[result.level][lang]) || levelInfo[result.level].en;
+
+    var labels = lang === 'it' ?
+        { greet: 'Ottimo lavoro, ' + name + '!', score: 'Punteggio', correct: 'Corrette', emailed: 'I dettagli sono stati inviati alla tua email.', cta1: 'Prenota Prova Gratuita', cta2: 'Vedi Prezzi' } :
+        { greet: 'Great work, ' + name + '!', score: 'Score', correct: 'Correct', emailed: 'A detailed report has been sent to your email.', cta1: 'Book Free Trial', cta2: 'See Pricing' };
+
+    content.innerHTML =
+        '<div class="test-result">' +
+            '<div style="font-size:0.95rem;color:var(--text-light);">' + labels.greet + '</div>' +
+            '<div class="result-cefr">' + (lang === 'it' ? 'Il tuo livello CEFR' : 'Your CEFR Level') + '</div>' +
+            '<div class="result-level-badge">' + result.level + '</div>' +
+            '<div class="result-title">' + info.title + '</div>' +
+            '<div class="result-description">' + info.desc + '</div>' +
+            '<div class="result-score-row">' +
+                '<div class="result-stat"><div class="result-stat-value">' + result.correct + '/' + result.total + '</div><div class="result-stat-label">' + labels.correct + '</div></div>' +
+                '<div class="result-stat"><div class="result-stat-value">' + Math.round((result.correct/result.total)*100) + '%</div><div class="result-stat-label">' + labels.score + '</div></div>' +
+            '</div>' +
+            '<p style="color:var(--text-light);font-size:0.9rem;margin:0.5rem 0 1.5rem;">&#128231; ' + labels.emailed + '</p>' +
+            '<div class="result-cta">' +
+                '<a href="https://cal.com/the.englishlounge/free-trial" target="_blank" rel="noopener" class="btn-primary" onclick="closeEntryTest()">' + labels.cta1 + ' &rarr;</a>' +
+                '<a href="#pricing" class="btn-secondary" onclick="closeEntryTest()">' + labels.cta2 + '</a>' +
+            '</div>' +
+        '</div>';
+}
+
+function escapeHtml(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+// Close test on ESC
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        var modal = document.getElementById('testModal');
+        if (modal && modal.classList.contains('open')) closeEntryTest();
+    }
+});
+
+</script>
 </body>
 </html>

@@ -45,6 +45,7 @@
 <section class="skill" id="listening">
   <div class="skill-head"><span class="skill-num">01</span><h2>Listening</h2></div>
   <p class="lead">4 sections, 40 questions, about 30 minutes. Play each section&rsquo;s audio once only. Spelling is graded &mdash; a misspelt word is marked wrong. Type your answers in the boxes.</p>
+  <div class="examtools" data-skill="listening" data-min="30" data-label="Listening"></div>
 
   <div class="card">
     <span class="tasktag">Section 1 &middot; Questions 1&ndash;10</span>
@@ -54,34 +55,34 @@
     <h3 style="margin-top:1rem;">Questions 1&ndash;7</h3>
     <p class="note">Complete the form. Write ONE WORD AND/OR A NUMBER for each answer.</p>
     <p><b>Riverside Sports Club &mdash; Membership Enquiry</b></p>
-    <p class="q"><b>1</b> Caller&rsquo;s surname: <input type="text" class="blank" autocomplete="off" spellcheck="false"></p>
-    <p class="q"><b>2</b> Type of membership chosen: <input type="text" class="blank" autocomplete="off" spellcheck="false"></p>
-    <p class="q"><b>3</b> Monthly fee: &pound;<input type="text" class="blank short" autocomplete="off" spellcheck="false"></p>
-    <p class="q"><b>4</b> Preferred start date: the <input type="text" class="blank short" autocomplete="off" spellcheck="false"> of June</p>
-    <p class="q"><b>5</b> Main sport of interest: <input type="text" class="blank" autocomplete="off" spellcheck="false"></p>
-    <p class="q"><b>6</b> Free induction lasts: <input type="text" class="blank short" autocomplete="off" spellcheck="false"> minutes</p>
-    <p class="q"><b>7</b> Item to bring to the first session: a <input type="text" class="blank" autocomplete="off" spellcheck="false"></p>
+    <p class="q"><b>1</b> Caller&rsquo;s surname: <input type="text" class="blank" autocomplete="off" spellcheck="false" data-skill="listening" data-q="1"></p>
+    <p class="q"><b>2</b> Type of membership chosen: <input type="text" class="blank" autocomplete="off" spellcheck="false" data-skill="listening" data-q="2"></p>
+    <p class="q"><b>3</b> Monthly fee: &pound;<input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="listening" data-q="3"></p>
+    <p class="q"><b>4</b> Preferred start date: the <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="listening" data-q="4"> of June</p>
+    <p class="q"><b>5</b> Main sport of interest: <input type="text" class="blank" autocomplete="off" spellcheck="false" data-skill="listening" data-q="5"></p>
+    <p class="q"><b>6</b> Free induction lasts: <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="listening" data-q="6"> minutes</p>
+    <p class="q"><b>7</b> Item to bring to the first session: a <input type="text" class="blank" autocomplete="off" spellcheck="false" data-skill="listening" data-q="7"></p>
     <h3 style="margin-top:1rem;">Questions 8&ndash;10</h3>
     <p class="note">Choose the correct letter, A, B or C.</p>
-    <div class="q mcq"><span class="qn">8</span>Parking at the club is
+    <div class="q mcq" data-skill="listening" data-q="8"><span class="qn">8</span>Parking at the club is
       <div class="opts">
-        <label><input type="radio" name="q8"><span class="ol">A</span> free for members</label>
-        <label><input type="radio" name="q8"><span class="ol">B</span> &pound;2 per visit</label>
-        <label><input type="radio" name="q8"><span class="ol">C</span> closed at weekends</label>
+        <label><input type="radio" name="q8" value="A"><span class="ol">A</span> free for members</label>
+        <label><input type="radio" name="q8" value="B"><span class="ol">B</span> &pound;2 per visit</label>
+        <label><input type="radio" name="q8" value="C"><span class="ol">C</span> closed at weekends</label>
       </div>
     </div>
-    <div class="q mcq"><span class="qn">9</span>The swimming pool is closed on
+    <div class="q mcq" data-skill="listening" data-q="9"><span class="qn">9</span>The swimming pool is closed on
       <div class="opts">
-        <label><input type="radio" name="q9"><span class="ol">A</span> Monday mornings</label>
-        <label><input type="radio" name="q9"><span class="ol">B</span> Wednesday afternoons</label>
-        <label><input type="radio" name="q9"><span class="ol">C</span> Sunday evenings</label>
+        <label><input type="radio" name="q9" value="A"><span class="ol">A</span> Monday mornings</label>
+        <label><input type="radio" name="q9" value="B"><span class="ol">B</span> Wednesday afternoons</label>
+        <label><input type="radio" name="q9" value="C"><span class="ol">C</span> Sunday evenings</label>
       </div>
     </div>
-    <div class="q mcq"><span class="qn">10</span>The caller decides to
+    <div class="q mcq" data-skill="listening" data-q="10"><span class="qn">10</span>The caller decides to
       <div class="opts">
-        <label><input type="radio" name="q10"><span class="ol">A</span> join immediately</label>
-        <label><input type="radio" name="q10"><span class="ol">B</span> visit the club first</label>
-        <label><input type="radio" name="q10"><span class="ol">C</span> call back next week</label>
+        <label><input type="radio" name="q10" value="A"><span class="ol">A</span> join immediately</label>
+        <label><input type="radio" name="q10" value="B"><span class="ol">B</span> visit the club first</label>
+        <label><input type="radio" name="q10" value="C"><span class="ol">C</span> call back next week</label>
       </div>
     </div>
   </div>
@@ -94,19 +95,19 @@
     <h3 style="margin-top:1rem;">Questions 11&ndash;15</h3>
     <p class="note">Complete the notes. Write NO MORE THAN TWO WORDS for each answer.</p>
     <p><b>Hartwood Country Park &mdash; visitor talk</b></p>
-    <p class="q"><b>11</b> The park first opened to the public in <input type="text" class="blank short" autocomplete="off" spellcheck="false">.</p>
-    <p class="q"><b>12</b> The most popular trail is called the <input type="text" class="blank" autocomplete="off" spellcheck="false"> Walk.</p>
-    <p class="q"><b>13</b> Visitors are asked not to feed the <input type="text" class="blank" autocomplete="off" spellcheck="false">.</p>
-    <p class="q"><b>14</b> The cafe is located next to the <input type="text" class="blank" autocomplete="off" spellcheck="false">.</p>
-    <p class="q"><b>15</b> Free guided tours start at <input type="text" class="blank short" autocomplete="off" spellcheck="false"> every day.</p>
+    <p class="q"><b>11</b> The park first opened to the public in <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="listening" data-q="11">.</p>
+    <p class="q"><b>12</b> The most popular trail is called the <input type="text" class="blank" autocomplete="off" spellcheck="false" data-skill="listening" data-q="12"> Walk.</p>
+    <p class="q"><b>13</b> Visitors are asked not to feed the <input type="text" class="blank" autocomplete="off" spellcheck="false" data-skill="listening" data-q="13">.</p>
+    <p class="q"><b>14</b> The cafe is located next to the <input type="text" class="blank" autocomplete="off" spellcheck="false" data-skill="listening" data-q="14">.</p>
+    <p class="q"><b>15</b> Free guided tours start at <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="listening" data-q="15"> every day.</p>
     <h3 style="margin-top:1rem;">Questions 16&ndash;20</h3>
     <p class="note">Which feature is found at each location? Choose the correct letter A&ndash;G and type it in the box.</p>
     <p class="note"><b>Features:</b> &nbsp; A &nbsp;bird hide &nbsp;&middot;&nbsp; B &nbsp;old mill &nbsp;&middot;&nbsp; C &nbsp;playground &nbsp;&middot;&nbsp; D &nbsp;rose garden &nbsp;&middot;&nbsp; E &nbsp;boathouse &nbsp;&middot;&nbsp; F &nbsp;car park &nbsp;&middot;&nbsp; G &nbsp;lookout tower</p>
-    <p class="q"><b>16</b> North of the lake: <input type="text" class="blank short" autocomplete="off" spellcheck="false"></p>
-    <p class="q"><b>17</b> Beside the main entrance: <input type="text" class="blank short" autocomplete="off" spellcheck="false"></p>
-    <p class="q"><b>18</b> At the top of the hill: <input type="text" class="blank short" autocomplete="off" spellcheck="false"></p>
-    <p class="q"><b>19</b> Along the river: <input type="text" class="blank short" autocomplete="off" spellcheck="false"></p>
-    <p class="q"><b>20</b> Behind the cafe: <input type="text" class="blank short" autocomplete="off" spellcheck="false"></p>
+    <p class="q"><b>16</b> North of the lake: <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="listening" data-q="16"></p>
+    <p class="q"><b>17</b> Beside the main entrance: <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="listening" data-q="17"></p>
+    <p class="q"><b>18</b> At the top of the hill: <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="listening" data-q="18"></p>
+    <p class="q"><b>19</b> Along the river: <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="listening" data-q="19"></p>
+    <p class="q"><b>20</b> Behind the cafe: <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="listening" data-q="20"></p>
   </div>
 
   <div class="card">
@@ -116,48 +117,48 @@
     </div>
     <h3 style="margin-top:1rem;">Questions 21&ndash;25</h3>
     <p class="note">Choose the correct letter, A, B or C.</p>
-    <div class="q mcq"><span class="qn">21</span>The students&rsquo; project is mainly about
+    <div class="q mcq" data-skill="listening" data-q="21"><span class="qn">21</span>The students&rsquo; project is mainly about
       <div class="opts">
-        <label><input type="radio" name="q21"><span class="ol">A</span> recycling habits</label>
-        <label><input type="radio" name="q21"><span class="ol">B</span> food waste</label>
-        <label><input type="radio" name="q21"><span class="ol">C</span> water use</label>
+        <label><input type="radio" name="q21" value="A"><span class="ol">A</span> recycling habits</label>
+        <label><input type="radio" name="q21" value="B"><span class="ol">B</span> food waste</label>
+        <label><input type="radio" name="q21" value="C"><span class="ol">C</span> water use</label>
       </div>
     </div>
-    <div class="q mcq"><span class="qn">22</span>Maria is mainly worried that their survey sample is
+    <div class="q mcq" data-skill="listening" data-q="22"><span class="qn">22</span>Maria is mainly worried that their survey sample is
       <div class="opts">
-        <label><input type="radio" name="q22"><span class="ol">A</span> too small</label>
-        <label><input type="radio" name="q22"><span class="ol">B</span> too old</label>
-        <label><input type="radio" name="q22"><span class="ol">C</span> not honest</label>
+        <label><input type="radio" name="q22" value="A"><span class="ol">A</span> too small</label>
+        <label><input type="radio" name="q22" value="B"><span class="ol">B</span> too old</label>
+        <label><input type="radio" name="q22" value="C"><span class="ol">C</span> not honest</label>
       </div>
     </div>
-    <div class="q mcq"><span class="qn">23</span>The tutor advises them to
+    <div class="q mcq" data-skill="listening" data-q="23"><span class="qn">23</span>The tutor advises them to
       <div class="opts">
-        <label><input type="radio" name="q23"><span class="ol">A</span> change the topic</label>
-        <label><input type="radio" name="q23"><span class="ol">B</span> add some interviews</label>
-        <label><input type="radio" name="q23"><span class="ol">C</span> use fewer questions</label>
+        <label><input type="radio" name="q23" value="A"><span class="ol">A</span> change the topic</label>
+        <label><input type="radio" name="q23" value="B"><span class="ol">B</span> add some interviews</label>
+        <label><input type="radio" name="q23" value="C"><span class="ol">C</span> use fewer questions</label>
       </div>
     </div>
-    <div class="q mcq"><span class="qn">24</span>They agree to collect data over a period of
+    <div class="q mcq" data-skill="listening" data-q="24"><span class="qn">24</span>They agree to collect data over a period of
       <div class="opts">
-        <label><input type="radio" name="q24"><span class="ol">A</span> one week</label>
-        <label><input type="radio" name="q24"><span class="ol">B</span> two weeks</label>
-        <label><input type="radio" name="q24"><span class="ol">C</span> one month</label>
+        <label><input type="radio" name="q24" value="A"><span class="ol">A</span> one week</label>
+        <label><input type="radio" name="q24" value="B"><span class="ol">B</span> two weeks</label>
+        <label><input type="radio" name="q24" value="C"><span class="ol">C</span> one month</label>
       </div>
     </div>
-    <div class="q mcq"><span class="qn">25</span>So far, the hardest part of the project has been
+    <div class="q mcq" data-skill="listening" data-q="25"><span class="qn">25</span>So far, the hardest part of the project has been
       <div class="opts">
-        <label><input type="radio" name="q25"><span class="ol">A</span> the background reading</label>
-        <label><input type="radio" name="q25"><span class="ol">B</span> the statistics</label>
-        <label><input type="radio" name="q25"><span class="ol">C</span> meeting deadlines</label>
+        <label><input type="radio" name="q25" value="A"><span class="ol">A</span> the background reading</label>
+        <label><input type="radio" name="q25" value="B"><span class="ol">B</span> the statistics</label>
+        <label><input type="radio" name="q25" value="C"><span class="ol">C</span> meeting deadlines</label>
       </div>
     </div>
     <h3 style="margin-top:1rem;">Questions 26&ndash;30</h3>
     <p class="note">Who will do each task? Type <b>J</b> (Jacob), <b>M</b> (Maria) or <b>B</b> (both).</p>
-    <p class="q"><b>26</b> Design the questionnaire: <input type="text" class="blank short" autocomplete="off" spellcheck="false"></p>
-    <p class="q"><b>27</b> Analyse the numbers: <input type="text" class="blank short" autocomplete="off" spellcheck="false"></p>
-    <p class="q"><b>28</b> Write the introduction: <input type="text" class="blank short" autocomplete="off" spellcheck="false"></p>
-    <p class="q"><b>29</b> Prepare the slides: <input type="text" class="blank short" autocomplete="off" spellcheck="false"></p>
-    <p class="q"><b>30</b> Check the references: <input type="text" class="blank short" autocomplete="off" spellcheck="false"></p>
+    <p class="q"><b>26</b> Design the questionnaire: <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="listening" data-q="26"></p>
+    <p class="q"><b>27</b> Analyse the numbers: <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="listening" data-q="27"></p>
+    <p class="q"><b>28</b> Write the introduction: <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="listening" data-q="28"></p>
+    <p class="q"><b>29</b> Prepare the slides: <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="listening" data-q="29"></p>
+    <p class="q"><b>30</b> Check the references: <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="listening" data-q="30"></p>
   </div>
 
   <div class="card">
@@ -168,16 +169,16 @@
     <h3 style="margin-top:1rem;">Questions 31&ndash;40</h3>
     <p class="note">Complete the lecture notes. Write ONE WORD ONLY for each answer.</p>
     <p><b>Lecture: a short history of artificial light</b></p>
-    <p class="q"><b>31</b> The earliest lamps burned animal <input type="text" class="blank" autocomplete="off" spellcheck="false">.</p>
-    <p class="q"><b>32</b> Roman lamps were usually made of <input type="text" class="blank" autocomplete="off" spellcheck="false">.</p>
-    <p class="q"><b>33</b> Gas lighting first appeared in city <input type="text" class="blank" autocomplete="off" spellcheck="false">.</p>
-    <p class="q"><b>34</b> Early electric bulbs used a carbon <input type="text" class="blank" autocomplete="off" spellcheck="false">.</p>
-    <p class="q"><b>35</b> The main advantage of electric light over flame was greater <input type="text" class="blank" autocomplete="off" spellcheck="false">.</p>
-    <p class="q"><b>36</b> Factories were now able to operate during the <input type="text" class="blank" autocomplete="off" spellcheck="false">.</p>
-    <p class="q"><b>37</b> One modern drawback discussed is light <input type="text" class="blank" autocomplete="off" spellcheck="false">.</p>
-    <p class="q"><b>38</b> Artificial light at night can disturb the <input type="text" class="blank" autocomplete="off" spellcheck="false"> of birds.</p>
-    <p class="q"><b>39</b> Compared with older bulbs, LEDs save a great deal of <input type="text" class="blank" autocomplete="off" spellcheck="false">.</p>
-    <p class="q"><b>40</b> The speaker predicts that future lighting will become more <input type="text" class="blank" autocomplete="off" spellcheck="false">.</p>
+    <p class="q"><b>31</b> The earliest lamps burned animal <input type="text" class="blank" autocomplete="off" spellcheck="false" data-skill="listening" data-q="31">.</p>
+    <p class="q"><b>32</b> Roman lamps were usually made of <input type="text" class="blank" autocomplete="off" spellcheck="false" data-skill="listening" data-q="32">.</p>
+    <p class="q"><b>33</b> Gas lighting first appeared in city <input type="text" class="blank" autocomplete="off" spellcheck="false" data-skill="listening" data-q="33">.</p>
+    <p class="q"><b>34</b> Early electric bulbs used a carbon <input type="text" class="blank" autocomplete="off" spellcheck="false" data-skill="listening" data-q="34">.</p>
+    <p class="q"><b>35</b> The main advantage of electric light over flame was greater <input type="text" class="blank" autocomplete="off" spellcheck="false" data-skill="listening" data-q="35">.</p>
+    <p class="q"><b>36</b> Factories were now able to operate during the <input type="text" class="blank" autocomplete="off" spellcheck="false" data-skill="listening" data-q="36">.</p>
+    <p class="q"><b>37</b> One modern drawback discussed is light <input type="text" class="blank" autocomplete="off" spellcheck="false" data-skill="listening" data-q="37">.</p>
+    <p class="q"><b>38</b> Artificial light at night can disturb the <input type="text" class="blank" autocomplete="off" spellcheck="false" data-skill="listening" data-q="38"> of birds.</p>
+    <p class="q"><b>39</b> Compared with older bulbs, LEDs save a great deal of <input type="text" class="blank" autocomplete="off" spellcheck="false" data-skill="listening" data-q="39">.</p>
+    <p class="q"><b>40</b> The speaker predicts that future lighting will become more <input type="text" class="blank" autocomplete="off" spellcheck="false" data-skill="listening" data-q="40">.</p>
 
     <details>
       <summary>Full transcript (Sections 1&ndash;4)</summary>
@@ -259,6 +260,7 @@
 <section class="skill" id="reading">
   <div class="skill-head"><span class="skill-num">02</span><h2>Reading</h2></div>
   <p class="lead">3 passages, 40 questions, 60 minutes. There is no extra time to transfer answers in the real exam &mdash; type them as you go.</p>
+  <div class="examtools" data-skill="reading" data-min="60" data-label="Reading"></div>
 
   <div class="card">
     <span class="tasktag">Passage 1 &middot; Questions 1&ndash;13</span>
@@ -273,42 +275,42 @@
     </div>
     <h4 style="margin-top:1.1rem;">Questions 1&ndash;6</h4>
     <p class="note">Do the statements agree with the information in the passage? Write TRUE, FALSE or NOT GIVEN.</p>
-    <p class="q"><b>1</b> In medieval Europe, spices were valued only for their taste. <input type="text" class="blank short" autocomplete="off" spellcheck="false"></p>
-    <p class="q"><b>2</b> Middlemen often profited from spices without seeing where they were grown. <input type="text" class="blank short" autocomplete="off" spellcheck="false"></p>
-    <p class="q"><b>3</b> Nutmeg was expensive in the islands where it grew. <input type="text" class="blank short" autocomplete="off" spellcheck="false"></p>
-    <p class="q"><b>4</b> Some trading companies deliberately limited where spices could be grown. <input type="text" class="blank short" autocomplete="off" spellcheck="false"></p>
-    <p class="q"><b>5</b> The spice trade led to a war between two European countries. <input type="text" class="blank short" autocomplete="off" spellcheck="false"></p>
-    <p class="q"><b>6</b> Recent historians stress that Asian traders ran sophisticated networks. <input type="text" class="blank short" autocomplete="off" spellcheck="false"></p>
+    <p class="q"><b>1</b> In medieval Europe, spices were valued only for their taste. <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="reading" data-q="1"></p>
+    <p class="q"><b>2</b> Middlemen often profited from spices without seeing where they were grown. <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="reading" data-q="2"></p>
+    <p class="q"><b>3</b> Nutmeg was expensive in the islands where it grew. <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="reading" data-q="3"></p>
+    <p class="q"><b>4</b> Some trading companies deliberately limited where spices could be grown. <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="reading" data-q="4"></p>
+    <p class="q"><b>5</b> The spice trade led to a war between two European countries. <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="reading" data-q="5"></p>
+    <p class="q"><b>6</b> Recent historians stress that Asian traders ran sophisticated networks. <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="reading" data-q="6"></p>
     <h4 style="margin-top:1.1rem;">Questions 7&ndash;10</h4>
     <p class="note">Complete the sentences. Write NO MORE THAN TWO WORDS from the passage.</p>
-    <p class="q"><b>7</b> Besides flavour and medicine, spices were valued as visible symbols of <input type="text" class="blank" autocomplete="off" spellcheck="false">.</p>
-    <p class="q"><b>8</b> The high European price came from distance, risk and the number of <input type="text" class="blank" autocomplete="off" spellcheck="false"> the goods passed through.</p>
-    <p class="q"><b>9</b> Restricting cultivation was a deliberate way to keep <input type="text" class="blank" autocomplete="off" spellcheck="false"> high.</p>
-    <p class="q"><b>10</b> Along the trade routes, techniques, words, plants and <input type="text" class="blank" autocomplete="off" spellcheck="false"> also travelled.</p>
+    <p class="q"><b>7</b> Besides flavour and medicine, spices were valued as visible symbols of <input type="text" class="blank" autocomplete="off" spellcheck="false" data-skill="reading" data-q="7">.</p>
+    <p class="q"><b>8</b> The high European price came from distance, risk and the number of <input type="text" class="blank" autocomplete="off" spellcheck="false" data-skill="reading" data-q="8"> the goods passed through.</p>
+    <p class="q"><b>9</b> Restricting cultivation was a deliberate way to keep <input type="text" class="blank" autocomplete="off" spellcheck="false" data-skill="reading" data-q="9"> high.</p>
+    <p class="q"><b>10</b> Along the trade routes, techniques, words, plants and <input type="text" class="blank" autocomplete="off" spellcheck="false" data-skill="reading" data-q="10"> also travelled.</p>
     <h4 style="margin-top:1.1rem;">Questions 11&ndash;13</h4>
     <p class="note">Choose the correct letter, A, B, C or D.</p>
-    <div class="q mcq"><span class="qn">11</span>According to the passage, the scarcity of spices in Europe was created mainly by
+    <div class="q mcq" data-skill="reading" data-q="11"><span class="qn">11</span>According to the passage, the scarcity of spices in Europe was created mainly by
       <div class="opts">
-        <label><input type="radio" name="q11"><span class="ol">A</span> nature</label>
-        <label><input type="radio" name="q11"><span class="ol">B</span> geography</label>
-        <label><input type="radio" name="q11"><span class="ol">C</span> climate</label>
-        <label><input type="radio" name="q11"><span class="ol">D</span> warfare</label>
+        <label><input type="radio" name="q11" value="A"><span class="ol">A</span> nature</label>
+        <label><input type="radio" name="q11" value="B"><span class="ol">B</span> geography</label>
+        <label><input type="radio" name="q11" value="C"><span class="ol">C</span> climate</label>
+        <label><input type="radio" name="q11" value="D"><span class="ol">D</span> warfare</label>
       </div>
     </div>
-    <div class="q mcq"><span class="qn">12</span>The deliberate control of where spices grew is described as
+    <div class="q mcq" data-skill="reading" data-q="12"><span class="qn">12</span>The deliberate control of where spices grew is described as
       <div class="opts">
-        <label><input type="radio" name="q12"><span class="ol">A</span> highly unusual</label>
-        <label><input type="radio" name="q12"><span class="ol">B</span> illegal at the time</label>
-        <label><input type="radio" name="q12"><span class="ol">C</span> still recognisable today</label>
-        <label><input type="radio" name="q12"><span class="ol">D</span> ultimately unsuccessful</label>
+        <label><input type="radio" name="q12" value="A"><span class="ol">A</span> highly unusual</label>
+        <label><input type="radio" name="q12" value="B"><span class="ol">B</span> illegal at the time</label>
+        <label><input type="radio" name="q12" value="C"><span class="ol">C</span> still recognisable today</label>
+        <label><input type="radio" name="q12" value="D"><span class="ol">D</span> ultimately unsuccessful</label>
       </div>
     </div>
-    <div class="q mcq"><span class="qn">13</span>The main purpose of the final paragraph is to
+    <div class="q mcq" data-skill="reading" data-q="13"><span class="qn">13</span>The main purpose of the final paragraph is to
       <div class="opts">
-        <label><input type="radio" name="q13"><span class="ol">A</span> tell an entirely new story</label>
-        <label><input type="radio" name="q13"><span class="ol">B</span> revise the traditional view</label>
-        <label><input type="radio" name="q13"><span class="ol">C</span> praise European explorers</label>
-        <label><input type="radio" name="q13"><span class="ol">D</span> list the main spices</label>
+        <label><input type="radio" name="q13" value="A"><span class="ol">A</span> tell an entirely new story</label>
+        <label><input type="radio" name="q13" value="B"><span class="ol">B</span> revise the traditional view</label>
+        <label><input type="radio" name="q13" value="C"><span class="ol">C</span> praise European explorers</label>
+        <label><input type="radio" name="q13" value="D"><span class="ol">D</span> list the main spices</label>
       </div>
     </div>
     <details>
@@ -335,23 +337,23 @@
     </div>
     <h4 style="margin-top:1.1rem;">Questions 14&ndash;18</h4>
     <p class="note">The passage has five paragraphs, A&ndash;E. Choose the correct heading for each paragraph and type the paragraph letter (A&ndash;E) in the box.</p>
-    <p class="q"><b>14</b> Heading: &ldquo;A slow but proven natural method&rdquo; &mdash; paragraph <input type="text" class="blank short" autocomplete="off" spellcheck="false"></p>
-    <p class="q"><b>15</b> Heading: &ldquo;Why cities heat up&rdquo; &mdash; paragraph <input type="text" class="blank short" autocomplete="off" spellcheck="false"></p>
-    <p class="q"><b>16</b> Heading: &ldquo;Combining methods, and a question of fairness&rdquo; &mdash; paragraph <input type="text" class="blank short" autocomplete="off" spellcheck="false"></p>
-    <p class="q"><b>17</b> Heading: &ldquo;Reflecting sunlight away&rdquo; &mdash; paragraph <input type="text" class="blank short" autocomplete="off" spellcheck="false"></p>
-    <p class="q"><b>18</b> Heading: &ldquo;Cooling through evaporation&rdquo; &mdash; paragraph <input type="text" class="blank short" autocomplete="off" spellcheck="false"></p>
+    <p class="q"><b>14</b> Heading: &ldquo;A slow but proven natural method&rdquo; &mdash; paragraph <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="reading" data-q="14"></p>
+    <p class="q"><b>15</b> Heading: &ldquo;Why cities heat up&rdquo; &mdash; paragraph <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="reading" data-q="15"></p>
+    <p class="q"><b>16</b> Heading: &ldquo;Combining methods, and a question of fairness&rdquo; &mdash; paragraph <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="reading" data-q="16"></p>
+    <p class="q"><b>17</b> Heading: &ldquo;Reflecting sunlight away&rdquo; &mdash; paragraph <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="reading" data-q="17"></p>
+    <p class="q"><b>18</b> Heading: &ldquo;Cooling through evaporation&rdquo; &mdash; paragraph <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="reading" data-q="18"></p>
     <h4 style="margin-top:1.1rem;">Questions 19&ndash;22</h4>
     <p class="note">Do the statements agree with the passage? Write TRUE, FALSE or NOT GIVEN.</p>
-    <p class="q"><b>19</b> In summer, city centres are usually cooler than the surrounding countryside. <input type="text" class="blank short" autocomplete="off" spellcheck="false"></p>
-    <p class="q"><b>20</b> Street trees cool the air partly by releasing water vapour. <input type="text" class="blank short" autocomplete="off" spellcheck="false"></p>
-    <p class="q"><b>21</b> Cool-roof programmes are cheaper than planting trees. <input type="text" class="blank short" autocomplete="off" spellcheck="false"></p>
-    <p class="q"><b>22</b> Poorer districts typically have fewer trees than wealthy ones. <input type="text" class="blank short" autocomplete="off" spellcheck="false"></p>
+    <p class="q"><b>19</b> In summer, city centres are usually cooler than the surrounding countryside. <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="reading" data-q="19"></p>
+    <p class="q"><b>20</b> Street trees cool the air partly by releasing water vapour. <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="reading" data-q="20"></p>
+    <p class="q"><b>21</b> Cool-roof programmes are cheaper than planting trees. <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="reading" data-q="21"></p>
+    <p class="q"><b>22</b> Poorer districts typically have fewer trees than wealthy ones. <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="reading" data-q="22"></p>
     <h4 style="margin-top:1.1rem;">Questions 23&ndash;26</h4>
     <p class="note">Complete the summary. Write ONE WORD ONLY from the passage for each answer.</p>
-    <p class="q"><b>23</b> Cities grow hot because dark surfaces absorb <input type="text" class="blank" autocomplete="off" spellcheck="false">,</p>
-    <p class="q"><b>24</b> there is a shortage of <input type="text" class="blank" autocomplete="off" spellcheck="false">, and machines add heat.</p>
-    <p class="q"><b>25</b> Trees help, but they grow <input type="text" class="blank" autocomplete="off" spellcheck="false">.</p>
-    <p class="q"><b>26</b> The best results come from treating the problem as a <input type="text" class="blank" autocomplete="off" spellcheck="false">.</p>
+    <p class="q"><b>23</b> Cities grow hot because dark surfaces absorb <input type="text" class="blank" autocomplete="off" spellcheck="false" data-skill="reading" data-q="23">,</p>
+    <p class="q"><b>24</b> there is a shortage of <input type="text" class="blank" autocomplete="off" spellcheck="false" data-skill="reading" data-q="24">, and machines add heat.</p>
+    <p class="q"><b>25</b> Trees help, but they grow <input type="text" class="blank" autocomplete="off" spellcheck="false" data-skill="reading" data-q="25">.</p>
+    <p class="q"><b>26</b> The best results come from treating the problem as a <input type="text" class="blank" autocomplete="off" spellcheck="false" data-skill="reading" data-q="26">.</p>
     <details>
       <summary>Passage 2 answer key</summary>
       <div class="body">
@@ -376,50 +378,50 @@
     </div>
     <h4 style="margin-top:1.1rem;">Questions 27&ndash;31</h4>
     <p class="note">Do the statements agree with the writer&rsquo;s views? Write YES, NO or NOT GIVEN.</p>
-    <p class="q"><b>27</b> Most everyday behaviour is the result of conscious choice. <input type="text" class="blank short" autocomplete="off" spellcheck="false"></p>
-    <p class="q"><b>28</b> The automation of habits serves a useful purpose. <input type="text" class="blank short" autocomplete="off" spellcheck="false"></p>
-    <p class="q"><b>29</b> Willpower is the most reliable way to change a habit. <input type="text" class="blank short" autocomplete="off" spellcheck="false"></p>
-    <p class="q"><b>30</b> A major life change such as moving house can make new habits easier to form. <input type="text" class="blank short" autocomplete="off" spellcheck="false"></p>
-    <p class="q"><b>31</b> Most people overestimate the influence of their environment. <input type="text" class="blank short" autocomplete="off" spellcheck="false"></p>
+    <p class="q"><b>27</b> Most everyday behaviour is the result of conscious choice. <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="reading" data-q="27"></p>
+    <p class="q"><b>28</b> The automation of habits serves a useful purpose. <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="reading" data-q="28"></p>
+    <p class="q"><b>29</b> Willpower is the most reliable way to change a habit. <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="reading" data-q="29"></p>
+    <p class="q"><b>30</b> A major life change such as moving house can make new habits easier to form. <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="reading" data-q="30"></p>
+    <p class="q"><b>31</b> Most people overestimate the influence of their environment. <input type="text" class="blank short" autocomplete="off" spellcheck="false" data-skill="reading" data-q="31"></p>
     <h4 style="margin-top:1.1rem;">Questions 32&ndash;36</h4>
     <p class="note">Complete the sentences. Write NO MORE THAN TWO WORDS from the passage.</p>
-    <p class="q"><b>32</b> Each habit loop begins with a <input type="text" class="blank" autocomplete="off" spellcheck="false">.</p>
-    <p class="q"><b>33</b> The brain automates habits in order to save <input type="text" class="blank" autocomplete="off" spellcheck="false">.</p>
-    <p class="q"><b>34</b> It is much easier to replace a habit than to <input type="text" class="blank" autocomplete="off" spellcheck="false"> it.</p>
-    <p class="q"><b>35</b> The recommended strategy keeps the cue and reward but changes the <input type="text" class="blank" autocomplete="off" spellcheck="false">.</p>
-    <p class="q"><b>36</b> A disruption to routine opens a brief <input type="text" class="blank" autocomplete="off" spellcheck="false"> for change.</p>
+    <p class="q"><b>32</b> Each habit loop begins with a <input type="text" class="blank" autocomplete="off" spellcheck="false" data-skill="reading" data-q="32">.</p>
+    <p class="q"><b>33</b> The brain automates habits in order to save <input type="text" class="blank" autocomplete="off" spellcheck="false" data-skill="reading" data-q="33">.</p>
+    <p class="q"><b>34</b> It is much easier to replace a habit than to <input type="text" class="blank" autocomplete="off" spellcheck="false" data-skill="reading" data-q="34"> it.</p>
+    <p class="q"><b>35</b> The recommended strategy keeps the cue and reward but changes the <input type="text" class="blank" autocomplete="off" spellcheck="false" data-skill="reading" data-q="35">.</p>
+    <p class="q"><b>36</b> A disruption to routine opens a brief <input type="text" class="blank" autocomplete="off" spellcheck="false" data-skill="reading" data-q="36"> for change.</p>
     <h4 style="margin-top:1.1rem;">Questions 37&ndash;40</h4>
     <p class="note">Choose the correct letter, A, B, C or D.</p>
-    <div class="q mcq"><span class="qn">37</span>The writer describes willpower as
+    <div class="q mcq" data-skill="reading" data-q="37"><span class="qn">37</span>The writer describes willpower as
       <div class="opts">
-        <label><input type="radio" name="q37"><span class="ol">A</span> essential and dependable</label>
-        <label><input type="radio" name="q37"><span class="ol">B</span> limited and unreliable</label>
-        <label><input type="radio" name="q37"><span class="ol">C</span> entirely imaginary</label>
-        <label><input type="radio" name="q37"><span class="ol">D</span> stronger with practice</label>
+        <label><input type="radio" name="q37" value="A"><span class="ol">A</span> essential and dependable</label>
+        <label><input type="radio" name="q37" value="B"><span class="ol">B</span> limited and unreliable</label>
+        <label><input type="radio" name="q37" value="C"><span class="ol">C</span> entirely imaginary</label>
+        <label><input type="radio" name="q37" value="D"><span class="ol">D</span> stronger with practice</label>
       </div>
     </div>
-    <div class="q mcq"><span class="qn">38</span>The example of stress snacking is used mainly to show that
+    <div class="q mcq" data-skill="reading" data-q="38"><span class="qn">38</span>The example of stress snacking is used mainly to show that
       <div class="opts">
-        <label><input type="radio" name="q38"><span class="ol">A</span> habits are harmless</label>
-        <label><input type="radio" name="q38"><span class="ol">B</span> substitution works better than resistance</label>
-        <label><input type="radio" name="q38"><span class="ol">C</span> dieting always fails</label>
-        <label><input type="radio" name="q38"><span class="ol">D</span> rewards are bad</label>
+        <label><input type="radio" name="q38" value="A"><span class="ol">A</span> habits are harmless</label>
+        <label><input type="radio" name="q38" value="B"><span class="ol">B</span> substitution works better than resistance</label>
+        <label><input type="radio" name="q38" value="C"><span class="ol">C</span> dieting always fails</label>
+        <label><input type="radio" name="q38" value="D"><span class="ol">D</span> rewards are bad</label>
       </div>
     </div>
-    <div class="q mcq"><span class="qn">39</span>The writer&rsquo;s overall tone in the final paragraph is
+    <div class="q mcq" data-skill="reading" data-q="39"><span class="qn">39</span>The writer&rsquo;s overall tone in the final paragraph is
       <div class="opts">
-        <label><input type="radio" name="q39"><span class="ol">A</span> pessimistic</label>
-        <label><input type="radio" name="q39"><span class="ol">B</span> indifferent</label>
-        <label><input type="radio" name="q39"><span class="ol">C</span> cautiously hopeful</label>
-        <label><input type="radio" name="q39"><span class="ol">D</span> angry</label>
+        <label><input type="radio" name="q39" value="A"><span class="ol">A</span> pessimistic</label>
+        <label><input type="radio" name="q39" value="B"><span class="ol">B</span> indifferent</label>
+        <label><input type="radio" name="q39" value="C"><span class="ol">C</span> cautiously hopeful</label>
+        <label><input type="radio" name="q39" value="D"><span class="ol">D</span> angry</label>
       </div>
     </div>
-    <div class="q mcq"><span class="qn">40</span>The main idea of the passage is that lasting change works best when we
+    <div class="q mcq" data-skill="reading" data-q="40"><span class="qn">40</span>The main idea of the passage is that lasting change works best when we
       <div class="opts">
-        <label><input type="radio" name="q40"><span class="ol">A</span> simply try harder</label>
-        <label><input type="radio" name="q40"><span class="ol">B</span> work with the brain&rsquo;s mechanisms</label>
-        <label><input type="radio" name="q40"><span class="ol">C</span> avoid all cues</label>
-        <label><input type="radio" name="q40"><span class="ol">D</span> rely on discipline alone</label>
+        <label><input type="radio" name="q40" value="A"><span class="ol">A</span> simply try harder</label>
+        <label><input type="radio" name="q40" value="B"><span class="ol">B</span> work with the brain&rsquo;s mechanisms</label>
+        <label><input type="radio" name="q40" value="C"><span class="ol">C</span> avoid all cues</label>
+        <label><input type="radio" name="q40" value="D"><span class="ol">D</span> rely on discipline alone</label>
       </div>
     </div>
     <details>
@@ -439,6 +441,7 @@
 <section class="skill" id="writing">
   <div class="skill-head"><span class="skill-num">03</span><h2>Writing</h2></div>
   <p class="lead">60 minutes. Task 1: at least 150 words in about 20 minutes. Task 2: at least 250 words in about 40 minutes. Task 2 carries more weight.</p>
+  <div class="examtools" data-skill="writing" data-min="60" data-label="Writing"></div>
 
   <div class="card">
     <span class="tasktag">Task 1 &middot; Academic</span>
@@ -631,5 +634,27 @@
   });
 </script>
 
+<script>
+window.IELTS_KEY = {
+  listening: {
+    "1":"Donovan","2":"standard","3":"45","4":["14th","fourteenth"],"5":"swimming",
+    "6":["60","sixty"],"7":"towel","8":"B","9":"B","10":"B",
+    "11":"1958","12":"Bluebell","13":"deer","14":"lake","15":["11","eleven","11am"],
+    "16":"A","17":"F","18":"G","19":"B","20":"C",
+    "21":"B","22":"A","23":"B","24":"B","25":"B","26":"J","27":"M","28":"B","29":"M","30":"J",
+    "31":"fat","32":"clay","33":"streets","34":"filament","35":"safety",
+    "36":"night","37":"pollution","38":"migration","39":"energy","40":"intelligent"
+  },
+  reading: {
+    "1":"false","2":"true","3":"false","4":"true","5":"not given","6":"true",
+    "7":"wealth","8":["hands","middlemen"],"9":"prices","10":"tastes","11":"B","12":"C","13":"B",
+    "14":"B","15":"A","16":"E","17":"C","18":"D","19":"false","20":"true","21":"not given","22":"true",
+    "23":"sunlight","24":"vegetation","25":"slowly","26":"system",
+    "27":"no","28":"yes","29":"no","30":"yes","31":"no",
+    "32":"cue","33":"effort","34":"erase","35":"routine","36":"window","37":"B","38":"B","39":"C","40":"B"
+  }
+};
+</script>
+<script src="ielts.js"></script>
 </body>
 </html>

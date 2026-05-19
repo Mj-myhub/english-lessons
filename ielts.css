@@ -66,6 +66,11 @@ details[open] summary::before{content:"\25BE  ";}
 details .body{padding:0.3rem 0 0.9rem;}
 .model{background:var(--cream);border-left:3px solid var(--gold);padding:0.9rem 1.1rem;border-radius:0 var(--radius) var(--radius) 0;margin:0.7rem 0;font-size:0.96rem;}
 .note{font-size:0.9rem;color:var(--text-light);margin-top:0.6rem;}
+.wordcount{display:inline-block;background:var(--cream);border:1px solid var(--cream-rich);border-left:3px solid var(--gold);border-radius:6px;padding:0.5rem 0.9rem;margin:0.4rem 0 1rem;font-size:0.92rem;color:var(--text);}
+.wordcount b{color:var(--forest-deep);}
+figure.chart{margin:1rem 0 0;background:var(--white);border:1px solid var(--cream-rich);border-radius:var(--radius);padding:1rem 0.6rem 0.4rem;}
+figure.chart svg{width:100%;height:auto;max-width:680px;display:block;margin:0 auto;}
+figure.chart figcaption{text-align:center;margin-top:0.4rem;}
 .btn{display:inline-flex;align-items:center;gap:0.5rem;border:none;cursor:pointer;font-family:var(--font-body);font-weight:700;font-size:0.92rem;padding:0.85rem 1.7rem;border-radius:50px;text-decoration:none;}
 .btn-primary{background:var(--forest-deep);color:#fff;box-shadow:0 8px 24px rgba(11,48,38,0.20);}
 .btn-gold{background:var(--gold);color:var(--forest-deep);}

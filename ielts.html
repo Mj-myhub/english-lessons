@@ -9,99 +9,7 @@
 <link rel="icon" href="favicon.ico">
 <link rel="apple-touch-icon" href="favicon-180.png">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --forest-shadow:#06231B; --forest-deep:#0B3026; --forest:#15604A; --forest-light:#1F7D60;
-    --gold:#CBA15B; --gold-light:#DDBA7C; --gold-dark:#9A7635; --gold-rich:#B08A45;
-    --terra:#C2683F;
-    --cream:#F7F8F8; --cream-dark:#ECEEEE; --cream-rich:#DADCDC;
-    --text:#2A2620; --text-light:#6B645A; --white:#FFFFFF;
-    --radius:14px; --radius-lg:24px;
-    --shadow:0 4px 20px rgba(11,48,38,0.07); --shadow-lg:0 16px 48px rgba(11,48,38,0.13);
-    --font-display:'Fraunces','Cormorant Garamond',Georgia,serif;
-    --font-body:'Plus Jakarta Sans',-apple-system,sans-serif;
-    --font-accent:'Cormorant Garamond',Georgia,serif;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{font-family:var(--font-body);color:var(--text);background:var(--cream);line-height:1.7;-webkit-font-smoothing:antialiased;}
-  h1,h2,h3,h4{font-family:var(--font-display);color:var(--forest-deep);line-height:1.15;letter-spacing:-0.02em;}
-  a{color:var(--forest);}
-  .wrap{max-width:920px;margin:0 auto;padding:0 1.3rem;}
-
-  .navbar{position:sticky;top:0;z-index:100;background:rgba(247,248,248,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(21,96,74,0.10);}
-  .nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0.8rem 1.3rem;gap:1rem;}
-  .nav-brand{display:flex;align-items:center;gap:0.7rem;text-decoration:none;}
-  .nav-brand img{width:42px;height:42px;border-radius:8px;}
-  .nav-brand-text{font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:var(--forest-deep);line-height:1;}
-  .nav-brand-tagline{font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-dark);font-weight:700;margin-top:3px;}
-  .nav-back{font-size:0.85rem;font-weight:700;color:var(--forest);text-decoration:none;border:1.5px solid var(--forest);padding:0.5rem 1.1rem;border-radius:50px;white-space:nowrap;}
-  .nav-back:hover{background:var(--forest);color:#fff;}
-
-  .hero{padding:3.5rem 0 2.5rem;text-align:center;background:linear-gradient(180deg,var(--cream) 0%,var(--cream-dark) 100%);}
-  .kicker{display:inline-block;font-size:0.72rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:1rem;}
-  .hero h1{font-size:clamp(2rem,5.5vw,3.2rem);font-variation-settings:"SOFT" 100,"WONK" 1;font-weight:400;}
-  .hero h1 em{font-family:var(--font-accent);font-style:italic;color:var(--gold-rich);font-weight:600;}
-  .hero p{max-width:600px;margin:1.1rem auto 0;color:var(--text-light);font-size:1.05rem;}
-  .pillrow{display:flex;flex-wrap:wrap;gap:0.6rem;justify-content:center;margin-top:1.6rem;}
-  .pill{background:var(--white);border:1px solid rgba(203,161,91,0.30);color:var(--forest-deep);font-weight:600;font-size:0.85rem;padding:0.5rem 1.1rem;border-radius:50px;box-shadow:var(--shadow);}
-
-  section.skill{padding:2.6rem 0;border-bottom:1px solid var(--cream-rich);}
-  .skill-head{display:flex;align-items:baseline;gap:0.8rem;flex-wrap:wrap;margin-bottom:0.4rem;}
-  .skill-num{font-family:var(--font-display);font-size:2.2rem;color:var(--gold);line-height:1;}
-  .skill h2{font-size:1.7rem;}
-  .skill .lead{color:var(--text-light);margin:0.5rem 0 1.4rem;}
-  .card{background:var(--white);border:1px solid var(--cream-rich);border-radius:var(--radius-lg);padding:1.6rem 1.4rem;box-shadow:var(--shadow);margin-bottom:1.2rem;}
-  .card h3{font-size:1.15rem;margin-bottom:0.6rem;}
-  .tasktag{display:inline-block;font-size:0.68rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:#fff;background:var(--forest);padding:0.35rem 0.8rem;border-radius:50px;margin-bottom:0.9rem;}
-  .q{margin:0.55rem 0;padding-left:1.6rem;position:relative;}
-  .q b{position:absolute;left:0;color:var(--forest);}
-  .passage p{margin:0.8rem 0;}
-  .blank{display:inline-block;min-width:90px;border-bottom:1.5px dotted var(--gold-dark);}
-  table.data{width:100%;border-collapse:collapse;margin:0.8rem 0;font-size:0.92rem;}
-  table.data th,table.data td{border:1px solid var(--cream-rich);padding:0.5rem 0.6rem;text-align:center;}
-  table.data th{background:var(--cream-dark);}
-  details{background:var(--cream);border:1px solid var(--cream-rich);border-radius:var(--radius);padding:0.4rem 1rem;margin-top:0.8rem;}
-  details summary{cursor:pointer;font-weight:700;color:var(--forest);padding:0.6rem 0;list-style:none;}
-  details summary::-webkit-details-marker{display:none;}
-  details summary::before{content:"\25B8  ";color:var(--gold);}
-  details[open] summary::before{content:"\25BE  ";}
-  details .body{padding:0.3rem 0 0.9rem;}
-  .model{background:var(--cream);border-left:3px solid var(--gold);padding:0.9rem 1.1rem;border-radius:0 var(--radius) var(--radius) 0;margin:0.7rem 0;font-size:0.96rem;}
-  .note{font-size:0.9rem;color:var(--text-light);margin-top:0.6rem;}
-  .btn{display:inline-flex;align-items:center;gap:0.5rem;border:none;cursor:pointer;font-family:var(--font-body);font-weight:700;font-size:0.92rem;padding:0.85rem 1.7rem;border-radius:50px;text-decoration:none;}
-  .btn-primary{background:var(--forest-deep);color:#fff;box-shadow:0 8px 24px rgba(11,48,38,0.20);}
-  .btn-gold{background:var(--gold);color:var(--forest-deep);}
-  .btn-ghost{background:transparent;color:var(--forest);border:1.5px solid var(--forest);}
-  .actions{display:flex;gap:0.7rem;flex-wrap:wrap;margin-top:0.4rem;}
-
-  .audiobox{background:var(--cream);border:1px dashed var(--gold-dark);border-radius:var(--radius);padding:1rem 1.1rem;font-size:0.92rem;color:var(--text-light);}
-  .audiobox b{color:var(--forest-deep);}
-
-  .lead{}
-  .leadform{background:linear-gradient(135deg,var(--forest-deep),var(--forest));color:#fff;border-radius:var(--radius-lg);padding:2rem 1.5rem;margin:2.6rem 0;text-align:center;}
-  .leadform h2{color:#fff;font-size:1.6rem;}
-  .leadform p{color:rgba(255,255,255,0.85);max-width:520px;margin:0.7rem auto 1.4rem;}
-  .leadform form{display:flex;flex-direction:column;gap:0.7rem;max-width:420px;margin:0 auto;}
-  .leadform input{padding:0.85rem 1rem;border-radius:50px;border:none;font-family:var(--font-body);font-size:0.95rem;}
-  .leadform label{display:flex;gap:0.5rem;align-items:flex-start;font-size:0.82rem;color:rgba(255,255,255,0.85);text-align:left;}
-  .leadform .btn-gold{justify-content:center;}
-  #formMsg{font-size:0.9rem;margin-top:0.6rem;min-height:1.2rem;}
-
-  footer{background:var(--forest-deep);color:rgba(255,255,255,0.85);text-align:center;padding:2rem 1.3rem;font-size:0.9rem;}
-  footer a{color:var(--gold-light);text-decoration:none;}
-
-  @media print{
-    .navbar,.leadform,.actions,.no-print{display:none!important;}
-    body{background:#fff;}
-    .card{box-shadow:none;border:1px solid #ccc;}
-    details{border:none;background:#fff;}
-    details[open] summary{display:none;}
-  }
-  @media(max-width:600px){
-    .nav-brand-text{font-size:1rem;} .skill-num{font-size:1.7rem;} .hero h1{font-size:2rem;}
-  }
-</style>
+<link rel="stylesheet" href="ielts.css">
 </head>
 <body>
 
@@ -130,7 +38,7 @@
       <span class="pill">Speaking</span>
     </div>
     <div class="actions" style="justify-content:center;margin-top:1.6rem;">
-      <button class="btn btn-gold no-print" onclick="window.print()">&#128424; Save / Print this page (PDF)</button>
+      <a class="btn btn-primary" href="#mock-tests">Start a full mock test</a>
       <a class="btn btn-ghost" href="https://cal.com/the.englishlounge/free-trial" target="_blank" rel="noopener">Book a free assessment</a>
     </div>
   </div>
@@ -138,8 +46,47 @@
 
 <main class="wrap">
 
+<!-- ===================== MOCK TEST DIRECTORY ===================== -->
+<section class="skill" id="mock-tests">
+  <div class="skill-head"><span class="skill-num">&#9635;</span><h2>Full Mock Tests</h2></div>
+  <p class="lead">Each test is a complete IELTS sitting &mdash; Listening, Reading, Writing and Speaking together, with answer keys and Band 9 models. New tests are added regularly.</p>
+  <div class="tests-grid">
+    <a class="test-card" href="ielts-test-01.html">
+      <div class="tnum">Mock Test 1</div>
+      <div class="tmeta">Academic &middot; all 4 skills &middot; answer keys + models</div>
+    </a>
+    <div class="test-card soon">
+      <div class="tnum">Mock Test 2</div>
+      <div class="tmeta">Coming soon</div>
+    </div>
+    <div class="test-card soon">
+      <div class="tnum">Mock Test 3</div>
+      <div class="tmeta">Coming soon</div>
+    </div>
+    <div class="test-card soon">
+      <div class="tnum">Mock Test 4</div>
+      <div class="tmeta">Coming soon</div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:1.6rem;">Practice one skill at a time</h3>
+  <p class="note">Jump straight to a single skill from any test.</p>
+  <div class="skill-index">
+    <a href="ielts-test-01.html#listening">Listening &middot; Test 1</a>
+    <a href="ielts-test-01.html#reading">Reading &middot; Test 1</a>
+    <a href="ielts-test-01.html#writing">Writing &middot; Test 1</a>
+    <a href="ielts-test-01.html#speaking">Speaking &middot; Test 1</a>
+  </div>
+</section>
+
+<!-- ===================== FREE TASTER ===================== -->
+<section class="skill">
+  <div class="skill-head"><span class="skill-num">&#9733;</span><h2>Free taster</h2></div>
+  <p class="lead">Not ready for a full test? Try one short sample from each skill below, with answers.</p>
+</section>
+
 <!-- ===================== LISTENING ===================== -->
-<section class="skill" id="listening">
+<section class="skill" id="listening-sample">
   <div class="skill-head"><span class="skill-num">01</span><h2>Listening</h2></div>
   <p class="lead">The Listening test is 4 sections, 40 questions, ~30 minutes. Below is an original Section 1 task (form completion) in the authentic IELTS format. Spelling counts &mdash; a misspelt answer is wrong.</p>
 
@@ -388,7 +335,7 @@
     <input type="text" name="target_band" placeholder="Target band (e.g. 7.0) - optional">
     <label><input type="checkbox" required> I agree to be contacted by The English Lounge about IELTS preparation.</label>
     <button type="submit" class="btn btn-gold">Send me the pack</button>
-    <div id="formMsg"></div>
+    <div id="formMsg" class="formMsg"></div>
   </form>
 </section>
 

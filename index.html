@@ -129,7 +129,7 @@
             font-size: 0.65rem; color: var(--gold-dark);
             text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600;
         }
-        .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+        .nav-links { display: flex; gap: 1.4rem; list-style: none; align-items: center; }
         .nav-links a {
             text-decoration: none; color: var(--text); font-size: 0.9rem;
             font-weight: 500; transition: var(--transition); position: relative;
@@ -140,6 +140,14 @@
         }
         .nav-links a:hover::after { width: 100%; }
         .nav-links a:hover { color: var(--forest); }
+        .nav-highlight {
+            color: var(--gold-dark) !important;
+            border: 1.5px solid var(--gold-light); padding: 0.32rem 0.85rem;
+            border-radius: 999px; font-weight: 600; font-size: 0.85rem !important;
+        }
+        .nav-highlight:hover { background: var(--gold); color: var(--white) !important; border-color: var(--gold); }
+        .nav-highlight::after { display: none !important; }
+        .nav-divider { width: 1px; height: 22px; background: rgba(11,48,38,0.12); margin: 0 0.2rem; }
         .nav-cta {
             background: var(--forest) !important; color: var(--white) !important;
             padding: 0.5rem 1.2rem; border-radius: 8px; font-weight: 600;
@@ -1050,9 +1058,10 @@
             <li><a href="#services"><span data-en>Services</span><span data-it>Servizi</span></a></li>
             <li><a href="#resources"><span data-en>Free Resources</span><span data-it>Risorse Gratuite</span></a></li>
             <li><a href="ielts.html"><span data-en>IELTS Practice</span><span data-it>Pratica IELTS</span></a></li>
-            <li><a href="#entry-test" style="color:var(--gold-dark);font-weight:600;"><span data-en>Level Test</span><span data-it>Test Livello</span></a></li>
             <li><a href="#pricing"><span data-en>Pricing</span><span data-it>Prezzi</span></a></li>
-            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#faq"><span data-en>FAQ</span><span data-it>Domande</span></a></li>
+            <li><a href="#entry-test" class="nav-highlight"><span data-en>Level Test</span><span data-it>Test Livello</span></a></li>
+            <li class="nav-divider" aria-hidden="true"></li>
             <li><a href="#pricing" class="nav-cta"><span data-en>Book Now</span><span data-it>Prenota</span></a></li>
             <li>
                 <div class="lang-switch">

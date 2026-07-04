@@ -12,10 +12,130 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://englishloungerome.com/logo.png">
     <meta name="robots" content="index, follow">
+    <link rel="alternate" hreflang="en" href="https://englishloungerome.com/">
+    <link rel="alternate" hreflang="it" href="https://englishloungerome.com/">
+    <link rel="alternate" hreflang="x-default" href="https://englishloungerome.com/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The English Lounge | Learn English in Comfort">
+    <meta name="twitter:description" content="Private English lessons in Rome & Online. Native Canadian teacher with 12+ years experience. General English, Business English, IELTS & Cambridge preparation.">
+    <meta name="twitter:image" content="https://englishloungerome.com/logo.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://englishloungerome.com/#business",
+      "name": "The English Lounge",
+      "description": "Private English lessons in Rome and online with a native Canadian teacher. General English, Business English, IELTS and Cambridge exam preparation.",
+      "url": "https://englishloungerome.com/",
+      "logo": "https://englishloungerome.com/logo.png",
+      "image": "https://englishloungerome.com/logo.png",
+      "telephone": "+393520809945",
+      "email": "theenglishlounge.rome@gmail.com",
+      "priceRange": "\u20ac20-\u20ac207",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Rome",
+        "addressRegion": "Lazio",
+        "addressCountry": "IT"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Rome" },
+        { "@type": "Country", "name": "Italy" }
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Majid Jaffrey",
+        "jobTitle": "English Teacher",
+        "alumniOf": "University of Siena",
+        "knowsLanguage": ["en", "it"]
+      },
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "name": "Free 20-Minute Trial Lesson",
+          "price": "0",
+          "priceCurrency": "EUR"
+        },
+        {
+          "@type": "Offer",
+          "name": "Single English Lesson (General or Business)",
+          "price": "20",
+          "priceCurrency": "EUR"
+        },
+        {
+          "@type": "Offer",
+          "name": "Single Exam Preparation Lesson (IELTS / Cambridge)",
+          "price": "23",
+          "priceCurrency": "EUR"
+        }
+      ],
+      "sameAs": [
+        "https://cal.com/the.englishlounge"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Who are your lessons for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lessons are for adults and teenagers at every level, from complete beginner (A1) to advanced (C1+). Whether you need general conversation, Business English, or IELTS and Cambridge exam preparation, each lesson plan is personalized to your goals."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are lessons online or in person?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Both. You can take lessons online via video call from anywhere, or in person in Rome. You choose whichever format suits you best."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the free trial work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The free trial is a relaxed 20-minute video call. We get to know each other, assess your current level, and discuss your goals. There is no payment and no commitment required."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I reschedule or cancel a lesson?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can reschedule or cancel with at least 1 day of notice for a full refund of the lesson. Changes communicated later than that are treated as a completed lesson."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do package lessons expire?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Packages are flexible and designed to fit your schedule. Lessons can be booked at times that work for you, week by week."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to buy any books?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. All learning materials are provided as part of your lessons, tailored to your level and goals."
+          }
+        }
+      ]
+    }
+    </script>
     <style>
         :root {
             /* Primary: Modern Emerald Green */
@@ -70,6 +190,24 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
+        :focus-visible {
+            outline: 3px solid var(--gold);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        .test-option:focus-visible, .btn-primary:focus-visible,
+        .btn-secondary:focus-visible, .btn-start-test:focus-visible {
+            outline: 3px solid var(--forest);
+            outline-offset: 3px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            html { scroll-behavior: auto; }
+        }
         body {
             font-family: var(--font-body);
             color: var(--text);
@@ -152,7 +290,7 @@
             border: 1.5px solid var(--gold-light); padding: 0.32rem 0.85rem;
             border-radius: 999px; font-weight: 600; font-size: 0.85rem !important;
         }
-        .nav-highlight:hover { background: var(--gold); color: var(--white) !important; border-color: var(--gold); }
+        .nav-highlight:hover { background: var(--gold); color: var(--forest-deep) !important; border-color: var(--gold); }
         .nav-highlight::after { display: none !important; }
         .nav-divider { width: 1px; height: 22px; background: rgba(11,48,38,0.12); margin: 0 0.2rem; }
         .nav-cta {
@@ -652,7 +790,7 @@
             box-shadow: var(--shadow);
         }
         .test-option:hover .opt-letter {
-            background: var(--gold); color: var(--white);
+            background: var(--gold); color: var(--forest-deep);
         }
         .test-option.selected {
             border-color: var(--forest);
@@ -1051,8 +1189,8 @@
 <!-- ===== NAVBAR ===== -->
 <nav class="navbar" id="navbar">
     <div class="nav-inner">
-        <a href="#" class="nav-brand">
-            <img src="logo.png" alt="The English Lounge">
+        <a href="#home" class="nav-brand" aria-label="The English Lounge - back to top">
+            <img src="logo.png" alt="The English Lounge" width="40" height="48">
             <div>
                 <div class="nav-brand-text">The English Lounge</div>
                 <div class="nav-brand-tagline">
@@ -1104,7 +1242,7 @@
             <a href="#resources" class="btn-secondary"><span data-en>Free Resources</span><span data-it>Risorse Gratuite</span></a>
         </div>
         <div class="hero-stats">
-            <div class="hero-stat"><div class="hero-stat-icon"><img src="https://flagcdn.com/w40/ca.png" alt="Canada" style="width:24px;height:auto;vertical-align:middle;border-radius:2px;"></div><div class="hero-stat-label"><span data-en>Native Speaker</span><span data-it>Madrelingua</span></div></div>
+            <div class="hero-stat"><div class="hero-stat-icon"><img src="https://flagcdn.com/w40/ca.png" alt="Canada" width="24" height="12" style="width:24px;height:auto;vertical-align:middle;border-radius:2px;"></div><div class="hero-stat-label"><span data-en>Native Speaker</span><span data-it>Madrelingua</span></div></div>
             <div class="hero-stat"><div class="hero-stat-icon">&#127758;</div><div class="hero-stat-label"><span data-en>Online &amp; In Rome</span><span data-it>Online &amp; a Roma</span></div></div>
             <div class="hero-stat"><div class="hero-stat-icon">&#128218;</div><div class="hero-stat-label">IELTS &middot; Business &middot; General</div></div>
             <div class="hero-stat"><div class="hero-stat-icon">&#127891;</div><div class="hero-stat-label"><span data-en>12+ Years Experience</span><span data-it>12+ Anni Esperienza</span></div></div>
@@ -1133,7 +1271,7 @@
             </div>
             <div>
                 <div class="about-credentials">
-                    <div class="credential"><img src="https://flagcdn.com/w40/ca.png" alt="Canada" style="width:22px;height:auto;border-radius:2px;"> <span data-en>Native English Speaker</span><span data-it>Madrelingua Inglese</span></div>
+                    <div class="credential"><img src="https://flagcdn.com/w40/ca.png" alt="Canada" width="22" height="11" style="width:22px;height:auto;border-radius:2px;"> <span data-en>Native English Speaker</span><span data-it>Madrelingua Inglese</span></div>
                     <div class="credential">&#127891; <span data-en>Masters in Linguistics</span><span data-it>Laurea in Linguistica</span></div>
                     <div class="credential">&#128220; <span data-en>TTC &amp; TEFL Certified</span><span data-it>Certificato TTC &amp; TEFL</span></div>
                     <div class="credential">&#128483;&#65039; <span data-en>12+ Years Teaching</span><span data-it>12+ Anni Insegnamento</span></div>
@@ -1186,21 +1324,21 @@
         </div>
         <div class="services-grid">
             <div class="service-card fade-in">
-                <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=600&q=80" alt="General English" class="service-img">
+                <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=600&q=80" alt="General English" class="service-img" width="600" height="180" loading="lazy">
                 <div class="service-body">
                     <h3><span data-en>&#128483;&#65039; General English</span><span data-it>&#128483;&#65039; Inglese Generale</span></h3>
                     <p><span data-en>Build confidence in everyday conversations, grammar, vocabulary, and pronunciation. From beginner to advanced.</span><span data-it>Acquisisci sicurezza nelle conversazioni quotidiane, grammatica, vocabolario e pronuncia.</span></p>
                 </div>
             </div>
             <div class="service-card fade-in">
-                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&q=80" alt="Business English" class="service-img">
+                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&q=80" alt="Business English" class="service-img" width="600" height="180" loading="lazy">
                 <div class="service-body">
                     <h3><span data-en>&#128188; Business English</span><span data-it>&#128188; Inglese Commerciale</span></h3>
                     <p><span data-en>Presentations, meetings, negotiations, and email writing. Communicate with confidence in the global workplace.</span><span data-it>Presentazioni, riunioni, negoziazioni e email. Comunica con sicurezza nel mondo del lavoro.</span></p>
                 </div>
             </div>
             <div class="service-card fade-in">
-                <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80" alt="Exam Preparation" class="service-img">
+                <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80" alt="Exam Preparation" class="service-img" width="600" height="180" loading="lazy">
                 <div class="service-body">
                     <h3><span data-en>&#127919; IELTS &amp; Cambridge Prep</span><span data-it>&#127919; Preparazione IELTS &amp; Cambridge</span></h3>
                     <p><span data-en>Focused exam preparation. Proven strategies, mock exams, and personalised score improvement plans.</span><span data-it>Preparazione mirata. Strategie comprovate, simulazioni e piani personalizzati.</span></p>
@@ -1564,6 +1702,7 @@ function detectLanguage() {
 
 function setLang(lang) {
     currentLang = lang;
+    document.documentElement.lang = lang;
     if (lang === 'it') {
         document.body.classList.add('lang-it');
     } else {

@@ -189,20 +189,24 @@
     "Moira", "Tessa", "Alex", "Aaron", "Nicky", "Fiona", "Kate", "Oliver"
   ];
 
+  function voiceScore(v) {
+    var s = 0, n = v.name || "";
+    /* strongly prefer modern natural/neural voices where the OS provides them */
+    if (/natural|neural|premium|enhanced/i.test(n)) s -= 60;
+    if (/siri/i.test(n)) s -= 40;
+    var pi = PREFERRED.indexOf(n);
+    if (pi !== -1) s -= (30 - pi);
+    if (/GB/i.test(v.lang)) s -= 6;               /* IELTS: prefer British */
+    if (v.localService) s -= 2;
+    if (/espeak|eSpeak|compact|whisper|novelty|bad news|bells|zarvox|trinoids/i.test(n)) s += 100;
+    return s;
+  }
+
   function rankVoices() {
     var all = window.speechSynthesis.getVoices() || [];
     var en = all.filter(function (v) { return /^en[-_]/i.test(v.lang) || v.lang === "en"; });
     if (!en.length) en = all;
-    en.sort(function (a, b) {
-      var ia = PREFERRED.indexOf(a.name), ib = PREFERRED.indexOf(b.name);
-      if (ia === -1) ia = 999; if (ib === -1) ib = 999;
-      if (ia !== ib) return ia - ib;
-      /* prefer British, then local voices */
-      var ga = /GB/i.test(a.lang) ? 0 : 1, gb = /GB/i.test(b.lang) ? 0 : 1;
-      if (ga !== gb) return ga - gb;
-      return (b.localService ? 1 : 0) - (a.localService ? 1 : 0);
-    });
-    /* dedupe by name */
+    en.sort(function (a, b) { return voiceScore(a) - voiceScore(b); });
     var seen = {}, out = [];
     en.forEach(function (v) { if (!seen[v.name]) { seen[v.name] = 1; out.push(v); } });
     return out;
@@ -221,11 +225,12 @@
      the next distinct voice; when voices run out, reuse with varied pitch. */
   function speakerStyle(index) {
     var vs = getVoices();
-    if (!vs.length) return { voice: null, pitch: 1, rate: 0.95 };
+    if (!vs.length) return { voice: null, pitch: 1, rate: 0.93 };
     var vi = index % vs.length;
     var round = Math.floor(index / vs.length);
-    var pitches = [1, 0.88, 1.12, 0.8, 1.2];
-    return { voice: vs[vi], pitch: pitches[round % pitches.length], rate: 0.95 };
+    /* keep pitch shifts subtle - extreme values sound robotic */
+    var pitches = [1, 0.94, 1.06, 0.9, 1.1];
+    return { voice: vs[vi], pitch: pitches[round % pitches.length], rate: 0.93 };
   }
 
   /* ---------- transcript parsing ---------- */
@@ -350,7 +355,7 @@
       var chunks = splitSentences(it.text);
       chunks.forEach(function (c, ci) {
         var lastChunk = ci === chunks.length - 1;
-        var gap = lastChunk ? (it.speaker === "NARRATOR" ? 1800 : 550) : 220;
+        var gap = lastChunk ? (it.speaker === "NARRATOR" ? 2600 : 600) : 220;
         q.push({ text: c, styleIndex: idx, gapAfter: gap });
       });
     });
@@ -358,6 +363,21 @@
   }
 
   /* ---------- player ---------- */
+  var CHARS_PER_SEC = 13.5; /* approx speech speed at rate 0.93 */
+
+  function estimateSeconds(queue, fromIdx) {
+    var s = 0;
+    for (var i = fromIdx || 0; i < queue.length; i++) {
+      s += queue[i].text.length / CHARS_PER_SEC + queue[i].gapAfter / 1000;
+    }
+    return s;
+  }
+
+  function fmtTime(sec) {
+    sec = Math.max(0, Math.round(sec));
+    return Math.floor(sec / 60) + ":" + (sec % 60 < 10 ? "0" : "") + (sec % 60);
+  }
+
   function stopAll(except) {
     players.forEach(function (p) { if (p !== except) p.stop(true); });
     window.speechSynthesis.cancel();
@@ -366,35 +386,29 @@
   function createPlayer(box, section, label) {
     var queue = buildQueue(section.items);
     var idx = 0, playing = false, timer = null;
+    var total = estimateSeconds(queue, 0);
 
     var ui = document.createElement("div");
     ui.className = "tts-player";
     ui.innerHTML =
       '<div class="tts-row">' +
-        '<button type="button" class="tts-btn tts-play">&#9654; Play</button>' +
-        '<button type="button" class="tts-btn tts-restart" title="Restart">&#8634;</button>' +
-        '<div class="tts-meta"><div class="tts-status">Ready \u00b7 ' + label + "</div>" +
-        '<div class="tts-barwrap"><div class="tts-bar"></div></div></div>' +
-      "</div>" +
-      '<p class="tts-note">Computer-generated practice voices &middot; different speakers have different voices. ' +
-      "In the real exam you will hear recorded human voices. Audio in the exam plays <b>once only</b> &mdash; " +
-      "for best practice, avoid replaying.</p>";
+        '<button type="button" class="tts-btn tts-play" aria-label="Play ' + label + '">&#9654;</button>' +
+        '<span class="tts-time">0:00 / ' + fmtTime(total) + "</span>" +
+      "</div>";
 
     var playBtn = ui.querySelector(".tts-play");
-    var restartBtn = ui.querySelector(".tts-restart");
-    var status = ui.querySelector(".tts-status");
-    var bar = ui.querySelector(".tts-bar");
+    var timeEl = ui.querySelector(".tts-time");
 
-    function setStatus(t) { status.textContent = t; }
-    function setBar() { bar.style.width = (queue.length ? Math.round(idx / queue.length * 100) : 0) + "%"; }
+    function elapsed() { return total - estimateSeconds(queue, idx); }
+    function setTime() { timeEl.textContent = fmtTime(elapsed()) + " / " + fmtTime(total); }
 
     function speakNext() {
       if (!playing) return;
       if (idx >= queue.length) {
         playing = false;
-        playBtn.innerHTML = "&#9654; Play again";
-        setStatus("Finished \u00b7 " + label);
-        setBar();
+        idx = 0;
+        playBtn.innerHTML = "&#9654;";
+        setTime();
         return;
       }
       var item = queue[idx];
@@ -404,8 +418,7 @@
       u.pitch = st.pitch; u.rate = st.rate; u.lang = (st.voice && st.voice.lang) || "en-GB";
       u.onend = function () {
         idx++;
-        setBar();
-        setStatus("Playing " + Math.min(idx + 1, queue.length) + " / " + queue.length + " \u00b7 " + label);
+        setTime();
         if (playing) timer = setTimeout(speakNext, item.gapAfter);
       };
       u.onerror = function () {
@@ -420,48 +433,37 @@
         playing = false;
         clearTimeout(timer);
         if (!silent) window.speechSynthesis.cancel();
-        playBtn.innerHTML = "&#9654; " + (idx > 0 && idx < queue.length ? "Resume" : "Play");
+        playBtn.innerHTML = "&#9654;";
       },
       start: function () {
         stopAll(self);
-        /* nudge voice list on first user gesture (required on some browsers) */
-        getVoices();
+        getVoices(); /* warm the voice list on user gesture */
         playing = true;
-        playBtn.innerHTML = "&#10074;&#10074; Pause";
-        setStatus("Playing " + (idx + 1) + " / " + queue.length + " \u00b7 " + label);
+        playBtn.innerHTML = "&#10074;&#10074;";
         speakNext();
       }
     };
 
     playBtn.addEventListener("click", function () {
-      if (playing) { self.stop(); setStatus("Paused \u00b7 " + label); }
+      if (playing) self.stop();
       else self.start();
-    });
-    restartBtn.addEventListener("click", function () {
-      self.stop();
-      idx = 0; setBar();
-      self.start();
     });
 
     players.push(self);
     box.appendChild(ui);
+    setTime();
   }
 
-  /* ---------- styles ---------- */
+/* ---------- styles ---------- */
   function injectStyles() {
     var css =
       ".tts-player{margin-top:.6rem}" +
-      ".tts-row{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}" +
-      ".tts-btn{border:0;border-radius:999px;padding:.55rem 1.1rem;font-weight:700;cursor:pointer;" +
-        "background:#15604A;color:#fff;font-family:inherit;font-size:.9rem;transition:background .2s}" +
-      ".tts-btn:hover{background:#0B3026}" +
-      ".tts-restart{padding:.55rem .8rem;background:#CBA15B;color:#0B3026}" +
-      ".tts-restart:hover{background:#b78d47}" +
-      ".tts-meta{flex:1;min-width:160px}" +
-      ".tts-status{font-size:.82rem;font-weight:600;color:#0B3026;margin-bottom:.25rem}" +
-      ".tts-barwrap{height:6px;background:rgba(11,48,38,.12);border-radius:3px;overflow:hidden}" +
-      ".tts-bar{height:100%;width:0;background:linear-gradient(90deg,#CBA15B,#15604A);border-radius:3px;transition:width .3s}" +
-      ".tts-note{font-size:.75rem;color:#6B645A;margin:.5rem 0 0;line-height:1.5}";
+      ".tts-row{display:flex;align-items:center;gap:.9rem}" +
+      ".tts-btn{border:0;border-radius:50%;width:52px;height:52px;font-size:1.15rem;" +
+        "display:inline-flex;align-items:center;justify-content:center;cursor:pointer;" +
+        "background:#15604A;color:#fff;transition:background .2s,transform .15s}" +
+      ".tts-btn:hover{background:#0B3026;transform:scale(1.05)}" +
+      ".tts-time{font-variant-numeric:tabular-nums;font-weight:600;font-size:1rem;color:#0B3026}";
     var s = document.createElement("style");
     s.textContent = css;
     document.head.appendChild(s);
